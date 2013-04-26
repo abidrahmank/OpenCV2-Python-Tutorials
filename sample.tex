@@ -1,0 +1,1334 @@
+
+
+
+% Header, overrides base
+
+    % Make sure that the sphinx doc style knows who it inherits from.
+    \def\sphinxdocclass{article}
+
+    % Declare the document class
+    \documentclass[letterpaper,10pt,english]{/usr/lib/python2.7/site-packages/sphinx/texinputs/sphinxhowto}
+
+    % Imports
+    \usepackage[utf8]{inputenc}
+    \DeclareUnicodeCharacter{00A0}{\\nobreakspace}
+    \usepackage[T1]{fontenc}
+    \usepackage{babel}
+    \usepackage{times}
+    \usepackage{import}
+    \usepackage[Bjarne]{/usr/lib/python2.7/site-packages/sphinx/texinputs/fncychap}
+    \usepackage{longtable}
+    \usepackage{/usr/lib/python2.7/site-packages/sphinx/texinputs/sphinx}
+    \usepackage{multirow}
+
+    \usepackage{amsmath}
+    \usepackage{amssymb}
+    \usepackage{ucs}
+    \usepackage{enumerate}
+
+    % Used to make the Input/Output rules follow around the contents.
+    \usepackage{needspace}
+
+    % Pygments requirements
+    \usepackage{fancyvrb}
+    \usepackage{color}
+
+    % Needed to box output/input
+    \usepackage{tikz}
+        \usetikzlibrary{calc,arrows,shadows}
+    \usepackage[framemethod=tikz]{mdframed}
+
+    \usepackage{alltt}
+
+    % Used to load and display graphics
+    \usepackage{graphicx}
+    \graphicspath{ {figs/} }
+    \usepackage[Export]{adjustbox} % To resize
+
+
+    % For formatting output while also word wrapping.
+    \usepackage{listings}
+    \lstset{breaklines=true}
+    \lstset{basicstyle=\small\ttfamily}
+    \def\smaller{\fontsize{9.5pt}{9.5pt}\selectfont}
+
+    %Pygments definitions
+    
+\makeatletter
+\def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax%
+    \let\PY@ul=\relax \let\PY@tc=\relax%
+    \let\PY@bc=\relax \let\PY@ff=\relax}
+\def\PY@tok#1{\csname PY@tok@#1\endcsname}
+\def\PY@toks#1+{\ifx\relax#1\empty\else%
+    \PY@tok{#1}\expandafter\PY@toks\fi}
+\def\PY@do#1{\PY@bc{\PY@tc{\PY@ul{%
+    \PY@it{\PY@bf{\PY@ff{#1}}}}}}}
+\def\PY#1#2{\PY@reset\PY@toks#1+\relax+\PY@do{#2}}
+
+\expandafter\def\csname PY@tok@gd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gu\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
+\expandafter\def\csname PY@tok@gs\endcsname{\let\PY@bf=\textbf}
+\expandafter\def\csname PY@tok@gr\endcsname{\def\PY@tc##1{\textcolor[rgb]{1.00,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@cm\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@vg\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@m\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@go\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.53,0.53}{##1}}}
+\expandafter\def\csname PY@tok@ge\endcsname{\let\PY@it=\textit}
+\expandafter\def\csname PY@tok@vc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@il\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@cs\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.74,0.48,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gh\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@ni\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.60,0.60,0.60}{##1}}}
+\expandafter\def\csname PY@tok@nl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@no\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@na\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.49,0.56,0.16}{##1}}}
+\expandafter\def\csname PY@tok@nb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@ne\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.82,0.25,0.23}{##1}}}
+\expandafter\def\csname PY@tok@nf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@si\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@s2\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@vi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@nt\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nv\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@s1\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sx\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@bp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@c1\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@kc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@c\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@mf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@err\endcsname{\def\PY@bc##1{\setlength{\fboxsep}{0pt}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}
+\expandafter\def\csname PY@tok@kd\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@ss\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sr\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@mo\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@kn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@mi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@gp\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@o\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@kr\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@s\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@kp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@w\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\expandafter\def\csname PY@tok@kt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
+\expandafter\def\csname PY@tok@ow\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@sb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@k\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@se\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sd\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+
+\def\PYZbs{\char`\\}
+\def\PYZus{\char`\_}
+\def\PYZob{\char`\{}
+\def\PYZcb{\char`\}}
+\def\PYZca{\char`\^}
+\def\PYZam{\char`\&}
+\def\PYZlt{\char`\<}
+\def\PYZgt{\char`\>}
+\def\PYZsh{\char`\#}
+\def\PYZpc{\char`\%}
+\def\PYZdl{\char`\$}
+\def\PYZhy{\char`\-}
+\def\PYZsq{\char`\'}
+\def\PYZdq{\char`\"}
+\def\PYZti{\char`\~}
+% for compatibility with earlier versions
+\def\PYZat{@}
+\def\PYZlb{[}
+\def\PYZrb{]}
+\makeatother
+
+
+    %Set pygments styles if needed...
+    
+        \definecolor{nbframe-border}{rgb}{0.867,0.867,0.867}
+        \definecolor{nbframe-bg}{rgb}{0.969,0.969,0.969}
+        \definecolor{nbframe-in-prompt}{rgb}{0.0,0.0,0.502}
+        \definecolor{nbframe-out-prompt}{rgb}{0.545,0.0,0.0}
+
+        \newenvironment{ColorVerbatim}
+        {\begin{mdframed}[%
+            roundcorner=1.0pt, %
+            backgroundcolor=nbframe-bg, %
+            userdefinedwidth=1\linewidth, %
+            leftmargin=0.1\linewidth, %
+            innerleftmargin=0pt, %
+            innerrightmargin=0pt, %
+            linecolor=nbframe-border, %
+            linewidth=1pt, %
+            usetwoside=false, %
+            everyline=true, %
+            innerlinewidth=3pt, %
+            innerlinecolor=nbframe-bg, %
+            middlelinewidth=1pt, %
+            middlelinecolor=nbframe-bg, %
+            outerlinewidth=0.5pt, %
+            outerlinecolor=nbframe-border, %
+            needspace=0pt
+        ]}
+        {\end{mdframed}}
+        
+        \newenvironment{InvisibleVerbatim}
+        {\begin{mdframed}[leftmargin=0.1\linewidth,innerleftmargin=3pt,innerrightmargin=3pt, userdefinedwidth=1\linewidth, linewidth=0pt, linecolor=white, usetwoside=false]}
+        {\end{mdframed}}
+
+        \renewenvironment{Verbatim}[1][\unskip]
+        {\begin{alltt}\smaller}
+        {\end{alltt}}
+    
+
+    % Help prevent overflowing lines due to urls and other hard-to-break 
+    % entities.  This doesn't catch everything...
+    \sloppy
+
+    % Document level variables
+    \title{Compressive Sampling}
+    \date{April 27, 2013}
+    \release{}
+    \author{}
+    \renewcommand{\releasename}{}
+
+    % TODO: Add option for the user to specify a logo for his/her export.
+    \newcommand{\sphinxlogo}{}
+
+    % Make the index page of the document.
+    \makeindex
+
+    % Import sphinx document type specifics.
+     
+
+
+% Body
+
+    % Start of the document
+    \begin{document}
+
+        
+            \maketitle
+        
+
+        
+
+
+        \section{Compressive sampling Overview
+}In our previous discussion, we saw that imposing bandlimited-ness on our
+class of signals permits point-wise sampling of our signal and then
+later perfect reconstruction. It turns out that by imposing
+\emph{sparsity} we can also obtain perfect reconstruction irrespective
+of whether or not we have satsified the sampling rate limits imposed by
+Shannon's sampling theorem. This has extremely important in practice
+because many signals are naturally sparse so that collecting samples at
+high rates only to dump most of them as the signal is compressed is
+expensive and wasteful.
+\section{What Are Sparse Signals?
+}Let's carefully discuss what we mean by \emph{sparse} in this context. A
+signal $f$ is sparse if it can be expressed in very few nonzero
+components ($\mathbf{s}$) with respect to a given basis ($\mathbf{\Psi}$
+). In other words, in matrix-vector language:
+
+$\mathbf{f} = \mathbf{\Psi} \mathbf{s}$
+
+where $|| \mathbf{s} ||_0 \leq N$ where $N$ is the length of the vector
+and $|| \cdot||_0$ counts the number of nonzero elements in
+$\mathbf{s}$. Furthermore, we don't actually collect $N$ samples
+point-wise as we did in the Shannon sampling case. Rather, we measure
+$\mathbf{f}$ indirectly as $\mathbf{y}$ with another matrix as in:
+
+$\mathbf{y} = \mathbf{\Phi f} = \mathbf{\Phi} \mathbf{\Psi} \mathbf{s} = \mathbf{\Theta s}$
+
+where $\mathbf{\Theta}$ is an $M \times N$ matrix and $M < N$ is the
+number of measurements. This setup means we have two problems to solve.
+First, how to design a \emph{stable} measurement matrix $\mathbf{\Phi}$
+and then, second, how to reconstruct $\mathbf{f}$ from $\mathbf{y}$.
+
+This may look like a standard linear algebra problem but since
+$\mathbf{\Theta}$ has fewer rows than columns, the solution is
+necessarily ill-posed. This is where we inject the sparsity concept!
+Suppose that $f$ is $K$-sparse ( $||f||_0=K$ ), then if we somehow knew
+\emph{which} $K$ columns of $\mathbf{\Theta}$ matched the $K$ non-zero
+entries in $\mathbf{s}$, then $\mathbf{\Theta}$ would be $M \times K$
+where we could make $M > K$ and then have a stable inverse.
+
+This bit of reasoning is encapsulated in the following statement for any
+vector $\mathbf{v}$ sharing the same $K$ non-zero entries as
+$\mathbf{s}$, we have
+
+\[1-\epsilon \leq \frac{||  \mathbf{\Theta v} ||_2}{|| \mathbf{v}  ||_2} \leq 1+\epsilon \]
+
+which is another way of saying that $\mathbf{\Theta}$ preserves the
+lengths of $K$-sparse vectors. Of course we don't know ahead of time
+which $K$ components to use, but it turns out that this condition is
+sufficient for a stable inverse of $\mathbf{\Theta}$ if it holds for any
+$3K$-sparse vector $\mathbf{v}$. This is the \emph{Restricted Isometry
+Property} (RIP). Unfortunately, in order to use this sufficient
+condition, we would have to propose a $\mathbf{\Theta}$ and then check
+all possible combinations of nonzero entries in the $N$-length vector
+$\mathbf{v}$. As you may guess, this is prohibitive.
+
+Alternatively, we can approach stability by defining \emph{incoherence}
+between the measurement matrix $\mathbf{\Phi}$ and the sparse basis
+$\mathbf{\Psi}$ as when any of the columns of one cannot be expressed as
+a small subset of the columns of the other. For example, if we have
+delta-spikes for $\mathbf{\Phi}$ as the row-truncated identity matrix
+
+\[\mathbf{\Phi} = \mathbf{I}_{M \times N} \]
+
+and the discrete Fourier transform matrix for $\mathbf{\Psi}$ as
+
+$\mathbf{\Psi} = \begin{bmatrix}\\\\ e^{-j 2\pi k n/N}\\\\ \end{bmatrix}_{N \times N}$
+
+Then we could not write any of the columns of $\mathbf{\Phi}$ using just
+a few of the columns of $\mathbf{\Psi}$.
+
+It turns out that picking the measuring $M \times N$ matrix randomly
+according to a Gaussian zero-mean, $1/N$ variance distribution and using
+the identity matrix as $\mathbf{\Phi}$, that the resulting
+$\mathbf{\Theta}$ matrix can be shown to satisfy RIP with a high
+probability. This means that we can recover $N$-length $K$-sparse
+signals with a high probability from just $M \ge c K \log (N/K)$ samples
+where $c$ is a small constant. Furthermore, it also turns out that we
+can use any orthonormal basis for $\mathbf{\Phi}$, not just the identity
+matrix, and these relations will all still hold.
+\section{Reconstructing Sparse Signals
+}Now that we have a way, by using random matrices, to satisfy the RIP, we
+are ready to consider the reconstruction problem. The first impulse is
+to compute the least-squares solution to this problem as
+
+\[ \mathbf{s}^* = \mathbf{\Theta}^T (\mathbf{\Theta}\mathbf{\Theta}^T)^{-1}\mathbf{y} \]
+
+But a moment's thought may convince you that since $\mathbf{\Theta}$ is
+a random matrix, most likely with lots of non-zero entries, it is highly
+unlikely that $\mathbf{s}^*$ will turn out to be sparse. There is
+actually a deeper geometric intuition as to why this happens, but let's
+first consider another way of solving this so that the $\mathbf{s}^*$ is
+$K$-sparse. Suppose instead we shuffle through combinations of $K$
+nonzero entries in $\mathbf{s}$ until we satisfy the measurements
+$\mathbf{y}$. Stated mathematically, this means
+
+\[ \mathbf{s}^* = argmin || \mathbf{s}^* ||_0  \]
+
+where
+
+\[ \mathbf{\Theta} \mathbf{s}^* = \mathbf{y} \]
+
+It can be shown that with $M=K+1$ iid Gaussian measurements, this
+optimization will recover a $K$-sparse signal exactly with high
+probability. Unfortunately, this is numerically unstable in addition to
+being an NP-complete problem.
+
+Thus, we need another tractable way to approach this problem. It turns
+out that when a signal is sparse, it usually means that the nonzero
+terms are highly asymmetric meaning that if there are $K$ terms, then
+most likely there is one term that is dominant (i.e.~of much larger
+magnitude) and that dwarfs the other nonzero terms. Geometrically, this
+means that in $N$-dimensional space, the sparse signal is very close to
+one (or, maybe just a few) of the axes.
+
+It turns out that one can bypass this combinatorial problem using $L_1$
+minimization. To examine this, let's digress and look at the main
+difference between $L_2$ and $L_1$ minimization problems.
+reference: \texttt{http://users.ece.gatech.edu/justin/ssp2007}
+\section{$L\_2$ vs. $L\_1$ Optimization
+}The classic constrained least squares problem is the following:
+
+min $||\mathbf{x}||_2^2$
+
+where $x_1 + 2 x_2 = 1$
+
+with corresponding solution illustrated below.
+
+
+    % Make sure that atleast 4 lines are below the HR
+    \needspace{4\baselineskip}
+
+    
+        \vspace{6pt}
+        \makebox[0.1\linewidth]{\smaller\hfill\tt\color{nbframe-in-prompt}In\hspace{4pt}{[}1{]}:\hspace{4pt}}\\*
+        \vspace{-2.65\baselineskip}
+        \begin{ColorVerbatim}
+            \vspace{-0.7\baselineskip}
+            \begin{Verbatim}[commandchars=\\\{\}]
+\PY{k+kn}{from} \PY{n+nn}{\PYZus{}\PYZus{}future\PYZus{}\PYZus{}} \PY{k+kn}{import} \PY{n}{division}
+\PY{k+kn}{from} \PY{n+nn}{matplotlib.patches} \PY{k+kn}{import} \PY{n}{Circle}
+\PY{n}{x1} \PY{o}{=} \PY{n}{linspace}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{10}\PY{p}{)}
+\PY{n}{fig}\PY{o}{=}\PY{n}{figure}\PY{p}{(}\PY{p}{)}
+\PY{n}{ax}\PY{o}{=}\PY{n}{fig}\PY{o}{.}\PY{n}{add\PYZus{}subplot}\PY{p}{(}\PY{l+m+mi}{111}\PY{p}{)}
+\PY{n}{ax}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x1}\PY{p}{,}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{\PYZhy{}}\PY{n}{x1}\PY{p}{)}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{)}
+\PY{n}{ax}\PY{o}{.}\PY{n}{add\PYZus{}patch}\PY{p}{(}\PY{n}{Circle}\PY{p}{(}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{,}\PY{l+m+mi}{1}\PY{o}{/}\PY{n}{sqrt}\PY{p}{(}\PY{l+m+mi}{5}\PY{p}{)}\PY{p}{,}\PY{n}{alpha}\PY{o}{=}\PY{l+m+mf}{0.3}\PY{p}{)}\PY{p}{)}
+\PY{n}{ax}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{/}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{2}\PY{o}{/}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+s}{\PYZsq{}}\PY{l+s}{rs}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+\PY{n}{ax}\PY{o}{.}\PY{n}{axis}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{equal}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+\PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}xlabel}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZdl{}x\PYZus{}1\PYZdl{}}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{24}\PY{p}{)}
+\PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}ylabel}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZdl{}x\PYZus{}2\PYZdl{}}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{24}\PY{p}{)}
+\PY{n}{ax}\PY{o}{.}\PY{n}{grid}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+            
+                \vspace{-0.2\baselineskip}
+            
+        \end{ColorVerbatim}
+    
+
+    
+
+        % If the first block is an image, minipage the image.  Else
+        % request a certain amount of space for the input text.
+        \needspace{4\baselineskip}
+        
+        
+
+            % Add document contents.
+            
+                \begin{InvisibleVerbatim}
+                \vspace{-0.5\baselineskip}\begin{center}
+    \includegraphics[max size={\textwidth}{\textheight}]{_fig_900.png}
+    \par
+    \end{center}
+            \end{InvisibleVerbatim}
+            
+        
+    
+Note that the line is the constraint so that any solution to this
+problem must be on this line (i.e.~satisfy the constraint). The $L_2$
+solution is the one that just touches the perimeter of the circle. This
+is because, in $L_2$, the unit-ball has the shape of a circle and
+represents all solutions of a fixed $L_2$ length. Thus, the one of
+smallest length that intersects the line is the one that satisfies the
+stated minimization problem. Intuitively, this means that we
+\emph{inflate} a ball at the origin and stop when it touches the
+contraint. The point of contact is our $L_2$ minimization solution.
+
+Now, let's do same problem in $L_1$ norm
+
+min $||\mathbf{x}||_1=|x_1|+|x_2|$
+
+where $x_1 + 2 x_2 = 1$
+
+In this case the constant-norm unit-ball contour in the $L_1$ norm is a
+diamond-shape instead of a circle. Comparing the graph below to the last
+shows that the solutions found are different. Geometrically, this is
+because the line tilts over in such a way that the inflating circular
+$L_2$ ball hits a point of tangency that is different from the $L_1$
+ball because the $L_1$ ball creeps out mainly along the principal axes
+and is less influenced by the tilt of the line. This effect is much more
+pronounced in higher $N$-dimensional spaces where $L_1$-balls get more
+\emph{spikey}.
+
+The fact that the $L_1$ problem is less sensitive to the tilt of the
+line is crucial since that tilt (i.e.~orientation) is random due the
+choice of random measurement matrices. So, for this problem to be
+well-posed, we need to \emph{not} be influenced by the orientation of
+any particular choice of random matrix and this is what casting this as
+a $L_1$ minimization provides.
+
+
+    % Make sure that atleast 4 lines are below the HR
+    \needspace{4\baselineskip}
+
+    
+        \vspace{6pt}
+        \makebox[0.1\linewidth]{\smaller\hfill\tt\color{nbframe-in-prompt}In\hspace{4pt}{[}2{]}:\hspace{4pt}}\\*
+        \vspace{-2.65\baselineskip}
+        \begin{ColorVerbatim}
+            \vspace{-0.7\baselineskip}
+            \begin{Verbatim}[commandchars=\\\{\}]
+\PY{k+kn}{from} \PY{n+nn}{matplotlib.patches} \PY{k+kn}{import} \PY{n}{Rectangle}
+\PY{k+kn}{import} \PY{n+nn}{matplotlib.patches}
+\PY{k+kn}{import} \PY{n+nn}{matplotlib.transforms}
+
+\PY{n}{r}\PY{o}{=}\PY{n}{matplotlib}\PY{o}{.}\PY{n}{patches}\PY{o}{.}\PY{n}{RegularPolygon}\PY{p}{(}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{,}\PY{l+m+mi}{1}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{,}\PY{n}{pi}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{,}\PY{n}{alpha}\PY{o}{=}\PY{l+m+mf}{0.5}\PY{p}{)}
+
+\PY{n}{fig}\PY{o}{=}\PY{n}{figure}\PY{p}{(}\PY{p}{)}
+\PY{n}{ax}\PY{o}{=}\PY{n}{fig}\PY{o}{.}\PY{n}{add\PYZus{}subplot}\PY{p}{(}\PY{l+m+mi}{111}\PY{p}{)}
+\PY{n}{ax}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x1}\PY{p}{,}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{\PYZhy{}}\PY{n}{x1}\PY{p}{)}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{)}
+\PY{n}{ax}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{1}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+s}{\PYZsq{}}\PY{l+s}{rs}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+\PY{n}{ax}\PY{o}{.}\PY{n}{add\PYZus{}patch}\PY{p}{(}\PY{n}{r}\PY{p}{)}
+\PY{n}{ax}\PY{o}{.}\PY{n}{grid}\PY{p}{(}\PY{p}{)}
+\PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}xlabel}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZdl{}x\PYZus{}1\PYZdl{}}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{24}\PY{p}{)}
+\PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}ylabel}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZdl{}x\PYZus{}2\PYZdl{}}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{24}\PY{p}{)}
+\PY{n}{ax}\PY{o}{.}\PY{n}{axis}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{equal}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+            
+                \vspace{-0.2\baselineskip}
+            
+        \end{ColorVerbatim}
+    
+
+    
+
+        % If the first block is an image, minipage the image.  Else
+        % request a certain amount of space for the input text.
+        \needspace{4\baselineskip}
+        
+        
+
+            % Add document contents.
+            
+                \makebox[0.1\linewidth]{\smaller\hfill\tt\color{nbframe-out-prompt}Out\hspace{4pt}{[}2{]}:\hspace{4pt}}\\*
+                \vspace{-2.55\baselineskip}\begin{InvisibleVerbatim}
+                \vspace{-0.5\baselineskip}
+    \begin{alltt}(-1.0, 1.0, -0.60000000000000009, 1.2)\end{alltt}
+
+            \end{InvisibleVerbatim}
+            
+                \begin{InvisibleVerbatim}
+                \vspace{-0.5\baselineskip}\begin{center}
+    \includegraphics[max size={\textwidth}{\textheight}]{_fig_1100.png}
+    \par
+    \end{center}
+            \end{InvisibleVerbatim}
+            
+        
+    
+To explore this a bit, let's consider using the \texttt{cvxopt} package
+(Python ver 2.6 used here). This can be cast as a linear programming
+problem as follows:
+
+min $||\mathbf{t}||_1 = |t_1| + |t_2|$
+
+subject to:
+
+$-t_1 < x_1 < t_1$
+
+$-t_2 < x_2 < t_2$
+
+$x_1 + 2 x_2 = 1$
+
+$t_1 > 0$
+
+$t_2 > 0$
+
+where the last two constraints are already implied by the first two and
+are written out just for clarity. This can be implemented and solved in
+\texttt{cvxopt} as the following:
+
+
+    % Make sure that atleast 4 lines are below the HR
+    \needspace{4\baselineskip}
+
+    
+        \vspace{6pt}
+        \makebox[0.1\linewidth]{\smaller\hfill\tt\color{nbframe-in-prompt}In\hspace{4pt}{[}3{]}:\hspace{4pt}}\\*
+        \vspace{-2.65\baselineskip}
+        \begin{ColorVerbatim}
+            \vspace{-0.7\baselineskip}
+            \begin{Verbatim}[commandchars=\\\{\}]
+\PY{k+kn}{from} \PY{n+nn}{cvxopt} \PY{k+kn}{import} \PY{n}{matrix} \PY{k}{as} \PY{n}{matrx} \PY{c}{\PYZsh{} don\PYZsq{}t overrite numpy matrix class}
+\PY{k+kn}{from} \PY{n+nn}{cvxopt} \PY{k+kn}{import} \PY{n}{solvers}
+
+\PY{c}{\PYZsh{}t1,x1,t2,x2}
+\PY{n}{c} \PY{o}{=} \PY{n}{matrx}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,}\PY{p}{(}\PY{l+m+mi}{4}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,}\PY{l+s}{\PYZsq{}}\PY{l+s}{d}\PY{l+s}{\PYZsq{}}\PY{p}{)} 
+\PY{n}{G} \PY{o}{=} \PY{n}{matrx}\PY{p}{(}\PY{p}{[}   \PY{p}{[}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,}  \PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{,}  \PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,}  \PY{c}{\PYZsh{}column\PYZhy{}0}
+              \PY{p}{[} \PY{l+m+mi}{1}\PY{p}{,}  \PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{,}  \PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,}  \PY{c}{\PYZsh{}column\PYZhy{}1}
+              \PY{p}{[} \PY{l+m+mi}{0}\PY{p}{,}   \PY{l+m+mi}{0}\PY{p}{,} \PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}  \PY{c}{\PYZsh{}column\PYZhy{}2}
+              \PY{p}{[} \PY{l+m+mi}{0}\PY{p}{,}   \PY{l+m+mi}{0}\PY{p}{,}  \PY{l+m+mi}{1}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}  \PY{c}{\PYZsh{}column\PYZhy{}3}
+           \PY{p}{]}\PY{p}{,}\PY{p}{(}\PY{l+m+mi}{4}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{)}\PY{p}{,}\PY{l+s}{\PYZsq{}}\PY{l+s}{d}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+
+\PY{n}{h} \PY{o}{=} \PY{n}{matrx}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,}\PY{p}{(}\PY{l+m+mi}{4}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,}\PY{l+s}{\PYZsq{}}\PY{l+s}{d}\PY{l+s}{\PYZsq{}}\PY{p}{)} \PY{c}{\PYZsh{} (4,1) is 4\PYZhy{}rows,1\PYZhy{}column, \PYZsq{}d\PYZsq{} is float type spec}
+\PY{n}{A} \PY{o}{=} \PY{n}{matrx}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{,}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{)}\PY{p}{,}\PY{l+s}{\PYZsq{}}\PY{l+s}{d}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+\PY{n}{b} \PY{o}{=} \PY{n}{matrx}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,}\PY{l+s}{\PYZsq{}}\PY{l+s}{d}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+\PY{n}{sol} \PY{o}{=} \PY{n}{solvers}\PY{o}{.}\PY{n}{lp}\PY{p}{(}\PY{n}{c}\PY{p}{,} \PY{n}{G}\PY{p}{,} \PY{n}{h}\PY{p}{,}\PY{n}{A}\PY{p}{,}\PY{n}{b}\PY{p}{)}
+\PY{n}{x1}\PY{o}{=}\PY{n}{sol}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{x}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}
+\PY{n}{x2}\PY{o}{=}\PY{n}{sol}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{x}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{]}
+\PY{k}{print} \PY{l+s}{\PYZsq{}}\PY{l+s}{x=}\PY{l+s+si}{\PYZpc{}3.2f}\PY{l+s}{\PYZsq{}}\PY{o}{\PYZpc{}} \PY{n}{x1}
+\PY{k}{print} \PY{l+s}{\PYZsq{}}\PY{l+s}{y=}\PY{l+s+si}{\PYZpc{}3.2f}\PY{l+s}{\PYZsq{}}\PY{o}{\PYZpc{}} \PY{n}{x2}
+\end{Verbatim}
+
+            
+                \vspace{-0.2\baselineskip}
+            
+        \end{ColorVerbatim}
+    
+
+    
+
+        % If the first block is an image, minipage the image.  Else
+        % request a certain amount of space for the input text.
+        \needspace{4\baselineskip}
+        
+        
+
+            % Add document contents.
+            
+                \begin{InvisibleVerbatim}
+                \vspace{-0.5\baselineskip}
+    \begin{alltt}     pcost       dcost       gap    pres   dres   k/t
+ 0:  0.0000e+00 -0.0000e+00  3e+00  3e+00  1e-16  1e+00
+ 1:  2.3609e-01  2.3386e-01  5e-01  5e-01  1e-16  2e-01
+ 2:  4.9833e-01  4.9734e-01  5e-02  4e-02  5e-15  1e-02
+ 3:  4.9998e-01  4.9997e-01  5e-04  5e-04  2e-15  2e-04
+ 4:  5.0000e-01  5.0000e-01  5e-06  5e-06  6e-16  2e-06
+ 5:  5.0000e-01  5.0000e-01  5e-08  5e-08  9e-16  2e-08
+Optimal solution found.
+x=0.00
+y=0.50
+\end{alltt}
+
+            \end{InvisibleVerbatim}
+            
+        
+    
+\section{Example Gaussian Random matrices
+}Let's try out our earlier result about random Gaussian matrices and see
+if we can reconstruct an unknown $\mathbf{s}$ vector using $L_1$
+minimization.
+
+
+    % Make sure that atleast 4 lines are below the HR
+    \needspace{4\baselineskip}
+
+    
+        \vspace{6pt}
+        \makebox[0.1\linewidth]{\smaller\hfill\tt\color{nbframe-in-prompt}In\hspace{4pt}{[}56{]}:\hspace{4pt}}\\*
+        \vspace{-2.65\baselineskip}
+        \begin{ColorVerbatim}
+            \vspace{-0.7\baselineskip}
+            \begin{Verbatim}[commandchars=\\\{\}]
+\PY{k+kn}{import} \PY{n+nn}{scipy.linalg}
+
+\PY{k}{def} \PY{n+nf}{rearrange\PYZus{}G}\PY{p}{(} \PY{n}{x} \PY{p}{)}\PY{p}{:} 
+    \PY{l+s}{\PYZsq{}}\PY{l+s}{setup to put inequalities matrix with last 1/2 of elements as main variables}\PY{l+s}{\PYZsq{}}
+    \PY{n}{n}\PY{o}{=}\PY{n}{x}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}
+    \PY{k}{return} \PY{n}{hstack}\PY{p}{(}\PY{p}{[}\PY{n}{x}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{n}{arange}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{n}{n}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{)}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,} \PY{n}{x}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{n}{arange}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{n}{n}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{]}\PY{p}{]}\PY{p}{)}
+
+\PY{n}{K}\PY{o}{=}\PY{l+m+mi}{2} \PY{c}{\PYZsh{} components}
+\PY{n}{Nf}\PY{o}{=}\PY{l+m+mi}{128} \PY{c}{\PYZsh{} number of samples}
+\PY{n}{M} \PY{o}{=} \PY{l+m+mi}{12} \PY{c}{\PYZsh{} \PYZgt{} K log2(Nf/K); num of measurements}
+\PY{n}{s}\PY{o}{=}\PY{n}{zeros}\PY{p}{(}\PY{p}{(}\PY{n}{Nf}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)} \PY{c}{\PYZsh{} sparse vector we want to find}
+\PY{n}{s}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{=}\PY{l+m+mi}{1} \PY{c}{\PYZsh{} set the K nonzero entries}
+\PY{n}{s}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{=}\PY{l+m+mf}{0.5}
+\PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{seed}\PY{p}{(}\PY{l+m+mi}{5489}\PY{p}{)} \PY{c}{\PYZsh{} set random seed for reproducibility}
+\PY{n}{Phi} \PY{o}{=} \PY{n}{matrix}\PY{p}{(}\PY{n}{randn}\PY{p}{(}\PY{n}{M}\PY{p}{,}\PY{n}{Nf}\PY{p}{)}\PY{o}{*}\PY{n}{sqrt}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{/}\PY{n}{Nf}\PY{p}{)}\PY{p}{)} \PY{c}{\PYZsh{} random Gaussian matrix}
+\PY{n}{y}\PY{o}{=}\PY{n}{Phi}\PY{o}{*}\PY{n}{s} \PY{c}{\PYZsh{} measurements}
+
+\PY{c}{\PYZsh{}\PYZhy{}\PYZhy{} setup L1 minimization problem \PYZhy{}\PYZhy{} }
+
+\PY{c}{\PYZsh{} inequalities matrix with }
+\PY{n}{G}\PY{o}{=}\PY{n}{matrx}\PY{p}{(}\PY{n}{rearrange\PYZus{}G}\PY{p}{(}\PY{n}{scipy}\PY{o}{.}\PY{n}{linalg}\PY{o}{.}\PY{n}{block\PYZus{}diag}\PY{p}{(}\PY{o}{*}\PY{p}{[}\PY{n}{matrix}\PY{p}{(}\PY{p}{[}\PY{p}{[}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{l+m+mf}{1.0}\PY{p}{]}\PY{p}{]}\PY{p}{)}\PY{p}{,}\PY{p}{]}\PY{o}{*}\PY{n}{Nf}\PY{p}{)} \PY{p}{)}\PY{p}{)}
+\PY{c}{\PYZsh{} objective function row\PYZhy{}matrix}
+\PY{n}{c}\PY{o}{=}\PY{n}{matrx}\PY{p}{(}\PY{n}{hstack}\PY{p}{(}\PY{p}{[}\PY{n}{ones}\PY{p}{(}\PY{n}{Nf}\PY{p}{)}\PY{p}{,}\PY{n}{zeros}\PY{p}{(}\PY{n}{Nf}\PY{p}{)}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+\PY{c}{\PYZsh{} RHS for inequalities}
+\PY{n}{h} \PY{o}{=} \PY{n}{matrx}\PY{p}{(}\PY{p}{[}\PY{l+m+mf}{0.0}\PY{p}{,}\PY{p}{]}\PY{o}{*}\PY{p}{(}\PY{n}{Nf}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{,}\PY{p}{(}\PY{n}{Nf}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,}\PY{l+s}{\PYZsq{}}\PY{l+s}{d}\PY{l+s}{\PYZsq{}}\PY{p}{)} 
+\PY{c}{\PYZsh{} equality constraint matrix}
+\PY{n}{A} \PY{o}{=} \PY{n}{matrx}\PY{p}{(}\PY{n}{hstack}\PY{p}{(}\PY{p}{[}\PY{n}{Phi}\PY{o}{*}\PY{l+m+mi}{0}\PY{p}{,}\PY{n}{Phi}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+\PY{c}{\PYZsh{} RHS for equality constraints }
+\PY{n}{b}\PY{o}{=}\PY{n}{matrx}\PY{p}{(}\PY{n}{y}\PY{p}{)}
+
+\PY{n}{sol} \PY{o}{=} \PY{n}{solvers}\PY{o}{.}\PY{n}{lp}\PY{p}{(}\PY{n}{c}\PY{p}{,} \PY{n}{G}\PY{p}{,} \PY{n}{h}\PY{p}{,}\PY{n}{A}\PY{p}{,}\PY{n}{b}\PY{p}{)}
+
+\PY{c}{\PYZsh{}nonzero entries}
+\PY{n}{nze}\PY{o}{=} \PY{n}{array}\PY{p}{(}\PY{n}{sol}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{x}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{)}\PY{o}{.}\PY{n}{flatten}\PY{p}{(}\PY{p}{)}\PY{p}{[}\PY{p}{:}\PY{n}{Nf}\PY{p}{]}\PY{o}{.}\PY{n}{round}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{)}\PY{o}{.}\PY{n}{nonzero}\PY{p}{(}\PY{p}{)}
+\PY{k}{print} \PY{n}{array}\PY{p}{(}\PY{n}{sol}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{x}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{)}\PY{p}{[}\PY{n}{nze}\PY{p}{]}
+\end{Verbatim}
+
+            
+                \vspace{-0.2\baselineskip}
+            
+        \end{ColorVerbatim}
+    
+
+    
+
+        % If the first block is an image, minipage the image.  Else
+        % request a certain amount of space for the input text.
+        \needspace{4\baselineskip}
+        
+        
+
+            % Add document contents.
+            
+                \begin{InvisibleVerbatim}
+                \vspace{-0.5\baselineskip}
+    \begin{alltt}     pcost       dcost       gap    pres   dres   k/t
+ 0:  0.0000e+00 -0.0000e+00  1e+02  2e+01  1e-16  1e+00
+ 1:  1.6712e-01  1.6700e-01  1e+01  1e+00  2e-16  7e-02
+ 2:  1.2947e+00  1.2929e+00  4e+00  5e-01  3e-16  3e-02
+ 3:  1.3785e+00  1.3745e+00  2e+00  2e-01  6e-16  8e-03
+ 4:  1.4705e+00  1.4690e+00  5e-01  7e-02  4e-16  2e-03
+ 5:  1.4976e+00  1.4972e+00  2e-01  2e-02  6e-16  7e-04
+ 6:  1.4979e+00  1.4978e+00  6e-02  7e-03  3e-14  2e-04
+ 7:  1.4998e+00  1.4998e+00  6e-03  8e-04  2e-14  2e-05
+ 8:  1.5000e+00  1.5000e+00  6e-05  8e-06  3e-14  3e-07
+ 9:  1.5000e+00  1.5000e+00  6e-07  8e-08  2e-14  3e-09
+Optimal solution found.
+[[ 0.99999789]
+ [ 0.49999879]]
+\end{alltt}
+
+            \end{InvisibleVerbatim}
+            
+        
+    
+That worked out! However, if you play around with this example enough
+with different random matrices (unset the \texttt{seed} statement
+above), you will find that it does not \emph{always} find the correct
+answer. This is because the guarantees about reconstruction are all
+stated probabalistically (i.e. ``high-probability''). This is another
+major difference between this and Shannon sampling.
+
+Let's encapulate the above $L_1$ minimization code so we can use it
+later.
+
+
+    % Make sure that atleast 4 lines are below the HR
+    \needspace{4\baselineskip}
+
+    
+        \vspace{6pt}
+        \makebox[0.1\linewidth]{\smaller\hfill\tt\color{nbframe-in-prompt}In\hspace{4pt}{[}5{]}:\hspace{4pt}}\\*
+        \vspace{-2.65\baselineskip}
+        \begin{ColorVerbatim}
+            \vspace{-0.7\baselineskip}
+            \begin{Verbatim}[commandchars=\\\{\}]
+\PY{k+kn}{from} \PY{n+nn}{cStringIO} \PY{k+kn}{import} \PY{n}{StringIO}
+\PY{k+kn}{import} \PY{n+nn}{sys}
+
+\PY{k}{def} \PY{n+nf}{L1\PYZus{}min}\PY{p}{(}\PY{n}{Phi}\PY{p}{,}\PY{n}{y}\PY{p}{,}\PY{n}{K}\PY{p}{)}\PY{p}{:}
+    \PY{c}{\PYZsh{} inequalities matrix with }
+    \PY{n}{M}\PY{p}{,}\PY{n}{Nf} \PY{o}{=} \PY{n}{Phi}\PY{o}{.}\PY{n}{shape}
+    \PY{n}{G}\PY{o}{=}\PY{n}{matrx}\PY{p}{(}\PY{n}{rearrange\PYZus{}G}\PY{p}{(}\PY{n}{scipy}\PY{o}{.}\PY{n}{linalg}\PY{o}{.}\PY{n}{block\PYZus{}diag}\PY{p}{(}\PY{o}{*}\PY{p}{[}\PY{n}{matrix}\PY{p}{(}\PY{p}{[}\PY{p}{[}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{l+m+mf}{1.0}\PY{p}{]}\PY{p}{]}\PY{p}{)}\PY{p}{,}\PY{p}{]}\PY{o}{*}\PY{n}{Nf}\PY{p}{)} \PY{p}{)}\PY{p}{)}
+    \PY{c}{\PYZsh{} objective function row\PYZhy{}matrix}
+    \PY{n}{c}\PY{o}{=}\PY{n}{matrx}\PY{p}{(}\PY{n}{hstack}\PY{p}{(}\PY{p}{[}\PY{n}{ones}\PY{p}{(}\PY{n}{Nf}\PY{p}{)}\PY{p}{,}\PY{n}{zeros}\PY{p}{(}\PY{n}{Nf}\PY{p}{)}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+    \PY{c}{\PYZsh{} RHS for inequalities}
+    \PY{n}{h} \PY{o}{=} \PY{n}{matrx}\PY{p}{(}\PY{p}{[}\PY{l+m+mf}{0.0}\PY{p}{,}\PY{p}{]}\PY{o}{*}\PY{p}{(}\PY{n}{Nf}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{,}\PY{p}{(}\PY{n}{Nf}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,}\PY{l+s}{\PYZsq{}}\PY{l+s}{d}\PY{l+s}{\PYZsq{}}\PY{p}{)} 
+    \PY{c}{\PYZsh{} equality constraint matrix}
+    \PY{n}{A} \PY{o}{=} \PY{n}{matrx}\PY{p}{(}\PY{n}{hstack}\PY{p}{(}\PY{p}{[}\PY{n}{Phi}\PY{o}{*}\PY{l+m+mi}{0}\PY{p}{,}\PY{n}{Phi}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+    \PY{c}{\PYZsh{} RHS for equality constraints }
+    \PY{n}{b}\PY{o}{=}\PY{n}{matrx}\PY{p}{(}\PY{n}{y}\PY{p}{)}
+    \PY{c}{\PYZsh{} suppress standard output}
+    \PY{n}{old\PYZus{}stdout} \PY{o}{=} \PY{n}{sys}\PY{o}{.}\PY{n}{stdout}
+    \PY{n}{sys}\PY{o}{.}\PY{n}{stdout} \PY{o}{=} \PY{n}{mystdout} \PY{o}{=} \PY{n}{StringIO}\PY{p}{(}\PY{p}{)}
+    \PY{n}{sol} \PY{o}{=} \PY{n}{solvers}\PY{o}{.}\PY{n}{lp}\PY{p}{(}\PY{n}{c}\PY{p}{,} \PY{n}{G}\PY{p}{,} \PY{n}{h}\PY{p}{,}\PY{n}{A}\PY{p}{,}\PY{n}{b}\PY{p}{)}
+    \PY{c}{\PYZsh{} restore standard output}
+    \PY{n}{sys}\PY{o}{.}\PY{n}{stdout} \PY{o}{=} \PY{n}{old\PYZus{}stdout}
+    \PY{n}{sln} \PY{o}{=} \PY{n}{array}\PY{p}{(}\PY{n}{sol}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{x}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{)}\PY{o}{.}\PY{n}{flatten}\PY{p}{(}\PY{p}{)}\PY{p}{[}\PY{p}{:}\PY{n}{Nf}\PY{p}{]}\PY{o}{.}\PY{n}{round}\PY{p}{(}\PY{l+m+mi}{4}\PY{p}{)}
+    \PY{k}{return} \PY{n}{sln}
+\end{Verbatim}
+
+            
+                \vspace{-0.2\baselineskip}
+            
+        \end{ColorVerbatim}
+    
+\section{Example: Sparse Fourier Transform
+}As an additional example, let us consider the Fourier transform and see
+if we can recover the sparse Fourier transform from a small set of
+measurements. For simplicity, we will assume that the time domain signal
+is real which automatically means that the Fourier transform is
+symmetric.
+
+
+    % Make sure that atleast 4 lines are below the HR
+    \needspace{4\baselineskip}
+
+    
+        \vspace{6pt}
+        \makebox[0.1\linewidth]{\smaller\hfill\tt\color{nbframe-in-prompt}In\hspace{4pt}{[}141{]}:\hspace{4pt}}\\*
+        \vspace{-2.65\baselineskip}
+        \begin{ColorVerbatim}
+            \vspace{-0.7\baselineskip}
+            \begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{def} \PY{n+nf}{dftmatrix}\PY{p}{(}\PY{n}{N}\PY{o}{=}\PY{l+m+mi}{8}\PY{p}{)}\PY{p}{:} 
+    \PY{l+s}{\PYZsq{}}\PY{l+s}{compute inverse DFT matrices}\PY{l+s}{\PYZsq{}}
+    \PY{n}{n} \PY{o}{=} \PY{n}{arange}\PY{p}{(}\PY{n}{N}\PY{p}{)}
+    \PY{n}{U}\PY{o}{=}\PY{n}{matrix}\PY{p}{(} \PY{n}{exp}\PY{p}{(}\PY{l+m+mi}{1j}\PY{o}{*}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{pi}\PY{o}{/}\PY{n}{N}\PY{o}{*}\PY{n}{n}\PY{o}{*}\PY{n}{n}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{n+nb+bp}{None}\PY{p}{]} \PY{p}{)}\PY{p}{)}\PY{o}{/}\PY{n}{sqrt}\PY{p}{(}\PY{n}{N}\PY{p}{)}
+    \PY{k}{return} \PY{n}{matrix}\PY{p}{(}\PY{n}{U}\PY{p}{)}
+
+\PY{n}{Nf}\PY{o}{=}\PY{l+m+mi}{128}
+\PY{n}{K}\PY{o}{=}\PY{l+m+mi}{3} \PY{c}{\PYZsh{} components}
+\PY{n}{M} \PY{o}{=} \PY{l+m+mi}{8} \PY{c}{\PYZsh{} \PYZgt{} K log2(Nf/K); num of measurements}
+\PY{n}{s}\PY{o}{=}\PY{n}{zeros}\PY{p}{(}\PY{p}{(}\PY{n}{Nf}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)} \PY{c}{\PYZsh{} sparse vector we want to find}
+\PY{n}{s}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{=}\PY{l+m+mi}{1} \PY{c}{\PYZsh{} set the K nonzero entries}
+\PY{n}{s}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{=}\PY{l+m+mf}{0.5}
+\PY{n}{s}\PY{p}{[}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]} \PY{o}{=} \PY{l+m+mf}{0.5} \PY{c}{\PYZsh{} symmetric to keep inverse Fourier transform real}
+\PY{n}{Phi} \PY{o}{=} \PY{n}{dftmatrix}\PY{p}{(}\PY{n}{Nf}\PY{p}{)}\PY{p}{[}\PY{p}{:}\PY{n}{M}\PY{p}{,}\PY{p}{:}\PY{p}{]} \PY{c}{\PYZsh{} take M\PYZhy{}rows}
+\PY{n}{y}\PY{o}{=}\PY{n}{Phi}\PY{o}{*}\PY{n}{s} \PY{c}{\PYZsh{} measurements}
+\PY{c}{\PYZsh{} have to assert the type here on my hardware}
+
+\PY{n}{sol}\PY{o}{=}\PY{n}{L1\PYZus{}min}\PY{p}{(}\PY{n}{Phi}\PY{o}{.}\PY{n}{real}\PY{p}{,}\PY{n}{y}\PY{o}{.}\PY{n}{real}\PY{o}{.}\PY{n}{astype}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{float64}\PY{p}{)}\PY{p}{,}\PY{n}{K}\PY{p}{)}
+
+\PY{k}{print} \PY{n}{np}\PY{o}{.}\PY{n}{allclose}\PY{p}{(}\PY{n}{s}\PY{o}{.}\PY{n}{flatten}\PY{p}{(}\PY{p}{)}\PY{p}{,}\PY{n}{sol}\PY{p}{)}
+\end{Verbatim}
+
+            
+                \vspace{-0.2\baselineskip}
+            
+        \end{ColorVerbatim}
+    
+
+    
+
+        % If the first block is an image, minipage the image.  Else
+        % request a certain amount of space for the input text.
+        \needspace{4\baselineskip}
+        
+        
+
+            % Add document contents.
+            
+                \begin{InvisibleVerbatim}
+                \vspace{-0.5\baselineskip}
+    \begin{alltt}True
+\end{alltt}
+
+            \end{InvisibleVerbatim}
+            
+        
+    
+
+
+    % Make sure that atleast 4 lines are below the HR
+    \needspace{4\baselineskip}
+
+    
+        \vspace{6pt}
+        \makebox[0.1\linewidth]{\smaller\hfill\tt\color{nbframe-in-prompt}In\hspace{4pt}{[}140{]}:\hspace{4pt}}\\*
+        \vspace{-2.65\baselineskip}
+        \begin{ColorVerbatim}
+            \vspace{-0.7\baselineskip}
+            \begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{plot}\PY{p}{(}\PY{n}{sol}\PY{p}{)}
+\PY{n}{plot}\PY{p}{(}\PY{n}{y}\PY{o}{.}\PY{n}{real}\PY{p}{)}
+\end{Verbatim}
+
+            
+                \vspace{-0.2\baselineskip}
+            
+        \end{ColorVerbatim}
+    
+
+    
+
+        % If the first block is an image, minipage the image.  Else
+        % request a certain amount of space for the input text.
+        \needspace{4\baselineskip}
+        
+        
+
+            % Add document contents.
+            
+                \makebox[0.1\linewidth]{\smaller\hfill\tt\color{nbframe-out-prompt}Out\hspace{4pt}{[}140{]}:\hspace{4pt}}\\*
+                \vspace{-2.55\baselineskip}\begin{InvisibleVerbatim}
+                \vspace{-0.5\baselineskip}
+    \begin{alltt}[<matplotlib.lines.Line2D at 0x7884910>]\end{alltt}
+
+            \end{InvisibleVerbatim}
+            
+                \begin{InvisibleVerbatim}
+                \vspace{-0.5\baselineskip}\begin{center}
+    \includegraphics[max size={\textwidth}{\textheight}]{_fig_2200.png}
+    \par
+    \end{center}
+            \end{InvisibleVerbatim}
+            
+        
+    
+\section{Uniform Uncertainty Principle
+}$\Phi$ obeys a UUP for sets of size $K$ if
+
+\[    0.8 \frac{M}{N} ||f||_2^2 \leq || \Phi f||_2^2 \leq 1.2 \frac{M}{N} ||f||_2^2 \]
+
+Measurements that satisfy this are defined as \emph{incoherent}. Given
+that $f$ is $K$-sparse and we measure $y=\Phi f$, then we search for the
+sparsest vector that explains the $y$ measurements and thus find $f$ as
+follows:
+
+%$min_f \\#\lbrace t: f(t) \ne 0 \rbrace$ where $\Phi f = y$
+
+Note that the hash mark is the size (i.e.~cardinality) of the set. This
+means that we are looking for the fewest individual points for $f$ that
+satisfy the constraints. Unfortunately, this is not practically
+possible, so we must use the $\mathbb{L}_1$ norm as a proxy for
+sparsity.
+
+Suppose $f$ is $K$-sparse and that $\Phi$ obeys UUP for sets of size
+$4K$. Then we measure $y=\Phi f$ and then solve
+
+$min_f ||f||_1$ where $\Phi f = y$
+
+to recover $f$ exactly and we can use $M > K \log N$ measurements, where
+the number of measurements is approximately equal to the number of
+active components. Let's consider a concrete example of how this works.
+\subsection{Example: Sampling Sinusoids
+}Here, we sample in the time-domain, given that we know the signal is
+sparse in the frequency domain.
+
+\[ \hat{f}(\omega) = \sum_{i=1}^K \alpha_i \delta(\omega_i-\omega) \]
+
+which means that it consists of $K$-sparse nonzero elements. Therefore,
+the time domain signal is
+
+\[ f(t) =  \sum_{i=1}^K \alpha_i e^{i \omega_i t} \]
+
+where the $\alpha_i$ and $\omega_i$ are unknown. We want solve for these
+%unknowns by taking $M \gt K \log N$ samples of $f$.
+The problem we want to solve is
+
+$min_g || \hat{g} ||_{L_1}$
+
+subject to
+
+$g(t_m)=f(t_m)$
+
+The trick here is that are minimizing in the frequency-domain while the
+constraints are in the time-domain. To make things easier, we will
+restrict our attention to real time-domain signals $f$ and we will only
+reconstruct the even-indexed time-samples from the signal. This means we
+need a way of expressing the inverse Fourier Transform as a matrix of
+equality constraints. The assumption of real-valued time-domain signals
+implies the following symmetry in the frequency-domain:
+
+$F(k) = F(N-k)^*$
+
+where $F$ is the Fourier transform of $f$ and the asterisk denotes
+complex conjugation and $k\in \lbrace 0,1,..N-1\rbrace$ and $N$ is the
+Fourier Transform length. To make things even more tractable we will
+assume the time-domain signal is even, which means real-valued Fourier
+transform values.
+
+Suppose that $\mathbf{U}_N$ is the $N$-point DFT-matrix. Note that we
+always assume $N$ is even. Since we are dealing with only real-valued
+signals, the transform is symmetric, so we only need half of the
+spectrum computed. It turns out that the even-indexed time-domain
+samples can be constructed as follows:
+
+\[\mathbf{f_{even}} = \mathbf{U}\_\{N/2\}
+\begin{bmatrix}\\\\
+F(0)+F(N/2)^* \\\\
+F(1)+F(N/2-1)^* \\\\
+F(2)+F(N/2-2)^* \\\\
+\dots \\\\
+F(N/2-1)+F(1)^* 
+\end{bmatrix}\]
+
+
+
+We can further simplify this by breaking this into real (superscript
+$R$) and imaginary (superscript $I$) parts and keeping only the real
+part
+
+\[\mathbf{f_{even}} = \mathbf{U}_{N/2}^R
+\begin{bmatrix}\\\\
+F(0)^R+F(N/2)^R \\\\
+F(1)^R+F(N/2-1)^R \\\\
+F(2)^R+F(N/2-2)^R \\\\
+\dots \\\\
+F(N/2-1)^R+F(1)^R 
+\end{bmatrix}
++
+\mathbf{U}^I_N
+\begin{bmatrix} \\\\
+-F(0)^I+F(N/2)^I  \\\\
+-F(1)^I+F(N/2-1)^I  \\\\
+-F(2)^I+F(N/2-2)^I  \\\\
+\dots \\\\
+-F(N/2-1)^I+F(1)^I 
+\end{bmatrix}\]
+
+But we are going to force all the $F(k)^I$ to be zero in our example.
+Note that the second term should have a $\mathbf{U}_{N/2}$ in it instead
+$\mathbf{U}_N$ but there is something wrong with the javascript parser
+for that bit of TeX.
+
+Now, let's see if we can walk through to step-by-step to make sure our
+optimization can actually work. Note that we don't need the second term
+on the right with the $F^I$ terms because by our construction, $F$ is
+real.
+
+
+    % Make sure that atleast 4 lines are below the HR
+    \needspace{4\baselineskip}
+
+    
+        \vspace{6pt}
+        \makebox[0.1\linewidth]{\smaller\hfill\tt\color{nbframe-in-prompt}In\hspace{4pt}{[}358{]}:\hspace{4pt}}\\*
+        \vspace{-2.65\baselineskip}
+        \begin{ColorVerbatim}
+            \vspace{-0.7\baselineskip}
+            \begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{def} \PY{n+nf}{dftmatrix}\PY{p}{(}\PY{n}{N}\PY{o}{=}\PY{l+m+mi}{8}\PY{p}{)}\PY{p}{:} 
+    \PY{l+s}{\PYZsq{}}\PY{l+s}{compute inverse DFT matrices}\PY{l+s}{\PYZsq{}}
+    \PY{n}{n} \PY{o}{=} \PY{n}{arange}\PY{p}{(}\PY{n}{N}\PY{p}{)}
+    \PY{n}{U}\PY{o}{=}\PY{n}{matrix}\PY{p}{(} \PY{n}{exp}\PY{p}{(}\PY{l+m+mi}{1j}\PY{o}{*}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{pi}\PY{o}{/}\PY{n}{N}\PY{o}{*}\PY{n}{n}\PY{o}{*}\PY{n}{n}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{n+nb+bp}{None}\PY{p}{]} \PY{p}{)}\PY{p}{)}\PY{o}{/}\PY{n}{sqrt}\PY{p}{(}\PY{n}{N}\PY{p}{)}
+    \PY{k}{return} \PY{n}{matrix}\PY{p}{(}\PY{n}{U}\PY{p}{)}
+
+\PY{k}{def} \PY{n+nf}{Q\PYZus{}rmatrix}\PY{p}{(}\PY{n}{Nf}\PY{o}{=}\PY{l+m+mi}{8}\PY{p}{)}\PY{p}{:}
+    \PY{l+s}{\PYZsq{}}\PY{l+s}{implements the reordering, adding, and stacking of the matrices above}\PY{l+s}{\PYZsq{}}
+    \PY{n}{Q\PYZus{}r}\PY{o}{=}\PY{n}{matrix}\PY{p}{(}\PY{n}{hstack}\PY{p}{(}\PY{p}{[}\PY{n}{eye}\PY{p}{(}\PY{n}{Nf}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{,}\PY{n}{eye}\PY{p}{(}\PY{n}{Nf}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{)}\PY{o}{*}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}
+               \PY{o}{+}\PY{n}{hstack}\PY{p}{(}\PY{p}{[}\PY{n}{zeros}\PY{p}{(}\PY{p}{(}\PY{n}{Nf}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}\PY{p}{,}\PY{n}{fliplr}\PY{p}{(}\PY{n}{eye}\PY{p}{(}\PY{n}{Nf}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{)}\PY{p}{,}\PY{n}{zeros}\PY{p}{(}\PY{p}{(}\PY{n}{Nf}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{,}\PY{n}{Nf}\PY{o}{/}\PY{l+m+mi}{2}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+    \PY{k}{return} \PY{n}{Q\PYZus{}r}
+
+\PY{n}{Nf}\PY{o}{=}\PY{l+m+mi}{8}
+\PY{n}{F}\PY{o}{=}\PY{n}{zeros}\PY{p}{(}\PY{p}{(}\PY{n}{Nf}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)} \PY{c}{\PYZsh{} 8\PYZhy{}point DFT}
+\PY{n}{F}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{=} \PY{l+m+mi}{1} \PY{c}{\PYZsh{} DC\PYZhy{}term, constant signal}
+\PY{n}{n} \PY{o}{=} \PY{n}{arange}\PY{p}{(}\PY{n}{Nf}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{)}
+
+\PY{n}{ft} \PY{o}{=} \PY{n}{dftmatrix}\PY{p}{(}\PY{n}{Nf}\PY{p}{)}\PY{o}{.}\PY{n}{H}\PY{o}{*}\PY{n}{F} \PY{c}{\PYZsh{} this gives the constant signal}
+
+\PY{n}{Q\PYZus{}r}\PY{o}{=}\PY{n}{Q\PYZus{}rmatrix}\PY{p}{(}\PY{n}{Nf}\PY{p}{)}
+\PY{n}{U}\PY{o}{=}\PY{n}{dftmatrix}\PY{p}{(}\PY{n}{Nf}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{)} \PY{c}{\PYZsh{}half inverse DFT matrix}
+\PY{n}{feven}\PY{o}{=} \PY{n}{U}\PY{o}{.}\PY{n}{real}\PY{o}{*}\PY{n}{Q\PYZus{}r}\PY{o}{*}\PY{n}{F} \PY{c}{\PYZsh{} half the size}
+\PY{k}{print} \PY{n}{np}\PY{o}{.}\PY{n}{allclose}\PY{p}{(}\PY{n}{feven}\PY{p}{,}\PY{n}{ft}\PY{p}{[}\PY{p}{:}\PY{p}{:}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{)} \PY{c}{\PYZsh{} retrieved even\PYZhy{}numbered samples}
+\end{Verbatim}
+
+            
+                \vspace{-0.2\baselineskip}
+            
+        \end{ColorVerbatim}
+    
+
+    
+
+        % If the first block is an image, minipage the image.  Else
+        % request a certain amount of space for the input text.
+        \needspace{4\baselineskip}
+        
+        
+
+            % Add document contents.
+            
+                \begin{InvisibleVerbatim}
+                \vspace{-0.5\baselineskip}
+    \begin{alltt}False
+\end{alltt}
+
+            \end{InvisibleVerbatim}
+            
+        
+    
+
+
+    % Make sure that atleast 4 lines are below the HR
+    \needspace{4\baselineskip}
+
+    
+        \vspace{6pt}
+        \makebox[0.1\linewidth]{\smaller\hfill\tt\color{nbframe-in-prompt}In\hspace{4pt}{[}359{]}:\hspace{4pt}}\\*
+        \vspace{-2.65\baselineskip}
+        \begin{ColorVerbatim}
+            \vspace{-0.7\baselineskip}
+            \begin{Verbatim}[commandchars=\\\{\}]
+\PY{c}{\PYZsh{} let\PYZsq{}s try this with another sparse frequency\PYZhy{}domain signal}
+\PY{n}{F}\PY{o}{=}\PY{n}{zeros}\PY{p}{(}\PY{p}{(}\PY{n}{Nf}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}  
+\PY{n}{F}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{=}\PY{l+m+mi}{1}
+\PY{n}{F}\PY{p}{[}\PY{n}{Nf}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{=}\PY{l+m+mi}{1} \PY{c}{\PYZsh{} symmetric part}
+\PY{n}{ft} \PY{o}{=} \PY{n}{dftmatrix}\PY{p}{(}\PY{n}{Nf}\PY{p}{)}\PY{o}{.}\PY{n}{H}\PY{o}{*}\PY{n}{F} \PY{c}{\PYZsh{} this gives the constant signal}
+\PY{n}{feven}\PY{o}{=} \PY{n}{U}\PY{o}{.}\PY{n}{real}\PY{o}{*}\PY{n}{Q\PYZus{}r}\PY{o}{*}\PY{n}{F}  \PY{c}{\PYZsh{} half the size}
+\PY{k}{print} \PY{n}{np}\PY{o}{.}\PY{n}{allclose}\PY{p}{(}\PY{n}{feven}\PY{p}{,}\PY{n}{ft}\PY{p}{[}\PY{p}{:}\PY{p}{:}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{)} \PY{c}{\PYZsh{} retrieved even\PYZhy{}numbered samples}
+
+\PY{n}{plot}\PY{p}{(}\PY{n}{arange}\PY{p}{(}\PY{n}{Nf}\PY{p}{)}\PY{p}{,}\PY{n}{ft}\PY{o}{.}\PY{n}{real}\PY{p}{,}\PY{n}{arange}\PY{p}{(}\PY{n}{Nf}\PY{p}{)}\PY{p}{[}\PY{p}{:}\PY{p}{:}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{,}\PY{n}{feven}\PY{p}{,}\PY{l+s}{\PYZsq{}}\PY{l+s}{o}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+\PY{n}{xlabel}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZdl{}t\PYZdl{}}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{22}\PY{p}{)}
+\PY{n}{ylabel}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZdl{}f(t)\PYZdl{}}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{22}\PY{p}{)}
+\PY{n}{title}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{even\PYZhy{}numbered samples}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+            
+                \vspace{-0.2\baselineskip}
+            
+        \end{ColorVerbatim}
+    
+
+    
+
+        % If the first block is an image, minipage the image.  Else
+        % request a certain amount of space for the input text.
+        \needspace{4\baselineskip}
+        
+        
+
+            % Add document contents.
+            
+                \begin{InvisibleVerbatim}
+                \vspace{-0.5\baselineskip}
+    \begin{alltt}False
+\end{alltt}
+
+            \end{InvisibleVerbatim}
+            
+                \makebox[0.1\linewidth]{\smaller\hfill\tt\color{nbframe-out-prompt}Out\hspace{4pt}{[}359{]}:\hspace{4pt}}\\*
+                \vspace{-2.55\baselineskip}\begin{InvisibleVerbatim}
+                \vspace{-0.5\baselineskip}
+    \begin{alltt}<matplotlib.text.Text at 0x7205970>\end{alltt}
+
+            \end{InvisibleVerbatim}
+            
+                \begin{InvisibleVerbatim}
+                \vspace{-0.5\baselineskip}\begin{center}
+    \includegraphics[max size={\textwidth}{\textheight}]{_fig_2900.png}
+    \par
+    \end{center}
+            \end{InvisibleVerbatim}
+            
+        
+    
+We can use the above cell to create more complicated real signals. You
+can experiment with the cell below. Just remember to impose the symmetry
+condition!
+
+
+    % Make sure that atleast 4 lines are below the HR
+    \needspace{4\baselineskip}
+
+    
+        \vspace{6pt}
+        \makebox[0.1\linewidth]{\smaller\hfill\tt\color{nbframe-in-prompt}In\hspace{4pt}{[}360{]}:\hspace{4pt}}\\*
+        \vspace{-2.65\baselineskip}
+        \begin{ColorVerbatim}
+            \vspace{-0.7\baselineskip}
+            \begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{Nf}\PY{o}{=}\PY{l+m+mi}{32} \PY{c}{\PYZsh{} must be even}
+\PY{n}{F}\PY{o}{=}\PY{n}{zeros}\PY{p}{(}\PY{p}{(}\PY{n}{Nf}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}  
+
+\PY{c}{\PYZsh{} set values and corresponding symmetry conditions}
+
+\PY{n}{F}\PY{p}{[}\PY{l+m+mi}{7}\PY{p}{]}\PY{o}{=}\PY{l+m+mi}{1} 
+\PY{n}{F}\PY{p}{[}\PY{l+m+mi}{12}\PY{p}{]}\PY{o}{=}\PY{l+m+mf}{0.5}
+\PY{n}{F}\PY{p}{[}\PY{l+m+mi}{9}\PY{p}{]}\PY{o}{=}\PY{o}{\PYZhy{}}\PY{l+m+mf}{0.25}
+\PY{n}{F}\PY{p}{[}\PY{n}{Nf}\PY{o}{\PYZhy{}}\PY{l+m+mi}{9}\PY{p}{]}\PY{o}{=}\PY{o}{\PYZhy{}}\PY{l+m+mf}{0.25}
+\PY{n}{F}\PY{p}{[}\PY{n}{Nf}\PY{o}{\PYZhy{}}\PY{l+m+mi}{12}\PY{p}{]} \PY{o}{=} \PY{l+m+mf}{0.5}
+\PY{n}{F}\PY{p}{[}\PY{n}{Nf}\PY{o}{\PYZhy{}}\PY{l+m+mi}{7}\PY{p}{]}\PY{o}{=}\PY{l+m+mi}{1} \PY{c}{\PYZsh{} symmetric part}
+
+\PY{n}{Q\PYZus{}r}\PY{o}{=}\PY{n}{Q\PYZus{}rmatrix}\PY{p}{(}\PY{n}{Nf}\PY{p}{)}
+\PY{n}{U}\PY{o}{=}\PY{n}{dftmatrix}\PY{p}{(}\PY{n}{Nf}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{)} \PY{c}{\PYZsh{}half inverse DFT matrix}
+\PY{n}{ft} \PY{o}{=} \PY{n}{dftmatrix}\PY{p}{(}\PY{n}{Nf}\PY{p}{)}\PY{o}{.}\PY{n}{H}\PY{o}{*}\PY{n}{F} \PY{c}{\PYZsh{} this gives the constant signal}
+\PY{n}{feven}\PY{o}{=} \PY{n}{U}\PY{o}{.}\PY{n}{real}\PY{o}{*}\PY{n}{Q\PYZus{}r}\PY{o}{*}\PY{n}{F}  \PY{c}{\PYZsh{} half the size}
+\PY{k}{print} \PY{n}{np}\PY{o}{.}\PY{n}{allclose}\PY{p}{(}\PY{n}{feven}\PY{p}{,}\PY{n}{ft}\PY{p}{[}\PY{p}{:}\PY{p}{:}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{)} \PY{c}{\PYZsh{} retrieved even\PYZhy{}numbered samples}
+
+\PY{n}{plot}\PY{p}{(}\PY{n}{arange}\PY{p}{(}\PY{n}{Nf}\PY{p}{)}\PY{p}{,}\PY{n}{ft}\PY{o}{.}\PY{n}{real}\PY{p}{,}\PY{n}{arange}\PY{p}{(}\PY{n}{Nf}\PY{p}{)}\PY{p}{[}\PY{p}{:}\PY{p}{:}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{,}\PY{n}{feven}\PY{p}{,}\PY{l+s}{\PYZsq{}}\PY{l+s}{o}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+\PY{n}{xlabel}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZdl{}t\PYZdl{}}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{22}\PY{p}{)}
+\PY{n}{ylabel}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZdl{}f(t)\PYZdl{}}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{22}\PY{p}{)}
+\PY{n}{title}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{even\PYZhy{}numbered samples}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+            
+                \vspace{-0.2\baselineskip}
+            
+        \end{ColorVerbatim}
+    
+
+    
+
+        % If the first block is an image, minipage the image.  Else
+        % request a certain amount of space for the input text.
+        \needspace{4\baselineskip}
+        
+        
+
+            % Add document contents.
+            
+                \begin{InvisibleVerbatim}
+                \vspace{-0.5\baselineskip}
+    \begin{alltt}False
+\end{alltt}
+
+            \end{InvisibleVerbatim}
+            
+                \makebox[0.1\linewidth]{\smaller\hfill\tt\color{nbframe-out-prompt}Out\hspace{4pt}{[}360{]}:\hspace{4pt}}\\*
+                \vspace{-2.55\baselineskip}\begin{InvisibleVerbatim}
+                \vspace{-0.5\baselineskip}
+    \begin{alltt}<matplotlib.text.Text at 0x73d8f10>\end{alltt}
+
+            \end{InvisibleVerbatim}
+            
+                \begin{InvisibleVerbatim}
+                \vspace{-0.5\baselineskip}\begin{center}
+    \includegraphics[max size={\textwidth}{\textheight}]{_fig_3100.png}
+    \par
+    \end{center}
+            \end{InvisibleVerbatim}
+            
+        
+    
+Now that we have gone through all that trouble to create the
+even-samples matrix, we can finally put it into the framework of the
+$L_1$ minimization problem:
+
+$min_F || \mathbf{F} ||_{L_1}$
+
+subject to
+
+$\mathbf{U}_{N/2}^R \mathbf{Q}_r \mathbf{F}= \mathbf{f}$
+
+
+    % Make sure that atleast 4 lines are below the HR
+    \needspace{4\baselineskip}
+
+    
+        \vspace{6pt}
+        \makebox[0.1\linewidth]{\smaller\hfill\tt\color{nbframe-in-prompt}In\hspace{4pt}{[}361{]}:\hspace{4pt}}\\*
+        \vspace{-2.65\baselineskip}
+        \begin{ColorVerbatim}
+            \vspace{-0.7\baselineskip}
+            \begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{def} \PY{n+nf}{rearrange\PYZus{}G}\PY{p}{(} \PY{n}{x} \PY{p}{)}\PY{p}{:} 
+    \PY{l+s}{\PYZsq{}}\PY{l+s}{setup to put inequalities matrix with first 1/2 of elements as main variables}\PY{l+s}{\PYZsq{}}
+    \PY{n}{n}\PY{o}{=}\PY{n}{x}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}
+    \PY{k}{return} \PY{n}{hstack}\PY{p}{(}\PY{p}{[}\PY{n}{x}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{n}{arange}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{n}{n}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{)}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,} \PY{n}{x}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{n}{arange}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{n}{n}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{]}\PY{p}{]}\PY{p}{)}
+
+\PY{n}{K}\PY{o}{=}\PY{l+m+mi}{2} \PY{c}{\PYZsh{} components}
+\PY{n}{Nf}\PY{o}{=}\PY{l+m+mi}{128} \PY{c}{\PYZsh{} number of samples}
+\PY{n}{M} \PY{o}{=} \PY{l+m+mi}{18} \PY{c}{\PYZsh{} \PYZgt{} K log(N); num of measurements}
+
+\PY{c}{\PYZsh{} setup signal DFT as F}
+\PY{n}{F}\PY{o}{=}\PY{n}{zeros}\PY{p}{(}\PY{p}{(}\PY{n}{Nf}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}  
+\PY{n}{F}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{=}\PY{l+m+mi}{1}
+\PY{n}{F}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{o}{=}\PY{l+m+mf}{0.5}
+\PY{n}{F}\PY{p}{[}\PY{n}{Nf}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{=}\PY{l+m+mi}{1} \PY{c}{\PYZsh{} symmetric parts}
+\PY{n}{F}\PY{p}{[}\PY{n}{Nf}\PY{o}{\PYZhy{}}\PY{l+m+mi}{2}\PY{p}{]}\PY{o}{=}\PY{l+m+mf}{0.5}
+\PY{n}{ftime} \PY{o}{=} \PY{n}{dftmatrix}\PY{p}{(}\PY{n}{Nf}\PY{p}{)}\PY{o}{.}\PY{n}{H}\PY{o}{*}\PY{n}{F} \PY{c}{\PYZsh{} this gives the time\PYZhy{}domain signal}
+\PY{n}{ftime} \PY{o}{=} \PY{n}{ftime}\PY{o}{.}\PY{n}{real} \PY{c}{\PYZsh{} it\PYZsq{}s real anyway}
+\PY{n}{time\PYZus{}samples}\PY{o}{=}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{4}\PY{p}{,} \PY{l+m+mi}{12}\PY{p}{,} \PY{l+m+mi}{14}\PY{p}{,} \PY{l+m+mi}{16}\PY{p}{,} \PY{l+m+mi}{18}\PY{p}{,} \PY{l+m+mi}{24}\PY{p}{,} \PY{l+m+mi}{34}\PY{p}{,} \PY{l+m+mi}{36}\PY{p}{,} \PY{l+m+mi}{38}\PY{p}{,} \PY{l+m+mi}{40}\PY{p}{,} \PY{l+m+mi}{44}\PY{p}{,} \PY{l+m+mi}{46}\PY{p}{,} \PY{l+m+mi}{52}\PY{p}{,} \PY{l+m+mi}{56}\PY{p}{,} \PY{l+m+mi}{54}\PY{p}{,}\PY{l+m+mi}{62}\PY{p}{]}
+\PY{n}{half\PYZus{}indexed\PYZus{}time\PYZus{}samples} \PY{o}{=} \PY{p}{(}\PY{n}{array}\PY{p}{(}\PY{n}{time\PYZus{}samples}\PY{p}{)}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{)}\PY{o}{.}\PY{n}{astype}\PY{p}{(}\PY{n+nb}{int}\PY{p}{)}
+\PY{n}{Phi} \PY{o}{=} \PY{n}{dftmatrix}\PY{p}{(}\PY{n}{Nf}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{)}\PY{o}{.}\PY{n}{real}\PY{o}{*}\PY{n}{Q\PYZus{}rmatrix}\PY{p}{(}\PY{n}{Nf}\PY{p}{)}
+\PY{n}{Phi\PYZus{}i} \PY{o}{=} \PY{n}{Phi}\PY{p}{[}\PY{n}{half\PYZus{}indexed\PYZus{}time\PYZus{}samples}\PY{p}{,}\PY{p}{:}\PY{p}{]}
+
+\PY{c}{\PYZsh{} inequalities matrix with }
+\PY{n}{G}\PY{o}{=}\PY{n}{matrx}\PY{p}{(}\PY{n}{rearrange\PYZus{}G}\PY{p}{(}\PY{n}{scipy}\PY{o}{.}\PY{n}{linalg}\PY{o}{.}\PY{n}{block\PYZus{}diag}\PY{p}{(}\PY{o}{*}\PY{p}{[}\PY{n}{matrix}\PY{p}{(}\PY{p}{[}\PY{p}{[}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{l+m+mf}{1.0}\PY{p}{]}\PY{p}{]}\PY{p}{)}\PY{p}{,}\PY{p}{]}\PY{o}{*}\PY{n}{Nf}\PY{p}{)} \PY{p}{)}\PY{p}{)}
+\PY{c}{\PYZsh{} objective function row\PYZhy{}matrix}
+\PY{n}{c}\PY{o}{=}\PY{n}{matrx}\PY{p}{(}\PY{n}{hstack}\PY{p}{(}\PY{p}{[}\PY{n}{zeros}\PY{p}{(}\PY{n}{Nf}\PY{p}{)}\PY{p}{,}\PY{n}{ones}\PY{p}{(}\PY{n}{Nf}\PY{p}{)}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+\PY{c}{\PYZsh{} RHS for inequalities}
+\PY{n}{h} \PY{o}{=} \PY{n}{matrx}\PY{p}{(}\PY{p}{[}\PY{l+m+mf}{0.0}\PY{p}{,}\PY{p}{]}\PY{o}{*}\PY{p}{(}\PY{n}{Nf}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{,}\PY{p}{(}\PY{n}{Nf}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,}\PY{l+s}{\PYZsq{}}\PY{l+s}{d}\PY{l+s}{\PYZsq{}}\PY{p}{)} 
+\PY{c}{\PYZsh{} equality constraint matrix}
+\PY{n}{A} \PY{o}{=} \PY{n}{matrx}\PY{p}{(}\PY{n}{hstack}\PY{p}{(}\PY{p}{[}\PY{n}{Phi\PYZus{}i}\PY{p}{,}\PY{n}{Phi\PYZus{}i}\PY{o}{*}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+\PY{c}{\PYZsh{} RHS for equality constraints }
+\PY{n}{b}\PY{o}{=}\PY{n}{matrx}\PY{p}{(}\PY{n}{ftime}\PY{p}{[}\PY{n}{time\PYZus{}samples}\PY{p}{]}\PY{p}{)}
+
+\PY{n}{sol} \PY{o}{=} \PY{n}{solvers}\PY{o}{.}\PY{n}{lp}\PY{p}{(}\PY{n}{c}\PY{p}{,} \PY{n}{G}\PY{p}{,} \PY{n}{h}\PY{p}{,}\PY{n}{A}\PY{p}{,}\PY{n}{b}\PY{p}{)}
+\end{Verbatim}
+
+            
+                \vspace{-0.2\baselineskip}
+            
+        \end{ColorVerbatim}
+    
+
+    
+
+        % If the first block is an image, minipage the image.  Else
+        % request a certain amount of space for the input text.
+        \needspace{4\baselineskip}
+        
+        
+
+            % Add document contents.
+            
+                \begin{InvisibleVerbatim}
+                \vspace{-0.5\baselineskip}
+    \begin{alltt}     pcost       dcost       gap    pres   dres   k/t
+ 0:  0.0000e+00 -0.0000e+00  4e+02  2e+01  3e+00  1e+00
+ 1: -1.5648e+01 -1.2218e+01  2e+03  2e+01  3e+00  4e+00
+ 2: -2.3184e+03 -1.7022e+03  1e+06  8e+01  1e+01  6e+02
+ 3: -2.2814e+05 -1.6566e+05  1e+08  8e+01  1e+01  6e+04
+ 4: -2.2818e+07 -1.6568e+07  1e+10  8e+01  1e+01  6e+06
+ 5: -2.2818e+09 -1.6568e+09  1e+12  8e+01  1e+01  6e+08
+Certificate of dual infeasibility found.
+\end{alltt}
+
+            \end{InvisibleVerbatim}
+            
+        
+    
+
+
+    % Make sure that atleast 4 lines are below the HR
+    \needspace{4\baselineskip}
+
+    
+        \vspace{6pt}
+        \makebox[0.1\linewidth]{\smaller\hfill\tt\color{nbframe-in-prompt}In\hspace{4pt}{[}12{]}:\hspace{4pt}}\\*
+        \vspace{-2.65\baselineskip}
+        \begin{ColorVerbatim}
+            \vspace{-0.7\baselineskip}
+            \begin{Verbatim}[commandchars=\\\{\}]
+\PY{k+kn}{import} \PY{n+nn}{itertools} \PY{k+kn}{as} \PY{n+nn}{it}
+
+\PY{k}{def} \PY{n+nf}{dftmatrix}\PY{p}{(}\PY{n}{N}\PY{o}{=}\PY{l+m+mi}{8}\PY{p}{)}\PY{p}{:} 
+    \PY{l+s}{\PYZsq{}}\PY{l+s}{compute inverse DFT matrices}\PY{l+s}{\PYZsq{}}
+    \PY{n}{n} \PY{o}{=} \PY{n}{arange}\PY{p}{(}\PY{n}{N}\PY{p}{)}
+    \PY{n}{U}\PY{o}{=}\PY{n}{matrix}\PY{p}{(} \PY{n}{exp}\PY{p}{(}\PY{l+m+mi}{1j}\PY{o}{*}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{pi}\PY{o}{/}\PY{n}{N}\PY{o}{*}\PY{n}{n}\PY{o}{*}\PY{n}{n}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{n+nb+bp}{None}\PY{p}{]} \PY{p}{)}\PY{p}{)}\PY{o}{/}\PY{n}{sqrt}\PY{p}{(}\PY{n}{N}\PY{p}{)}
+    \PY{k}{return} \PY{n}{matrix}\PY{p}{(}\PY{n}{U}\PY{p}{)}
+
+\PY{n}{M} \PY{o}{=} \PY{l+m+mi}{3}
+
+\PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{seed}\PY{p}{(}\PY{l+m+mi}{5489}\PY{p}{)} \PY{c}{\PYZsh{} set random seed for reproducibility}
+\PY{n}{Psi}\PY{o}{=} \PY{n}{dftmatrix}\PY{p}{(}\PY{l+m+mi}{128}\PY{p}{)}
+\PY{n}{Phi}\PY{o}{=} \PY{n}{randn}\PY{p}{(}\PY{n}{M}\PY{p}{,}\PY{l+m+mi}{128}\PY{p}{)}
+\PY{n}{s}\PY{o}{=}\PY{n}{zeros}\PY{p}{(}\PY{p}{(}\PY{l+m+mi}{128}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}
+\PY{n}{s}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{=}\PY{l+m+mi}{1}
+\PY{n}{s}\PY{p}{[}\PY{l+m+mi}{10}\PY{p}{]}\PY{o}{=}\PY{l+m+mi}{1}
+
+\PY{n}{Theta} \PY{o}{=} \PY{n}{Phi}\PY{o}{*}\PY{n}{Psi}
+\PY{n}{y} \PY{o}{=} \PY{n}{Theta}\PY{o}{*}\PY{n}{s}
+
+\PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n}{it}\PY{o}{.}\PY{n}{combinations}\PY{p}{(}\PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{128}\PY{p}{)}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{:}
+   \PY{n}{sstar}\PY{o}{=}\PY{n}{zeros}\PY{p}{(}\PY{p}{(}\PY{l+m+mi}{128}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}
+   \PY{n}{sstar}\PY{p}{[}\PY{n}{array}\PY{p}{(}\PY{n}{i}\PY{p}{)}\PY{p}{]}\PY{o}{=}\PY{l+m+mi}{1}
+   \PY{k}{if} \PY{n}{np}\PY{o}{.}\PY{n}{allclose}\PY{p}{(}\PY{n}{Theta}\PY{o}{*}\PY{n}{sstar}\PY{p}{,}\PY{n}{y}\PY{p}{)}\PY{p}{:}
+      \PY{k}{break}
+\PY{k}{else}\PY{p}{:}
+   \PY{k}{print} \PY{l+s}{\PYZsq{}}\PY{l+s}{no solution}\PY{l+s}{\PYZsq{}}
+\end{Verbatim}
+
+            
+                \vspace{-0.2\baselineskip}
+            
+        \end{ColorVerbatim}
+    
+
+
+    % Make sure that atleast 4 lines are below the HR
+    \needspace{4\baselineskip}
+
+    
+        \vspace{6pt}
+        \makebox[0.1\linewidth]{\smaller\hfill\tt\color{nbframe-in-prompt}In\hspace{4pt}{[}9{]}:\hspace{4pt}}\\*
+        \vspace{-2.65\baselineskip}
+        \begin{ColorVerbatim}
+            \vspace{-0.7\baselineskip}
+            \begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}}\PY{k}{qtconsole}
+\end{Verbatim}
+
+            
+                \vspace{-0.2\baselineskip}
+            
+        \end{ColorVerbatim}
+    
+
+
+    % Make sure that atleast 4 lines are below the HR
+    \needspace{4\baselineskip}
+
+    
+        \vspace{6pt}
+        \makebox[0.1\linewidth]{\smaller\hfill\tt\color{nbframe-in-prompt}In\hspace{4pt}{[}{]}:\hspace{4pt}}\\*
+        \vspace{-2.65\baselineskip}
+        \begin{ColorVerbatim}
+            \vspace{-0.7\baselineskip}
+            \begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+
+            
+                \vspace{-0.2\baselineskip}
+            
+        \end{ColorVerbatim}
+    
+
+
+        \renewcommand{\indexname}{Index}
+        \printindex
+
+    % End of document
+    \end{document}
+
+
