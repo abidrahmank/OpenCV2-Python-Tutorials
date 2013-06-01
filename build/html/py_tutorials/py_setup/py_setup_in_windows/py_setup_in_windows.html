@@ -1,0 +1,172 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Install OpenCV-Python in Windows &mdash; OpenCV-Python Tutorials 1 documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="OpenCV-Python Tutorials 1 documentation" href="../../../index.html" />
+    <link rel="up" title="Introduction to OpenCV" href="../py_table_of_contents_setup/py_table_of_contents_setup.html" />
+    <link rel="next" title="Install OpenCV-Python in Fedora" href="../py_setup_in_fedora/py_setup_in_fedora.html" />
+    <link rel="prev" title="Title of Doc comes here" href="../py_tutorial_template/py_tutorial_template.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py_setup_in_fedora/py_setup_in_fedora.html" title="Install OpenCV-Python in Fedora"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../py_tutorial_template/py_tutorial_template.html" title="Title of Doc comes here"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">OpenCV-Python Tutorials 1 documentation</a> &raquo;</li>
+          <li><a href="../../py_tutorials.html" >OpenCV-Python Tutorials</a> &raquo;</li>
+          <li><a href="../py_table_of_contents_setup/py_table_of_contents_setup.html" accesskey="U">Introduction to OpenCV</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="install-opencv-python-in-windows">
+<span id="id1"></span><h1>Install OpenCV-Python in Windows<a class="headerlink" href="#install-opencv-python-in-windows" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="goals">
+<h2>Goals<a class="headerlink" href="#goals" title="Permalink to this headline">¶</a></h2>
+<p>In this tutorial, you will learn to setup OpenCV-Python in your Windows system. Below steps are tested for Windows 7.</p>
+</div>
+<div class="section" id="required-packages">
+<h2>Required Packages<a class="headerlink" href="#required-packages" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Python</li>
+<li>Numpy</li>
+<li>OpenCV</li>
+</ol>
+<p>Below are some optional packages which will be useful in your journey.</p>
+<ol class="arabic simple">
+<li>Matplotlib</li>
+<li>SciPy</li>
+</ol>
+<p>Install Python, Numpy, Matplotlib, Scipy to their default locations. To install OpenCV, you can either use prebuilt binaries or compile from source.</p>
+</div>
+<div class="section" id="installing-opencv-from-prebuilt-binaries">
+<h2>Installing OpenCV from prebuilt binaries<a class="headerlink" href="#installing-opencv-from-prebuilt-binaries" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Goto opencv/../../2.7 folder.</p>
+</li>
+<li><p class="first">Copy cv2.pyd to C:/Python27/lib/site-packeges</p>
+</li>
+<li><p class="first">Open Python IDLE and type following codes in Python terminal.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cv2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">cv2</span><span class="o">.</span><span class="n">__version__</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>If the results are printed out without any errors, congratulations !!! You have installed OpenCV-Python successfully.</p>
+</div>
+<div class="section" id="installing-opencv-from-source">
+<h2>Installing OpenCV from source<a class="headerlink" href="#installing-opencv-from-source" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Put complete compilation steps here</li>
+</ol>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../../index.html">
+              <img class="logo" src="../../../_static/opencv-logo-white.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="../../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Install OpenCV-Python in Windows</a><ul>
+<li><a class="reference internal" href="#goals">Goals</a></li>
+<li><a class="reference internal" href="#required-packages">Required Packages</a></li>
+<li><a class="reference internal" href="#installing-opencv-from-prebuilt-binaries">Installing OpenCV from prebuilt binaries</a></li>
+<li><a class="reference internal" href="#installing-opencv-from-source">Installing OpenCV from source</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../py_tutorial_template/py_tutorial_template.html"
+                        title="previous chapter">Title of Doc comes here</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../py_setup_in_fedora/py_setup_in_fedora.html"
+                        title="next chapter">Install OpenCV-Python in Fedora</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/py_tutorials/py_setup/py_setup_in_windows/py_setup_in_windows.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py_setup_in_fedora/py_setup_in_fedora.html" title="Install OpenCV-Python in Fedora"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../py_tutorial_template/py_tutorial_template.html" title="Title of Doc comes here"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">OpenCV-Python Tutorials 1 documentation</a> &raquo;</li>
+          <li><a href="../../py_tutorials.html" >OpenCV-Python Tutorials</a> &raquo;</li>
+          <li><a href="../py_table_of_contents_setup/py_table_of_contents_setup.html" >Introduction to OpenCV</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Alexander Mordvintsev &amp; Abid K.
+      Last updated on Jun 01, 2013.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>
