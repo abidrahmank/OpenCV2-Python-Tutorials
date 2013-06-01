@@ -17,17 +17,16 @@ OpenCV-Python Tutorials
                  :width:  80pt
                  :alt: Introduction Icon
 
-*  :ref:`Table-Of-Content-Core`
+*  :ref:`Table-Of-Content-Gui`
 
    .. tabularcolumns:: m{100pt} m{300pt}
    .. cssclass:: toctableopencv
 
    =========== =======================================================
-   |Core|      Here you will learn the about the basic building blocks of the library. A must read and know for     understanding how to manipulate the images on a pixel level.
-
+   |Gui|       Here you will learn how to display and save images and videos, control mouse events and create trackbar.
    =========== =======================================================
 
-   .. |Core| image:: images/core.jpg
+   .. |Gui| image:: images/core.jpg
                  :height: 80pt
                  :width:  80pt
                  :alt: core Icon
