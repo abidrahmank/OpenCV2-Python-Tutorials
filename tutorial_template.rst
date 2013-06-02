@@ -78,8 +78,8 @@ Here we can give some additional tasks for reader to do
     * Related SOF and answers.opencv.org questions
     * Our own questions or tasks
     
-References [optional]
-======================
+Additional Resources [optional]
+================================
 
 Give references if any for better understanding of algorithm, like any standard textbooks, web links etc. Numbered references are given as 
 
