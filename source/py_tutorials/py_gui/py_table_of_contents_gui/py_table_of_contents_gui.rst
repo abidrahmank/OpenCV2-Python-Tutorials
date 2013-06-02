@@ -35,6 +35,20 @@ create trackbars etc. It will be helpful in creating interactive programs with O
                  :height: 90pt
                  :width:  90pt
 
+*  :ref:`Drawing_Functions`
+
+  .. tabularcolumns:: m{100pt} m{300pt}
+  .. cssclass:: toctableopencv
+
+  =========== ======================================================
+  |gui_5|     Learn to draw lines, rectangles, ellipses, circles etc with OpenCV
+
+  =========== ======================================================
+
+  .. |gui_5| image:: images/fedora-logo.jpg
+                 :height: 90pt
+                 :width:  90pt
+
 *  :ref:`Mouse_Handling`
 
   .. tabularcolumns:: m{100pt} m{300pt}
@@ -73,5 +87,6 @@ create trackbars etc. It will be helpful in creating interactive programs with O
 
    ../py_image_display/py_image_display
    ../py_video_display/py_video_display
+   ../py_drawing_functions/py_drawing_functions
    ../py_mouse_handling/py_mouse_handling
    ../py_trackbar/py_trackbar

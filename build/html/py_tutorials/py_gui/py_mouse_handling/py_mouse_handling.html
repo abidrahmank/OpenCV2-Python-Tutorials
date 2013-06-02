@@ -28,7 +28,7 @@
     <link rel="top" title="OpenCV-Python Tutorials 1 documentation" href="../../../index.html" />
     <link rel="up" title="Gui Features in OpenCV" href="../py_table_of_contents_gui/py_table_of_contents_gui.html" />
     <link rel="next" title="Trackbar as the Color Palette" href="../py_trackbar/py_trackbar.html" />
-    <link rel="prev" title="Getting Started with Videos" href="../py_video_display/py_video_display.html" /> 
+    <link rel="prev" title="Drawing Functions in OpenCV" href="../py_drawing_functions/py_drawing_functions.html" /> 
   </head>
   <body>
     <div class="related">
@@ -41,7 +41,7 @@
           <a href="../py_trackbar/py_trackbar.html" title="Trackbar as the Color Palette"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="../py_video_display/py_video_display.html" title="Getting Started with Videos"
+          <a href="../py_drawing_functions/py_drawing_functions.html" title="Drawing Functions in OpenCV"
              accesskey="P">previous</a> |</li>
         <li><a href="../../../index.html">OpenCV-Python Tutorials 1 documentation</a> &raquo;</li>
           <li><a href="../../py_tutorials.html" >OpenCV-Python Tutorials</a> &raquo;</li>
@@ -56,6 +56,102 @@
             
   <div class="section" id="mouse-as-a-paint-brush">
 <span id="mouse-handling"></span><h1>Mouse as a Paint-Brush<a class="headerlink" href="#mouse-as-a-paint-brush" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="goal">
+<h2>Goal<a class="headerlink" href="#goal" title="Permalink to this headline">¶</a></h2>
+<div class="enumeratevisibleitemswithsquare container">
+<ul class="simple">
+<li>Learn to handle mouse events in OpenCV</li>
+<li>You will learn these functions : <a href="#id1"><span class="problematic" id="id2">:ocv:func:`setMouseCallback`</span></a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="simple-demo">
+<h2>Simple Demo<a class="headerlink" href="#simple-demo" title="Permalink to this headline">¶</a></h2>
+<p>First we create a simple application which draws a circle on an image wherever we double-click on it.</p>
+<p>Here, first we create a mouse callback function which is executed when a mouse event take place. Mouse event can be anything related to mouse like, left-button down, left-button up, left-button double-click etc. It gives us the coordinates (x,y) for every mouse event. With this event and location, we can do whatever we like. To list all available events available, run the following code in Python terminal:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cv2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">events</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">cv2</span><span class="p">)</span> <span class="k">if</span> <span class="s">&#39;EVENT&#39;</span> <span class="ow">in</span> <span class="n">i</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">events</span>
+</pre></div>
+</div>
+<p>Creating mouse callback function has a specific format which is same everywhere. It differs only in what the function does. So our mouse callback function does one thing, it draws a circle where we double-click. So see the code below. Code is self-explanatory from comments :</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">cv2</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="c"># mouse callback function</span>
+<span class="k">def</span> <span class="nf">draw_circle</span><span class="p">(</span><span class="n">event</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">flags</span><span class="p">,</span><span class="n">param</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">event</span> <span class="o">==</span> <span class="n">cv2</span><span class="o">.</span><span class="n">EVENT_LBUTTONDBLCLK</span><span class="p">:</span>
+        <span class="n">cv2</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">img</span><span class="p">,(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">),</span><span class="mi">100</span><span class="p">,(</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c"># Create a black image, a window and bind the function to window</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">512</span><span class="p">,</span><span class="mi">512</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">namedWindow</span><span class="p">(</span><span class="s">&#39;image&#39;</span><span class="p">)</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">setMouseCallback</span><span class="p">(</span><span class="s">&#39;image&#39;</span><span class="p">,</span><span class="n">draw_circle</span><span class="p">)</span>
+
+<span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s">&#39;image&#39;</span><span class="p">,</span><span class="n">img</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">cv2</span><span class="o">.</span><span class="n">waitKey</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0xFF</span> <span class="o">==</span> <span class="mi">27</span><span class="p">:</span>
+        <span class="k">break</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">destroyAllWindows</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="more-advanced-demo">
+<h2>More Advanced Demo<a class="headerlink" href="#more-advanced-demo" title="Permalink to this headline">¶</a></h2>
+<p>Now we go for much more better application. In this, we draw either rectangles or curves (depending on the mode we select) by dragging the mouse like we do in Paint application. So our mouse callback function has two parts, one to draw rectangle and other to draw the curves. This specific example will be really helpful in creating and understanding some interactive applications like object tracking, image segmentation etc.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">cv2</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="n">drawing</span> <span class="o">=</span> <span class="bp">False</span> <span class="c"># true if mouse is pressed</span>
+<span class="n">mode</span> <span class="o">=</span> <span class="bp">True</span> <span class="c"># if True, draw rectangle. Press &#39;m&#39; to toggle to curve</span>
+<span class="n">ix</span><span class="p">,</span><span class="n">iy</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span>
+
+<span class="c"># mouse callback function</span>
+<span class="k">def</span> <span class="nf">draw_circle</span><span class="p">(</span><span class="n">event</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">flags</span><span class="p">,</span><span class="n">param</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">ix</span><span class="p">,</span><span class="n">iy</span><span class="p">,</span><span class="n">drawing</span><span class="p">,</span><span class="n">mode</span>
+
+    <span class="k">if</span> <span class="n">event</span> <span class="o">==</span> <span class="n">cv2</span><span class="o">.</span><span class="n">EVENT_LBUTTONDOWN</span><span class="p">:</span>
+        <span class="n">drawing</span> <span class="o">=</span> <span class="bp">True</span>
+        <span class="n">ix</span><span class="p">,</span><span class="n">iy</span> <span class="o">=</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span>
+
+    <span class="k">elif</span> <span class="n">event</span> <span class="o">==</span> <span class="n">cv2</span><span class="o">.</span><span class="n">EVENT_MOUSEMOVE</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">drawing</span> <span class="o">==</span> <span class="bp">True</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">mode</span> <span class="o">==</span> <span class="bp">True</span><span class="p">:</span>
+                <span class="n">cv2</span><span class="o">.</span><span class="n">rectangle</span><span class="p">(</span><span class="n">img</span><span class="p">,(</span><span class="n">ix</span><span class="p">,</span><span class="n">iy</span><span class="p">),(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">),(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">cv2</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">img</span><span class="p">,(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">),</span><span class="mi">5</span><span class="p">,(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">),</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">elif</span> <span class="n">event</span> <span class="o">==</span> <span class="n">cv2</span><span class="o">.</span><span class="n">EVENT_LBUTTONUP</span><span class="p">:</span>
+        <span class="n">drawing</span> <span class="o">=</span> <span class="bp">False</span>
+        <span class="k">if</span> <span class="n">mode</span> <span class="o">==</span> <span class="bp">True</span><span class="p">:</span>
+            <span class="n">cv2</span><span class="o">.</span><span class="n">rectangle</span><span class="p">(</span><span class="n">img</span><span class="p">,(</span><span class="n">ix</span><span class="p">,</span><span class="n">iy</span><span class="p">),(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">),(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">cv2</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">img</span><span class="p">,(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">),</span><span class="mi">5</span><span class="p">,(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">),</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Next we have to bind this mouse callback function to OpenCV window. In the main loop, we should set a keyboard binding for key &#8216;m&#8217; to toggle between rectangle and curve.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">img</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">512</span><span class="p">,</span><span class="mi">512</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">namedWindow</span><span class="p">(</span><span class="s">&#39;image&#39;</span><span class="p">)</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">setMouseCallback</span><span class="p">(</span><span class="s">&#39;image&#39;</span><span class="p">,</span><span class="n">draw_circle</span><span class="p">)</span>
+
+<span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s">&#39;image&#39;</span><span class="p">,</span><span class="n">img</span><span class="p">)</span>
+    <span class="n">k</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">waitKey</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0xFF</span>
+    <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="nb">ord</span><span class="p">(</span><span class="s">&#39;m&#39;</span><span class="p">):</span>
+        <span class="n">mode</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">mode</span>
+    <span class="k">elif</span> <span class="n">k</span> <span class="o">==</span> <span class="mi">27</span><span class="p">:</span>
+        <span class="k">break</span>
+
+<span class="n">cv2</span><span class="o">.</span><span class="n">destroyAllWindows</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>In our last example, we drew filled rectangle. You modify the code to draw an unfilled rectangle.</li>
+</ol>
+</div>
 </div>
 
 
@@ -67,9 +163,20 @@
             <p class="logo"><a href="../../../index.html">
               <img class="logo" src="../../../_static/opencv-logo-white.png" alt="Logo"/>
             </a></p>
+  <h3><a href="../../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Mouse as a Paint-Brush</a><ul>
+<li><a class="reference internal" href="#goal">Goal</a></li>
+<li><a class="reference internal" href="#simple-demo">Simple Demo</a></li>
+<li><a class="reference internal" href="#more-advanced-demo">More Advanced Demo</a></li>
+<li><a class="reference internal" href="#exercises">Exercises</a></li>
+</ul>
+</li>
+</ul>
+
   <h4>Previous topic</h4>
-  <p class="topless"><a href="../py_video_display/py_video_display.html"
-                        title="previous chapter">Getting Started with Videos</a></p>
+  <p class="topless"><a href="../py_drawing_functions/py_drawing_functions.html"
+                        title="previous chapter">Drawing Functions in OpenCV</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="../py_trackbar/py_trackbar.html"
                         title="next chapter">Trackbar as the Color Palette</a></p>
@@ -105,7 +212,7 @@
           <a href="../py_trackbar/py_trackbar.html" title="Trackbar as the Color Palette"
              >next</a> |</li>
         <li class="right" >
-          <a href="../py_video_display/py_video_display.html" title="Getting Started with Videos"
+          <a href="../py_drawing_functions/py_drawing_functions.html" title="Drawing Functions in OpenCV"
              >previous</a> |</li>
         <li><a href="../../../index.html">OpenCV-Python Tutorials 1 documentation</a> &raquo;</li>
           <li><a href="../../py_tutorials.html" >OpenCV-Python Tutorials</a> &raquo;</li>

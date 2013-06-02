@@ -95,7 +95,7 @@
 </div>
 <div class="section" id="display-an-image">
 <h3>Display an image<a class="headerlink" href="#display-an-image" title="Permalink to this headline">¶</a></h3>
-<p>Use the function <a href="#id9"><span class="problematic" id="id10">:ocv:func:`imshow`</span></a> to display an image in a window.</p>
+<p>Use the function <a href="#id9"><span class="problematic" id="id10">:ocv:func:`imshow`</span></a> to display an image in a window. The window automatically fits to the image size.</p>
 <p>First argument is a window name which is a string. second argument is our image. You can create as many as you wish, but with different window names.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s">&#39;image&#39;</span><span class="p">,</span><span class="n">img</span><span class="p">)</span>
 <span class="n">cv2</span><span class="o">.</span><span class="n">waitKey</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
@@ -108,10 +108,20 @@
 </div></blockquote>
 <p><a href="#id11"><span class="problematic" id="id12">:ocv:func:`waitKey`</span></a> is keyboard binding function. Its argument is the time in milliseconds. The function waits for specified milliseconds for any keyboard event. If you press any key in that time, the program continues. If <strong>0</strong> is passed, it waits indefinitely for a key stroke. It can also be set to detect specific key strokes like, if key <cite>a</cite> is pressed etc which we will discuss below.</p>
 <p><a href="#id13"><span class="problematic" id="id14">:ocv:func:`destroyAllWindows`</span></a> simply destroys all the windows we created. If you want to destroy any specific windows, use the function <a href="#id15"><span class="problematic" id="id16">:ocv:func:`destroyWindow`</span></a> where you pass the exact window name as the argument.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">There is a special case where you can already create a window and load image to it later. In that case, you can specify whether window is resizable or not. It is done with the function <a href="#id17"><span class="problematic" id="id18">:ocv:func:`namedWindow`</span></a>. By default, the flag is <tt class="docutils literal"><span class="pre">cv2.WINDOW_AUTOSIZE</span></tt>. But if you specify flag to be <tt class="docutils literal"><span class="pre">cv2.WINDOW_NORMAL</span></tt>, you can resize window. It will be helpful when image is too large in dimension and adding trackbar to windows.</p>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">cv2</span><span class="o">.</span><span class="n">namedWindow</span><span class="p">(</span><span class="s">&#39;image&#39;</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">WINDOW_NORMAL</span><span class="p">)</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s">&#39;image&#39;</span><span class="p">,</span><span class="n">img</span><span class="p">)</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">waitKey</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">destroyAllWindows</span><span class="p">()</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="write-an-image">
 <h3>Write an image<a class="headerlink" href="#write-an-image" title="Permalink to this headline">¶</a></h3>
-<p>Use the function <a href="#id17"><span class="problematic" id="id18">:ocv:func:`imwrite`</span></a> to save an image.</p>
+<p>Use the function <a href="#id19"><span class="problematic" id="id20">:ocv:func:`imwrite`</span></a> to save an image.</p>
 <p>First argument is the file name, second argument is the image you want to save.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">cv2</span><span class="o">.</span><span class="n">imwrite</span><span class="p">(</span><span class="s">&#39;messigray.png&#39;</span><span class="p">,</span><span class="n">img</span><span class="p">)</span>
 </pre></div>
