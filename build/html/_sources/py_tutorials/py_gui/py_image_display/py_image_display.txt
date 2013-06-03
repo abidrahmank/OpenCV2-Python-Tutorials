@@ -132,4 +132,4 @@ Additional Resources
 Exercises
 ==========
 
-#. There is some problem when you try to load color image in OpenCV and display it in Matplotlib. Read this discussion and understand it.
+#. There is some problem when you try to load color image in OpenCV and display it in Matplotlib. Read `this discussion <http://stackoverflow.com/a/15074748/1134940>`_ and understand it.
