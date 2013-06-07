@@ -17,7 +17,7 @@ create trackbars etc. It will be helpful in creating interactive programs with O
 
   =========== ======================================================
 
-  .. |gui_1|  image:: images/ubuntu-logo.jpg
+  .. |gui_1|  image:: images/image_display.jpg
                  :height: 90pt
                  :width:  90pt
 
@@ -31,7 +31,7 @@ create trackbars etc. It will be helpful in creating interactive programs with O
 
   =========== ======================================================
 
-  .. |gui_2|  image:: images/windows-logo.jpg
+  .. |gui_2|  image:: images/video_display.jpg
                  :height: 90pt
                  :width:  90pt
 
@@ -45,7 +45,7 @@ create trackbars etc. It will be helpful in creating interactive programs with O
 
   =========== ======================================================
 
-  .. |gui_5| image:: images/fedora-logo.jpg
+  .. |gui_5| image:: images/drawing.jpg
                  :height: 90pt
                  :width:  90pt
 
@@ -59,7 +59,7 @@ create trackbars etc. It will be helpful in creating interactive programs with O
 
   =========== ======================================================
 
-  .. |gui_3| image:: images/fedora-logo.jpg
+  .. |gui_3| image:: images/mouse_drawing.jpg
                  :height: 90pt
                  :width:  90pt
 
@@ -73,7 +73,7 @@ create trackbars etc. It will be helpful in creating interactive programs with O
 
   =========== ======================================================
 
-  .. |gui_4| image:: images/fedora-logo.jpg
+  .. |gui_4| image:: images/trackbar.jpg
                  :height: 90pt
                  :width:  90pt
                  

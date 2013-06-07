@@ -8,11 +8,11 @@ OpenCV-Python Tutorials
    .. cssclass:: toctableopencv
 
    =========== =======================================================
-   |Introduct| Learn how to setup OpenCV on your computer!
+   |Introduct| Learn how to setup OpenCV-Python on your computer!
 
    =========== =======================================================
 
-   .. |Introduct| image:: images/introduction.jpg
+   .. |Introduct| image:: images/intro.png
                  :height: 80pt
                  :width:  80pt
                  :alt: Introduction Icon
@@ -26,10 +26,26 @@ OpenCV-Python Tutorials
    |Gui|       Here you will learn how to display and save images and videos, control mouse events and create trackbar.
    =========== =======================================================
 
-   .. |Gui| image:: images/core.jpg
+   .. |Gui| image:: images/gui.jpg
                  :height: 80pt
                  :width:  80pt
                  :alt: core Icon
+
+*  :ref:`Table-Of-Content-Core`
+
+   .. tabularcolumns:: m{100pt} m{300pt}
+   .. cssclass:: toctableopencv
+
+   =========== =======================================================
+   |Core|      In this section you will learn basic operations on image like pixel editing, geometric transformations, code optimization, some mathematical tools etc.
+
+   =========== =======================================================
+
+   .. |Core| image:: images/core.jpg
+                 :height: 80pt
+                 :width:  80pt
+                 :alt: imgproc Icon
+
 
 *  :ref:`Table-Of-Content-ImgProc`
 
@@ -37,7 +53,7 @@ OpenCV-Python Tutorials
    .. cssclass:: toctableopencv
 
    =========== =======================================================
-   |ImgProc|   In this section you will learn about the image processing (manipulation) functions inside OpenCV.
+   |ImgProc|   In this section you will learn different image processing functions inside OpenCV.
 
    =========== =======================================================
 
@@ -56,7 +72,8 @@ OpenCV-Python Tutorials
    
    py_setup/py_table_of_contents_setup/py_table_of_contents_setup
    py_gui/py_table_of_contents_gui/py_table_of_contents_gui
-   py_basic_ops/py_table_of_contents_basic_ops/py_table_of_contents_basic_ops
+   py_core/py_table_of_contents_core/py_table_of_contents_core
+   py_imgproc/py_table_of_contents_imgproc/py_table_of_contents_imgproc
    
 
                              

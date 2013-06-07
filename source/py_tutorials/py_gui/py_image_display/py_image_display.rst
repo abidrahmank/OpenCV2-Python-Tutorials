@@ -28,7 +28,7 @@ Second argument is a flag which specifies the way image should be read.
 
 .. note:: Instead of these three flags, you can simply pass integers 1, 0 or -1 respectively.
 
-.. code below
+See the code below:
 ::
     
     import numpy as np
@@ -46,6 +46,7 @@ Use the function :ocv:func:`imshow` to display an image in a window. The window 
 
 First argument is a window name which is a string. second argument is our image. You can create as many as you wish, but with different window names.
 ::
+    
     cv2.imshow('image',img)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
@@ -62,7 +63,7 @@ A screenshot of the window will look like this (in Fedora-Gnome machine):
 
 .. note:: There is a special case where you can already create a window and load image to it later. In that case, you can specify whether window is resizable or not. It is done with the function :ocv:func:`namedWindow`. By default, the flag is ``cv2.WINDOW_AUTOSIZE``. But if you specify flag to be ``cv2.WINDOW_NORMAL``, you can resize window. It will be helpful when image is too large in dimension and adding trackbar to windows.
 
-.. code here
+See the code below:
 ::
     
     cv2.namedWindow('image', cv2.WINDOW_NORMAL)

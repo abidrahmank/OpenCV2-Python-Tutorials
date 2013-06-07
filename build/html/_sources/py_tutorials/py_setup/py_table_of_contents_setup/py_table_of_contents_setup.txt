@@ -7,20 +7,6 @@ Here you can read tutorials about how to set up your computer to work with the O
 Additionally you can find a few very basic sample source code that will let introduce you to the
 world of the OpenCV.
 
-*  :ref:`Tutorial-Template`
-
-  .. tabularcolumns:: m{100pt} m{300pt}
-  .. cssclass:: toctableopencv
-
-  =========== ======================================================
-  |Install_1| Template for tutorial doc
-
-  =========== ======================================================
-
-  .. |Install_1| image:: images/ubuntu-logo.jpg
-                 :height: 90pt
-                 :width:  90pt
-
 *  :ref:`Install-OpenCV-Python-in-Windows`
 
   .. tabularcolumns:: m{100pt} m{300pt}
@@ -31,7 +17,7 @@ world of the OpenCV.
 
   =========== ======================================================
 
-  .. |Install_1| image:: images/windows-logo.jpg
+  .. |Install_1| image:: images/windows_logo.jpg
                  :height: 90pt
                  :width:  90pt
 
@@ -45,7 +31,7 @@ world of the OpenCV.
 
   =========== ======================================================
 
-  .. |Install_2| image:: images/fedora-logo.jpg
+  .. |Install_2| image:: images/fedora_logo.jpg
                  :height: 90pt
                  :width:  90pt
                  
@@ -57,6 +43,5 @@ world of the OpenCV.
 .. toctree::
    :hidden:
 
-   ../py_tutorial_template/py_tutorial_template
    ../py_setup_in_windows/py_setup_in_windows
    ../py_setup_in_fedora/py_setup_in_fedora

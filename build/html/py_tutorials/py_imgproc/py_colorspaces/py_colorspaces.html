@@ -1,0 +1,221 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Changing Colorspaces &mdash; OpenCV-Python Tutorials 1 documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="OpenCV-Python Tutorials 1 documentation" href="../../../index.html" />
+    <link rel="up" title="Image Processing in OpenCV" href="../py_table_of_contents_imgproc/py_table_of_contents_imgproc.html" />
+    <link rel="next" title="Image Thresholding" href="../py_thresholding/py_thresholding.html" />
+    <link rel="prev" title="Image Processing in OpenCV" href="../py_table_of_contents_imgproc/py_table_of_contents_imgproc.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py_thresholding/py_thresholding.html" title="Image Thresholding"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../py_table_of_contents_imgproc/py_table_of_contents_imgproc.html" title="Image Processing in OpenCV"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">OpenCV-Python Tutorials 1 documentation</a> &raquo;</li>
+          <li><a href="../../py_tutorials.html" >OpenCV-Python Tutorials</a> &raquo;</li>
+          <li><a href="../py_table_of_contents_imgproc/py_table_of_contents_imgproc.html" accesskey="U">Image Processing in OpenCV</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="changing-colorspaces">
+<span id="converting-colorspaces"></span><h1>Changing Colorspaces<a class="headerlink" href="#changing-colorspaces" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="goal">
+<h2>Goal<a class="headerlink" href="#goal" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>In this tutorial, you will learn how to convert images from one color-space to another, like BGR <img class="math" src="../../../_images/math/d4563ad8c3bc2ead402d6ffc50768b0269bf073a.png" alt="\leftrightarrow"/> Gray, BGR <img class="math" src="../../../_images/math/d4563ad8c3bc2ead402d6ffc50768b0269bf073a.png" alt="\leftrightarrow"/> HSV etc.</li>
+<li>In addition to that, we will create an application which extracts a colored object in a video</li>
+<li>You will learn following functions : <a href="#id1"><span class="problematic" id="id2">:ocv:pyfunction:`cvtColor`</span></a>, <a href="#id3"><span class="problematic" id="id4">:ocv:pyfunction:`inRange`</span></a> etc.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="changing-color-space">
+<h2>Changing Color-space<a class="headerlink" href="#changing-color-space" title="Permalink to this headline">¶</a></h2>
+<p>There are more than 150 color-space conversion methods are available in OpenCV. But we will look into only two which are most widely used ones, BGR <img class="math" src="../../../_images/math/d4563ad8c3bc2ead402d6ffc50768b0269bf073a.png" alt="\leftrightarrow"/> Gray and BGR <img class="math" src="../../../_images/math/d4563ad8c3bc2ead402d6ffc50768b0269bf073a.png" alt="\leftrightarrow"/> HSV.</p>
+<p>For color conversion, we use the function <tt class="docutils literal"><span class="pre">cv2.cvtColor(input_image,</span> <span class="pre">flag)</span></tt> where <tt class="docutils literal"><span class="pre">flag</span></tt> determines the type of conversion.</p>
+<p>For BGR <img class="math" src="../../../_images/math/e12b6767375342ed57d27678e3ea1cdb97f47e15.png" alt="\rightarrow"/> Gray conversion we use the flags <tt class="docutils literal"><span class="pre">cv2.COLOR_BGR2GRAY</span></tt>. Similarly for BGR <img class="math" src="../../../_images/math/e12b6767375342ed57d27678e3ea1cdb97f47e15.png" alt="\rightarrow"/> HSV, we use the flag <tt class="docutils literal"><span class="pre">cv2.COLOR_BGR2HSV</span></tt>. To get other flags, just run following commands in your Python terminal :</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cv2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flags</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">cv2</span><span class="p">)</span> <span class="k">if</span> <span class="n">i</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">&#39;COLOR_&#39;</span><span class="p">)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">flags</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="object-tracking">
+<h2>Object Tracking<a class="headerlink" href="#object-tracking" title="Permalink to this headline">¶</a></h2>
+<p>Now we know how to convert BGR image to HSV, we can use this to extract a colored object. In HSV, it is more easier to represent a color than RGB color-space. In our application, we will try to extract a blue colored object. So here is the method:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Take each frame of the video</li>
+<li>Convert from BGR to HSV color-space</li>
+<li>We threshold the HSV image for a range of blue color</li>
+<li>Now extract the blue object alone, we can do whatever on that image we want.</li>
+</ul>
+</div></blockquote>
+<p>Below is the code which are commented in detail :</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">cv2</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="n">cap</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">VideoCapture</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+
+    <span class="c"># Take each frame</span>
+    <span class="n">_</span><span class="p">,</span> <span class="n">frame</span> <span class="o">=</span> <span class="n">cap</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+    <span class="c"># Convert BGR to HSV</span>
+    <span class="n">hsv</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2HSV</span><span class="p">)</span>
+
+    <span class="c"># define range of blue color in HSV</span>
+    <span class="n">lower_blue</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">110</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">50</span><span class="p">])</span>
+    <span class="n">upper_blue</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">130</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">])</span>
+
+    <span class="c"># Threshold the HSV image to get only blue colors</span>
+    <span class="n">mask</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">inRange</span><span class="p">(</span><span class="n">hsv</span><span class="p">,</span> <span class="n">lower_green</span><span class="p">,</span> <span class="n">upper_green</span><span class="p">)</span>
+
+    <span class="c"># Bitwise-AND mask and original image</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">bitwise_and</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span><span class="n">frame</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span> <span class="n">mask</span><span class="p">)</span>
+
+    <span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s">&#39;frame&#39;</span><span class="p">,</span><span class="n">frame</span><span class="p">)</span>
+    <span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s">&#39;mask&#39;</span><span class="p">,</span><span class="n">mask</span><span class="p">)</span>
+    <span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s">&#39;res&#39;</span><span class="p">,</span><span class="n">res</span><span class="p">)</span>
+    <span class="n">k</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">waitKey</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0xFF</span>
+    <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="mi">27</span><span class="p">:</span>
+        <span class="k">break</span>
+
+<span class="n">cv2</span><span class="o">.</span><span class="n">destroyAllWindows</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Below image shows tracking of the blue object:</p>
+<blockquote>
+<div><img alt="Blue Object Tracking" class="align-center" src="../../../_images/frame.jpg" style="width: 780pt;" />
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">There are some noises in the image. We will see how to remove them in later chapters.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This is the simplest method in object tracking. Once you learn functions of contours, you can do plenty of things like find centroid of this object and use it to track the object, draw diagrams just by moving your hand in front of camera and many other funny stuffs.</p>
+</div>
+</div>
+<div class="section" id="additional-resources">
+<h2>Additional Resources<a class="headerlink" href="#additional-resources" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Try to find a way to extract more than one colored objects, for eg, extract red, blue, green objects simultaneously and implement it.</li>
+</ol>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../../index.html">
+              <img class="logo" src="../../../_static/opencv-logo-white.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="../../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Changing Colorspaces</a><ul>
+<li><a class="reference internal" href="#goal">Goal</a></li>
+<li><a class="reference internal" href="#changing-color-space">Changing Color-space</a></li>
+<li><a class="reference internal" href="#object-tracking">Object Tracking</a></li>
+<li><a class="reference internal" href="#additional-resources">Additional Resources</a></li>
+<li><a class="reference internal" href="#exercises">Exercises</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../py_table_of_contents_imgproc/py_table_of_contents_imgproc.html"
+                        title="previous chapter">Image Processing in OpenCV</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../py_thresholding/py_thresholding.html"
+                        title="next chapter">Image Thresholding</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/py_tutorials/py_imgproc/py_colorspaces/py_colorspaces.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py_thresholding/py_thresholding.html" title="Image Thresholding"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../py_table_of_contents_imgproc/py_table_of_contents_imgproc.html" title="Image Processing in OpenCV"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">OpenCV-Python Tutorials 1 documentation</a> &raquo;</li>
+          <li><a href="../../py_tutorials.html" >OpenCV-Python Tutorials</a> &raquo;</li>
+          <li><a href="../py_table_of_contents_imgproc/py_table_of_contents_imgproc.html" >Image Processing in OpenCV</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Alexander Mordvintsev &amp; Abid K.
+      Last updated on Jun 07, 2013.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>
