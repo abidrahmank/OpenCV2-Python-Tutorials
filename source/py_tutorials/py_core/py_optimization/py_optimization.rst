@@ -105,6 +105,7 @@ Even after doing all these operations, if your code is still slow, or use of lar
 Additional Resources
 ======================
 
+#. `Python Optimization Techniques <http://wiki.python.org/moin/PythonSpeed/PerformanceTips>`_  
 
 Exercises
 ============
