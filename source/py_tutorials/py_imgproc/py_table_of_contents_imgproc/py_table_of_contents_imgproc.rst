@@ -18,6 +18,20 @@ Image Processing in OpenCV
                  :height: 90pt
                  :width:  90pt
                  
+*  :ref:`Geometric_Transformations`
+
+  .. tabularcolumns:: m{100pt} m{300pt}
+  .. cssclass:: toctableopencv
+
+  ============ ===================================================================
+  |imgproc_gt| Learn to apply different geometric transformations to images like rotation, translation etc.
+
+  ============ ===================================================================
+
+  .. |imgproc_gt|  image:: images/geometric.jpg
+                  :height: 90pt
+                  :width:  90pt
+
 *  :ref:`Thresholding`
 
   .. tabularcolumns:: m{100pt} m{300pt}
@@ -61,5 +75,6 @@ Image Processing in OpenCV
 
    ../py_colorspaces/py_colorspaces
    ../py_thresholding/py_thresholding
+   ../py_geometric_transformations/py_geometric_transformations
    ../py_contours/py_table_of_contents_contours/py_table_of_contents_contours
 

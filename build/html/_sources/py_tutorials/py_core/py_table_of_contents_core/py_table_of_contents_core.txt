@@ -1,6 +1,6 @@
 .. _Table-Of-Content-Core:
 
-Basic Operations on Image
+Core Operations
 -----------------------------------------------------------
 
 Here, you will learn some basic operations on image. As mentioned in Introduction, a good knowledge of Numpy is recommended for writing and understanding better codes in OpenCV-Python. 
@@ -30,21 +30,6 @@ Here, you will learn some basic operations on image. As mentioned in Introductio
   =========== ======================================================
 
   .. |core_2|  image:: images/image_arithmetic.jpg
-                 :height: 90pt
-                 :width:  90pt
-
-*  :ref:`Geometric_Transformations`
-
-  .. tabularcolumns:: m{100pt} m{300pt}
-  .. cssclass:: toctableopencv
-
-
-  =========== ======================================================
-  |core_3|     Learn to apply geometric transformations to images like rotation.
-
-  =========== ======================================================
-
-  .. |core_3| image:: images/geometric.jpg
                  :height: 90pt
                  :width:  90pt
 
@@ -87,6 +72,5 @@ Here, you will learn some basic operations on image. As mentioned in Introductio
 
    ../py_basic_ops/py_basic_ops
    ../py_image_arithmetics/py_image_arithmetics
-   ../py_geometric_transformations/py_geometric_transformations
    ../py_optimization/py_optimization
    ../py_maths_tools/py_maths_tools

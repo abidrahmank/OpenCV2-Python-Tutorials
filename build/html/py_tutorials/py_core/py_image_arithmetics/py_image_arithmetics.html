@@ -27,7 +27,7 @@
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <link rel="top" title="OpenCV-Python Tutorials 1 documentation" href="../../../index.html" />
     <link rel="up" title="Basic Operations on Image" href="../py_table_of_contents_core/py_table_of_contents_core.html" />
-    <link rel="next" title="Geometric Transformations of Images" href="../py_geometric_transformations/py_geometric_transformations.html" />
+    <link rel="next" title="Perfomance Measurement and Improvement Techniques" href="../py_optimization/py_optimization.html" />
     <link rel="prev" title="Basic Operations on Images" href="../py_basic_ops/py_basic_ops.html" /> 
   </head>
   <body>
@@ -38,7 +38,7 @@
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="../py_geometric_transformations/py_geometric_transformations.html" title="Geometric Transformations of Images"
+          <a href="../py_optimization/py_optimization.html" title="Perfomance Measurement and Improvement Techniques"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="../py_basic_ops/py_basic_ops.html" title="Basic Operations on Images"
@@ -72,15 +72,16 @@
 <p class="first admonition-title">Note</p>
 <p class="last">But there is a difference between OpenCV addition and Numpy addition. OpenCV addition is a saturated operation while Numpy addition is a modulo operation.</p>
 </div>
-<p>For example, consider below sample (in IPython shell):</p>
-<div class="highlight-python"><pre>In [3]: x = np.uint8([250])
-In [6]: y = np.uint8([10])
+<p>For example, consider below sample:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">([</span><span class="mi">250</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">([</span><span class="mi">10</span><span class="p">])</span>
 
-In [8]: print cv2.add(x,y) # 250+10 = 260 =&gt; 255
-[[255]]
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">cv2</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span> <span class="c"># 250+10 = 260 =&gt; 255</span>
+<span class="go">[[255]]</span>
 
-In [9]: print x+y          # 250+10 = 260 % 256 = 4
-[4]</pre>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span>          <span class="c"># 250+10 = 260 % 256 = 4</span>
+<span class="go">[4]</span>
+</pre></div>
 </div>
 <p>It will be more visible when you add two images. OpenCV function will provide a better result. So always better stick to OpenCV functions.</p>
 </div>
@@ -112,7 +113,7 @@ In [9]: print x+y          # 250+10 = 260 % 256 = 4
 <div class="section" id="bitwise-operations">
 <h2>Bitwise Operations<a class="headerlink" href="#bitwise-operations" title="Permalink to this headline">¶</a></h2>
 <p>This includes bitwise AND, OR, NOT and XOR operations. They will be highly useful while extracting any part of the image (as we will see in coming chapters), defining and working with non-rectangular ROI etc. Below we will see an example on how to change a particular region of an image.</p>
-<p>I want to OpenCV logo above an image. If I add two images, it will change color. If I blend it, I get an transparent effect. But I want it to be opaque. If it was a rectangular region, I could use ROI as we did in last chapter. But OpenCV logo is a not a rectangular shape. So you can do it with bitwise operations as below:</p>
+<p>I want to put OpenCV logo above an image. If I add two images, it will change color. If I blend it, I get an transparent effect. But I want it to be opaque. If it was a rectangular region, I could use ROI as we did in last chapter. But OpenCV logo is a not a rectangular shape. So you can do it with bitwise operations as below:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="c"># Load two images</span>
 <span class="n">img1</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s">&#39;messi5.jpg&#39;</span><span class="p">)</span>
 <span class="n">img2</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s">&#39;opencv_logo.png&#39;</span><span class="p">)</span>
@@ -183,8 +184,8 @@ In [9]: print x+y          # 250+10 = 260 % 256 = 4
   <p class="topless"><a href="../py_basic_ops/py_basic_ops.html"
                         title="previous chapter">Basic Operations on Images</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="../py_geometric_transformations/py_geometric_transformations.html"
-                        title="next chapter">Geometric Transformations of Images</a></p>
+  <p class="topless"><a href="../py_optimization/py_optimization.html"
+                        title="next chapter">Perfomance Measurement and Improvement Techniques</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="../../../_sources/py_tutorials/py_core/py_image_arithmetics/py_image_arithmetics.txt"
@@ -214,7 +215,7 @@ In [9]: print x+y          # 250+10 = 260 % 256 = 4
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="../py_geometric_transformations/py_geometric_transformations.html" title="Geometric Transformations of Images"
+          <a href="../py_optimization/py_optimization.html" title="Perfomance Measurement and Improvement Techniques"
              >next</a> |</li>
         <li class="right" >
           <a href="../py_basic_ops/py_basic_ops.html" title="Basic Operations on Images"

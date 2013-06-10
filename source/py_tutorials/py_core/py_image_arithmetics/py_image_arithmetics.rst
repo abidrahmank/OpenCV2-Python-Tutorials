@@ -16,16 +16,16 @@ You can add two images by OpenCV function, ``cv2.add()`` or simply by numpy oper
 
 .. note:: But there is a difference between OpenCV addition and Numpy addition. OpenCV addition is a saturated operation while Numpy addition is a modulo operation.
 
-For example, consider below sample (in IPython shell):
+For example, consider below sample:
 ::
     
-    In [3]: x = np.uint8([250])
-    In [6]: y = np.uint8([10])
+    >>> x = np.uint8([250])
+    >>> y = np.uint8([10])
     
-    In [8]: print cv2.add(x,y) # 250+10 = 260 => 255
+    >>> print cv2.add(x,y) # 250+10 = 260 => 255
     [[255]]
     
-    In [9]: print x+y          # 250+10 = 260 % 256 = 4
+    >>> print x+y          # 250+10 = 260 % 256 = 4
     [4]
     
 It will be more visible when you add two images. OpenCV function will provide a better result. So always better stick to OpenCV functions.
