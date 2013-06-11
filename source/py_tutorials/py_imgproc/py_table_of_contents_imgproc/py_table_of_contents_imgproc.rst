@@ -47,6 +47,20 @@ Image Processing in OpenCV
                  :height: 90pt
                  :width:  90pt
                  
+*  :ref:`Filtering`
+
+  .. tabularcolumns:: m{100pt} m{300pt}
+  .. cssclass:: toctableopencv
+
+  =========== ===================================================================
+  |imgproc_4| Learn to blur the images, filter the images with custom kernels etc.
+
+  =========== ===================================================================
+
+  .. |imgproc_4|  image:: images/contours.jpg
+                 :height: 90pt
+                 :width:  90pt
+
 *  :ref:`Table-Of-Content-Contours`
 
   .. tabularcolumns:: m{100pt} m{300pt}
@@ -76,5 +90,6 @@ Image Processing in OpenCV
    ../py_colorspaces/py_colorspaces
    ../py_thresholding/py_thresholding
    ../py_geometric_transformations/py_geometric_transformations
+   ../py_filtering/py_filtering
    ../py_contours/py_table_of_contents_contours/py_table_of_contents_contours
 

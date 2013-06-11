@@ -18,34 +18,21 @@ All about Contours in OpenCV
                  :height: 90pt
                  :width:  90pt
                  
-*  :ref:`Thresholding`
+*  :ref:`Contour_Features`
 
   .. tabularcolumns:: m{100pt} m{300pt}
   .. cssclass:: toctableopencv
 
   =========== ===================================================================
-  |imgproc_2| Learn to convert images to binary images using global thresholding, 
-              Adaptive thresholding, Otsu's binarization etc
+  |contour_2| Learn to find different features of contours like area, perimeter, bounding rectangle etc.
 
   =========== ===================================================================
 
-  .. |imgproc_2|  image:: images/test.jpg
+  .. |contour_2|  image:: images/test.jpg
                  :height: 90pt
                  :width:  90pt
                  
-*  :ref:`Canny_edge_detection`
 
-  .. tabularcolumns:: m{100pt} m{300pt}
-  .. cssclass:: toctableopencv
-
-  =========== ===================================================================
-  |imgproc_3| edge detection
-
-  =========== ===================================================================
-
-  .. |imgproc_3|  image:: images/test.jpg
-                 :height: 90pt
-                 :width:  90pt
 
 
 
@@ -60,5 +47,6 @@ All about Contours in OpenCV
    :hidden:
 
    ../py_contours_begin/py_contours_begin
-
+   ../py_contour_features/py_contour_features
+    
 
