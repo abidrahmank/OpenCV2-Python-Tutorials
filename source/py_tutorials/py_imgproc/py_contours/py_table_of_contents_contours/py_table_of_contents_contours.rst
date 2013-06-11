@@ -32,7 +32,19 @@ All about Contours in OpenCV
                  :height: 90pt
                  :width:  90pt
                  
+*  :ref:`Contour_Properties`
 
+  .. tabularcolumns:: m{100pt} m{300pt}
+  .. cssclass:: toctableopencv
+
+  =========== ===================================================================
+  |contour_3| Learn to find different properties of contours like Solidity, Mean Intensity etc.
+
+  =========== ===================================================================
+
+  .. |contour_3|  image:: images/test.jpg
+                 :height: 90pt
+                 :width:  90pt
 
 
 
@@ -48,5 +60,6 @@ All about Contours in OpenCV
 
    ../py_contours_begin/py_contours_begin
    ../py_contour_features/py_contour_features
+   ../py_contour_properties/py_contour_properties
     
 

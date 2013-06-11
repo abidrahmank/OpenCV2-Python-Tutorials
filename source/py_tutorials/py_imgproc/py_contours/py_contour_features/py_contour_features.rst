@@ -40,7 +40,7 @@ From this moments, you can extract useful data like area, centroid etc. Centroid
 2. Contour Area
 =================
 
-Contour area is given by the function **cv2.contourArea()** or from moments, **M{'m00'}**.
+Contour area is given by the function **cv2.contourArea()** or from moments, **M['m00']**.
 ::
 
     area = cv2.contourArea(cnt)
@@ -164,4 +164,8 @@ Next one is to fit an ellipse to an object. It returns the rotated rectangle in 
         :alt: Fitting an Ellipse
         :align: center  
         
+Additional Resources
+======================
 
+Exercises
+=============
