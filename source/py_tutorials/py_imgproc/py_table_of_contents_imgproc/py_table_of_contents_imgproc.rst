@@ -61,6 +61,20 @@ Image Processing in OpenCV
                  :height: 90pt
                  :width:  90pt
 
+*  :ref:`Gradients`
+
+  .. tabularcolumns:: m{100pt} m{300pt}
+  .. cssclass:: toctableopencv
+
+  =========== ===================================================================
+  |imgproc_5| Learn to find image gradients, edges etc.
+
+  =========== ===================================================================
+
+  .. |imgproc_5|  image:: images/contours.jpg
+                 :height: 90pt
+                 :width:  90pt
+
 *  :ref:`Table-Of-Content-Contours`
 
   .. tabularcolumns:: m{100pt} m{300pt}
@@ -91,5 +105,6 @@ Image Processing in OpenCV
    ../py_thresholding/py_thresholding
    ../py_geometric_transformations/py_geometric_transformations
    ../py_filtering/py_filtering
+   ../py_gradients/py_gradients
    ../py_contours/py_table_of_contents_contours/py_table_of_contents_contours
 
