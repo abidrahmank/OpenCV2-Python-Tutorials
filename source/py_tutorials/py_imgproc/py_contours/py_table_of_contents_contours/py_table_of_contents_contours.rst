@@ -46,9 +46,33 @@ All about Contours in OpenCV
                  :height: 90pt
                  :width:  90pt
 
+*  :ref:`Contours_More_Functions`
 
+  .. tabularcolumns:: m{100pt} m{300pt}
+  .. cssclass:: toctableopencv
 
+  =========== ===================================================================
+  |contour_4| Learn to find convexity defects, pointPolygonTest, match different shapes etc.
 
+  =========== ===================================================================
+
+  .. |contour_4|  image:: images/test.jpg
+                 :height: 90pt
+                 :width:  90pt
+
+*  :ref:`Contours_Hierarchy`
+
+  .. tabularcolumns:: m{100pt} m{300pt}
+  .. cssclass:: toctableopencv
+
+  =========== ===================================================================
+  |contour_5| Learn about Contour Hierarchy
+
+  =========== ===================================================================
+
+  .. |contour_5|  image:: images/test.jpg
+                 :height: 90pt
+                 :width:  90pt
 
 .. raw:: latex
 
@@ -61,5 +85,7 @@ All about Contours in OpenCV
    ../py_contours_begin/py_contours_begin
    ../py_contour_features/py_contour_features
    ../py_contour_properties/py_contour_properties
+   ../py_contours_more_functions/py_contours_more_functions
+   ../py_contours_hierarchy/py_contours_hierarchy
     
 
