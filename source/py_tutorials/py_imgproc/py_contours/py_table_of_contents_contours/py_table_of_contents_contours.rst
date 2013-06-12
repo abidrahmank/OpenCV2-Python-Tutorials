@@ -1,6 +1,6 @@
 .. _Table-Of-Content-Contours:
 
-All about Contours in OpenCV
+Contours in OpenCV
 -----------------------------------------------------------
 
 *  :ref:`Contours_Getting_Started`

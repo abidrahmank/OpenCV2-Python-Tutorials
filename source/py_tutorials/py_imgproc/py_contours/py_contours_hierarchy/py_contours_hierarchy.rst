@@ -1,6 +1,6 @@
 .. _Contours_Hierarchy:
 
-Hierarchy in Contours 
+Contours Hierarchy
 *************************
 
 Goal

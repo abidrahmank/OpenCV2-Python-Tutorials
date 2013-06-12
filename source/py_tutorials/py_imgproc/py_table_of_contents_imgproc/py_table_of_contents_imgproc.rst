@@ -89,7 +89,19 @@ Image Processing in OpenCV
                  :height: 90pt
                  :width:  90pt
 
+*  :ref:`Table-Of-Content-Histograms`
 
+  .. tabularcolumns:: m{100pt} m{300pt}
+  .. cssclass:: toctableopencv
+
+  =========== ===================================================================
+  |imgproc_6| Contours
+
+  =========== ===================================================================
+
+  .. |imgproc_6|  image:: images/contours.jpg
+                 :height: 90pt
+                 :width:  90pt
 
 
 
@@ -107,4 +119,6 @@ Image Processing in OpenCV
    ../py_filtering/py_filtering
    ../py_gradients/py_gradients
    ../py_contours/py_table_of_contents_contours/py_table_of_contents_contours
+   ../py_histograms/py_table_of_contents_histograms/py_table_of_contents_histograms
+   
 
