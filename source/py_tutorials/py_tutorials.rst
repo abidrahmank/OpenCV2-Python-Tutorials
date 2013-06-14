@@ -61,6 +61,21 @@ OpenCV-Python Tutorials
                  :height: 80pt
                  :width:  80pt
                  :alt: imgproc Icon
+
+*  :ref:`Table-Of-Content-ML`
+
+   .. tabularcolumns:: m{100pt} m{300pt}
+   .. cssclass:: toctableopencv
+
+   =========== =======================================================
+   |ML|        In this section you will learn different image processing functions inside OpenCV.
+
+   =========== =======================================================
+
+   .. |ML| image:: images/imgproc.jpg
+                 :height: 80pt
+                 :width:  80pt
+                 :alt: imgproc Icon
                  
 .. raw:: latex
 
@@ -74,6 +89,7 @@ OpenCV-Python Tutorials
    py_gui/py_table_of_contents_gui/py_table_of_contents_gui
    py_core/py_table_of_contents_core/py_table_of_contents_core
    py_imgproc/py_table_of_contents_imgproc/py_table_of_contents_imgproc
+   py_ml/py_table_of_contents_ml/py_table_of_contents_ml
    
 
                              
