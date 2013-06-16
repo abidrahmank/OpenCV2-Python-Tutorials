@@ -29,7 +29,7 @@ OpenCV-Python Tutorials
    .. |Gui| image:: images/gui.jpg
                  :height: 80pt
                  :width:  80pt
-                 :alt: core Icon
+                 :alt: gui Icon
 
 *  :ref:`Table-Of-Content-Core`
 
@@ -44,7 +44,7 @@ OpenCV-Python Tutorials
    .. |Core| image:: images/core.jpg
                  :height: 80pt
                  :width:  80pt
-                 :alt: imgproc Icon
+                 :alt: core Icon
 
 
 *  :ref:`Table-Of-Content-ImgProc`
@@ -72,10 +72,10 @@ OpenCV-Python Tutorials
 
    =========== =======================================================
 
-   .. |ML| image:: images/imgproc.jpg
+   .. |ML| image:: images/MachineLearnings.jpg
                  :height: 80pt
                  :width:  80pt
-                 :alt: imgproc Icon
+                 :alt: ML Icon
                  
 .. raw:: latex
 

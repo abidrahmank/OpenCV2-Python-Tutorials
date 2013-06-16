@@ -57,7 +57,7 @@ Image Processing in OpenCV
 
   =========== ===================================================================
 
-  .. |imgproc_4|  image:: images/contours.jpg
+  .. |imgproc_4|  image:: images/blurring.jpg
                  :height: 90pt
                  :width:  90pt
 
@@ -71,7 +71,7 @@ Image Processing in OpenCV
 
   =========== ===================================================================
 
-  .. |imgproc_5|  image:: images/contours.jpg
+  .. |imgproc_5|  image:: images/gradient.jpg
                  :height: 90pt
                  :width:  90pt
 
@@ -81,7 +81,7 @@ Image Processing in OpenCV
   .. cssclass:: toctableopencv
 
   =========== ===================================================================
-  |imgproc_3| Contours
+  |imgproc_3| All about Contours in OpenCV
 
   =========== ===================================================================
 
@@ -95,11 +95,11 @@ Image Processing in OpenCV
   .. cssclass:: toctableopencv
 
   =========== ===================================================================
-  |imgproc_6| Contours
+  |imgproc_6| All about histograms in OpenCV
 
   =========== ===================================================================
 
-  .. |imgproc_6|  image:: images/contours.jpg
+  .. |imgproc_6|  image:: images/histogram.jpg
                  :height: 90pt
                  :width:  90pt
 

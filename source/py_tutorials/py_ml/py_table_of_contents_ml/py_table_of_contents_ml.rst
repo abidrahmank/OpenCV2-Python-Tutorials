@@ -13,7 +13,7 @@ Machine Learning
               Plus learn to do color quantization using K-Means Clustering
   =========== ===================================================================
 
-  .. |ML_KM| image:: images/test.jpg
+  .. |ML_KM| image:: images/kmeansicon.jpg
                  :height: 90pt
                  :width:  90pt
 

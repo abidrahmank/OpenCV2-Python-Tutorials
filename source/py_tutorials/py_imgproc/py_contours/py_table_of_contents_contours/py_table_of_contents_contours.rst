@@ -70,7 +70,7 @@ Contours in OpenCV
 
   =========== ===================================================================
 
-  .. |contour_5|  image:: images/test.jpg
+  .. |contour_5|  image:: images/hierarchy.jpg
                  :height: 90pt
                  :width:  90pt
 
