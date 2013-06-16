@@ -103,7 +103,19 @@ Image Processing in OpenCV
                  :height: 90pt
                  :width:  90pt
 
+*  :ref:`Table-Of-Content-Transforms`
 
+  .. tabularcolumns:: m{100pt} m{300pt}
+  .. cssclass:: toctableopencv
+
+  =========== ===================================================================
+  |imgproc_7| Meet different Image Transforms in OpenCV like Fourier Transform, Cosine Transform etc.
+
+  =========== ===================================================================
+
+  .. |imgproc_7|  image:: images/histogram.jpg
+                 :height: 90pt
+                 :width:  90pt
 
 .. raw:: latex
 
@@ -120,5 +132,5 @@ Image Processing in OpenCV
    ../py_gradients/py_gradients
    ../py_contours/py_table_of_contents_contours/py_table_of_contents_contours
    ../py_histograms/py_table_of_contents_histograms/py_table_of_contents_histograms
-   
+   ../py_transforms/py_table_of_contents_transforms/py_table_of_contents_transforms   
 
