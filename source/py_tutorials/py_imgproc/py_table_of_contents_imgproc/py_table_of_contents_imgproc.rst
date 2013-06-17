@@ -75,6 +75,20 @@ Image Processing in OpenCV
                  :height: 90pt
                  :width:  90pt
 
+*  :ref:`Canny`
+
+  .. tabularcolumns:: m{100pt} m{300pt}
+  .. cssclass:: toctableopencv
+
+  =========== ===================================================================
+  |imgproc_8| Learn to find edges with Canny Edge Detection
+
+  =========== ===================================================================
+
+  .. |imgproc_8|  image:: images/histogram.jpg
+                 :height: 90pt
+                 :width:  90pt
+
 *  :ref:`Table-Of-Content-Contours`
 
   .. tabularcolumns:: m{100pt} m{300pt}
@@ -117,6 +131,20 @@ Image Processing in OpenCV
                  :height: 90pt
                  :width:  90pt
 
+*  :ref:`Template_Matching`
+
+  .. tabularcolumns:: m{100pt} m{300pt}
+  .. cssclass:: toctableopencv
+
+  =========== ===================================================================
+  |imgproc_9| Learn to search for an object in an image using Template Matching
+
+  =========== ===================================================================
+
+  .. |imgproc_9|  image:: images/histogram.jpg
+                 :height: 90pt
+                 :width:  90pt
+
 .. raw:: latex
 
    \pagebreak
@@ -130,7 +158,9 @@ Image Processing in OpenCV
    ../py_geometric_transformations/py_geometric_transformations
    ../py_filtering/py_filtering
    ../py_gradients/py_gradients
+   ../py_canny/py_canny
    ../py_contours/py_table_of_contents_contours/py_table_of_contents_contours
    ../py_histograms/py_table_of_contents_histograms/py_table_of_contents_histograms
-   ../py_transforms/py_table_of_contents_transforms/py_table_of_contents_transforms   
+   ../py_transforms/py_table_of_contents_transforms/py_table_of_contents_transforms  
+   ../py_template_matching/py_template_matching 
 
