@@ -145,6 +145,20 @@ Image Processing in OpenCV
                  :height: 90pt
                  :width:  90pt
 
+*  :ref:`Hough_Lines`
+
+  .. tabularcolumns:: m{100pt} m{300pt}
+  .. cssclass:: toctableopencv
+
+  ============ ===================================================================
+  |imgproc_10| Learn to search for an object in an image using Template Matching
+
+  ============ ===================================================================
+
+  .. |imgproc_10|  image:: images/histogram.jpg
+                 :height: 90pt
+                 :width:  90pt
+
 .. raw:: latex
 
    \pagebreak
@@ -162,5 +176,5 @@ Image Processing in OpenCV
    ../py_contours/py_table_of_contents_contours/py_table_of_contents_contours
    ../py_histograms/py_table_of_contents_histograms/py_table_of_contents_histograms
    ../py_transforms/py_table_of_contents_transforms/py_table_of_contents_transforms  
-   ../py_template_matching/py_template_matching 
-
+   ../py_template_matching/py_template_matching
+   ../py_houghlines/py_houghlines
