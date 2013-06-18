@@ -61,6 +61,20 @@ Image Processing in OpenCV
                  :height: 90pt
                  :width:  90pt
 
+*  :ref:`Morphological_Ops`
+
+  .. tabularcolumns:: m{100pt} m{300pt}
+  .. cssclass:: toctableopencv
+
+  ============ ===================================================================
+  |imgproc_12| Learn about morphological transformations like Erosion, Dilation, Opening, Closing etc
+
+  ============ ===================================================================
+
+  .. |imgproc_12|  image:: images/blurring.jpg
+                 :height: 90pt
+                 :width:  90pt
+
 *  :ref:`Gradients`
 
   .. tabularcolumns:: m{100pt} m{300pt}
@@ -185,6 +199,7 @@ Image Processing in OpenCV
    ../py_thresholding/py_thresholding
    ../py_geometric_transformations/py_geometric_transformations
    ../py_filtering/py_filtering
+   ../py_morphological_ops/py_morphological_ops
    ../py_gradients/py_gradients
    ../py_canny/py_canny
    ../py_contours/py_table_of_contents_contours/py_table_of_contents_contours
