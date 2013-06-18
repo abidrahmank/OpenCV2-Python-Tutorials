@@ -151,11 +151,25 @@ Image Processing in OpenCV
   .. cssclass:: toctableopencv
 
   ============ ===================================================================
-  |imgproc_10| Learn to search for an object in an image using Template Matching
+  |imgproc_10| Learn to detect lines in an image
 
   ============ ===================================================================
 
   .. |imgproc_10|  image:: images/histogram.jpg
+                 :height: 90pt
+                 :width:  90pt
+
+*  :ref:`Hough_Circles`
+
+  .. tabularcolumns:: m{100pt} m{300pt}
+  .. cssclass:: toctableopencv
+
+  ============ ===================================================================
+  |imgproc_11| Learn to detect circles in an image
+
+  ============ ===================================================================
+
+  .. |imgproc_11|  image:: images/histogram.jpg
                  :height: 90pt
                  :width:  90pt
 
@@ -178,3 +192,4 @@ Image Processing in OpenCV
    ../py_transforms/py_table_of_contents_transforms/py_table_of_contents_transforms  
    ../py_template_matching/py_template_matching
    ../py_houghlines/py_houghlines
+   ../py_houghcircles/py_houghcircles
