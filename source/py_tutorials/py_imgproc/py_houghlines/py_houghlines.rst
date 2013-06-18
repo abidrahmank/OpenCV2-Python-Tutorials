@@ -29,18 +29,23 @@ Now let's see how Hough Transform works for lines. Any line can be represented i
 
 Consider a 100x100 image with a horizontal line at the middle. Take the first point of the line. You know its (x,y) values. Now in the line equation, put the values :math:`\theta = 0,1,2,....,180` and check the :math:`\rho` you get. For every :math:`(\rho, \theta)` pair, you increment value by one in our accumulator in its corresponding :math:`(\rho, \theta)` cells. So now in accumulator, the cell (50,90) = 1 along with some other cells.
 
-Now take the second point on the line. Do the same as above. Increment the the values in the cells corresponding to :math:`(\rho, \theta)` you got. This time, the cell (50,90) = 2. What you actually do is voting the :math:`(\rho, \theta)` values. You continue this process for every point on the line. At each point, the cell (50,90) will be incremented or voted up, while other cells may or may not be voted up. This way, at the end, the cell (50,90) will have maximum votes. So if you search the accumulator for maximum votes, you get the value (50,90) which says, there is a line in this image at distance 50 from origin and at angle 90 degrees.
+Now take the second point on the line. Do the same as above. Increment the the values in the cells corresponding to :math:`(\rho, \theta)` you got. This time, the cell (50,90) = 2. What you actually do is voting the :math:`(\rho, \theta)` values. You continue this process for every point on the line. At each point, the cell (50,90) will be incremented or voted up, while other cells may or may not be voted up. This way, at the end, the cell (50,90) will have maximum votes. So if you search the accumulator for maximum votes, you get the value (50,90) which says, there is a line in this image at distance 50 from origin and at angle 90 degrees. It is well shown in below animation (Image Courtesy: `Amos Storkey <http://homepages.inf.ed.ac.uk/amos/hough.html>`_ )
 
-This is how hough transform for lines works. It is simple, and may be you can implement it using Numpy on your own. Below is an image which shows the accumulator. Bright spots at some locations denotes they are the parameters of possible lines in the image.
+    .. image:: images/houghlinesdemo.gif
+        :alt: Hough Transform Demo
+        :align: center
 
-    .. image:: images/houghlines2.jpg
+
+This is how hough transform for lines works. It is simple, and may be you can implement it using Numpy on your own. Below is an image which shows the accumulator. Bright spots at some locations denotes they are the parameters of possible lines in the image. (Image courtesy: `Wikipedia <http://en.wikipedia.org/wiki/Hough_transform>`_ )
+
+    .. image:: images/houghlines2.png
         :alt: Hough Transform accumulator
         :align: center
         
 Hough Tranform in OpenCV
 =========================
 
-Everything explained above is encapsulated by the OpenCV function, **cv2.HoughLines()**. It simply returns an array of :math:`(\rho, \theta)` values. :math:`\rho` is measured in pixels and :math:`\theta` is measured in radians. First parameter, Input image should be a binary image, so apply threshold or use canny edge detection before finding applying hough transform. Second and third parameters are :math:`\rho` and :math:`\theta` accuracies respectively. Fourth argument is the threshold, which means minimum vote it should get for it to be considered as a line. Remember, number of votes depend upon number of points on the line. So it represents the minimum length of line that should be detected.
+Everything explained above is encapsulated by the OpenCV function, **cv2.HoughLines()**. It simply returns an array of :math:`(\rho, \theta)` values. :math:`\rho` is measured in pixels and :math:`\theta` is measured in radians. First parameter, Input image should be a binary image, so apply threshold or use canny edge detection before finding applying hough transform. Second and third parameters are :math:`\rho` and :math:`\theta` accuracies respectively. Fourth argument is the `threshold`, which means minimum vote it should get for it to be considered as a line. Remember, number of votes depend upon number of points on the line. So it represents the minimum length of line that should be detected.
 ::
 
     import cv2
@@ -71,9 +76,46 @@ Check the results below:
         :alt: Hough Transform Line Detection
         :align: center
         
-        
+Probabilistic Hough Transform
+==============================
+
+In the hough transform, you can see that even for a line with two arguments, it takes a lot of computation. Probabilistic Hough Transform is an optimization of Hough Transform we saw. It doesn't take all the points into consideration, instead take only a random subset of points and that is sufficient for line detection. Just we have to decrease the threshold. See below image which compare Hough Transform and Probabilistic Hough Transform in hough space. (Image Courtesy : `Franck Bettinger's home page <http://phdfb1.free.fr/robot/mscthesis/node14.html>`_
+
+    .. image:: images/houghlines4.png
+        :alt: Hough Transform and Probabilistic Hough Transform
+        :align: center
+
+OpenCV implementation is based on Robust Detection of Lines Using the Progressive Probabilistic Hough Transform by Matas, J. and Galambos, C. and Kittler, J.V.. The function used is **cv2.HoughLinesP()**. It has two new arguments. 
+    * **minLineLength** - Minimum length of line. Line segments shorter than this are rejected.
+    * **maxLineGap** - Maximum allowed gap between line segments to treat them as single line.
+    
+Best thing is that, it directly returns the two endpoints of lines. In previous case, you got only the parameters of lines, and you had to find all the points. Here, everything is direct and simple.
+::
+
+    import cv2
+    import numpy as np
+
+    img = cv2.imread('dave.jpg')
+    gray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
+    edges = cv2.Canny(gray,50,150,apertureSize = 3)
+    minLineLength = 100
+    maxLineGap = 10
+    lines = cv2.HoughLinesP(edges,1,np.pi/180,100,minLineLength,maxLineGap)
+    for x1,y1,x2,y2 in lines[0]:
+        cv2.line(img,(x1,y1),(x2,y2),(0,255,0),2)
+
+    cv2.imwrite('houghlines5.jpg',img)       
+
+See the results below:
+
+    .. image:: images/houghlines5.jpg
+        :alt: Probabilistic Hough Transform
+        :align: center
+
 Additional Resources
 =======================
+#. `Hough Transform on Wikipedia <http://en.wikipedia.org/wiki/Hough_transform>`_
+
 
 Exercises
-============
+===========
