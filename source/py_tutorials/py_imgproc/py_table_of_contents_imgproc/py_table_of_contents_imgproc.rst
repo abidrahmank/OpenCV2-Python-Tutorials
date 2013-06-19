@@ -187,6 +187,20 @@ Image Processing in OpenCV
                  :height: 90pt
                  :width:  90pt
 
+*  :ref:`Watershed`
+
+  .. tabularcolumns:: m{100pt} m{300pt}
+  .. cssclass:: toctableopencv
+
+  ============ ===================================================================
+  |imgproc_13| Learn to segment images with watershed segmentation
+
+  ============ ===================================================================
+
+  .. |imgproc_13|  image:: images/histogram.jpg
+                 :height: 90pt
+                 :width:  90pt
+
 .. raw:: latex
 
    \pagebreak
@@ -208,3 +222,4 @@ Image Processing in OpenCV
    ../py_template_matching/py_template_matching
    ../py_houghlines/py_houghlines
    ../py_houghcircles/py_houghcircles
+   ../py_watershed/py_watershed
