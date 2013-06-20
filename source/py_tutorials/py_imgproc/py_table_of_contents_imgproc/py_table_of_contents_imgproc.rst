@@ -103,6 +103,20 @@ Image Processing in OpenCV
                  :height: 90pt
                  :width:  90pt
 
+*  :ref:`Pyramids`
+
+  .. tabularcolumns:: m{100pt} m{300pt}
+  .. cssclass:: toctableopencv
+
+  ============ ===================================================================
+  |imgproc_14| Learn about image pyramids and how to use them for image blending
+
+  ============ ===================================================================
+
+  .. |imgproc_14|  image:: images/histogram.jpg
+                 :height: 90pt
+                 :width:  90pt
+
 *  :ref:`Table-Of-Content-Contours`
 
   .. tabularcolumns:: m{100pt} m{300pt}
@@ -216,6 +230,7 @@ Image Processing in OpenCV
    ../py_morphological_ops/py_morphological_ops
    ../py_gradients/py_gradients
    ../py_canny/py_canny
+   ../py_pyramids/py_pyramids
    ../py_contours/py_table_of_contents_contours/py_table_of_contents_contours
    ../py_histograms/py_table_of_contents_histograms/py_table_of_contents_histograms
    ../py_transforms/py_table_of_contents_transforms/py_table_of_contents_transforms  
