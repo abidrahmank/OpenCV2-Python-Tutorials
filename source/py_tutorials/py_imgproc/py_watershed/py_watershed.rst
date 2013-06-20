@@ -47,46 +47,45 @@ Result:
         
 Now we need to remove any small white noises in the image. For that we can use morphological opening. To remove any small holes in the object, we can use morphological closing. So, now we know for sure that region near to center of objects are foreground and region much away from the object are background. Only region we are not sure is the boundary region of coins. 
 
-So we need to extract the area which we are sure they are coins. Erosion removes the boundary pixels. So whatever remaining we get, we can be sure it is coin. Then we need to find the area which we are sure they are not coins. For that, we dilate the result. Dilation increases object boundary to background. This way, we can make sure whatever region in background in result is really a background, since boundary region is removed.
+So we need to extract the area which we are sure they are coins. Erosion removes the boundary pixels. So whatever remaining we get, we can be sure it is coin. That would work if objects were not touching each other. But since they are touching each other, another good option would be to find the distance transform and apply a proper threshold. Next we need to find the area which we are sure they are not coins. For that, we dilate the result. Dilation increases object boundary to background. This way, we can make sure whatever region in background in result is really a background, since boundary region is removed. The remaining regions are those which don't have any idea, whether it is coins or background. Watershed algorithm should find it. These areas are normally around the boundaries of coins where foreground and background meet (Or even two different coins meet). We call it border. It can be obtained from subtracting sure_fg area from sure_bg area.
 ::
-
+    
+    # noise removal
     kernel = np.ones((3,3),np.uint8)
     opening = cv2.morphologyEx(thresh,cv2.MORPH_OPEN,kernel, iterations = 2)
 
-    sure_fg = cv2.erode(opening,kernel,iterations=3)
+    # sure background area
     sure_bg = cv2.dilate(opening,kernel,iterations=3)
 
-See the result to understand what we did:
+    # Finding sure foreground area
+    dist_transform = cv2.distanceTransform(opening,cv2.DIST_L2,5)
+    ret, sure_fg = cv2.threshold(dist_transform,0.7*dist_transform.max(),255,0)
 
-    .. image:: images/water_fgbg.png
-        :alt: Background and Foreground Regions
-        :align: center        
-
-The coins are touching. As long as they are touching we can't label two coins as different. So for this purpose, we apply distance transform first, then apply a suitable threshold so that all coins are detached.
-::
-
-    dist_transform = cv2.distanceTransform(opening,cv2.cv.CV_DIST_L2,5)
-    ret, thresh = cv2.threshold(dist_transform,0.7*dist_transform.max(),255,0)
+    # Finding unknown region
+    sure_fg = np.uint8(sure_fg)
+    unknown = cv2.subtract(sure_bg,sure_fg)
     
-See the result. In the thresholded image, we get some regions of coins which we are sure of coins and they are detached. (In previous step, we have used erosion to find sure coins area, that is not needed in this example. In some cases, you may be interested in only foreground segmentation, not in separating the mutually touching objects. In that case, you need not use distance transform, just erosion is sufficient. Simply, erosion is just another method to extract sure foreground area, that's all.)
+See the result. In the thresholded image, we get some regions of coins which we are sure of coins and they are detached now. (In some cases, you may be interested in only foreground segmentation, not in separating the mutually touching objects. In that case, you need not use distance transform, just erosion is sufficient. Erosion is just another method to extract sure foreground area, that's all.)
 
     .. image:: images/water_dt.png
         :alt: Distance Transform
         :align: center         
 
+Now we know for sure which are region of coins, which are background and all. So we create marker (it is an array of same size as that of original image, but with int32 datatype) and label the regions inside it. The regions we know for sure (whether foreground or background) are labelled with any positive integers, but different integers, and the area we don't know for sure are just left as zero. For this we use **cv2.connectedComponents()**. It labels background of the image with 0, then other objects with integers starting from 1. 
 
-Now we know for sure which are region of coins, which are background and all. So we create marker (it is an array of same size as that of original image, but with int32 datatype) and label the regions inside it. The regions we know for sure are labelled with any positive integers, but different integers, and the area we don't know for sure are just left as zero. For this we use **cv2.findContours()** and draw the contours with different colors. Finally, mark region of sure background with a different color.
+But we know that if background is marked with 0, watershed will consider it as unknown area. So we want to mark it with different integer. Instead, we will mark unknown region, defined by ``unknown``, with 0.
 ::
 
-    markers = np.zeros(gray.shape).astype('int32')
-    contours, hierarchy = cv2.findContours(np.uint8(thresh),cv2.RETR_LIST, 1)
+    # Marker labelling
+    ret, markers = cv2.connectedComponents(sure_fg)
 
-    for (i,cnt) in enumerate(contours):
-        cv2.drawContours(markers,[cnt],0,i+1,-1)
-
-    markers[sure_bg==0] = i+2
+    # Add one to all labels so that sure background is not 0, but 1
+    markers = markers+1
     
-See the result shown in JET colormap. The red region shows sure background. Sure coins are colored with different values. Around the coins, you can see an uniform blue color which is the region we are not sure.
+    # Now, mark the region of unknown with zero
+    markers[unknown==255] = 0
+    
+See the result shown in JET colormap. The dark blue region shows unknown region. Sure coins are colored with different values. Remaining area which are sure background are shown in lighter blue compared to unknown region.
 
     .. image:: images/water_marker.jpg
         :alt: Marker Image
@@ -98,17 +97,20 @@ Now our marker is ready. It is time for final step, apply watershed. Then marker
     cv2.watershed(img,markers)
     img[markers == -1] = [255,0,0]
     
-See the result below. For some coins, the region where they touch are segmented properly. 
+See the result below. For some coins, the region where they touch are segmented properly and for some, they are not. 
 
     .. image:: images/water_result.jpg
         :alt: Result
         :align: center
+
         
 Additional Resources
 ======================
+
 #. CMM page on `Watershed Tranformation <http://cmm.ensmp.fr/~beucher/wtshed.html>`_
 
 Exercises
 ==============
+
 #. OpenCV samples has an interactive sample on watershed segmentation, `watershed.py`. Run it, Enjoy it, then learn it.
 
