@@ -215,6 +215,21 @@ Image Processing in OpenCV
                  :height: 90pt
                  :width:  90pt
 
+*  :ref:`grabcut`
+
+  .. tabularcolumns:: m{100pt} m{300pt}
+  .. cssclass:: toctableopencv
+
+  ============ ===================================================================
+  |imgproc_15| Learn to extract foreground with GrabCut algorithm
+
+  ============ ===================================================================
+
+  .. |imgproc_15|  image:: images/histogram.jpg
+                 :height: 90pt
+                 :width:  90pt
+
+
 .. raw:: latex
 
    \pagebreak
@@ -238,3 +253,4 @@ Image Processing in OpenCV
    ../py_houghlines/py_houghlines
    ../py_houghcircles/py_houghcircles
    ../py_watershed/py_watershed
+   ../py_grabcut/py_grabcut
