@@ -16,7 +16,21 @@ Feature Detection and Description
   .. |f2d_1|  image:: images/test.jpg
                  :height: 90pt
                  :width:  90pt
-                 
+
+
+*  :ref:`Harris_Corners`
+
+  .. tabularcolumns:: m{100pt} m{300pt}
+  .. cssclass:: toctableopencv
+
+  =========== ======================================================
+  |f2d_2|     We will look into what is Harris corner detection, subpixel accuracy etc.
+
+  =========== ======================================================
+
+  .. |f2d_2|  image:: images/test.jpg
+                 :height: 90pt
+                 :width:  90pt                 
                  
 .. raw:: latex
 
@@ -27,3 +41,4 @@ Feature Detection and Description
    :hidden:
 
    ../py_features_meaning/py_features_meaning
+   ../py_features_harris/py_features_harris

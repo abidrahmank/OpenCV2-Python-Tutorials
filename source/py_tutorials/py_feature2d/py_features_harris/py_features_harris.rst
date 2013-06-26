@@ -1,6 +1,6 @@
 .. _Harris_Corners:
 
-Harris Corners Detection
+Harris Corner Detection
 ****************************
 
 Goal
@@ -9,12 +9,12 @@ Goal
 In this chapter,
 
     * We will understand the concepts behind Harris Corner Detection.
-    * We will use the function **cv2.cornerHarris()**
+    * We will see the functions: **cv2.cornerHarris()**, **cv2.cornerSubPix()**
     
 Theory
 ==========
 
-In last chapter, we saw that corners are regions in the image with large variation in intensity in all the directions. One early attempt to find these corners was done by **Chris Harris & Mike Stephens** in their paper **A Combined Corner and Edge Detector**, so now it is called Harris Corner Detector. He took this simple idea to a mathematical form. It basically finds the difference in intensity for a displacement of :math:`(u,v)` in all directions. This is expressed as below:
+In last chapter, we saw that corners are regions in the image with large variation in intensity in all the directions. One early attempt to find these corners was done by **Chris Harris & Mike Stephens** in their paper **A Combined Corner and Edge Detector** in 1988, so now it is called Harris Corner Detector. He took this simple idea to a mathematical form. It basically finds the difference in intensity for a displacement of :math:`(u,v)` in all directions. This is expressed as below:
 
 .. math::
 

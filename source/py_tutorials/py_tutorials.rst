@@ -62,6 +62,21 @@ OpenCV-Python Tutorials
                  :width:  80pt
                  :alt: imgproc Icon
 
+*  :ref:`Table-Of-Content-Feature2D`
+
+   .. tabularcolumns:: m{100pt} m{300pt}
+   .. cssclass:: toctableopencv
+
+   =========== =======================================================
+   |Feature2D| In this section you will learn about feature detectors and descriptors
+
+   =========== =======================================================
+
+   .. |Feature2D| image:: images/imgproc.jpg
+                 :height: 80pt
+                 :width:  80pt
+                 :alt: imgproc Icon
+
 *  :ref:`Table-Of-Content-ML`
 
    .. tabularcolumns:: m{100pt} m{300pt}
@@ -89,6 +104,7 @@ OpenCV-Python Tutorials
    py_gui/py_table_of_contents_gui/py_table_of_contents_gui
    py_core/py_table_of_contents_core/py_table_of_contents_core
    py_imgproc/py_table_of_contents_imgproc/py_table_of_contents_imgproc
+   py_feature2d/py_table_of_contents_feature2d/py_table_of_contents_feature2d
    py_ml/py_table_of_contents_ml/py_table_of_contents_ml
    
 

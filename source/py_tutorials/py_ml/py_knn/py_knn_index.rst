@@ -1,37 +1,34 @@
-.. _Table-Of-Content-ML:
+.. _KNN:
 
-Machine Learning
-********************
+K-Nearest Neighbour
+**********************
 
-*  :ref:`KNN`
-
-  .. tabularcolumns:: m{100pt} m{300pt}
-  .. cssclass:: toctableopencv
-
-  =========== ===================================================================
-  |ML_KNN|    Learn to use kNN for classification
-              Plus learn about handwritten digit recognition using kNN
-  =========== ===================================================================
-
-  .. |ML_KNN| image:: images/kmeansicon.jpg
-                 :height: 90pt
-                 :width:  90pt
-
-*  :ref:`KMeans_Clustering`
+*  :ref:`KNN_Understanding`
 
   .. tabularcolumns:: m{100pt} m{300pt}
   .. cssclass:: toctableopencv
 
   =========== ===================================================================
-  |ML_KM|     Learn to use K-Means Clustering to group data to a number of clusters. 
-              Plus learn to do color quantization using K-Means Clustering
+  |KNN_1|      Get a basic understanding of what kNN is 
   =========== ===================================================================
 
-  .. |ML_KM| image:: images/kmeansicon.jpg
+  .. |KNN_1| image:: images/test.jpg
                  :height: 90pt
                  :width:  90pt
 
+*  :ref:`KNN_OpenCV`
 
+  .. tabularcolumns:: m{100pt} m{300pt}
+  .. cssclass:: toctableopencv
+
+  =========== ===================================================================
+  |KNN_2|      Now let's use kNN in OpenCV for digit recognition OCR
+  =========== ===================================================================
+
+  .. |KNN_2| image:: images/test.jpg
+                 :height: 90pt
+                 :width:  90pt 
+                 
 .. raw:: latex
 
    \pagebreak
@@ -40,5 +37,5 @@ Machine Learning
 .. toctree::
    :hidden:
 
-   ../py_knn/py_knn_index
-   ../py_kmeans/py_kmeans_index
+   py_knn_understanding/py_knn_understanding
+   py_knn_opencv/py_knn_opencv
