@@ -13,7 +13,7 @@ Machine Learning
               Plus learn about handwritten digit recognition using kNN
   =========== ===================================================================
 
-  .. |ML_KNN| image:: images/kmeansicon.jpg
+  .. |ML_KNN| image:: images/knnicon.png
                  :height: 90pt
                  :width:  90pt
 

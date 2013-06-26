@@ -14,7 +14,7 @@ Histograms in OpenCV
               
   =========== ===================================================================
 
-  .. |hist_1|  image:: images/test.jpg
+  .. |hist_1|  image:: images/histograms_1d.jpg
                  :height: 90pt
                  :width:  90pt
 
@@ -29,7 +29,7 @@ Histograms in OpenCV
               
   =========== ===================================================================
 
-  .. |hist_2|  image:: images/test.jpg
+  .. |hist_2|  image:: images/histograms_equ.jpg
                  :height: 90pt
                  :width:  90pt                 
 
@@ -44,7 +44,7 @@ Histograms in OpenCV
               
   =========== ===================================================================
 
-  .. |hist_3|  image:: images/test.jpg
+  .. |hist_3|  image:: images/histograms_2d.jpg
                  :height: 90pt
                  :width:  90pt 
 
@@ -59,7 +59,7 @@ Histograms in OpenCV
               
   =========== ===================================================================
 
-  .. |hist_4|  image:: images/test.jpg
+  .. |hist_4|  image:: images/histograms_bp.jpg
                  :height: 90pt
                  :width:  90pt 
                  

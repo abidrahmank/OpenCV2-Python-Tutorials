@@ -71,7 +71,7 @@ Image Processing in OpenCV
 
   ============ ===================================================================
 
-  .. |imgproc_12|  image:: images/blurring.jpg
+  .. |imgproc_12|  image:: images/morphology.jpg
                  :height: 90pt
                  :width:  90pt
 
@@ -99,7 +99,7 @@ Image Processing in OpenCV
 
   =========== ===================================================================
 
-  .. |imgproc_8|  image:: images/histogram.jpg
+  .. |imgproc_8|  image:: images/canny.jpg
                  :height: 90pt
                  :width:  90pt
 
@@ -113,7 +113,7 @@ Image Processing in OpenCV
 
   ============ ===================================================================
 
-  .. |imgproc_14|  image:: images/histogram.jpg
+  .. |imgproc_14|  image:: images/pyramid.png
                  :height: 90pt
                  :width:  90pt
 
@@ -155,7 +155,7 @@ Image Processing in OpenCV
 
   =========== ===================================================================
 
-  .. |imgproc_7|  image:: images/histogram.jpg
+  .. |imgproc_7|  image:: images/transforms.jpg
                  :height: 90pt
                  :width:  90pt
 
@@ -169,7 +169,7 @@ Image Processing in OpenCV
 
   =========== ===================================================================
 
-  .. |imgproc_9|  image:: images/histogram.jpg
+  .. |imgproc_9|  image:: images/template.jpg
                  :height: 90pt
                  :width:  90pt
 
@@ -183,7 +183,7 @@ Image Processing in OpenCV
 
   ============ ===================================================================
 
-  .. |imgproc_10|  image:: images/histogram.jpg
+  .. |imgproc_10|  image:: images/houghlines.jpg
                  :height: 90pt
                  :width:  90pt
 
@@ -197,7 +197,7 @@ Image Processing in OpenCV
 
   ============ ===================================================================
 
-  .. |imgproc_11|  image:: images/histogram.jpg
+  .. |imgproc_11|  image:: images/houghcircles.jpg
                  :height: 90pt
                  :width:  90pt
 
@@ -211,7 +211,7 @@ Image Processing in OpenCV
 
   ============ ===================================================================
 
-  .. |imgproc_13|  image:: images/histogram.jpg
+  .. |imgproc_13|  image:: images/watershed.jpg
                  :height: 90pt
                  :width:  90pt
 
@@ -225,7 +225,7 @@ Image Processing in OpenCV
 
   ============ ===================================================================
 
-  .. |imgproc_15|  image:: images/histogram.jpg
+  .. |imgproc_15|  image:: images/grabcut.jpg
                  :height: 90pt
                  :width:  90pt
 

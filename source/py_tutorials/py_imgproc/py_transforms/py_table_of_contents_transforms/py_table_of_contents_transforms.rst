@@ -14,7 +14,7 @@ Image Transforms in OpenCV
               
   ============= ===================================================================
 
-  .. |transform_1|  image:: images/test.jpg
+  .. |transform_1|  image:: images/transform_fourier.jpg
                  :height: 90pt
                  :width:  90pt
                  

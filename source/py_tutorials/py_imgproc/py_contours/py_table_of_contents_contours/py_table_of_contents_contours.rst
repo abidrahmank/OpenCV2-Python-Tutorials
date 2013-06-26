@@ -14,7 +14,7 @@ Contours in OpenCV
               
   =========== ===================================================================
 
-  .. |contour_1|  image:: images/test.jpg
+  .. |contour_1|  image:: images/contour_starting.jpg
                  :height: 90pt
                  :width:  90pt
                  
@@ -28,7 +28,7 @@ Contours in OpenCV
 
   =========== ===================================================================
 
-  .. |contour_2|  image:: images/test.jpg
+  .. |contour_2|  image:: images/contour_features.jpg
                  :height: 90pt
                  :width:  90pt
                  
@@ -42,7 +42,7 @@ Contours in OpenCV
 
   =========== ===================================================================
 
-  .. |contour_3|  image:: images/test.jpg
+  .. |contour_3|  image:: images/contour_properties.jpg
                  :height: 90pt
                  :width:  90pt
 
@@ -56,7 +56,7 @@ Contours in OpenCV
 
   =========== ===================================================================
 
-  .. |contour_4|  image:: images/test.jpg
+  .. |contour_4|  image:: images/contour_defects.jpg
                  :height: 90pt
                  :width:  90pt
 
@@ -70,7 +70,7 @@ Contours in OpenCV
 
   =========== ===================================================================
 
-  .. |contour_5|  image:: images/hierarchy.jpg
+  .. |contour_5|  image:: images/contour_hierarchy.jpg
                  :height: 90pt
                  :width:  90pt
 

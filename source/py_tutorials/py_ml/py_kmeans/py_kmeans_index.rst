@@ -1,7 +1,7 @@
 .. _KMeans_Clustering:
 
 K-Means Clustering
-**********************
+*********************
 
 *  :ref:`KMeans_Clustering_Understanding`
 
@@ -12,7 +12,7 @@ K-Means Clustering
   |KM_1|      Read to get an intuitive understanding of K-Means Clustering
   =========== ===================================================================
 
-  .. |KM_1| image:: images/test.jpg
+  .. |KM_1| image:: images/kmeans_begin.jpg
                  :height: 90pt
                  :width:  90pt
 
@@ -25,7 +25,7 @@ K-Means Clustering
   |KM_2|      Now let's try K-Means functions in OpenCV
   =========== ===================================================================
 
-  .. |KM_2| image:: images/test.jpg
+  .. |KM_2| image:: images/kmeans_demo.jpg
                  :height: 90pt
                  :width:  90pt 
                  
