@@ -31,6 +31,22 @@ Feature Detection and Description
   .. |f2d_2|  image:: images/test.jpg
                  :height: 90pt
                  :width:  90pt                 
+
+
+*  :ref:`shi_tomasi`
+
+  .. tabularcolumns:: m{100pt} m{300pt}
+  .. cssclass:: toctableopencv
+
+  =========== ======================================================
+  |f2d_3|     We will look into Shi-Tomasi corner detection
+
+  =========== ======================================================
+
+  .. |f2d_3|  image:: images/test.jpg
+                 :height: 90pt
+                 :width:  90pt 
+   
                  
 .. raw:: latex
 
@@ -42,3 +58,4 @@ Feature Detection and Description
 
    ../py_features_meaning/py_features_meaning
    ../py_features_harris/py_features_harris
+   ../py_shi_tomasi/py_shi_tomasi
