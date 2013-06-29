@@ -17,6 +17,20 @@ Machine Learning
                  :height: 90pt
                  :width:  90pt
 
+
+*  :ref:`SVM`
+
+  .. tabularcolumns:: m{100pt} m{300pt}
+  .. cssclass:: toctableopencv
+
+  =========== ===================================================================
+  |ML_SVM|    Understand concepts of SVM
+  =========== ===================================================================
+
+  .. |ML_SVM| image:: images/svmicon.png
+                 :height: 90pt
+                 :width:  90pt
+
 *  :ref:`KMeans_Clustering`
 
   .. tabularcolumns:: m{100pt} m{300pt}
@@ -41,4 +55,5 @@ Machine Learning
    :hidden:
 
    ../py_knn/py_knn_index
+   ../py_svm/py_svm_index
    ../py_kmeans/py_kmeans_index

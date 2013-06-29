@@ -109,7 +109,7 @@ In my system, it takes around 4.4 MB of memory. Since we are using intensity val
 OCR of English Alphabets
 ===========================
 
-Next we will do the same for English alphabets, but there is a slight change in data and feature set. Here, instead of images, OpenCV comes with a data file, ``letter-recognition.data`` in ``opencv/samples/cpp/`` folder. If you open it, you will see 20000 lines which may, on first sight, look like garbage. Actually, in each row, first column is an alphabet which is our label. Next 16 numbers following it are its different features. These features are obtained from `UCI Machine Learning Repository <http://archive.ics.uci.edu/ml/>`_. You can find the details of these features in `this page <http://ftp.ics.uci.edu/pub/machine-learning-databases/letter-recognition/letter-recognition.names>`_.
+Next we will do the same for English alphabets, but there is a slight change in data and feature set. Here, instead of images, OpenCV comes with a data file, ``letter-recognition.data`` in ``opencv/samples/cpp/`` folder. If you open it, you will see 20000 lines which may, on first sight, look like garbage. Actually, in each row, first column is an alphabet which is our label. Next 16 numbers following it are its different features. These features are obtained from `UCI Machine Learning Repository <http://archive.ics.uci.edu/ml/>`_. You can find the details of these features in `this page <http://archive.ics.uci.edu/ml/datasets/Letter+Recognition>`_.
 
 There are 20000 samples available, so we take first 10000 data as training samples and remaining 10000 as test samples. We should change the alphabets to ascii characters because we can't work with alphabets directly.
 ::
