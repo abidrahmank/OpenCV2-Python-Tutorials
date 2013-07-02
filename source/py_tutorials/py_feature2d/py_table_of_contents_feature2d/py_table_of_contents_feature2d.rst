@@ -9,7 +9,7 @@ Feature Detection and Description
   .. cssclass:: toctableopencv
 
   =========== ======================================================
-  |f2d_1|     Understanding what are features, feature detection, feature description etc.
+  |f2d_1|     What are the main features in an image? How can finding those features be useful to us?
 
   =========== ======================================================
 
@@ -24,7 +24,7 @@ Feature Detection and Description
   .. cssclass:: toctableopencv
 
   =========== ======================================================
-  |f2d_2|     We will look into what is Harris corner detection, subpixel accuracy etc.
+  |f2d_2|     Okay, Corners are good features? But how do we find them?
 
   =========== ======================================================
 
@@ -54,14 +54,28 @@ Feature Detection and Description
   .. cssclass:: toctableopencv
 
   =========== ======================================================
-  |f2d_4|     We move onto Scale-Invariant Feature Transform (SIFT)
+  |f2d_4|     Harris corner detect is not enough when scale of image changes. Lowe developed a breakthrough method to find scale-invariant features and it is called SIFT
 
   =========== ======================================================
 
   .. |f2d_4|  image:: images/test.jpg
                  :height: 90pt
                  :width:  90pt
-   
+
+
+*  :ref:`SURF`
+
+  .. tabularcolumns:: m{100pt} m{300pt}
+  .. cssclass:: toctableopencv
+
+  =========== ======================================================
+  |f2d_5|     SIFT was not fast enough, so people came up with a speeded-up version called SURF.
+
+  =========== ======================================================
+
+  .. |f2d_5|  image:: images/test.jpg
+                 :height: 90pt
+                 :width:  90pt   
                  
 .. raw:: latex
 
@@ -75,3 +89,4 @@ Feature Detection and Description
    ../py_features_harris/py_features_harris
    ../py_shi_tomasi/py_shi_tomasi
    ../py_sift_intro/py_sift_intro
+   ../py_surf_intro/py_surf_intro
