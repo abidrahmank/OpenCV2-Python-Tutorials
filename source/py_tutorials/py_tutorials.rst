@@ -72,7 +72,7 @@ OpenCV-Python Tutorials
 
    =========== =======================================================
 
-   .. |Feature2D| image:: images/imgproc.jpg
+   .. |Feature2D| image:: images/featureicon.jpg
                  :height: 80pt
                  :width:  80pt
                  :alt: imgproc Icon

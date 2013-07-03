@@ -6,7 +6,7 @@ Understanding Features
 Goal
 =====
 
-In this chapter, we will just try to understand what are features, why are they important etc.
+In this chapter, we will just try to understand what are features, why are they important, why corners are important etc.
 
 Explanation
 ==============
@@ -31,7 +31,7 @@ Image is very simple. At the top of image, six small image patches are given. Qu
         :alt: Features
         :align: center
 
-Just like above, blue patch is flat area and difficult to find and track. Where-ever you move the blue patch, it looks same. For black patch, it is an edge. If you move it in vertical direction (ie along the gradient) it changes. Put along the edge (parallel to edge), it looks same. And for red patch, it is a corner. Wherever you move the patch, it looks different, means it is unique. So basically, corners are considered to be good features in an image. 
+Just like above, blue patch is flat area and difficult to find and track. Whereever you move the blue patch, it looks same. For black patch, it is an edge. If you move it in vertical direction (ie along the gradient) it changes. Put along the edge (parallel to edge), it looks same. And for red patch, it is a corner. Wherever you move the patch, it looks different, means it is unique. So basically, corners are considered to be good features in an image. (Not just corners, in some cases blobs are considered good features.)
 
 So now we answered our question, "what are these features?". But next question arises. How do we find them? Or how do we find the corners?. That also we answered in an intuitive way, ie, look for the regions in images which have maximum variation when moved (by a small amount) in all regions around it. This would be projected into computer language in coming chapters. So finding these image features is called **Feature Detection**.
 

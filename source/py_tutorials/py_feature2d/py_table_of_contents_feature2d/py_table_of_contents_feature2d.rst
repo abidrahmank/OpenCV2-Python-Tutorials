@@ -69,13 +69,30 @@ Feature Detection and Description
   .. cssclass:: toctableopencv
 
   =========== ======================================================
-  |f2d_5|     SIFT was not fast enough, so people came up with a speeded-up version called SURF.
+  |f2d_5|     SIFT is really good, but not fast enough, so people came up with a speeded-up version called SURF.
 
   =========== ======================================================
 
   .. |f2d_5|  image:: images/test.jpg
                  :height: 90pt
                  :width:  90pt   
+
+
+*  :ref:`FAST`
+
+  .. tabularcolumns:: m{100pt} m{300pt}
+  .. cssclass:: toctableopencv
+
+  =========== ======================================================
+  |f2d_06|    All the above feature detection methods are good in some way. But they are not fast enough to work in real-time applications like SLAM. There comes the FAST algorithm, which is really "FAST".
+
+  =========== ======================================================
+
+  .. |f2d_06|  image:: images/test.jpg
+                 :height: 90pt
+                 :width:  90pt   
+
+
                  
 .. raw:: latex
 
@@ -90,3 +107,4 @@ Feature Detection and Description
    ../py_shi_tomasi/py_shi_tomasi
    ../py_sift_intro/py_sift_intro
    ../py_surf_intro/py_surf_intro
+   ../py_fast/py_fast
