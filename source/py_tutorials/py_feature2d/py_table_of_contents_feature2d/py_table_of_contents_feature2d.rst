@@ -54,7 +54,7 @@ Feature Detection and Description
   .. cssclass:: toctableopencv
 
   =========== ======================================================
-  |f2d_4|     Harris corner detect is not enough when scale of image changes. Lowe developed a breakthrough method to find scale-invariant features and it is called SIFT
+  |f2d_4|     Harris corner detector is not good enough when scale of image changes. Lowe developed a breakthrough method to find scale-invariant features and it is called SIFT
 
   =========== ======================================================
 
@@ -93,6 +93,19 @@ Feature Detection and Description
                  :width:  90pt   
 
 
+*  :ref:`BRIEF`
+
+  .. tabularcolumns:: m{100pt} m{300pt}
+  .. cssclass:: toctableopencv
+
+  =========== ======================================================
+  |f2d_07|    SIFT uses a feature descriptor with 128 floating point numbers. Consider thousands of such features. It takes lots of memory and more time for matching. We can compress it to make it faster. But still we have to calculate it first. There comes BRIEF which gives the shortcut to find binary descriptors with less memory, faster matching, still higher recognition rate.
+
+  =========== ======================================================
+
+  .. |f2d_07|  image:: images/test.jpg
+                 :height: 90pt
+                 :width:  90pt 
                  
 .. raw:: latex
 
@@ -108,3 +121,4 @@ Feature Detection and Description
    ../py_sift_intro/py_sift_intro
    ../py_surf_intro/py_surf_intro
    ../py_fast/py_fast
+   ../py_brief/py_brief
