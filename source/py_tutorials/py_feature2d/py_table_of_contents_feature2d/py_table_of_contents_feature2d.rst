@@ -106,6 +106,22 @@ Feature Detection and Description
   .. |f2d_07|  image:: images/test.jpg
                  :height: 90pt
                  :width:  90pt 
+
+
+*  :ref:`ORB`
+
+  .. tabularcolumns:: m{100pt} m{300pt}
+  .. cssclass:: toctableopencv
+
+  =========== ======================================================
+  |f2d_08|    SIFT and SURF are good in what they do, but what if you have to pay a few dollars every year to use them in your applications? Yeah, they are patented!!! To solve that problem, OpenCV devs came up with a new "FREE" alternative to SIFT & SURF, and that is ORB.
+  =========== ======================================================
+
+  .. |f2d_08|  image:: images/test.jpg
+                 :height: 90pt
+                 :width:  90pt 
+
+
                  
 .. raw:: latex
 
@@ -122,3 +138,4 @@ Feature Detection and Description
    ../py_surf_intro/py_surf_intro
    ../py_fast/py_fast
    ../py_brief/py_brief
+   ../py_orb/py_orb
