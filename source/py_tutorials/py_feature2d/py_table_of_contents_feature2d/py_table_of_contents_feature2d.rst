@@ -122,6 +122,19 @@ Feature Detection and Description
                  :width:  90pt 
 
 
+*  :ref:`Matcher`
+
+  .. tabularcolumns:: m{100pt} m{300pt}
+  .. cssclass:: toctableopencv
+
+  =========== ======================================================
+  |f2d_09|    We know a great deal about feature detectors and descriptors. It is time to learn how to match different descriptors
+  =========== ======================================================
+
+  .. |f2d_09|  image:: images/test.jpg
+                 :height: 90pt
+                 :width:  90pt 
+
                  
 .. raw:: latex
 
@@ -139,3 +152,4 @@ Feature Detection and Description
    ../py_fast/py_fast
    ../py_brief/py_brief
    ../py_orb/py_orb
+   ../py_matcher/py_matcher
