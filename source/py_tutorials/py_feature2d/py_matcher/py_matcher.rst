@@ -28,8 +28,8 @@ Let's see one example for each of SURF and ORB (Both use different distance meas
 
 
 
-Feature Matching with ORB Descriptors
-========================================
+Brute-Force Matching with ORB Descriptors
+--------------------------------------------
 
 Here, we will see a simple example on how to match features between two images. In this case, I have a queryImage and a trainImage. We will try to find the queryImage in trainImage using feature matching. ( The images are ``/samples/c/box.png`` and ``/samples/c/box_in_scene.png``)
 
@@ -86,8 +86,8 @@ The result of ``matches = bf.match(des1,des2)`` line is a list of DMatch objects
     * ``DMatch.imgIdx``   - Index of the train image.
     
     
-Feature Matching with SIFT Descriptors and Ratio Test
-=======================================================
+Brute-Force Matching with SIFT Descriptors and Ratio Test
+-------------------------------------------------------------
 
 This time, we will use ``BFMatcher.knnMatch()`` to get k best matches. In this example, we will take k=2 so that we can apply ratio test explained by D.Lowe in his paper. 
 ::
@@ -127,6 +127,15 @@ See the result below:
         :alt: SIFT Descriptor with ratio test
         :align: center
         
+
+FLANN based Matcher
+==========================
+
+FLANN stands for Fast Library for Approximate Nearest Neighbors. It contains a collection of algorithms optimized for fast nearest neighbor search in large datasets and for high dimensional features. It works more faster than BFMatcher for large datasets. We will see the second example with FLANN based matcher.
+
+.. warning:: Code to be added
+
+
         
         
 Additional Resources
