@@ -77,6 +77,23 @@ OpenCV-Python Tutorials
                  :width:  80pt
                  :alt: imgproc Icon
 
+
+*  :ref:`Table-Of-Content-Video`
+
+   .. tabularcolumns:: m{100pt} m{300pt}
+   .. cssclass:: toctableopencv
+
+   =========== =======================================================
+   |Video|     In this section you will learn different techniques to work with videos like object tracking etc.
+
+   =========== =======================================================
+
+   .. |Video| image:: images/featureicon.jpg
+                 :height: 80pt
+                 :width:  80pt
+                 :alt: imgproc Icon
+
+
 *  :ref:`Table-Of-Content-ML`
 
    .. tabularcolumns:: m{100pt} m{300pt}
@@ -105,6 +122,7 @@ OpenCV-Python Tutorials
    py_core/py_table_of_contents_core/py_table_of_contents_core
    py_imgproc/py_table_of_contents_imgproc/py_table_of_contents_imgproc
    py_feature2d/py_table_of_contents_feature2d/py_table_of_contents_feature2d
+   py_video/py_table_of_contents_video/py_table_of_contents_video
    py_ml/py_table_of_contents_ml/py_table_of_contents_ml
    
 
