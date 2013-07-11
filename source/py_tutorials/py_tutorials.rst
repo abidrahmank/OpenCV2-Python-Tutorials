@@ -108,6 +108,23 @@ OpenCV-Python Tutorials
                  :height: 80pt
                  :width:  80pt
                  :alt: ML Icon
+
+
+*  :ref:`Table-Of-Content-Photo`
+
+   .. tabularcolumns:: m{100pt} m{300pt}
+   .. cssclass:: toctableopencv
+
+   =========== =======================================================
+   |Photo|     In this section you will learn different computational photography techniques like image denoising etc.
+
+   =========== =======================================================
+
+   .. |Photo| image:: images/MachineLearnings.jpg
+                 :height: 80pt
+                 :width:  80pt
+                 :alt: ML Icon
+
                  
 .. raw:: latex
 
@@ -124,6 +141,7 @@ OpenCV-Python Tutorials
    py_feature2d/py_table_of_contents_feature2d/py_table_of_contents_feature2d
    py_video/py_table_of_contents_video/py_table_of_contents_video
    py_ml/py_table_of_contents_ml/py_table_of_contents_ml
+   py_photo/py_table_of_contents_photo/py_table_of_contents_photo
    
 
                              
