@@ -17,7 +17,7 @@ Here you will learn different OpenCV functionalities related to Computational Ph
 
   =========== ======================================================
 
-  .. |core_1|  image:: images/pixel_ops.jpg
+  .. |photo_1|  image:: images/test.jpg
                  :height: 90pt
                  :width:  90pt
                  

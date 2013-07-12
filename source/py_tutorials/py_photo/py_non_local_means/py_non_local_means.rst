@@ -75,7 +75,7 @@ As mentioned above it is used to noise from color images. (Noise is expected to 
 
 Below is a zoomed version of result. My input image has a gaussian noise of :math:`\sigma = 25`. See the result:
 
-    .. image:: images/nlm_result1.png
+    .. image:: images/nlm_result1.jpg
         :alt: Result of denoising
         :align: center
         
