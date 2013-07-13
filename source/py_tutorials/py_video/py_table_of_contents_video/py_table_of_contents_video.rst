@@ -16,7 +16,21 @@ Video Analysis
   .. |vdo_1|  image:: images/test.jpg
                  :height: 90pt
                  :width:  90pt
-                 
+
+
+*  :ref:`Lucas_Kanade`
+
+  .. tabularcolumns:: m{100pt} m{300pt}
+  .. cssclass:: toctableopencv
+
+  =========== ======================================================
+  |vdo_2|     Now let's discuss an important concept, "Optical Flow", which is related to videos and has many applications. In this chapter, we discuss a special method "Lucas-Kanade" to find optical flow of objects in videos.  
+
+  =========== ======================================================
+
+  .. |vdo_2|  image:: images/test.jpg
+                 :height: 90pt
+                 :width:  90pt                 
                  
 .. raw:: latex
 
@@ -27,3 +41,4 @@ Video Analysis
    :hidden:
 
    ../py_meanshift/py_meanshift
+   ../py_lucas_kanade/py_lucas_kanade
