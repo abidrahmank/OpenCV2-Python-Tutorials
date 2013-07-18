@@ -24,13 +24,28 @@ Video Analysis
   .. cssclass:: toctableopencv
 
   =========== ======================================================
-  |vdo_2|     Now let's discuss an important concept, "Optical Flow", which is related to videos and has many applications. In this chapter, we discuss a special method "Lucas-Kanade" to find optical flow of objects in videos.  
-
+  |vdo_2|     Now let's discuss an important concept, "Optical Flow", which is related to videos and has many applications.
   =========== ======================================================
 
-  .. |vdo_2|  image:: images/test.jpg
+  .. |vdo_2|  image:: images/opticalflow.jpeg
                  :height: 90pt
                  :width:  90pt                 
+
+
+*  :ref:`background_subtraction`
+
+  .. tabularcolumns:: m{100pt} m{300pt}
+  .. cssclass:: toctableopencv
+
+  =========== ======================================================
+  |vdo_b|     In several applications, we need to extract foreground for further operations like object tracking. Background Subtraction is a well-known method in those cases. 
+  =========== ======================================================
+
+  .. |vdo_b|  image:: images/opticalflow.jpeg
+                 :height: 90pt
+                 :width:  90pt  
+
+
                  
 .. raw:: latex
 
@@ -42,3 +57,4 @@ Video Analysis
 
    ../py_meanshift/py_meanshift
    ../py_lucas_kanade/py_lucas_kanade
+   ../py_bg_subtraction/py_bg_subtraction

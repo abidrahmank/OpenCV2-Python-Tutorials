@@ -88,7 +88,7 @@ OpenCV-Python Tutorials
 
    =========== =======================================================
 
-   .. |Video| image:: images/featureicon.jpg
+   .. |Video| image:: images/videoicon.jpg
                  :height: 80pt
                  :width:  80pt
                  :alt: imgproc Icon
@@ -120,7 +120,7 @@ OpenCV-Python Tutorials
 
    =========== =======================================================
 
-   .. |Photo| image:: images/MachineLearnings.jpg
+   .. |Photo| image:: images/photoicon.jpg
                  :height: 80pt
                  :width:  80pt
                  :alt: ML Icon

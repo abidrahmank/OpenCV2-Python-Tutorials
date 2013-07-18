@@ -88,7 +88,7 @@ Feature Detection and Description
 
   =========== ======================================================
 
-  .. |f2d_06|  image:: images/test.jpg
+  .. |f2d_06|  image:: images/fast.jpg
                  :height: 90pt
                  :width:  90pt   
 
@@ -103,7 +103,7 @@ Feature Detection and Description
 
   =========== ======================================================
 
-  .. |f2d_07|  image:: images/test.jpg
+  .. |f2d_07|  image:: images/brief.jpg
                  :height: 90pt
                  :width:  90pt 
 
@@ -117,7 +117,7 @@ Feature Detection and Description
   |f2d_08|    SIFT and SURF are good in what they do, but what if you have to pay a few dollars every year to use them in your applications? Yeah, they are patented!!! To solve that problem, OpenCV devs came up with a new "FREE" alternative to SIFT & SURF, and that is ORB.
   =========== ======================================================
 
-  .. |f2d_08|  image:: images/test.jpg
+  .. |f2d_08|  image:: images/orb.jpg
                  :height: 90pt
                  :width:  90pt 
 
@@ -131,7 +131,7 @@ Feature Detection and Description
   |f2d_09|    We know a great deal about feature detectors and descriptors. It is time to learn how to match different descriptors
   =========== ======================================================
 
-  .. |f2d_09|  image:: images/test.jpg
+  .. |f2d_09|  image:: images/matching.jpg
                  :height: 90pt
                  :width:  90pt 
 
