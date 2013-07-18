@@ -13,7 +13,7 @@ Video Analysis
 
   =========== ======================================================
 
-  .. |vdo_1|  image:: images/test.jpg
+  .. |vdo_1|  image:: images/camshift.jpg
                  :height: 90pt
                  :width:  90pt
 
@@ -41,7 +41,7 @@ Video Analysis
   |vdo_b|     In several applications, we need to extract foreground for further operations like object tracking. Background Subtraction is a well-known method in those cases. 
   =========== ======================================================
 
-  .. |vdo_b|  image:: images/opticalflow.jpeg
+  .. |vdo_b|  image:: images/background.jpg
                  :height: 90pt
                  :width:  90pt  
 
