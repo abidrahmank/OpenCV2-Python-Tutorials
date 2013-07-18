@@ -1,7 +1,7 @@
 .. _Lucas_Kanade:
 
 
-Optical Flow using Lucas-Kanade Method
+Optical Flow
 *********************************************
 
 Goal
@@ -152,7 +152,54 @@ See the results we got:
         :alt: Lucas-Kanade method for optical flow
         :align: center
         
+
+Dense Optical Flow in OpenCV
+==============================
+
+Lucas-Kanade method computes optical flow for a sparse feature set (in our example, corners detected using Shi-Tomasi algorithm). OpenCV provides another algorithm to find the dense optical flow. It computes the optical flow for all the points in the frame. It is based on Gunner Farneback's algorithm which is explained in "Two-Frame Motion Estimation Based on Polynomial Expansion" by Gunner Farneback in 2003. 
+
+Below sample shows how to find the dense optical flow using above algorithm. We get a 2-channel array with optical flow vectors, :math:`(u,v)`. We find their magnitude and direction. We color code the result to for better visualization. Direction corresponds to Hue value of the image. Magnitude corresponds to Value plane. See the code below:
+::
+
+    import cv2
+    import numpy as np
+    cap = cv2.VideoCapture("vtest.avi")
+
+    ret, frame1 = cap.read()
+    prvs = cv2.cvtColor(frame1,cv2.COLOR_BGR2GRAY)
+    hsv = np.zeros_like(frame1)
+    hsv[...,1] = 255
+
+    while(1):
+        ret, frame2 = cap.read()
+        next = cv2.cvtColor(frame2,cv2.COLOR_BGR2GRAY)
+
+        flow = cv2.calcOpticalFlowFarneback(prvs,next, None, 0.5, 3, 15, 3, 5, 1.2, 0)
         
+        mag, ang = cv2.cartToPolar(flow[...,0], flow[...,1])
+        hsv[...,0] = ang*180/np.pi/2
+        hsv[...,2] = cv2.normalize(mag,None,0,255,cv2.NORM_MINMAX)
+        rgb = cv2.cvtColor(hsv,cv2.COLOR_HSV2BGR)
+
+        cv2.imshow('frame2',rgb)
+        k = cv2.waitKey(30) & 0xff
+        if k == 27:
+            break
+        elif k == ord('s'):
+            cv2.imwrite('opticalfb.png',frame2)
+            cv2.imwrite('opticalhsv.png',rgb)
+        prvs = next
+        
+    cap.release()
+    cv2.destroyAllWindows()
+ 
+See the result below:
+
+    .. image:: images/opticalfb.jpg
+        :alt: Dense Optical Flow
+        :align: center
+        
+OpenCV comes with a more advanced sample on dense optical flow, please see ``samples/python2/opt_flow.py``. 
         
 Additional Resources
 ========================
@@ -162,3 +209,4 @@ Exercises
 ===========
 
 #. Check the code in ``samples/python2/lk_track.py``. Try to understand the code.
+#. Check the code in ``samples/python2/opt_flow.py``. Try to understand the code.
