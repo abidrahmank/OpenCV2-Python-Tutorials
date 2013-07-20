@@ -51,13 +51,13 @@ Common arguments are:
     
 Please visit first link in additional resources for more details on these parameters.
 
-We will demonstrate 2 and 4 here. Rest is left for you.
+We will demonstrate 2 and 3 here. Rest is left for you.
 
 
 1. cv2.fastNlMeansDenoisingColored()
 ------------------------------------------
 
-As mentioned above it is used to noise from color images. (Noise is expected to be gaussian). See the example below:
+As mentioned above it is used to remove noise from color images. (Noise is expected to be gaussian). See the example below:
 ::
 
     import numpy as np
@@ -79,8 +79,48 @@ Below is a zoomed version of result. My input image has a gaussian noise of :mat
         :alt: Result of denoising
         :align: center
         
+
+2. cv2.fastNlMeansDenoisingMulti()
+------------------------------------------
+Now we will apply the same method to a video. The first argument is the list of noisy frames. Second argument `imgToDenoiseIndex` specifies which frame we need to denoise, for that we pass the index of frame in our input list. Third is the `temporalWindowSize` which specifies the number of nearby frames to be used for denoising. It should be odd. In that case, a total of `temporalWindowSize` frames are used where central frame is the frame to be denoised. For example, you passed a list of 5 frames as input. Let `imgToDenoiseIndex = 2` and `temporalWindowSize = 3`. Then frame-1, frame-2 and frame-3 are used to denoise frame-2. Let's see an example.
+::
+
+    import numpy as np
+    import cv2
+    from matplotlib import pyplot as plt
+
+    cap = cv2.VideoCapture('vtest.avi')
+
+    # create a list of first 5 frames
+    img = [cap.read()[1] for i in xrange(5)]
+
+    # convert all to grayscale
+    gray = [cv2.cvtColor(i, cv2.COLOR_BGR2GRAY) for i in img]
+
+    # create a noise of variance 25
+    noise = np.uint8(np.random.randn(*gray[1].shape)*5)
+
+    # Add this noise to images
+    noisy = [i+noise for i in gray]
+
+    # Denoise 3rd frame considering all the 5 frames
+    dst = cv2.fastNlMeansDenoisingMulti(noisy, 2, 5, None, 4, 7, 35)
+
+    plt.subplot(131),plt.imshow(gray[2],'gray')
+    plt.subplot(132),plt.imshow(noisy[2],'gray')
+    plt.subplot(133),plt.imshow(dst,'gray')
+    plt.show()
+
+
+Below image shows a zoomed version of the result we got:
+
+    .. image:: images/nlm_video.jpg
+        :alt: Denoising a frame
+        :align: center
         
-        
+
+It takes considerable amount of time for computation. In the result, first image is the original frame, second is the noisy one, third is the denoised image.
+            
         
 Additional Resources
 ========================
