@@ -42,7 +42,7 @@ Our goal is to build an application which can read the handwritten digits. For t
     # Initiate kNN, train the data, then test it with test data for k=1
     knn = cv2.KNearest()
     knn.train(train,train_labels)
-    ret,result,neighbours,dist = knn.find_nearest(train,k=5)
+    ret,result,neighbours,dist = knn.find_nearest(test,k=5)
 
     # Now we check the accuracy of classification
     # For that, compare the result with test_labels and check which are wrong
