@@ -16,11 +16,11 @@ In this chapter,
 Theory
 =========
 
-In earlier chapters, we have seen many image smoothening techniques like Gaussian Blurring, Median Blurring etc and they were good to some extent in removing small quantities of noise. In those techniques, we took a small neighbourhood around a pixel and did some operations like gaussian weighted average, median of the values etc to replace the central element. In short, noise removal at a pixel was local to its neighbourhood. 
+In earlier chapters, we have seen many image smoothing techniques like Gaussian Blurring, Median Blurring etc and they were good to some extent in removing small quantities of noise. In those techniques, we took a small neighbourhood around a pixel and did some operations like gaussian weighted average, median of the values etc to replace the central element. In short, noise removal at a pixel was local to its neighbourhood. 
 
 There is a property of noise. Noise is generally considered to be a random variable with zero mean. Consider a noisy pixel, :math:`p = p_0 + n` where :math:`p_0` is the true value of pixel and :math:`n` is the noise in that pixel. You can a large number of same pixel (say :math:`N`) from different images and computes their average. Ideally, you should get :math:`p = p_0` since mean of noise is zero.
 
-You can verify it yourself by a simple setup. Hold a static camera to a certain location for a couple of seconds. This will give you plenty of frames, or a lot of images of the same scene. Then write a piece of code to find the average of all the frames in the video (This should be too simple for you now ). Compare the final result and first frame. But to get a comparable result, you need :math:`N` to be very large which is not a good idea.
+You can verify it yourself by a simple setup. Hold a static camera to a certain location for a couple of seconds. This will give you plenty of frames, or a lot of images of the same scene. Then write a piece of code to find the average of all the frames in the video (This should be too simple for you now ). Compare the final result and first frame. Unfortunately this simple method is not robust to camera and scene motions. Also often there is only one noisy image available.
 
 So idea is simple, we need a set of similar images to average out the noise. Consider a small window (say 5x5 window) in the image. Chance is large that the same patch may be somewhere else in the image. Sometimes in a small neigbourhood around it. What about using these similar patches together and find their average? For that particular window, that is fine. See an example image below:
 
