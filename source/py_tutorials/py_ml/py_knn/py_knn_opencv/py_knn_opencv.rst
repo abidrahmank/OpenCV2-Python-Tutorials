@@ -60,7 +60,7 @@ So our basic OCR app is ready. This particular example gave me an accuracy of 91
 
     cells = [np.hsplit(row,100) for row in np.vsplit(gray,50)]
 
-    x = np.array(cells))
+    x = np.array(cells)
 
     # train and test data
     train = x[:,:50].reshape(-1,400).astype(np.float32)
@@ -77,9 +77,9 @@ So our basic OCR app is ready. This particular example gave me an accuracy of 91
         knn.train(train,train_labels)
         ret,res,neighbours,dist = knn.find_nearest(test,k=5)
 
-        matches = res==test_labels
+        matches = result==test_labels
         correct = np.count_nonzero(matches)
-        accuracy = correct*100.0/res.size
+        accuracy = correct*100.0/result.size
         print accuracy
 
         # show wrong ones
