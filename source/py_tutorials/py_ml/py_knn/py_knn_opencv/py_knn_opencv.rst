@@ -46,9 +46,9 @@ Our goal is to build an application which can read the handwritten digits. For t
 
     # Now we check the accuracy of classification
     # For that, compare the result with test_labels and check which are wrong
-    matches = res==test_labels
+    matches = result==test_labels
     correct = np.count_nonzero(matches)
-    accuracy = correct*100.0/res.size
+    accuracy = correct*100.0/result.size
     print accuracy
 
 
