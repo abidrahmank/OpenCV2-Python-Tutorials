@@ -94,6 +94,23 @@ OpenCV-Python Tutorials
                  :alt: imgproc Icon
 
 
+*  :ref:`Table-Of-Content-Calib`
+
+   .. tabularcolumns:: m{100pt} m{300pt}
+   .. cssclass:: toctableopencv
+
+   =========== =======================================================
+   |Calib|     In this section we will learn about camera calibration, stereo imaging etc.
+
+   =========== =======================================================
+
+   .. |Calib| image:: images/videoicon.jpg
+                 :height: 80pt
+                 :width:  80pt
+                 :alt: Calib Icon
+
+
+
 *  :ref:`Table-Of-Content-ML`
 
    .. tabularcolumns:: m{100pt} m{300pt}
@@ -140,6 +157,7 @@ OpenCV-Python Tutorials
    py_imgproc/py_table_of_contents_imgproc/py_table_of_contents_imgproc
    py_feature2d/py_table_of_contents_feature2d/py_table_of_contents_feature2d
    py_video/py_table_of_contents_video/py_table_of_contents_video
+   py_calib3d/py_table_of_contents_calib3d/py_table_of_contents_calib3d
    py_ml/py_table_of_contents_ml/py_table_of_contents_ml
    py_photo/py_table_of_contents_photo/py_table_of_contents_photo
    

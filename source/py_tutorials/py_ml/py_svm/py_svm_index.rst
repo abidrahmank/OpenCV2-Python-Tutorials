@@ -16,6 +16,19 @@ Support Vector Machines (SVM)
                  :height: 90pt
                  :width:  90pt
 
+
+*  :ref:`svm_opencv`
+
+  .. tabularcolumns:: m{100pt} m{300pt}
+  .. cssclass:: toctableopencv
+
+  =========== ===================================================================
+  |SVM_2|      Let's use SVM functionalities in OpenCV
+  =========== ===================================================================
+
+  .. |SVM_2| image:: images/test.jpg
+                 :height: 90pt
+                 :width:  90pt
                  
 .. raw:: latex
 
@@ -26,5 +39,6 @@ Support Vector Machines (SVM)
    :hidden:
 
    py_svm_basics/py_svm_basics
+   py_svm_opencv/py_svm_opencv
    
 
