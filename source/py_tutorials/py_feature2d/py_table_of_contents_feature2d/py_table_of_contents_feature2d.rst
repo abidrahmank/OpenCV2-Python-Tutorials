@@ -128,7 +128,7 @@ Feature Detection and Description
   .. cssclass:: toctableopencv
 
   =========== ======================================================
-  |f2d_09|    We know a great deal about feature detectors and descriptors. It is time to learn how to match different descriptors
+  |f2d_09|    We know a great deal about feature detectors and descriptors. It is time to learn how to match different descriptors. OpenCV provides two techniques, Brute-Force matcher and FLANN based matcher.
   =========== ======================================================
 
   .. |f2d_09|  image:: images/matching.jpg
