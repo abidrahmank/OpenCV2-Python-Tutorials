@@ -135,6 +135,20 @@ Feature Detection and Description
                  :height: 90pt
                  :width:  90pt 
 
+
+*  :ref:`feature_homography`
+
+  .. tabularcolumns:: m{100pt} m{300pt}
+  .. cssclass:: toctableopencv
+
+  =========== ======================================================
+  |f2d_10|    Now we know about feature matching. Let's mix it up with `calib3d` module to find objects in a complex image.
+  =========== ======================================================
+
+  .. |f2d_10|  image:: images/test.jpg
+                 :height: 90pt
+                 :width:  90pt 
+
                  
 .. raw:: latex
 
@@ -153,3 +167,4 @@ Feature Detection and Description
    ../py_brief/py_brief
    ../py_orb/py_orb
    ../py_matcher/py_matcher
+   ../py_feature_homography/py_feature_homography
