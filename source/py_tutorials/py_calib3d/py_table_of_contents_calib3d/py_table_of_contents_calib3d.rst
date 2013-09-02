@@ -34,6 +34,19 @@ Camera Calibration and 3D Reconstruction
                  :width:  90pt
 
 
+*  :ref:`epipolar_geometry`
+
+  .. tabularcolumns:: m{100pt} m{300pt}
+  .. cssclass:: toctableopencv
+
+  =========== ======================================================
+  |calib_3|   Let's get started with multiview geometry
+
+  =========== ======================================================
+
+  .. |calib_3|  image:: images/test.jpg
+                 :height: 90pt
+                 :width:  90pt
                  
 
               
@@ -49,4 +62,5 @@ Camera Calibration and 3D Reconstruction
 
    ../py_calibration/py_calibration
    ../py_pose/py_pose
+   ../py_epipolar_geometry/py_epipolar_geometry
       
