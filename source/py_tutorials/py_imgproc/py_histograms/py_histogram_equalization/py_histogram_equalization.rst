@@ -6,7 +6,9 @@ Histograms - 2: Histogram Equalization
 Goal
 ======
 
-Here you will learn concepts about histogram equalization and improve the contrast of your image.
+In this section,
+
+    * We will learn the concepts of histogram equalization and use it to improve the contrast of our images.
 
 Theory
 =========
@@ -61,12 +63,12 @@ Now we calculate its histogram and cdf as before ( you do it) and result looks l
     :alt: Histograms Equalization 
     :align: center 
     
-Another important feature is that, even if the image was a darker image (instead of a brighter one we used), after equalization we will get almost the same image as we got. As a result, this is used as a "reference tool" to make all images with same light conditions. This is useful in many cases, for eg, in face recognition, before training the face data, the images of faces are histogram equalized to make them all with same light conditions.
+Another important feature is that, even if the image was a darker image (instead of a brighter one we used), after equalization we will get almost the same image as we got. As a result, this is used as a "reference tool" to make all images with same lighting conditions. This is useful in many cases. For example, in face recognition, before training the face data, the images of faces are histogram equalized to make them all with same lighting conditions.
 
 Histograms Equalization in OpenCV
 ===================================
 
-OpenCV has a function to do this, **cv2.calcHist()**. Its input is just grayscale image and output is our image.
+OpenCV has a function to do this, **cv2.calcHist()**. Its input is just grayscale image and output is our histogram equalized image.
 
 Below is a simple code snippet showing its usage for same image we used :
 ::
@@ -84,9 +86,44 @@ So now you can take different images with different light conditions, equalize i
 
 Histogram equalization is good when histogram of the image is confined to a particular region. It won't work good in places where there is large intensity variations where histogram covers a large region, ie both bright and dark pixels are present. Please check the SOF links in Additional Resources.
 
+
+CLAHE (Contrast Limited Adaptive Histogram Equalization)
+============================================================
+
+The first histogram equalization we just saw, considers the global contrast of the image. In many cases, it is not a good idea. For example, below image shows an input image and its result after global histogram equalization.
+
+    .. image:: images/clahe_1.jpg
+        :alt: Problem of Global HE
+        :align: center
+        
+It is true that the background contrast has improved after histogram equalization. But compare the face of statue in both images. We lost most of the information there due to over-brightness. It is because its histogram is not confined to a particular region as we saw in previous cases (Try to plot histogram of input image, you will get more intuition).
+
+So to solve this problem, **adaptive histogram equalization** is used. In this, image is divided into small blocks called "tiles" (tileSize is 8x8 by default in OpenCV). Then each of these blocks are histogram equalized as usual. So in a small area, histogram would confine to a small region (unless there is noise). If noise is there, it will be amplified. To avoid this, **contrast limiting** is applied. If any histogram bin is above the specified contrast limit (by default 40 in OpenCV), those pixels are clipped and distributed uniformly to other bins before applying histogram equalization. After equalization, to remove artifacts in tile borders, bilinear interpolation is applied.
+
+Below code snippet shows how to apply CLAHE in OpenCV:
+::
+
+    import numpy as np
+    import cv2
+
+    img = cv2.imread('tsukuba_l.png',0)
+
+    # create a CLAHE object (Arguments are optional).
+    clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8,8))
+    cl1 = clahe.apply(img)
+
+    cv2.imwrite('clahe_2.jpg',cl1)
+
+See the result below and compare it with results above, especially the statue region:
+
+    .. image:: images/clahe_2.jpg
+        :alt: Result of CLAHE
+        :align: center
+
+
 Additional Resources
 ======================
-1. wikipedia page on `Histogram Equalization <http://en.wikipedia.org/wiki/Histogram_equalization>`_
+1. Wikipedia page on `Histogram Equalization <http://en.wikipedia.org/wiki/Histogram_equalization>`_
 2. `Masked Arrays in Numpy <http://docs.scipy.org/doc/numpy/reference/maskedarray.html>`_
 
 Also check these SOF questions regarding contrast adjustment:
