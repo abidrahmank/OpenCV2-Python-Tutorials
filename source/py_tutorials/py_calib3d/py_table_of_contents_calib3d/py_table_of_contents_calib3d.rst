@@ -40,7 +40,7 @@ Camera Calibration and 3D Reconstruction
   .. cssclass:: toctableopencv
 
   =========== ======================================================
-  |calib_3|   Let's get started with multiview geometry
+  |calib_3|   Let's understand epipolar geometry and epipolar constraint.
 
   =========== ======================================================
 
@@ -49,6 +49,19 @@ Camera Calibration and 3D Reconstruction
                  :width:  90pt
                  
 
+*  :ref:`py_depthmap`
+
+  .. tabularcolumns:: m{100pt} m{300pt}
+  .. cssclass:: toctableopencv
+
+  =========== ======================================================
+  |calib_4|   Extract depth information from 2D images.
+
+  =========== ======================================================
+
+  .. |calib_4|  image:: images/test.jpg
+                 :height: 90pt
+                 :width:  90pt
               
                  
                
@@ -63,4 +76,5 @@ Camera Calibration and 3D Reconstruction
    ../py_calibration/py_calibration
    ../py_pose/py_pose
    ../py_epipolar_geometry/py_epipolar_geometry
+   ../py_depthmap/py_depthmap
       
