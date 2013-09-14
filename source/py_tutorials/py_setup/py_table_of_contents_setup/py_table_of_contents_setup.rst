@@ -3,9 +3,21 @@
 Introduction to OpenCV
 -----------------------------------------------------------
 
-Here you can read tutorials about how to set up your computer to work with the OpenCV library.
-Additionally you can find a few very basic sample source code that will let introduce you to the
-world of the OpenCV.
+*  :ref:`Intro`
+
+  .. tabularcolumns:: m{100pt} m{300pt}
+  .. cssclass:: toctableopencv
+
+  =========== ======================================================
+  |Intro_1|   Getting Started with OpenCV-Python
+
+  =========== ======================================================
+
+  .. |Intro_1| image:: images/windows_logo.jpg
+                 :height: 90pt
+                 :width:  90pt
+
+
 
 *  :ref:`Install-OpenCV-Python-in-Windows`
 
@@ -43,5 +55,6 @@ world of the OpenCV.
 .. toctree::
    :hidden:
 
+   ../py_intro/py_intro
    ../py_setup_in_windows/py_setup_in_windows
    ../py_setup_in_fedora/py_setup_in_fedora

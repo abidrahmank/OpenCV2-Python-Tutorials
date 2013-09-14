@@ -142,6 +142,23 @@ OpenCV-Python Tutorials
                  :width:  80pt
                  :alt: ML Icon
 
+
+*  :ref:`Table-Of-Content-Objdetection`
+
+   .. tabularcolumns:: m{100pt} m{300pt}
+   .. cssclass:: toctableopencv
+
+   =========== =======================================================
+   |Objde|     In this section you will object detection techniques like face detection etc.
+
+   =========== =======================================================
+
+   .. |Objde| image:: images/photoicon.jpg
+                 :height: 80pt
+                 :width:  80pt
+                 :alt: OD Icon
+
+
                  
 .. raw:: latex
 
@@ -160,6 +177,7 @@ OpenCV-Python Tutorials
    py_calib3d/py_table_of_contents_calib3d/py_table_of_contents_calib3d
    py_ml/py_table_of_contents_ml/py_table_of_contents_ml
    py_photo/py_table_of_contents_photo/py_table_of_contents_photo
+   py_objdetect/py_table_of_contents_objdetect/py_table_of_contents_objdetect
    
 
                              
