@@ -10,7 +10,7 @@ Goal
 
     * Learn to read video, display video and save video.
     * Learn to capture from Camera and display it.
-    * You will learn these functions : :ocv:func:`VideoCapture`, :ocv:func:`VideoWriter`
+    * You will learn these functions : **cv2.VideoCapture()**, **cv2.VideoWriter()**
     
 
 Capture Video from Camera
@@ -39,7 +39,7 @@ To capture a video, you need to create a **VideoCapture** object. Its argument c
             break
 
     # When everything done, release the capture
-    cap.release()        
+    cap.release()
     cv2.destroyAllWindows()
 
 ``cap.read()`` returns a bool (True/False). If frame is read correctly, it will be True. So you can check end of the video by checking this return value.
@@ -72,7 +72,7 @@ It is same as capturing from Camera, just change camera index with video file na
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
 
-    cap.release()        
+    cap.release()
     cv2.destroyAllWindows()
     
 .. Note:: Make sure proper versions of ffmpeg or gstreamer is installed. Sometimes, it is a headache to work with Video Capture mostly due to wrong installation of ffmpeg/gstreamer.
@@ -119,9 +119,9 @@ Below code capture from a Camera, flip every frame in vertical direction and sav
         else:
             break
             
-    # Release everything if job is finished        
+    # Release everything if job is finished
     cap.release()
-    out.release()        
+    out.release()
     cv2.destroyAllWindows()
 
 
