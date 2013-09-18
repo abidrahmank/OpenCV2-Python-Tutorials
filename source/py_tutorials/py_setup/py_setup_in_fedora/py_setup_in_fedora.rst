@@ -17,7 +17,7 @@ OpenCV-Python can be installed in Fedora in two ways, 1) Install from pre-built 
 Another important thing is the additional libraries required. OpenCV-Python requires only **Numpy** (in addition to other dependencies, which we will see later). But in this tutorials, we also use **Matplotlib** for some easy and nice plotting purposes (which I feel much better compared to OpenCV). Matplotlib is optional, but highly recommended. Similarly we will also see **IPython**, an Interactive Python Terminal, which is also highly recommended.
 
 
-Installing OpenCV-Python from Prebuilt Binaries
+Installing OpenCV-Python from Pre-built Binaries
 ===================================================
 
 Install all packages with following command in terminal as root.
@@ -37,7 +37,7 @@ If the results are printed out without any errors, congratulations !!! You have 
 
 It is quite easy. But there is a problem with this. Yum repositories may not contain the latest version of OpenCV always. For example, at the time of writing this tutorial, yum repository contains 2.4.5 while latest OpenCV version is 2.4.6. With respect to Python API, latest version will always contain much better support. Also, there may be chance of problems with camera support, video playback etc depending upon the drivers, ffmpeg, gstreamer packages present etc. 
 
-So my personnel preference is next method, ie compiling from source. Also at some point of time, if you want to contribute to OpenCV, you will need this.
+So my personnel preference is next method, i.e. compiling from source. Also at some point of time, if you want to contribute to OpenCV, you will need this.
 
 
 Installing OpenCV from source 
@@ -75,9 +75,9 @@ Next we need **GTK** support for GUI features, Camera support (libdc1394, libv4l
 Optional Dependencies
 --------------------------
 
-Above dependencies are sufficient to install OpenCV in your fedora machine. But depending upon your requirements, you may need some extra dependencies. A list of such optional dependencies are given below. You can either leave it or install it, your call :)     
+Above dependencies are sufficient to install OpenCV in your fedora machine. But depending upon your requirements, you may need some extra dependencies. A list of such optional dependencies are given below. You can either leave it or install it, your call :)
         
-OpenCV comes with supporting files for image formats like PNG, JPEG, JPEG2000, TIFF, WebP etc. But it may be a little old. If you want to get latest libraries, you can install development files for these formats.        
+OpenCV comes with supporting files for image formats like PNG, JPEG, JPEG2000, TIFF, WebP etc. But it may be a little old. If you want to get latest libraries, you can install development files for these formats.
 
     .. code-block:: bash
         
@@ -89,7 +89,7 @@ OpenCV comes with supporting files for image formats like PNG, JPEG, JPEG2000, T
         yum install libwebp-devel
         
 
-Several OpenCV functions are parallelized with Intel's Threading Building Blocks (TBB). But if you want to enable it, you need to install TBB first. ( Also while configuring installation with CMake, don't forget to pass ``-D WITH_TBB=ON``. More details below.)
+Several OpenCV functions are parallelized with **Intel's Threading Building Blocks** (TBB). But if you want to enable it, you need to install TBB first. ( Also while configuring installation with CMake, don't forget to pass ``-D WITH_TBB=ON``. More details below.)
 
     .. code-block:: bash
         
@@ -114,7 +114,7 @@ Downloading OpenCV
 
 Next we have to download OpenCV. You can download the latest release of OpenCV from `sourceforge site <http://sourceforge.net/projects/opencvlibrary/>`_. Then extract the folder.
 
-Or you can download latest source from OpenCV's github repo. (If you want to contribute to OpenCV, choose this. It always keep your OpenCV up-to-date). For that, you need to install **Git** first.
+Or you can download latest source from OpenCV's github repo. (If you want to contribute to OpenCV, choose this. It always keeps your OpenCV up-to-date). For that, you need to install **Git** first.
 
     .. code-block:: bash
     
@@ -134,7 +134,7 @@ Now open a terminal window and navigate to the downloaded OpenCV folder. Create 
 Configuring and Installing
 ----------------------------
 
-Now we have installed all the required dependencies, let's install OpenCV. Installation has to be configured with CMake. It specifies which modules are to be installed, installation path, which additional libraries to be used, whether documentation and examples to be compiled etc. Below command is the normally used for configuration (executed from ``build`` folder).
+Now we have installed all the required dependencies, let's install OpenCV. Installation has to be configured with CMake. It specifies which modules are to be installed, installation path, which additional libraries to be used, whether documentation and examples to be compiled etc. Below command is normally used for configuration (executed from ``build`` folder).
 
     .. code-block:: bash
     
@@ -235,13 +235,13 @@ Now you build the files using ``make`` command and install it using ``make insta
         
 Installation is over. All files are installed in ``/usr/local/`` folder. But to use it, your Python should be able to find OpenCV module. You have two options for that.
 
-1. **Move the module to any folder in Python Path** : Python path can be found out by entering ``import sys;print sys.path`` in Python terminal. It will print out many locations. Move `` /usr/local/lib/python2.7/site-packages/cv2.so`` to any of this folder. For example,
+1. **Move the module to any folder in Python Path** : Python path can be found out by entering ``import sys;print sys.path`` in Python terminal. It will print out many locations. Move ``/usr/local/lib/python2.7/site-packages/cv2.so`` to any of this folder. For example,
 
     .. code-block:: bash
         
         su mv /usr/local/lib/python2.7/site-packages/cv2.so /usr/lib/python2.7/site-packages
         
-But you will have to do this everytime you install OpenCV. 
+But you will have to do this every time you install OpenCV. 
 
 2. **Add ``/usr/local/lib/python2.7/site-packages`` to the PYTHON_PATH**: It is to be done only once. Just open ``~/.bashrc`` and add following line to it, then log out and come back.
 
@@ -259,6 +259,7 @@ To build the documentation, just enter following commands:
         make html_docs
         
 Then open ``opencv/build/doc/_html/index.html`` and bookmark it in the browser.
+
 
 Additional Resources
 ========================
