@@ -17,7 +17,7 @@ Here you will learn different OpenCV functionalities related to Face Detection e
 
   =========== ======================================================
 
-  .. |objdet_1|  image:: images/test.jpg
+  .. |objdet_1|  image:: images/face_icon.jpg
                  :height: 90pt
                  :width:  90pt
                  

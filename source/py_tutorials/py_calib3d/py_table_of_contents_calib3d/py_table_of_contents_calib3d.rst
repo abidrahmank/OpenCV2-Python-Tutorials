@@ -14,7 +14,7 @@ Camera Calibration and 3D Reconstruction
 
   =========== ======================================================
 
-  .. |calib_1|  image:: images/test.jpg
+  .. |calib_1|  image:: images/calibration_icon.jpg
                  :height: 90pt
                  :width:  90pt
 
@@ -29,7 +29,7 @@ Camera Calibration and 3D Reconstruction
 
   =========== ======================================================
 
-  .. |calib_2|  image:: images/test.jpg
+  .. |calib_2|  image:: images/pose_icon.jpg
                  :height: 90pt
                  :width:  90pt
 
@@ -44,7 +44,7 @@ Camera Calibration and 3D Reconstruction
 
   =========== ======================================================
 
-  .. |calib_3|  image:: images/test.jpg
+  .. |calib_3|  image:: images/epipolar_icon.jpg
                  :height: 90pt
                  :width:  90pt
                  
@@ -59,7 +59,7 @@ Camera Calibration and 3D Reconstruction
 
   =========== ======================================================
 
-  .. |calib_4|  image:: images/test.jpg
+  .. |calib_4|  image:: images/depthmap_icon.jpg
                  :height: 90pt
                  :width:  90pt
               

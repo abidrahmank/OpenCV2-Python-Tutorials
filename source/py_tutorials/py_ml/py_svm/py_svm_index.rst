@@ -12,7 +12,7 @@ Support Vector Machines (SVM)
   |SVM_1|      Get a basic understanding of what SVM is 
   =========== ===================================================================
 
-  .. |SVM_1| image:: images/test.jpg
+  .. |SVM_1| image:: images/svm_icon1.jpg
                  :height: 90pt
                  :width:  90pt
 
@@ -26,7 +26,7 @@ Support Vector Machines (SVM)
   |SVM_2|      Let's use SVM functionalities in OpenCV
   =========== ===================================================================
 
-  .. |SVM_2| image:: images/test.jpg
+  .. |SVM_2| image:: images/svm_icon2.jpg
                  :height: 90pt
                  :width:  90pt
                  

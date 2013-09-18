@@ -104,7 +104,7 @@ OpenCV-Python Tutorials
 
    =========== =======================================================
 
-   .. |Calib| image:: images/videoicon.jpg
+   .. |Calib| image:: images/calib3d_icon.jpg
                  :height: 80pt
                  :width:  80pt
                  :alt: Calib Icon
@@ -153,7 +153,7 @@ OpenCV-Python Tutorials
 
    =========== =======================================================
 
-   .. |Objde| image:: images/photoicon.jpg
+   .. |Objde| image:: images/obj_icon.jpg
                  :height: 80pt
                  :width:  80pt
                  :alt: OD Icon

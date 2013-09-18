@@ -17,7 +17,7 @@ Here you will learn different OpenCV functionalities related to Computational Ph
 
   =========== ======================================================
 
-  .. |photo_1|  image:: images/test.jpg
+  .. |photo_1|  image:: images/nlm_icon.jpg
                  :height: 90pt
                  :width:  90pt
                  
@@ -46,4 +46,4 @@ Here you will learn different OpenCV functionalities related to Computational Ph
    :hidden:
 
    ../py_non_local_means/py_non_local_means
-   ../py_inpainting/py_inpainting          
+   ../py_inpainting/py_inpainting

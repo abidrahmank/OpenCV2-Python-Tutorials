@@ -12,7 +12,7 @@ K-Nearest Neighbour
   |KNN_1|      Get a basic understanding of what kNN is 
   =========== ===================================================================
 
-  .. |KNN_1| image:: images/test.jpg
+  .. |KNN_1| image:: images/knn_icon1.jpg
                  :height: 90pt
                  :width:  90pt
 
@@ -25,7 +25,7 @@ K-Nearest Neighbour
   |KNN_2|      Now let's use kNN in OpenCV for digit recognition OCR
   =========== ===================================================================
 
-  .. |KNN_2| image:: images/test.jpg
+  .. |KNN_2| image:: images/knn_icon2.jpg
                  :height: 90pt
                  :width:  90pt 
                  

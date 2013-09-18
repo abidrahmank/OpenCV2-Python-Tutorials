@@ -13,7 +13,7 @@ Introduction to OpenCV
 
   =========== ======================================================
 
-  .. |Intro_1| image:: images/windows_logo.jpg
+  .. |Intro_1| image:: images/opencv_logo.jpg
                  :height: 90pt
                  :width:  90pt
 

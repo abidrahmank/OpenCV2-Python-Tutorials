@@ -33,7 +33,7 @@ OpenCV introduces a new set of tutorials which will guide you through various fu
 
 A prior knowledge on Python and Numpy is required before starting because they won't be covered in this guide. **Especially, a good knowledge on Numpy is must to write optimized codes OpenCV-Python.**
 
-This tutorial has been started by **Abid Rahman K.** as part of Google Summer of Code 2013 program, under the guidance of **Alexander Mordvintsev**.
+This tutorial has been started by *Abid Rahman K.* as part of Google Summer of Code 2013 program, under the guidance of *Alexander Mordvintsev*.
 
 
 OpenCV Needs You !!!

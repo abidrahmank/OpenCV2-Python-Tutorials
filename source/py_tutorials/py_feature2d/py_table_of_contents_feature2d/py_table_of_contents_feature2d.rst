@@ -13,7 +13,7 @@ Feature Detection and Description
 
   =========== ======================================================
 
-  .. |f2d_1|  image:: images/test.jpg
+  .. |f2d_1|  image:: images/features_icon.jpg
                  :height: 90pt
                  :width:  90pt
 
@@ -28,7 +28,7 @@ Feature Detection and Description
 
   =========== ======================================================
 
-  .. |f2d_2|  image:: images/test.jpg
+  .. |f2d_2|  image:: images/harris_icon.jpg
                  :height: 90pt
                  :width:  90pt                 
 
@@ -43,7 +43,7 @@ Feature Detection and Description
 
   =========== ======================================================
 
-  .. |f2d_3|  image:: images/test.jpg
+  .. |f2d_3|  image:: images/shi_icon.jpg
                  :height: 90pt
                  :width:  90pt 
 
@@ -58,7 +58,7 @@ Feature Detection and Description
 
   =========== ======================================================
 
-  .. |f2d_4|  image:: images/test.jpg
+  .. |f2d_4|  image:: images/sift_icon.jpg
                  :height: 90pt
                  :width:  90pt
 
@@ -73,7 +73,7 @@ Feature Detection and Description
 
   =========== ======================================================
 
-  .. |f2d_5|  image:: images/test.jpg
+  .. |f2d_5|  image:: images/surf_icon.jpg
                  :height: 90pt
                  :width:  90pt   
 
@@ -88,7 +88,7 @@ Feature Detection and Description
 
   =========== ======================================================
 
-  .. |f2d_06|  image:: images/fast.jpg
+  .. |f2d_06|  image:: images/fast_icon.jpg
                  :height: 90pt
                  :width:  90pt   
 
@@ -145,7 +145,7 @@ Feature Detection and Description
   |f2d_10|    Now we know about feature matching. Let's mix it up with `calib3d` module to find objects in a complex image.
   =========== ======================================================
 
-  .. |f2d_10|  image:: images/test.jpg
+  .. |f2d_10|  image:: images/homography_icon.jpg
                  :height: 90pt
                  :width:  90pt 
 
