@@ -3,7 +3,6 @@
 Core Operations
 -----------------------------------------------------------
 
-Here, you will learn some basic operations on image. As mentioned in Introduction, a good knowledge of Numpy is recommended for writing and understanding better codes in OpenCV-Python. 
 
 *  :ref:`Basic_Ops`
 
@@ -25,7 +24,7 @@ Here, you will learn some basic operations on image. As mentioned in Introductio
   .. cssclass:: toctableopencv
 
   =========== ======================================================
-  |core_2|     Perform arithmetic operations on images             
+  |core_2|     Perform arithmetic operations on images
 
   =========== ======================================================
 
@@ -39,7 +38,7 @@ Here, you will learn some basic operations on image. As mentioned in Introductio
   .. cssclass:: toctableopencv
 
   =========== ======================================================
-  |core_4|     Getting answer is important. But getting it in fastest way is more important. Learn to check the speed of your code, optimize the code etc. 
+  |core_4|     Getting a solution is important. But getting it in the fastest way is more important. Learn to check the speed of your code, optimize the code etc. 
 
   =========== ======================================================
 

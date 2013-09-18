@@ -7,14 +7,14 @@ Goal
 =====
 
     * Learn several arithmetic operations on images like addition, subtraction, bitwise operations etc.
-    * You will learn these functions : :ocv:pyfunction:`cv2.add`, :ocv:pyfunction:`addWeighted`, :ocv:pyfunction:`addWeighted` etc.
+    * You will learn these functions : **cv2.add()**, **cv2.addWeighted()** etc.
 
 Image Addition
 ================
 
 You can add two images by OpenCV function, ``cv2.add()`` or simply by numpy operation, ``res = img1 + img2``. Both images should be of same depth and type, or second image can just be a scalar value.
 
-.. note:: But there is a difference between OpenCV addition and Numpy addition. OpenCV addition is a saturated operation while Numpy addition is a modulo operation.
+.. note:: There is a difference between OpenCV addition and Numpy addition. OpenCV addition is a saturated operation while Numpy addition is a modulo operation.
 
 For example, consider below sample:
 ::

@@ -9,14 +9,14 @@ Goal
 .. container:: enumeratevisibleitemswithsquare
     
     * Learn to handle mouse events in OpenCV
-    * You will learn these functions : :ocv:func:`setMouseCallback`
+    * You will learn these functions : **cv2.setMouseCallback()**
     
 Simple Demo
 =============
 
-First we create a simple application which draws a circle on an image wherever we double-click on it.
+Here, we create a simple application which draws a circle on an image wherever we double-click on it.
 
-Here, first we create a mouse callback function which is executed when a mouse event take place. Mouse event can be anything related to mouse like, left-button down, left-button up, left-button double-click etc. It gives us the coordinates (x,y) for every mouse event. With this event and location, we can do whatever we like. To list all available events available, run the following code in Python terminal:
+First we create a mouse callback function which is executed when a mouse event take place. Mouse event can be anything related to mouse like left-button down, left-button up, left-button double-click etc. It gives us the coordinates (x,y) for every mouse event. With this event and location, we can do whatever we like. To list all available events available, run the following code in Python terminal:
 ::
 
     >>> import cv2
@@ -43,12 +43,12 @@ Creating mouse callback function has a specific format which is same everywhere.
         cv2.imshow('image',img)
         if cv2.waitKey(20) & 0xFF == 27:
             break
-    cv2.destroyAllWindows()    
+    cv2.destroyAllWindows()
     
 More Advanced Demo
 ===================
 
-Now we go for much more better application. In this, we draw either rectangles or curves (depending on the mode we select) by dragging the mouse like we do in Paint application. So our mouse callback function has two parts, one to draw rectangle and other to draw the curves. This specific example will be really helpful in creating and understanding some interactive applications like object tracking, image segmentation etc.
+Now we go for much more better application. In this, we draw either rectangles or circles (depending on the mode we select) by dragging the mouse like we do in Paint application. So our mouse callback function has two parts, one to draw rectangle and other to draw the circles. This specific example will be really helpful in creating and understanding some interactive applications like object tracking, image segmentation etc.
 ::
 
     import cv2
@@ -80,7 +80,7 @@ Now we go for much more better application. In this, we draw either rectangles o
             else:
                 cv2.circle(img,(x,y),5,(0,0,255),-1)
                 
-Next we have to bind this mouse callback function to OpenCV window. In the main loop, we should set a keyboard binding for key 'm' to toggle between rectangle and curve.
+Next we have to bind this mouse callback function to OpenCV window. In the main loop, we should set a keyboard binding for key 'm' to toggle between rectangle and circle.
 ::
     
     img = np.zeros((512,512,3), np.uint8)
@@ -97,6 +97,11 @@ Next we have to bind this mouse callback function to OpenCV window. In the main 
             
     cv2.destroyAllWindows() 
     
+
+Additional Resources
+========================
+
+
 Exercises
 ==========
 

@@ -40,7 +40,7 @@ You can access a pixel value by its row and column coordinates. For BGR image, i
     >>> print blue
     157
     
-You can modify the pixel values also the same way.
+You can modify the pixel values the same way.
 ::
 
     >>> img[100,100] = [255,255,255]
@@ -52,11 +52,12 @@ You can modify the pixel values also the same way.
 .. note:: Above mentioned method is normally used for selecting a region of array, say first 5 rows and last 3 columns like that. For individual pixel access, Numpy array methods, ``array.item()`` and ``array.itemset()`` is considered to be more better. But it always returns a scalar. So if you want to access all B,G,R values, you need to call ``array.item()`` separately for all.
 
 Better pixel accessing and editing method :
-::
-    
+
+.. code-block:: python
+
     # accessing RED value
     >>> img.item(10,10,2)
-    59  
+    59
     
     # modifying RED value
     >>> img.itemset((10,10,2),100)
@@ -93,7 +94,7 @@ Image datatype is obtained by ``img.dtype``:
 Image ROI
 ===========
 
-Sometimes, you will have to play with certain region of images. For eg, eye detection in images, first face detection is done all over the image and when face is obtained, we select the face region alone and search for eyes inside it instead of searching whole image. It improves accuracy (because eyes are always on faces :D ) and performance (we search for a small area)
+Sometimes, you will have to play with certain region of images. For eye detection in images, first face detection is done all over the image and when face is obtained, we select the face region alone and search for eyes inside it instead of searching whole image. It improves accuracy (because eyes are always on faces :D ) and performance (because we search for a small area)
 
 ROI is again obtained using Numpy indexing. Here I am selecting the ball and copying it to another region in the image:
 ::
