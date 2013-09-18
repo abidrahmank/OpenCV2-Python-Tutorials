@@ -267,6 +267,6 @@ Additional Resources
 Exercises
 ===============        
         
-
+1. Compile OpenCV from source in your Fedora machine.
 
        

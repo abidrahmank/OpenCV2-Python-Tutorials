@@ -3,9 +3,6 @@
 Gui Features in OpenCV
 -----------------------------------------------------------
 
-Here you will learn most basic feature of OpenCV, i.e. open an image, display it and save it. 
-Then you will extend it to playing and recording videos. Later you will learn how to integrate mouse events, 
-create trackbars etc. It will be helpful in creating interactive programs with OpenCV.
 
 *  :ref:`Display_Image`
 
@@ -27,7 +24,7 @@ create trackbars etc. It will be helpful in creating interactive programs with O
   .. cssclass:: toctableopencv
 
   =========== ======================================================
-  |gui_2|     Learn to play videos, capture videos from Camera and write it as a video              
+  |gui_2|     Learn to play videos, capture videos from Camera and write it as a video
 
   =========== ======================================================
 
