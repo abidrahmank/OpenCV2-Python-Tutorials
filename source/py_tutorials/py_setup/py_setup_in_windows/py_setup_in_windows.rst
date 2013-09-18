@@ -58,7 +58,7 @@ Building OpenCV from source
 
 .. note:: In this case, we are using 32-bit binaries of Python packages. But if you want to use OpenCV for x64, 64-bit binaries of Python packages are to be installed. Problem is that, there is no official 64-bit binaries of Numpy. You have to build it on your own. For that, you have to use the same compiler used to build Python. When you start Python IDLE, it shows the compiler details. You can get more `information here <http://stackoverflow.com/q/2676763/1134940>`_. So your system must have the same Visual Studio version and build Numpy from source.
 
-.. note:: Another method to have 64-bit Python packages is to use ready-made Python distributions from third-parties like `Anaconda <http://www.continuum.io/downloads>`_, `Enthought <https://www.enthought.com/downloads/>`_ etc. It will bigger in size, but will have everything you need. Everything in a single shell. You can also download 32-bit versions also.
+.. note:: Another method to have 64-bit Python packages is to use ready-made Python distributions from third-parties like `Anaconda <http://www.continuum.io/downloads>`_, `Enthought <https://www.enthought.com/downloads/>`_ etc. It will be bigger in size, but will have everything you need. Everything in a single shell. You can also download 32-bit versions also.
 
 3. Make sure Python and Numpy are working fine.
 
@@ -142,7 +142,7 @@ Building OpenCV from source
         
 18. Open Python IDLE and enter ``import cv2``. If no error, it is installed correctly.
 
-.. note:: We have installed with no other support like TBB, Eigen, Qt, Documentation etc. It would be difficult to explain it. A more detailed video will be added soon or you can just hack around.
+.. note:: We have installed with no other support like TBB, Eigen, Qt, Documentation etc. It would be difficult to explain it here. A more detailed video will be added soon or you can just hack around.
 
 
 Additional Resources
@@ -151,3 +151,5 @@ Additional Resources
 
 Exercises
 ============
+
+1. If you have a windows machine, compile the OpenCV from source. Do all kinds of hacks. If you meet any problem, visit OpenCV forum and explain your problem.
