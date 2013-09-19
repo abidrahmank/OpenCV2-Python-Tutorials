@@ -8,12 +8,12 @@ Goal
 
     * In this tutorial, you will learn how to convert images from one color-space to another, like BGR :math:`\leftrightarrow` Gray, BGR :math:`\leftrightarrow` HSV etc.
     * In addition to that, we will create an application which extracts a colored object in a video
-    * You will learn following functions : :ocv:pyfunction:`cvtColor`, :ocv:pyfunction:`inRange` etc.
+    * You will learn following functions : **cv2.cvtColor()**, **cv2.inRange()** etc.
     
 Changing Color-space
 ======================
 
-There are more than 150 color-space conversion methods are available in OpenCV. But we will look into only two which are most widely used ones, BGR :math:`\leftrightarrow` Gray and BGR :math:`\leftrightarrow` HSV.
+There are more than 150 color-space conversion methods available in OpenCV. But we will look into only two which are most widely used ones, BGR :math:`\leftrightarrow` Gray and BGR :math:`\leftrightarrow` HSV.
 
 For color conversion, we use the function ``cv2.cvtColor(input_image, flag)`` where ``flag`` determines the type of conversion.
 
@@ -101,4 +101,4 @@ Additional Resources
 
 Exercises
 ============
-#. Try to find a way to extract more than one colored objects, for eg, extract red, blue, green objects simultaneously and implement it.
+#. Try to find a way to extract more than one colored objects, for eg, extract red, blue, green objects simultaneously.
