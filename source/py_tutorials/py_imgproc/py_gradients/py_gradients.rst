@@ -19,7 +19,7 @@ OpenCV provides three types of gradient filters or High-pass filters, Sobel, Sch
 1. Sobel and Scharr Derivatives
 ---------------------------------
 
-Sobel operators is a joint Gausssian smoothing and differentiation operation, so it is more resistant to noise. You can specify the direction of derivatives to be taken, vertical or horizontal (by the flags, yorder and xorder respectively). You can also specify the size of kernel by the flag ksize. If ksize = -1, a 3x3 Scharr filter is used which gives better results than 3x3 Sobel filter. Please see the docs for kernels used.
+Sobel operators is a joint Gausssian smoothing plus differentiation operation, so it is more resistant to noise. You can specify the direction of derivatives to be taken, vertical or horizontal (by the arguments, ``yorder`` and ``xorder`` respectively). You can also specify the size of kernel by the argument ``ksize``. If ksize = -1, a 3x3 Scharr filter is used which gives better results than 3x3 Sobel filter. Please see the docs for kernels used.
 
 2. Laplacian Derivatives
 --------------------------
@@ -28,7 +28,7 @@ It calculates the Laplacian of the image given by the relation, :math:`\Delta sr
 
 .. math::
 
-    \begin{bmatrix} 0 & 1 & 0 \\ 1 & -4 & 1 \\ 0 & 1 & 0  \end{bmatrix} 
+    kernel = \begin{bmatrix} 0 & 1 & 0 \\ 1 & -4 & 1 \\ 0 & 1 & 0  \end{bmatrix}
 
 Code 
 =======
@@ -94,7 +94,7 @@ If you want to detect both edges, better option is to keep the output datatype t
 
     plt.show()
 
-Check the result below:    
+Check the result below:
 
      .. image:: images/double_edge.jpg
         :alt: Double Edges
