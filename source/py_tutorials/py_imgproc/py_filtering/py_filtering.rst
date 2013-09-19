@@ -21,7 +21,7 @@ OpenCV provides a function **cv2.filter2D()** to convolve a kernel with an image
 
     K =  \frac{1}{25} \begin{bmatrix} 1 & 1 & 1 & 1 & 1  \\ 1 & 1 & 1 & 1 & 1 \\ 1 & 1 & 1 & 1 & 1 \\ 1 & 1 & 1 & 1 & 1 \\ 1 & 1 & 1 & 1 & 1 \end{bmatrix}
     
-This function keeps this kernel above a pixel, add all the 25 pixels below this kernel, take its average and replace the central pixel with the new average value. It continues this operation for all the pixels in the image. Try this code and check the result:
+Operation is like this: keep this kernel above a pixel, add all the 25 pixels below this kernel, take its average and replace the central pixel with the new average value. It continues this operation for all the pixels in the image. Try this code and check the result:
 ::
 
     import cv2
@@ -95,6 +95,14 @@ If you want, you can create a Gaussian kernel with the function, **cv2.getGaussi
 The above code can be modified for Gaussian blurring:
 ::
 
+    blur = cv2.GaussianBlur(img,(5,5),0)
+
+
+Result:
+
+    .. image:: images/gaussian.jpg
+        :alt: Gaussian Blurring
+        :align: center
 
 
 3. Median Blurring
@@ -117,13 +125,27 @@ Result:
 4. Bilateral Filtering
 -----------------------
 
-**cv2.bilateralFilter()** is highly effective in noise removal while keeping edges sharp. But the operation is slower compared to other filters. (For details on arguments, visit docs)
+**cv2.bilateralFilter()** is highly effective in noise removal while keeping edges sharp. But the operation is slower compared to other filters. We already saw that gaussian filter takes the a neighbourhood around the pixel and find its gaussian weighted average. This gaussian filter is a function of space alone, that is, nearby pixels are considered while filtering. It doesn't consider whether pixels have almost same intensity. It doesn't consider whether pixel is an edge pixel or not. So it blurs the edges also, which we don't want to do. 
 
-All the above filters are shown in a single code with same kernel size, so that you can compare their performance.
+Bilateral filter also takes a gaussian filter in space, but one more gaussian filter which is a function of pixel difference. Gaussian function of space make sure only nearby pixels are considered for blurring while gaussian function of intensity difference make sure only those pixels with similar intensity to central pixel is considered for blurring. So it preserves the edges since pixels at edges will have large intensity variation.
+
+Below samples shows use bilateral filter (For details on arguments, visit docs).
+::
+
+    blur = cv2.bilateralFilter(img,9,75,75)
+    
+Result:
+    
+    .. image:: images/bilateral.jpg
+        :alt: Bilateral Filtering
+        :align: center    
+
+See, the texture on the surface is gone, but edges are still preserved.
 
 Additional Resources
 ======================
 
+1. Details about the `bilateral filtering <http://people.csail.mit.edu/sparis/bf_course/>`_
 
 Exercises
 ===========
