@@ -36,7 +36,7 @@ Gradient direction is always perpendicular to edges. It is rounded to one of fou
 
 After getting gradient magnitude and direction, a full scan of image is done to remove any unwanted pixels which may not constitute the edge. For this, at every pixel, pixel is checked if it is a local maximum in its neighborhood in the direction of gradient. Check the image below:
 
-    .. image:: images/nms.svg
+    .. image:: images/nms.jpg
         :alt: Non-Maximum Suppression
         :align: center
         
@@ -48,7 +48,7 @@ In short, the result you get is a binary image with "thin edges".
 
 This stage decides which are all edges are really edges and which are not. For this, we need two threshold values, `minVal` and `maxVal`. Any edges with intensity gradient more than `maxVal` are sure to be edges and those below `minVal` are sure to be non-edges, so discarded. Those who lie between these two thresholds are classified edges or non-edges based on their connectivity. If they are connected to "sure-edge" pixels, they are considered to be part of edges. Otherwise, they are also discarded. See the image below:
 
-    .. image:: images/hysteresis.svg
+    .. image:: images/hysteresis.jpg
         :alt: Hysteresis Thresholding
         :align: center
 
