@@ -25,7 +25,7 @@ Scaling is just resizing of the image. OpenCV comes with a function **cv2.resize
 
     img = cv2.imread('messi5.jpg')
 
-    res = cv2.resize(img,None,fx=2, fy = 2, interpolation = cv2.INTER_CUBIC)
+    res = cv2.resize(img,None,fx=2, fy=2, interpolation = cv2.INTER_CUBIC)
 
     #OR
 
@@ -35,7 +35,7 @@ Scaling is just resizing of the image. OpenCV comes with a function **cv2.resize
 Translation
 -------------
 
-Translation is the shifting of object's location. If you know the shift in (x,y) direction, let it be :math:`(t_x,t_y)`, you can create the transformation matrix :math: \textbf{M} as follows:
+Translation is the shifting of object's location. If you know the shift in (x,y) direction, let it be :math:`(t_x,t_y)`, you can create the transformation matrix :math:`\textbf{M}` as follows:
 
 .. math::
 
@@ -105,7 +105,7 @@ See the result:
 Affine Transformation
 ------------------------
 
-In affine transformation, all parallel lines in the original image will still be parallel in the output image. To find the transformation matrix, we need three points from input image and their corresponding location in output image. Then **cv2.getAffineTransform** will create a 2x3 matrix which is to be passed to **cv2.warpAffine**. 
+In affine transformation, all parallel lines in the original image will still be parallel in the output image. To find the transformation matrix, we need three points from input image and their corresponding locations in output image. Then **cv2.getAffineTransform** will create a 2x3 matrix which is to be passed to **cv2.warpAffine**. 
 
 Check below example, and also look at the points I selected (which are marked in Green color):
 ::
@@ -133,7 +133,7 @@ See the result:
 Perspective Transformation
 ----------------------------
 
-For perspective transformation, you need a 3x3 transformation matrix. Straight lines will remain straight even after the transformation. To find this transformation matrix, you need 4 points on the input image and corresponding points on the output image. Then transformation matrix can be found by the function **cv2.getPerspectiveTransform**. Then apply **cv2.warpPerspective** with this 3x3 transformation matrix.
+For perspective transformation, you need a 3x3 transformation matrix. Straight lines will remain straight even after the transformation. To find this transformation matrix, you need 4 points on the input image and corresponding points on the output image. Among these 4 points, 3 of them should not be collinear. Then transformation matrix can be found by the function **cv2.getPerspectiveTransform**. Then apply **cv2.warpPerspective** with this 3x3 transformation matrix.
 
 See the code below:
 ::
