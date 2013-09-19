@@ -9,12 +9,12 @@ Goal
 .. container:: enumeratevisibleitemswithsquare
 
     * In this tutorial, you will learn Simple thresholding, Adaptive thresholding, Otsu's thresholding etc.
-    * You will learn these functions : :ocv:pyfunction:`threshold`, :ocv:pyfunction:`adaptiveThreshold` etc.
+    * You will learn these functions : **cv2.threshold**, **cv2.adaptiveThreshold** etc.
     
 Simple Thresholding
 =====================
 
-Here, the matter is straight forward. If pixel value is greater than a threshold value, it is assigned one value (may be white), else it is assigned another value (may be black). The function used is ocv:pyfunction:`threshold`. First param is the source image, which **should be a grayscale image**. Second param is the threshold value which is used to classify the pixel values. Third param is the maxVal which represents the value to be given if pixel value is more than (sometimes less than) the threshold value. OpenCV provides different styles of thresholding and it decided by the fourth parameter of the function. Different types are:
+Here, the matter is straight forward. If pixel value is greater than a threshold value, it is assigned one value (may be white), else it is assigned another value (may be black). The function used is **cv2.threshold**. First argument is the source image, which **should be a grayscale image**. Second argument is the threshold value which is used to classify the pixel values. Third argument is the maxVal which represents the value to be given if pixel value is more than (sometimes less than) the threshold value. OpenCV provides different styles of thresholding and it is decided by the fourth parameter of the function. Different types are:
 
    * cv2.THRESH_BINARY
    * cv2.THRESH_BINARY_INV
@@ -24,7 +24,7 @@ Here, the matter is straight forward. If pixel value is greater than a threshold
 
 Documentation clearly explain what each type is meant for. Please check out the documentation.
 
-Two outputs are obtained. First one is a **retval** which I will explain later. Second output is our **thresholded image**.
+Two outputs are obtained. First one is a **retval** which will be explained later. Second output is our **thresholded image**.
 
 Code :
 ::
@@ -63,7 +63,7 @@ Adaptive Thresholding
 
 In the previous section, we used a global value as threshold value. But it may not be good in all the conditions where image has different lighting conditions in different areas. In that case, we go for adaptive thresholding. In this, the algorithm calculate the threshold for a small regions of the image. So we get different thresholds for different regions of the same image and it gives us better results for images with varying illumination.
 
-It has three ‘special’ input params and only one output param.
+It has three ‘special’ input params and only one output argument.
 
 **Adaptive Method** - It decides how thresholding value is calculated.
      * cv2.ADAPTIVE_THRESH_MEAN_C : threshold value is the mean of neighbourhood area.
@@ -159,7 +159,7 @@ Result :
 How Otsu's Binarization Works?
 ----------------------------------
 
-This section demonstrates a Python implementation of Otsu's binarization to show how it works actually. If you are not interested, you can skip this actually.
+This section demonstrates a Python implementation of Otsu's binarization to show how it works actually. If you are not interested, you can skip this.
 
 Since we are working with bimodal images, Otsu's algorithm tries to find a threshold value (t) which minimizes the **weighted within-class variance** given by the relation :
 
