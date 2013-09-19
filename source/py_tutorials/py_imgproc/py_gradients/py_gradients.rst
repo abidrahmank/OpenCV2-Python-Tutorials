@@ -94,7 +94,7 @@ If you want to detect both edges, better option is to keep the output datatype t
 
     plt.show()
 
-Check the result below:
+Check the result below:    
 
      .. image:: images/double_edge.jpg
         :alt: Double Edges
