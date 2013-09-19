@@ -100,7 +100,7 @@ Below is the full code. (For sake of simplicity, each step is done separately wh
         L = cv2.subtract(gpB[i-1],GE)
         lpB.append(L)
         
-    # Now add left and right halves of images in each level   
+    # Now add left and right halves of images in each level
     LS = []
     for la,lb in zip(lpA,lpB):
         rows,cols,dpt = la.shape
