@@ -23,7 +23,7 @@ Morphological transformations are some simple operations based on the image shap
 --------------
 The basic idea of erosion is just like soil erosion only, it erodes away the boundaries of foreground object (Always try to keep foreground in white). So what it does? The kernel slides through the image (as in 2D convolution). A pixel in the original image (either 1 or 0) will be considered 1 only if all the pixels under the kernel is 1, otherwise it is eroded (made to zero). 
 
-So what happends is that, all the pixels near boundary will be discarded depending upon the size of kernel. So the thickness or size of the foreground object decreases or simply white region decreases in the image. It is useful for removing small white noises (as we have seen in colorspace chapter), detach two close objects etc.
+So what happends is that, all the pixels near boundary will be discarded depending upon the size of kernel. So the thickness or size of the foreground object decreases or simply white region decreases in the image. It is useful for removing small white noises (as we have seen in colorspace chapter), detach two connected objects etc.
 
 Here, as an example, I would use a 5x5 kernel with full of ones. Let's see it how it works:
 ::
@@ -43,7 +43,7 @@ Result:
 
 2. Dilation
 --------------
-It is just opposite of erosion. Here, a pixel element is '1' if atleast one pixel under the kernel is '1'. So it increases the white region in the image or size of foreground object increases. Normally, in cases like noise removal, erosion is followed by dilation. Because, erosion removes white noises, but it also shrinks our object. So we dilate it. Since noises are gone, they won't come back, but our object area increases. It is also useful in joining broken parts of an object.
+It is just opposite of erosion. Here, a pixel element is '1' if atleast one pixel under the kernel is '1'. So it increases the white region in the image or size of foreground object increases. Normally, in cases like noise removal, erosion is followed by dilation. Because, erosion removes white noises, but it also shrinks our object. So we dilate it. Since noise is gone, they won't come back, but our object area increases. It is also useful in joining broken parts of an object.
 ::
 
     dilation = cv2.dilate(img,kernel,iterations = 1)
@@ -125,7 +125,8 @@ Structuring Element
 ========================  
 
 We manually created a structuring elements in the previous examples with help of Numpy. It is rectangular shape. But in some cases, you may need elliptical/circular shaped kernels. So for this purpose, OpenCV has a function, **cv2.getStructuringElement()**. You just pass the shape and size of the kernel, you get the desired kernel.
-::
+
+.. code-block:: python
 
     # Rectangular Kernel
     >>> cv2.getStructuringElement(cv2.MORPH_RECT,(5,5))
@@ -153,8 +154,8 @@ We manually created a structuring elements in the previous examples with help of
 
 Additional Resources
 =======================
-#. Wikipedia pages for Erosion, Dilation, Opening, Closing etc.
+
 #. `Morphological Operations <http://homepages.inf.ed.ac.uk/rbf/HIPR2/morops.htm>`_ at HIPR2
 
 Exercises
-==========    
+==========
