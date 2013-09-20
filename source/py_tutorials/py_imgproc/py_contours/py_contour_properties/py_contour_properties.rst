@@ -114,7 +114,7 @@ Extreme Points means topmost, bottommost, rightmost and leftmost points of the o
     
 For eg, if I apply it to an Indian map, I get the following result :
 
-    .. image:: images/extremepoints.png
+    .. image:: images/extremepoints.jpg
         :alt: Extreme Points
         :align: center
         
