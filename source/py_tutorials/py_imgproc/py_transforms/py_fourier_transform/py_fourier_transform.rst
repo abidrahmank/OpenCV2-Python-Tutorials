@@ -17,7 +17,7 @@ Theory
 
 Fourier Transform is used to analyze the frequency characteristics of various filters. For images, **2D Discrete Fourier Transform (DFT)** is used to find the frequency domain. A fast algorithm called **Fast Fourier Transform (FFT)** is used for calculation of DFT. Details about these can be found in any image processing or signal processing textbooks. Please see `Additional Resources`_ section.
 
-For a sinusoidal signal, :math:`x(t) = A \sin(2 \pi ft)`, we can say :math:`f` is the frequency of signal, and if its frequency domain is taken, we can see a spike at :math:`f`. If signal is sampled to form a discrete signal, we get the same frequency domain, but is periodic in the range :math:`[- \pi, \pi]` or :math:`[0,2\pi]` (or :math:`[0,N]` for N-point DFT). You can consider an image as a discrete signal which is sampled in two directions. So taking fourier transform in both X and Y directions gives you the frequency representation of image. 
+For a sinusoidal signal, :math:`x(t) = A \sin(2 \pi ft)`, we can say :math:`f` is the frequency of signal, and if its frequency domain is taken, we can see a spike at :math:`f`. If signal is sampled to form a discrete signal, we get the same frequency domain, but is periodic in the range :math:`[- \pi, \pi]` or :math:`[0,2\pi]` (or :math:`[0,N]` for N-point DFT). You can consider an image as a signal which is sampled in two directions. So taking fourier transform in both X and Y directions gives you the frequency representation of image.
 
 More intuitively, for the sinusoidal signal, if the amplitude varies so fast in short time, you can say it is a high frequency signal. If it varies slowly, it is a low frequency signal. You can extend the same idea to images. Where does the amplitude varies drastically in images ? At the edge points, or noises. So we can say, edges and noises are high frequency contents in an image. If there is no much changes in amplitude, it is a low frequency component. ( Some links are added to `Additional Resources`_ which explains frequency transform intuitively with examples).
 
@@ -104,6 +104,8 @@ OpenCV provides the functions **cv2.dft()** and **cv2.idft()** for this. It retu
     plt.subplot(122),plt.imshow(magnitude_spectrum, cmap = 'gray')
     plt.title('Magnitude Spectrum'), plt.xticks([]), plt.yticks([])
     plt.show()
+
+.. note:: You can also use **cv2.cartToPolar()** which returns both magnitude and phase in a single shot
     
 So, now we have to do inverse DFT. In previous session, we created a HPF, this time we will see how to remove high frequency contents in the image, ie we apply LPF to image. It actually blurs the image. For this, we create a mask first with high value (1) at low frequencies, ie we pass the LF content, and 0 at HF region.
 ::
@@ -183,12 +185,12 @@ It shows a 4x speedup. Now we will try the same with OpenCV functions.
     In [27]: %timeit dft2= cv2.dft(np.float32(nimg),flags=cv2.DFT_COMPLEX_OUTPUT)
     100 loops, best of 3: 3.11 ms per loop
 
-It also shows a 4x speed. You can also see that OpenCV functions are around 3x faster than Numpy functions. This can be tested for inverse FFT also, and that is left as an exercise for you.
+It also shows a 4x speed-up. You can also see that OpenCV functions are around 3x faster than Numpy functions. This can be tested for inverse FFT also, and that is left as an exercise for you.
 
 Why Laplacian is a High Pass Filter?
 =======================================
 
-A similar question was asked by someone in a forum. The question is, why Laplacian is a high pass filter? Why Sobel is a HPF? etc. ( I don't remember the link). And the first answer given to it was in terms of Fourier Transform. Just take the fourier transform of Laplacian for some higher size of FFT. Analyze it:
+A similar question was asked in a forum. The question is, why Laplacian is a high pass filter? Why Sobel is a HPF? etc. And the first answer given to it was in terms of Fourier Transform. Just take the fourier transform of Laplacian for some higher size of FFT. Analyze it:
 ::
 
     import cv2
@@ -243,6 +245,11 @@ From image, you can see what frequency region each kernel blocks, and what regio
 
 Additional Resources
 =====================
+
+1. `An Intuitive Explanation of Fourier Theory <http://cns-alumni.bu.edu/~slehar/fourier/fourier.html>`_ by Steven Lehar
+2. `Fourier Transform <http://homepages.inf.ed.ac.uk/rbf/HIPR2/fourier.htm>`_ at HIPR
+3. `What does frequency domain denote in case of images? <http://dsp.stackexchange.com/q/1637/818>`_
+
 
 Exercises
 ============
