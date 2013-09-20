@@ -99,7 +99,7 @@ In that code, the author created a color map in HSV. Then converted it into BGR.
 
 I leave it to the readers to run the code, analyze it and have your own hack arounds. Below is the output of that code for the same image as above:
 
-    .. image:: images/2dhist_opencv.png
+    .. image:: images/2dhist_opencv.jpg
         :alt: 2D Histograms using OpenCV-Python Samples
         :align: center
         
