@@ -73,7 +73,7 @@ Below, in second image, green line shows the approximated curve for ``epsilon = 
 5. Convex Hull
 =================
 
-Convex Hull will look similar to contour approximation, but not (Both may provide same results in some cases). Here, **cv2.convexHull()** function checks a curve for convexity defects and corrects it. Generally speaking, convex curves are the curves which are always bulged out, or at-least flat. And if it is bulged inside, it is called convexity defects. For example, check the below image of hand. Red line shows the convex hull of hand. The double-sided arrow marks shows the convexity defects, which are the local maximum deviations of hull from contours.
+Convex Hull will look similar to contour approximation, but it is not (Both may provide same results in some cases). Here, **cv2.convexHull()** function checks a curve for convexity defects and corrects it. Generally speaking, convex curves are the curves which are always bulged out, or at-least flat. And if it is bulged inside, it is called convexity defects. For example, check the below image of hand. Red line shows the convex hull of hand. The double-sided arrow marks shows the convexity defects, which are the local maximum deviations of hull from contours.
 
     .. image:: images/convexitydefects.jpg
         :alt: Convex Hull
@@ -96,7 +96,7 @@ So to get a convex hull as in above image, following is sufficient:
 
     hull = cv2.convexHull(cnt)
     
-But if you find convexity defects, you need to pass ``returnPoints = False``. To understand it, we will take the rectangle image above. First I found its contour as ``cnt``. Now I found its convex hull with ``returnPoints = True``, I got following values: ``[[[234 202]], [[ 51 202]], [[ 51 79]], [[234 79]]]`` which are the four corner points of rectangle. Now if do the same with ``returnPoints = False``, I get following result: ``[[129],[ 67],[ 0],[142]]``. These are the indices of corresponding points in contours. For eg, check the first value: ``cnt[129] = [[234, 202]]`` which is same as first result (and so on for others). 
+But if you want to find convexity defects, you need to pass ``returnPoints = False``. To understand it, we will take the rectangle image above. First I found its contour as ``cnt``. Now I found its convex hull with ``returnPoints = True``, I got following values: ``[[[234 202]], [[ 51 202]], [[ 51 79]], [[234 79]]]`` which are the four corner points of rectangle. Now if do the same with ``returnPoints = False``, I get following result: ``[[129],[ 67],[ 0],[142]]``. These are the indices of corresponding points in contours. For eg, check the first value: ``cnt[129] = [[234, 202]]`` which is same as first result (and so on for others).
 
 You will see it again when we discuss about convexity defects.
 
@@ -119,17 +119,17 @@ Let (x,y) be the top-left coordinate of the rectangle and (w,h) be its width and
 ::
 
     x,y,w,h = cv2.boundingRect(cnt)
-    cv2.rectangle(img,(x,y),(x+w,y+h),(0,255,0),2)
+    img = cv2.rectangle(img,(x,y),(x+w,y+h),(0,255,0),2)
     
 7.b. Rotated Rectangle
 -----------------------
-Here, bounding rectangle is drawn with minimum area, so it considers the rotation also. The function used is **cv2.minAreaRect()**. It returns a Box2D structure which contains following detals - ( top-left corner(x,y), (width, height), angle of rotation ). But to draw this rectangle, we need 4 corners of the rectangle. It is obtained by the function **cv2.cv.BoxPoints()**
+Here, bounding rectangle is drawn with minimum area, so it considers the rotation also. The function used is **cv2.minAreaRect()**. It returns a Box2D structure which contains following detals - ( top-left corner(x,y), (width, height), angle of rotation ). But to draw this rectangle, we need 4 corners of the rectangle. It is obtained by the function **cv2.boxPoints()**
 ::
 
     rect = cv2.minAreaRect(cnt)
-    box = cv2.cv.BoxPoints(rect)
+    box = cv2.boxPoints(rect)
     box = np.int0(box)
-    cv2.drawContours(im,[box],0,(0,0,255),2)
+    im = cv2.drawContours(im,[box],0,(0,0,255),2)
     
 Both the rectangles are shown in a single image. Green rectangle shows the normal bounding rect. Red rectangle is the rotated rect.
   
@@ -145,7 +145,7 @@ Next we find the circumcircle of an object using the function **cv2.minEnclosing
     (x,y),radius = cv2.minEnclosingCircle(cnt)
     center = (int(x),int(y))
     radius = int(radius)
-    cv2.circle(img,center,radius,(0,255,0),2)
+    img = cv2.circle(img,center,radius,(0,255,0),2)
     
 .. image:: images/circumcircle.png
         :alt: Minimum Enclosing Circle
@@ -158,12 +158,29 @@ Next one is to fit an ellipse to an object. It returns the rotated rectangle in 
 ::
 
     ellipse = cv2.fitEllipse(cnt)
-    cv2.ellipse(im,ellipse,(0,255,0),2)
+    im = cv2.ellipse(im,ellipse,(0,255,0),2)
     
 .. image:: images/fitellipse.png
         :alt: Fitting an Ellipse
         :align: center  
-        
+
+
+10. Fitting a Line
+=======================
+
+Similarly we can fit a line to a set of points. Below image contains a set of white points. We can approximate a straight line to it.
+::
+
+    rows,cols = img.shape[:2]
+    [vx,vy,x,y] = cv2.fitLine(cnt, cv2.DIST_L2,0,0.01,0.01)
+    lefty = int((-x*vy/vx) + y)
+    righty = int(((cols-x)*vy/vx)+y)
+    img = cv2.line(img,(cols-1,righty),(0,lefty),(0,255,0),2)
+
+.. image:: images/fitline.jpg
+        :alt: Fitting a Line
+        :align: center
+
 Additional Resources
 ======================
 
