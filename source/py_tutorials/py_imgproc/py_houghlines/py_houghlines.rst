@@ -13,7 +13,7 @@ In this chapter,
     
 Theory
 ========
-Hough Transform is a popular technique to detect any shape, unless you can represent that shape in mathematical form. It can detect the shape even if it is broken or distorted a little bit. We will see how it works for a line.
+Hough Transform is a popular technique to detect any shape, if you can represent that shape in mathematical form. It can detect the shape even if it is broken or distorted a little bit. We will see how it works for a line.
 
 A line can be represented as :math:`y = mx+c` or in parametric form, as :math:`\rho = x \cos \theta + y \sin \theta` where :math:`\rho` is the perpendicular distance from origin to the line, and :math:`\theta` is the angle formed by this perpendicular line and horizontal axis measured in counter-clockwise ( That direction varies on how you represent the coordinate system. This representation is used in OpenCV). Check below image:
 
@@ -25,7 +25,7 @@ A line can be represented as :math:`y = mx+c` or in parametric form, as :math:`\
         
 So if line is passing below the origin, it will have a positive rho and angle less than 180. If it is going above the origin, instead of taking angle greater than 180, angle is taken less than 180, and rho is taken negative. Any vertical line will have 0 degree and horizontal lines will have 90 degree.
 
-Now let's see how Hough Transform works for lines. Any line can be represented in these two terms, :math:`(\rho, \theta)`. So first it creates a 2D array or accumulator (to hold values of two parameters) and it is set to 0 initially. Let rows denote the :math:`\rho` and columns denote the :math:`\theta`. Size of array depends on the accuracy you need. Suppose you want the accuracy of angles should be 1 degree, you need 180 columns. For :math:`\rho`, the maximum distance possible is the diagonal length of the image. So taking one pixel accuracy, number of rows can be diagonal length of the image.
+Now let's see how Hough Transform works for lines. Any line can be represented in these two terms, :math:`(\rho, \theta)`. So first it creates a 2D array or accumulator (to hold values of two parameters) and it is set to 0 initially. Let rows denote the :math:`\rho` and columns denote the :math:`\theta`. Size of array depends on the accuracy you need. Suppose you want the accuracy of angles to be 1 degree, you need 180 columns. For :math:`\rho`, the maximum distance possible is the diagonal length of the image. So taking one pixel accuracy, number of rows can be diagonal length of the image.
 
 Consider a 100x100 image with a horizontal line at the middle. Take the first point of the line. You know its (x,y) values. Now in the line equation, put the values :math:`\theta = 0,1,2,....,180` and check the :math:`\rho` you get. For every :math:`(\rho, \theta)` pair, you increment value by one in our accumulator in its corresponding :math:`(\rho, \theta)` cells. So now in accumulator, the cell (50,90) = 1 along with some other cells.
 
@@ -38,14 +38,14 @@ Now take the second point on the line. Do the same as above. Increment the the v
 
 This is how hough transform for lines works. It is simple, and may be you can implement it using Numpy on your own. Below is an image which shows the accumulator. Bright spots at some locations denotes they are the parameters of possible lines in the image. (Image courtesy: `Wikipedia <http://en.wikipedia.org/wiki/Hough_transform>`_ )
 
-    .. image:: images/houghlines2.png
+    .. image:: images/houghlines2.jpg
         :alt: Hough Transform accumulator
         :align: center
         
 Hough Tranform in OpenCV
 =========================
 
-Everything explained above is encapsulated by the OpenCV function, **cv2.HoughLines()**. It simply returns an array of :math:`(\rho, \theta)` values. :math:`\rho` is measured in pixels and :math:`\theta` is measured in radians. First parameter, Input image should be a binary image, so apply threshold or use canny edge detection before finding applying hough transform. Second and third parameters are :math:`\rho` and :math:`\theta` accuracies respectively. Fourth argument is the `threshold`, which means minimum vote it should get for it to be considered as a line. Remember, number of votes depend upon number of points on the line. So it represents the minimum length of line that should be detected.
+Everything explained above is encapsulated in the OpenCV function, **cv2.HoughLines()**. It simply returns an array of :math:`(\rho, \theta)` values. :math:`\rho` is measured in pixels and :math:`\theta` is measured in radians. First parameter, Input image should be a binary image, so apply threshold or use canny edge detection before finding applying hough transform. Second and third parameters are :math:`\rho` and :math:`\theta` accuracies respectively. Fourth argument is the `threshold`, which means minimum vote it should get for it to be considered as a line. Remember, number of votes depend upon number of points on the line. So it represents the minimum length of line that should be detected.
 ::
 
     import cv2
