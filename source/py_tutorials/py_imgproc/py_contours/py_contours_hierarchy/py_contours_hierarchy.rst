@@ -11,9 +11,9 @@ This time, we learn about the hierarchy of contours, i.e. the parent-child relat
 Theory
 =========
 
-In the last few articles on contours, we have worked with several functions related to contours provided by OpenCV. But when we found the contours in image using **cv2.findContours()** function, we have passed an argument, **Contour Retrieval Mode**. We usually passed **cv2.RETR_LIST** or **cv2.RETR_TREE** for first this it worked nice. But what does it actually mean ?
+In the last few articles on contours, we have worked with several functions related to contours provided by OpenCV. But when we found the contours in image using **cv2.findContours()** function, we have passed an argument, **Contour Retrieval Mode**. We usually passed **cv2.RETR_LIST** or **cv2.RETR_TREE** and it worked nice. But what does it actually mean ?
 
-Also, in the output, we got two arrays, one is our contours, and one more output which we named as ``hierarchy`` (Please checkout the codes in previous articles). But we never used this hierarchy anywhere. Then what is this hierarchy and what is it for ? What is its relationship with the previous mentioned function argument ?
+Also, in the output, we got three arrays, first is the image, second is our contours, and one more output which we named as **hierarchy** (Please checkout the codes in previous articles). But we never used this hierarchy anywhere. Then what is this hierarchy and what is it for ? What is its relationship with the previous mentioned function argument ?
 
 That is what we are going to deal in this article.
 
@@ -144,7 +144,7 @@ Remaining you can fill up. This is the final answer I got:
 4. RETR_TREE
 ------------------ 
 
-And this is the final guy, Mr.Perfect. It retrieves all the contours and creates a full family hierarchy list. "It even tells, who is the grandpa, father, son, grandson and even beyond... ".
+And this is the final guy, Mr.Perfect. It retrieves all the contours and creates a full family hierarchy list. **It even tells, who is the grandpa, father, son, grandson and even beyond... :)**.
 
 For examle, I took above image, rewrite the code for cv2.RETR_TREE, reorder the contours as per the result given by OpenCV and analyze it. Again, red letters give the contour number and green letters give the hierarchy order.
 
