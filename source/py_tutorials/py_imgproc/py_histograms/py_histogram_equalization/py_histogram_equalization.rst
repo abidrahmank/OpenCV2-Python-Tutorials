@@ -39,7 +39,7 @@ I would recommend you to read the wikipedia page on `Histogram Equalization <htt
     plt.legend(('cdf','histogram'), loc = 'upper left')
     plt.show()
     
-.. image:: images/histeq_numpy1.png
+.. image:: images/histeq_numpy1.jpg
     :alt: Histograms Equalization 
     :align: center 
 
@@ -59,7 +59,7 @@ Now we have the look-up table that gives us the information on what is the outpu
     
 Now we calculate its histogram and cdf as before ( you do it) and result looks like below :
 
-.. image:: images/histeq_numpy2.png
+.. image:: images/histeq_numpy2.jpg
     :alt: Histograms Equalization 
     :align: center 
     
@@ -68,7 +68,7 @@ Another important feature is that, even if the image was a darker image (instead
 Histograms Equalization in OpenCV
 ===================================
 
-OpenCV has a function to do this, **cv2.calcHist()**. Its input is just grayscale image and output is our histogram equalized image.
+OpenCV has a function to do this, **cv2.equalizeHist()**. Its input is just grayscale image and output is our histogram equalized image.
 
 Below is a simple code snippet showing its usage for same image we used :
 ::
