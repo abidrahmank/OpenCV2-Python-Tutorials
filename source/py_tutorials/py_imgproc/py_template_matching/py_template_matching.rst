@@ -73,37 +73,37 @@ See the results below:
 
     * cv2.TM_CCOEFF
     
-    .. image:: images/template_match_1.png
+    .. image:: images/template_ccoeff_1.jpg
         :alt: Template Image
         :align: center
 
     * cv2.TM_CCOEFF_NORMED
     
-    .. image:: images/template_match_2.png
+    .. image:: images/template_ccoeffn_2.jpg
         :alt: Template Image
         :align: center
 
     * cv2.TM_CCORR
     
-    .. image:: images/template_match_3.png
+    .. image:: images/template_ccorr_3.jpg
         :alt: Template Image
         :align: center
 
     * cv2.TM_CCORR_NORMED
     
-    .. image:: images/template_match_4.png
+    .. image:: images/template_ccorrn_4.jpg
         :alt: Template Image
         :align: center
 
-    * cv2.TM_SQDIFF  
+    * cv2.TM_SQDIFF
        
-    .. image:: images/template_match_5.png
+    .. image:: images/template_sqdiff_5.jpg
         :alt: Template Image
         :align: center
 
     * cv2.TM_SQDIFF_NORMED 
            
-    .. image:: images/template_match_6.png
+    .. image:: images/template_sqdiffn_6.jpg
         :alt: Template Image
         :align: center    
         
@@ -134,7 +134,7 @@ In the previous section, we searched image for Messi's face, which occurs only o
     
 Result:
 
-    .. image:: images/res_mario.png
+    .. image:: images/res_mario.jpg
         :alt: Template Matching
         :align: center 
         
