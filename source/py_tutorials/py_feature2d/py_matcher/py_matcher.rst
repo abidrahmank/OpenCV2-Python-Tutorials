@@ -22,7 +22,7 @@ Second param is boolean variable, ``crossCheck`` which is false by default. If i
 
 Once it is created, two important methods are *BFMatcher.match()* and *BFMatcher.knnMatch()*. First one returns the best match. Second method returns `k` best matches where k is specified by the user. It may be useful when we need to do additional work on that. 
 
-Like we used cv2.drawKeypoints() to draw keypoints, **cv2.drawMatches()** helps us to draw the matches. It stacks two images horizontally and draw lines from first image to second image showing best matches.
+Like we used cv2.drawKeypoints() to draw keypoints, **cv2.drawMatches()** helps us to draw the matches. It stacks two images horizontally and draw lines from first image to second image showing best matches. There is also **cv2.drawMatchesKnn** which draws all the k best matches. If k=2, it will draw two match-lines for each keypoint. So we have to pass a mask if we want to selectively draw it.
 
 Let's see one example for each of SURF and ORB (Both use different distance measurements).
 
