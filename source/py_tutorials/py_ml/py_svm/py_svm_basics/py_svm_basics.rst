@@ -22,7 +22,7 @@ Consider the image below which has two types of data, red and blue. In kNN, for 
         :alt: Test Data
         :align: center
 
-Consider another idea. We find a line which :math:`f(x)=ax_1+bx_2+c` which divides both the data to two regions. When we get a new test_data :math:`X`, just substitute it in :math:`f(x)`. If :math:`f(X) > 0`, it belongs to blue group, else it belongs to red group. We can call this line as **Decision Boundary**. It is very simple and memory-efficient. Such data which can be divided into two with a straight line (or hyperplanes in higher dimensions) is called **Linear Separable**. 
+Consider another idea. We find a line, :math:`f(x)=ax_1+bx_2+c` which divides both the data to two regions. When we get a new test_data :math:`X`, just substitute it in :math:`f(x)`. If :math:`f(X) > 0`, it belongs to blue group, else it belongs to red group. We can call this line as **Decision Boundary**. It is very simple and memory-efficient. Such data which can be divided into two with a straight line (or hyperplanes in higher dimensions) is called **Linear Separable**.
 
 So in above image, you can see plenty of such lines are possible. Which one we will take? Very intuitively we can say that the line should be passing as far as possible from all the points. Why? Because there can be noise in the incoming data. This data should not affect the classification accuracy. So taking a farthest line will provide more immunity against noise. So what SVM does is to find a straight line (or hyperplane) with largest minimum distance to the training samples. See the bold line in below image passing through the center.
 
@@ -32,7 +32,7 @@ So in above image, you can see plenty of such lines are possible. Which one we w
         
 So to find this Decision Boundary, you need training data. Do you need all? NO. Just the ones which are close to the opposite group are sufficient. In our image, they are the one blue filled circle and two red filled squares. We can call them **Support Vectors** and the lines passing through them are called **Support Planes**. They are adequate for finding our decision boundary. We need not worry about all the data. It helps in data reduction.
 
-What happened is, first two hyperplanes are found which best represents the data. For eg, blue data is represented by :math:`w^Tx+b_0 > 1` while red data is represented by :math:`w^Tx+b_0 < -1` where :math:`w` is **weight vector** ( :math:`w=[w_1, w_2,..., w_n]`) and :math:`x` is the feature vector (:math:`x = [x_1,x_2,..., x_n]`). :math:`b_0` is the **bias**. Weight vector decides the orientation of decision boundary while bias point decides its location. Now decision boundary is defined to be midway between these hyperplanes, so expressed as :math:`w^Tx+b_0 = 0`. The minimum distance from support vector to the decision boundary is given by, :math:`distance_{support \, vectors}=\frac{1}{||w||}`. Margin is twice this distance, and we need to maximize this margin. Otherwise we need to minimize a new function :math:`L(w, b_0)` with some constraints which can expressed below:
+What happened is, first two hyperplanes are found which best represents the data. For eg, blue data is represented by :math:`w^Tx+b_0 > 1` while red data is represented by :math:`w^Tx+b_0 < -1` where :math:`w` is **weight vector** ( :math:`w=[w_1, w_2,..., w_n]`) and :math:`x` is the feature vector (:math:`x = [x_1,x_2,..., x_n]`). :math:`b_0` is the **bias**. Weight vector decides the orientation of decision boundary while bias point decides its location. Now decision boundary is defined to be midway between these hyperplanes, so expressed as :math:`w^Tx+b_0 = 0`. The minimum distance from support vector to the decision boundary is given by, :math:`distance_{support \, vectors}=\frac{1}{||w||}`. Margin is twice this distance, and we need to maximize this margin. i.e. we need to minimize a new function :math:`L(w, b_0)` with some constraints which can expressed below:
 
 .. math::
 
@@ -45,7 +45,7 @@ where :math:`t_i` is the label of each class, :math:`t_i \in [-1,1]`.
 Non-Linearly Separable Data
 -----------------------------
 
-Consider some data which can't be divided into two with a straight line. For example, consider an one-dimensional data where 'X' is at -3 & +3 and 'O' is at -1 & +1. Clearly it is not linearly separable. But there are methods to solve these kinds of problems. If we can map this data set with a function, :math:`f(x) = x^2`, we get 'X' at 9 and 'O' at 1 which is linear separable. 
+Consider some data which can't be divided into two with a straight line. For example, consider an one-dimensional data where 'X' is at -3 & +3 and 'O' is at -1 & +1. Clearly it is not linearly separable. But there are methods to solve these kinds of problems. If we can map this data set with a function, :math:`f(x) = x^2`, we get 'X' at 9 and 'O' at 1 which are linear separable.
 
 Otherwise we can convert this one-dimensional to two-dimensional data. We can use :math:`f(x)=(x,x^2)` function to map this data. Then 'X' becomes (-3,9) and (3,9) while 'O' becomes (-1,1) and (1,1). This is also linear separable. In short, chance is more for a non-linear separable data in lower-dimensional space to become linear separable in higher-dimensional space.
 
@@ -96,7 +96,7 @@ How should the parameter C be chosen? It is obvious that the answer to this ques
 Additional Resources
 ======================
 
-#. NPTEL notes on Statistical Pattern Recognition, Chapters 25-29.
+#. `NPTEL notes on Statistical Pattern Recognition, Chapters 25-29 <http://www.nptel.iitm.ac.in/courses/106108057/26>`_.
 
 
 Exercises
