@@ -177,7 +177,7 @@ There is nothing new to be explained here. There are 3 features, say, R,G,B. So 
     
 See the result below for K=8:
 
-    .. image:: images/oc_color_quantization.png
+    .. image:: images/oc_color_quantization.jpg
         :alt: Color Quantization
         :align: center
 

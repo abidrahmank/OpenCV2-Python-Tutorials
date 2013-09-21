@@ -18,7 +18,7 @@ T-shirt size problem
 
 Consider a company, which is going to release a new model of T-shirt to market. Obviously they will have to manufacture models in different sizes to satisfy people of all sizes. So the company make a data of people's height and weight, and plot them on to a graph, as below:
 
-    .. image:: images/tshirt.png
+    .. image:: images/tshirt.jpg
         :alt: T-shirt Problem
         :align: center
         
@@ -35,17 +35,17 @@ This algorithm is an iterative process. We will explain it step-by-step with the
 
 Consider a set of data as below ( You can consider it as t-shirt problem). We need to cluster this data into two groups.
 
-    .. image:: images/testdata.png
+    .. image:: images/testdata.jpg
         :alt: Test Data
         :align: center
         
 **Step : 1** - Algorithm randomly chooses two centroids, :math:`C1` and :math:`C2` (sometimes, any two data are taken as the centroids).
 
-**Step : 2** - Then it calculates the distance from each point to both centroids. If a test data is more closer to :math:`C1`, then that data is labelled with '0'. If it is closer to :math:`C2`, then labelled as '1' (If more centroids are there, labelled as '2','3' etc).
+**Step : 2** - It calculates the distance from each point to both centroids. If a test data is more closer to :math:`C1`, then that data is labelled with '0'. If it is closer to :math:`C2`, then labelled as '1' (If more centroids are there, labelled as '2','3' etc).
 
 In our case, we will color all '0' labelled with red, and '1' labelled with blue. So we get following image after above operations.
 
-    .. image:: images/initial_labelling.png
+    .. image:: images/initial_labelling.jpg
         :alt: Initial Centroid Selection and Data Collection
         :align: center
         
@@ -67,7 +67,7 @@ Now **Step - 2** and **Step - 3** are iterated until both centroids are converge
 
 Final result almost looks like below :
 
-    .. image:: images/final_clusters.png
+    .. image:: images/final_clusters.jpg
         :alt: Final Result
         :align: center
         
@@ -75,7 +75,7 @@ So this is just an intuitive understanding of K-Means Clustering. For more detai
 
 Additional Resources
 =====================
-#. `Machine Learning Course <https://www.coursera.org/course/ml>`_, Video lectures by Prof. Andrew Ng
+#. `Machine Learning Course <https://www.coursera.org/course/ml>`_, Video lectures by Prof. Andrew Ng (Some of the images are taken from this)
 
 Exercises
 ===========
