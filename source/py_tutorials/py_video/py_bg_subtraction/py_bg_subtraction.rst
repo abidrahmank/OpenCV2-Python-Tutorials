@@ -24,9 +24,7 @@ Several algorithms were introduced for this purpose. OpenCV has implemented thre
 BackgroundSubtractorMOG
 -----------------------------------
 
-It is a Gaussian Mixture-based Background/Foreground Segmentation Algorithm. It was introduced in the paper "An improved adaptive background mixture model for real-time tracking with shadow detection" by P. KadewTraKuPong and R. Bowden in 2001. It uses a method to model each background pixel by a mixture of K Gaussian distributions (K = 3 to 5). The weights the mixture represent the time proportions that those colours stay in the scene. The probable background colours are the ones which stay longer and more static. 
-
-For background estimation, a minimum threhold T is used which is the minimum prior probability that the background is in the scene. Background subtraction is performed by marking a foreground pixel any pixel that is more than 2.5 standard deviations away from any of the B distributions. It estimates the gaussian mixture model by statistics update equations. When first L samples are processed, it switch to L-recent window update equations which gives priority to recent data so that tracker adapt to the recent changes in environment.
+It is a Gaussian Mixture-based Background/Foreground Segmentation Algorithm. It was introduced in the paper "An improved adaptive background mixture model for real-time tracking with shadow detection" by P. KadewTraKuPong and R. Bowden in 2001. It uses a method to model each background pixel by a mixture of K Gaussian distributions (K = 3 to 5). The weights of the mixture represent the time proportions that those colours stay in the scene. The probable background colours are the ones which stay longer and more static.
 
 While coding, we need to create a background object using the function, **cv2.createBackgroundSubtractorMOG()**. It has some optional parameters like length of history, number of gaussian mixtures, threshold etc. It is all set to some default values. Then inside the video loop, use ``backgroundsubtractor.apply()`` method to get the foreground mask.
 
@@ -104,7 +102,7 @@ It would be better to apply morphological opening to the result to remove the no
     cap = cv2.VideoCapture('vtest.avi')
 
     kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE,(3,3))
-    fgbg = cv2.createBackgroundSubtractorMOG2()
+    fgbg = cv2.createBackgroundSubtractorGMG()
 
     while(1):
         ret, frame = cap.read()
