@@ -52,47 +52,7 @@ Our goal is to build an application which can read the handwritten digits. For t
     print accuracy
 
 
-So our basic OCR app is ready. This particular example gave me an accuracy of 91%. One option improve accuracy is to put this wrong data in our training set and train again. Iterate this process until you get desired accuracy. For example, I modified above code for 10 iterations.
-::
-
-    img = cv2.imread('digits.png')
-    gray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
-
-    cells = [np.hsplit(row,100) for row in np.vsplit(gray,50)]
-
-    x = np.array(cells)
-
-    # train and test data
-    train = x[:,:50].reshape(-1,400).astype(np.float32)
-    test = x[:,50:100].reshape(-1,400).astype(np.float32)  
-
-    # labels for train and test data
-    k = np.arange(10)
-    train_labels = np.repeat(k,250)[:,np.newaxis]
-    test_labels = train_labels.copy()
-    
-    knn = cv2.KNearest()
-    
-    for count in xrange(10):
-        knn.train(train,train_labels)
-        ret,res,neighbours,dist = knn.find_nearest(test,k=5)
-
-        matches = result==test_labels
-        correct = np.count_nonzero(matches)
-        accuracy = correct*100.0/result.size
-        print accuracy
-
-        # show wrong ones
-        loc = np.where(matches==0)[0]
-        wrong_images = test[loc]
-        real_labels = train_labels[loc]
-
-        # add it to train data and train labels
-        train_labels=np.vstack((train_labels,real_labels))
-        train = np.vstack((train,wrong_images))
-
-
-Now after 10 iterations, I get an accuracy of 100%. This final training data gives me 100% accuracy. So instead of finding this training data everytime I start application, I better save it, so that next time, I directly read this data from a file and start classification. You can do it with the help of some Numpy functions like np.savetxt, np.savez, np.load etc. Please check their docs for more details.
+So our basic OCR app is ready. This particular example gave me an accuracy of 91%. One option improve accuracy is to add more data for training, especially the wrong ones. So instead of finding this training data everytime I start application, I better save it, so that next time, I directly read this data from a file and start classification. You can do it with the help of some Numpy functions like np.savetxt, np.savez, np.load etc. Please check their docs for more details.
 ::
 
     # save the data
@@ -138,8 +98,7 @@ There are 20000 samples available, so we take first 10000 data as training sampl
     accuracy = correct*100.0/10000
     print accuracy
 
-It gives me an accuracy of 93.22%. Again, if you want to increase accuracy, you can iteratively add error data in each level as we did in previous example.
-
+It gives me an accuracy of 93.22%. Again, if you want to increase accuracy, you can iteratively add error data in each level.
 
 Additional Resources
 =======================

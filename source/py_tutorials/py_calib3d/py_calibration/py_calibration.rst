@@ -17,7 +17,7 @@ Basics
 
 Today's cheap pinhole cameras introduces a lot of distortion to images. Two major distortions are radial distortion and tangential distortion.
 
-Due to radial distortion, straight lines will appear curved. Its effect is more as we move away from the center of image. For example, one image is shown below, where two edges of a chess board are marked with red lines. But you can see that border is not a straight line and doesn't match with the red line. All the expected straight lines are bulged out. Visit `Distortion (optics) <en.wikipedia.org/wiki/Distortion_(optics)‎>`_ for more details.
+Due to radial distortion, straight lines will appear curved. Its effect is more as we move away from the center of image. For example, one image is shown below, where two edges of a chess board are marked with red lines. But you can see that border is not a straight line and doesn't match with the red line. All the expected straight lines are bulged out. Visit `Distortion (optics) <http://en.wikipedia.org/wiki/Distortion_%28optics%29>`_ for more details.
 
     .. image:: images/calib_radial.jpg
         :alt: Radial Distortion
@@ -139,7 +139,7 @@ So now we have our object points and image points we are ready to go for calibra
 Undistortion
 ---------------
 
-We have got what we were trying. Now we can take an image and undistort it. OpenCV comes with two methods, we will see both. But before that, we can refine the camera matrix based on a free scaling parameter using **cv2.getOptimalNewCameraMatrix()**. If the scaling parameter ``alpha=0``, it returns undistorts with minimum unwanted pixels. So it may even remove some pixels at image corners. If ``alpha=1``, all pixels are retained with some extra black images. It also returns an image ROI which can be used to crop the result.
+We have got what we were trying. Now we can take an image and undistort it. OpenCV comes with two methods, we will see both. But before that, we can refine the camera matrix based on a free scaling parameter using **cv2.getOptimalNewCameraMatrix()**. If the scaling parameter ``alpha=0``, it returns undistorted image with minimum unwanted pixels. So it may even remove some pixels at image corners. If ``alpha=1``, all pixels are retained with some extra black images. It also returns an image ROI which can be used to crop the result.
 
 So we take a new image (``left12.jpg`` in this case. That is the first image in this chapter)
 ::
