@@ -18,7 +18,7 @@ Optical Flow
 Optical flow is the pattern of apparent motion of image objects between two consecutive frames caused by the movemement of object or camera. It is 2D vector field where each vector is a displacement vector showing the movement of points from first frame to second. Consider the image below (Image Courtesy: `Wikipedia article on Optical Flow <http://en.wikipedia.org/wiki/Optical_flow>`_). 
 
 
-    .. image:: images/optical_flow_basic1.png
+    .. image:: images/optical_flow_basic1.jpg
         :alt: Optical Flow
         :align: center
 
@@ -144,7 +144,7 @@ OpenCV provides all these in a single function, **cv2.calcOpticalFlowPyrLK()**. 
     cap.release()
     
 
-(This code doesn't check the how correct are the next keypoints. So even if any feature point disappears in image, there is a chance that optical flow finds the next point which may look close to it. So actually for a robust tracking, corner points should be detected in particular intervals. OpenCV samples comes up with such a sample which finds the feature points at every 5 frames. It also run a backward-check of the optical flow points got to select only good one. Check ``samples/python2/lk_track.py``). 
+(This code doesn't check how correct are the next keypoints. So even if any feature point disappears in image, there is a chance that optical flow finds the next point which may look close to it. So actually for a robust tracking, corner points should be detected in particular intervals. OpenCV samples comes up with such a sample which finds the feature points at every 5 frames. It also run a backward-check of the optical flow points got to select only good ones. Check ``samples/python2/lk_track.py``).
 
 See the results we got:
 
@@ -158,7 +158,7 @@ Dense Optical Flow in OpenCV
 
 Lucas-Kanade method computes optical flow for a sparse feature set (in our example, corners detected using Shi-Tomasi algorithm). OpenCV provides another algorithm to find the dense optical flow. It computes the optical flow for all the points in the frame. It is based on Gunner Farneback's algorithm which is explained in "Two-Frame Motion Estimation Based on Polynomial Expansion" by Gunner Farneback in 2003. 
 
-Below sample shows how to find the dense optical flow using above algorithm. We get a 2-channel array with optical flow vectors, :math:`(u,v)`. We find their magnitude and direction. We color code the result to for better visualization. Direction corresponds to Hue value of the image. Magnitude corresponds to Value plane. See the code below:
+Below sample shows how to find the dense optical flow using above algorithm. We get a 2-channel array with optical flow vectors, :math:`(u,v)`. We find their magnitude and direction. We color code the result for better visualization. Direction corresponds to Hue value of the image. Magnitude corresponds to Value plane. See the code below:
 ::
 
     import cv2
