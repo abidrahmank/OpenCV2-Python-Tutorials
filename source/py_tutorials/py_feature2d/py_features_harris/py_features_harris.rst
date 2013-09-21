@@ -20,7 +20,7 @@ In last chapter, we saw that corners are regions in the image with large variati
 
     E(u,v) = \sum_{x,y} \underbrace{w(x,y)}_\text{window function} \, [\underbrace{I(x+u,y+v)}_\text{shifted intensity}-\underbrace{I(x,y)}_\text{intensity}]^2
 
-window function is either a rectangular window or gaussian window which gives weights to pixels underneath.
+Window function is either a rectangular window or gaussian window which gives weights to pixels underneath.
 
 We have to maximize this function :math:`E(u,v)` for corner detection. That means, we have to maximize the second term. Applying Taylor Expansion to above equation and using some mathematical steps (please refer any standard text books you like for full derivation), we get the final equation as:
 
@@ -37,7 +37,7 @@ where
                                          
 Here, :math:`I_x` and :math:`I_y` are image derivatives in x and y directions respectively. (Can be easily found out using **cv2.Sobel()**).
 
-Then comes the main part. After this, they created a score, an equation, which will determine if a window can contain a corner or not.
+Then comes the main part. After this, they created a score, basically an equation, which will determine if a window can contain a corner or not.
 
 .. math::
 
@@ -54,13 +54,13 @@ So the values of these eigen values decide whether a region is corner, edge or f
     * When :math:`R<0`, which happens when :math:`\lambda_1 >> \lambda_2` or vice versa, the region is edge.
     * When :math:`R` is large, which happens when :math:`\lambda_1` and :math:`\lambda_2` are large and :math:`\lambda_1 \sim \lambda_2`, the region is a corner.
     
-It can be represented in a nice picture as follows *(Image Courtesy: Link-1 in Additional Resources)*:
+It can be represented in a nice picture as follows:
 
     .. image:: images/harris_region.jpg
         :alt: Classification of Image Points
         :align: center
         
-So the result of a Harris Corner Detection is a grayscale image with these values. Thresholding for a suitable give you the corners in the image. We will do it with a simple image.
+So the result of Harris Corner Detection is a grayscale image with these scores. Thresholding for a suitable give you the corners in the image. We will do it with a simple image.
 
 
 Harris Corner Detector in OpenCV
@@ -99,7 +99,7 @@ See the example below:
     
 Below are the three results:
 
-    .. image:: images/harris_result.png
+    .. image:: images/harris_result.jpg
         :alt: Harris Corner Detection
         :align: center
         
