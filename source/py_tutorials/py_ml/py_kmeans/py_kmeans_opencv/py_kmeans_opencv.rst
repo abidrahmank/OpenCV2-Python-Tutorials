@@ -6,7 +6,7 @@ K-Means Clustering in OpenCV
 Goal
 =======
 
-    * Learn to use **cv2.KMeans()** function in OpenCV for data clustering
+    * Learn to use **cv2.kmeans()** function in OpenCV for data clustering
 
 Understanding Parameters
 ==========================
@@ -48,6 +48,10 @@ Consider, you have a set of data with only one feature, ie one-dimensional. For 
 So we start by creating data and plot it in Matplotlib
 ::
 
+    import numpy as np
+    import cv2
+    from matplotlib import pyplot as plt
+
     x = np.random.randint(25,100,25)
     y = np.random.randint(175,255,25)
     z = np.hstack((x,y))
@@ -73,7 +77,7 @@ Now we apply the KMeans function. Before that we need to specify the `criteria`.
     flags = cv2.KMEANS_RANDOM_CENTERS
      
     # Apply KMeans
-    compactness,labels,centers = cv2.kmeans(z,2,criteria,10,flags)
+    compactness,labels,centers = cv2.kmeans(z,2,None,criteria,10,flags)
     
 This gives us the compactness, labels and centers. In this case, I got centers as 60 and 207. Labels will have the same size as that of test data where each data will be labelled as '0','1','2' etc. depending on their centroids. Now we split the data to different clusters depending on their labels. 
 ::
@@ -105,7 +109,7 @@ Remember, in previous case, we made our data to a single column vector. Each fea
 
 For example, in this case, we set a test data of size 50x2, which are heights and weights of 50 people. First column corresponds to height of all the 50 people and second column corresponds to their weights. First row contains two elements where first one is the height of first person and second one his weight. Similarly remaining rows corresponds to heights and weights of other people. Check image below:
 
-    .. image:: images/oc_feature_representation.png
+    .. image:: images/oc_feature_representation.jpg
         :alt: Feature Representation
         :align: center
         
@@ -125,7 +129,7 @@ Now I am directly moving to the code:
      
     # define criteria and apply kmeans()
     criteria = (cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_MAX_ITER, 10, 1.0)
-    ret,label,center = cv2.kmeans(Z,2,criteria,10,cv2.KMEANS_RANDOM_CENTERS)
+    ret,label,center=cv2.kmeans(Z,2,None,criteria,10,cv2.KMEANS_RANDOM_CENTERS)
      
     # Now separate the data, Note the flatten()
     A = Z[label.ravel()==0]
@@ -140,7 +144,7 @@ Now I am directly moving to the code:
     
 Below is the output we get:
 
-    .. image:: images/oc_2d_clustered.png
+    .. image:: images/oc_2d_clustered.jpg
         :alt: Result of KMeans Clustering
         :align: center
         
@@ -164,7 +168,7 @@ There is nothing new to be explained here. There are 3 features, say, R,G,B. So 
     # define criteria, number of clusters(K) and apply kmeans()
     criteria = (cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_MAX_ITER, 10, 1.0)
     K = 8
-    ret,label,center = cv2.kmeans(Z,K,criteria,10,cv2.KMEANS_RANDOM_CENTERS)
+    ret,label,center=cv2.kmeans(Z,K,None,criteria,10,cv2.KMEANS_RANDOM_CENTERS)
      
     # Now convert back into uint8, and make original image
     center = np.uint8(center)

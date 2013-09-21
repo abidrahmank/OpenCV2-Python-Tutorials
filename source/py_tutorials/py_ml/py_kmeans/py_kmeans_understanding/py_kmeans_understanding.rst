@@ -55,7 +55,7 @@ And again, perform step 2 with new centroids and label data to '0' and '1'.
 
 So we get result as below :
 
-    .. image:: images/update_centroid.png
+    .. image:: images/update_centroid.jpg
         :alt: New Centroid Calculated and Data Re-laballed
         :align: center
         
