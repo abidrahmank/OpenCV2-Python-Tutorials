@@ -20,7 +20,7 @@ ORB is basically a fusion of FAST keypoint detector and BRIEF descriptor with ma
 It computes the intensity weighted centroid of the patch with located corner at center. The direction of the vector from this corner point to centroid gives the orientation. To improve the rotation invariance, moments are computed with x and y which should be in a circular region of radius :math:`r`, where :math:`r` is the size of the patch.
 
 Now for descriptors, ORB use BRIEF descriptors. But we have already seen that BRIEF performs poorly with rotation. So what ORB does is to "steer" BRIEF according to the orientation of keypoints. For any feature set of :math:`n` binary tests at location
-:math:`(x_i, y_i)`, define a :math:`2 \times n` matrix :math:`S` of these locations. Then using the orientation of patch, :math:`\theta`, its rotation matrix is found and rotates the :math:`S` to get steered(rotated) version :math:`S_\theta`. 
+:math:`(x_i, y_i)`, define a :math:`2 \times n` matrix, :math:`S` which contains the coordinates of these pixels. Then using the orientation of patch, :math:`\theta`, its rotation matrix is found and rotates the :math:`S` to get steered(rotated) version :math:`S_\theta`.
 
 ORB discretize the angle to increments of :math:`2 \pi /30` (12 degrees), and construct a lookup table of precomputed BRIEF patterns. As long as the keypoint orientation :math:`\theta` is consistent across views, the correct set of points :math:`S_\theta` will be used to compute its descriptor.
 
