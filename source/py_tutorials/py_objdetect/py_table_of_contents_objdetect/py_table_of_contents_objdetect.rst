@@ -4,7 +4,6 @@
 Object Detection
 --------------------------------
 
-Here you will learn different OpenCV functionalities related to Face Detection etc.
 
 
 *  :ref:`face_detection`
