@@ -14,7 +14,7 @@ In this chapter,
 Theory
 =========
 
-We saw several feature detectors and many of them are really good. But when looking from a real-time application point of view, they are not fast enough to work in real-time. One best example would be SLAM (Simultaneous Localization and Mapping) mobile robot which have limited computational resources. 
+We saw several feature detectors and many of them are really good. But when looking from a real-time application point of view, they are not fast enough. One best example would be SLAM (Simultaneous Localization and Mapping) mobile robot which have limited computational resources.
 
 As a solution to this, FAST (Features from Accelerated Segment Test) algorithm was proposed by Edward Rosten and Tom Drummond in their paper "Machine learning for high-speed corner detection" in 2006 (Later revised it in 2010). A basic summary of the algorithm is presented below. Refer original paper for more details (All the images are taken from original paper).
 
@@ -26,7 +26,7 @@ Feature Detection using FAST
 2. Select appropriate threshold value :math:`t`.
 3. Consider a circle of 16 pixels around the pixel under test. (See the image below)
 
-    .. image:: images/fast_speedtest.png
+    .. image:: images/fast_speedtest.jpg
         :alt: A corner in the image
         :align: center
         
@@ -49,7 +49,9 @@ Machine Learning a Corner Detector
 3. For every feature point, store the 16 pixels around it as a vector. Do it for all the images to get feature vector :math:`P`.
 4. Each pixel (say :math:`x`) in these 16 pixels can have one of the following three states:
 
-    .. warning:: an equation comes here
+    .. image:: images/fast_eqns.jpg
+        :alt: FAST equation
+        :align: center
 
 5. Depending on these states, the feature vector :math:`P` is subdivided into 3 subsets, :math:`P_d`, :math:`P_s`, :math:`P_b`.
 6. Define a new boolean variable, :math:`K_p`, which is true if :math:`p` is a corner and false otherwise.
@@ -71,9 +73,9 @@ Detecting multiple interest points in adjacent locations is another problem. It 
 Summary
 -----------
 
-It is many times faster than other existing corner detectors.
+It is several times faster than other existing corner detectors.
 
-But it is not robust high levels of noise. It is dependant on a threshold.
+But it is not robust to high levels of noise. It is dependant on a threshold.
 
 
 FAST Feature Detector in OpenCV
@@ -117,7 +119,7 @@ For the neighborhood, three flags are defined, ``cv2.FAST_FEATURE_DETECTOR_TYPE_
     
 See the results. First image shows FAST with nonmaxSuppression and second one without nonmaxSuppression:
 
-    .. image:: images/fast_kp.png
+    .. image:: images/fast_kp.jpg
         :alt: FAST Keypoints
         :align: center
 
