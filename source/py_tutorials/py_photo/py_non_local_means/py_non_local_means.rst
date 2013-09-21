@@ -18,9 +18,9 @@ Theory
 
 In earlier chapters, we have seen many image smoothing techniques like Gaussian Blurring, Median Blurring etc and they were good to some extent in removing small quantities of noise. In those techniques, we took a small neighbourhood around a pixel and did some operations like gaussian weighted average, median of the values etc to replace the central element. In short, noise removal at a pixel was local to its neighbourhood. 
 
-There is a property of noise. Noise is generally considered to be a random variable with zero mean. Consider a noisy pixel, :math:`p = p_0 + n` where :math:`p_0` is the true value of pixel and :math:`n` is the noise in that pixel. You can a large number of same pixel (say :math:`N`) from different images and computes their average. Ideally, you should get :math:`p = p_0` since mean of noise is zero.
+There is a property of noise. Noise is generally considered to be a random variable with zero mean. Consider a noisy pixel, :math:`p = p_0 + n` where :math:`p_0` is the true value of pixel and :math:`n` is the noise in that pixel. You can take large number of same pixels (say :math:`N`) from different images and computes their average. Ideally, you should get :math:`p = p_0` since mean of noise is zero.
 
-You can verify it yourself by a simple setup. Hold a static camera to a certain location for a couple of seconds. This will give you plenty of frames, or a lot of images of the same scene. Then write a piece of code to find the average of all the frames in the video (This should be too simple for you now ). Compare the final result and first frame. Unfortunately this simple method is not robust to camera and scene motions. Also often there is only one noisy image available.
+You can verify it yourself by a simple setup. Hold a static camera to a certain location for a couple of seconds. This will give you plenty of frames, or a lot of images of the same scene. Then write a piece of code to find the average of all the frames in the video (This should be too simple for you now ). Compare the final result and first frame. You can see reduction in noise. Unfortunately this simple method is not robust to camera and scene motions. Also often there is only one noisy image available.
 
 So idea is simple, we need a set of similar images to average out the noise. Consider a small window (say 5x5 window) in the image. Chance is large that the same patch may be somewhere else in the image. Sometimes in a small neigbourhood around it. What about using these similar patches together and find their average? For that particular window, that is fine. See an example image below:
 
@@ -97,11 +97,17 @@ Now we will apply the same method to a video. The first argument is the list of 
     # convert all to grayscale
     gray = [cv2.cvtColor(i, cv2.COLOR_BGR2GRAY) for i in img]
 
+    # convert all to float64
+    gray = [np.float64(i) for i in gray]
+
     # create a noise of variance 25
-    noise = np.uint8(np.random.randn(*gray[1].shape)*5)
+    noise = np.random.randn(*gray[1].shape)*10
 
     # Add this noise to images
     noisy = [i+noise for i in gray]
+
+    # Convert back to uint8
+    noisy = [np.uint8(np.clip(i,0,255)) for i in noisy]
 
     # Denoise 3rd frame considering all the 5 frames
     dst = cv2.fastNlMeansDenoisingMulti(noisy, 2, 5, None, 4, 7, 35)
@@ -114,7 +120,7 @@ Now we will apply the same method to a video. The first argument is the list of 
 
 Below image shows a zoomed version of the result we got:
 
-    .. image:: images/nlm_video.jpg
+    .. image:: images/nlm_multi.jpg
         :alt: Denoising a frame
         :align: center
         
@@ -127,7 +133,7 @@ Additional Resources
 
 #. http://www.ipol.im/pub/art/2011/bcm_nlm/ (It has the details, online demo etc. Highly recommended to visit. Our test image is generated from this link)
 
-#. Online course at coursera (link to be added)(First image taken from here)
+#. `Online course at coursera <https://www.coursera.org/course/images>`_ (First image taken from here)
 
 Exercises
 ============        
