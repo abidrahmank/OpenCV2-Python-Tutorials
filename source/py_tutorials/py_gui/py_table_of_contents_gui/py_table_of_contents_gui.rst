@@ -1,4 +1,4 @@
-.. _Table-Of-Content-Gui:
+.. _PY_Table-Of-Content-Gui:
 
 Gui Features in OpenCV
 -----------------------------------------------------------

@@ -1,4 +1,4 @@
-.. _Table-Of-Content-Feature2D:
+.. _PY_Table-Of-Content-Feature2D:
 
 Feature Detection and Description
 ------------------------------------------

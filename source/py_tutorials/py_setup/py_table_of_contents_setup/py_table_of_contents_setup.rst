@@ -1,4 +1,4 @@
-.. _Table-Of-Content-Setup:
+.. _PY_Table-Of-Content-Setup:
 
 Introduction to OpenCV
 -----------------------------------------------------------

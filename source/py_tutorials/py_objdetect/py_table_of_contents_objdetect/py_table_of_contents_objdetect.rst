@@ -1,4 +1,4 @@
-.. _Table-Of-Content-Objdetection:
+.. _PY_Table-Of-Content-Objdetection:
 
 
 Object Detection

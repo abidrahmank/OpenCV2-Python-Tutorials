@@ -2,7 +2,7 @@
 OpenCV-Python Tutorials
 #######################
 
-*  :ref:`Table-Of-Content-Setup`
+*  :ref:`PY_Table-Of-Content-Setup`
 
    .. tabularcolumns:: m{100pt} m{300pt}
    .. cssclass:: toctableopencv
@@ -17,7 +17,7 @@ OpenCV-Python Tutorials
                  :width:  80pt
                  :alt: Introduction Icon
 
-*  :ref:`Table-Of-Content-Gui`
+*  :ref:`PY_Table-Of-Content-Gui`
 
    .. tabularcolumns:: m{100pt} m{300pt}
    .. cssclass:: toctableopencv
@@ -31,7 +31,7 @@ OpenCV-Python Tutorials
                  :width:  80pt
                  :alt: gui Icon
 
-*  :ref:`Table-Of-Content-Core`
+*  :ref:`PY_Table-Of-Content-Core`
 
    .. tabularcolumns:: m{100pt} m{300pt}
    .. cssclass:: toctableopencv
@@ -47,7 +47,7 @@ OpenCV-Python Tutorials
                  :alt: core Icon
 
 
-*  :ref:`Table-Of-Content-ImgProc`
+*  :ref:`PY_Table-Of-Content-ImgProc`
 
    .. tabularcolumns:: m{100pt} m{300pt}
    .. cssclass:: toctableopencv
@@ -62,7 +62,7 @@ OpenCV-Python Tutorials
                  :width:  80pt
                  :alt: imgproc Icon
 
-*  :ref:`Table-Of-Content-Feature2D`
+*  :ref:`PY_Table-Of-Content-Feature2D`
 
    .. tabularcolumns:: m{100pt} m{300pt}
    .. cssclass:: toctableopencv
@@ -78,7 +78,7 @@ OpenCV-Python Tutorials
                  :alt: imgproc Icon
 
 
-*  :ref:`Table-Of-Content-Video`
+*  :ref:`PY_Table-Of-Content-Video`
 
    .. tabularcolumns:: m{100pt} m{300pt}
    .. cssclass:: toctableopencv
@@ -94,7 +94,7 @@ OpenCV-Python Tutorials
                  :alt: imgproc Icon
 
 
-*  :ref:`Table-Of-Content-Calib`
+*  :ref:`PY_Table-Of-Content-Calib`
 
    .. tabularcolumns:: m{100pt} m{300pt}
    .. cssclass:: toctableopencv
@@ -111,7 +111,7 @@ OpenCV-Python Tutorials
 
 
 
-*  :ref:`Table-Of-Content-ML`
+*  :ref:`PY_Table-Of-Content-ML`
 
    .. tabularcolumns:: m{100pt} m{300pt}
    .. cssclass:: toctableopencv
@@ -127,7 +127,7 @@ OpenCV-Python Tutorials
                  :alt: ML Icon
 
 
-*  :ref:`Table-Of-Content-Photo`
+*  :ref:`PY_Table-Of-Content-Photo`
 
    .. tabularcolumns:: m{100pt} m{300pt}
    .. cssclass:: toctableopencv
@@ -143,7 +143,7 @@ OpenCV-Python Tutorials
                  :alt: ML Icon
 
 
-*  :ref:`Table-Of-Content-Objdetection`
+*  :ref:`PY_Table-Of-Content-Objdetection`
 
    .. tabularcolumns:: m{100pt} m{300pt}
    .. cssclass:: toctableopencv

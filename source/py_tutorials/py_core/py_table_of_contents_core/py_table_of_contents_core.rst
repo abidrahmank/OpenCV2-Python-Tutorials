@@ -1,4 +1,4 @@
-.. _Table-Of-Content-Core:
+.. _PY_Table-Of-Content-Core:
 
 Core Operations
 -----------------------------------------------------------

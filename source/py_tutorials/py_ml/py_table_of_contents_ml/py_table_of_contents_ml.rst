@@ -1,4 +1,4 @@
-.. _Table-Of-Content-ML:
+.. _PY_Table-Of-Content-ML:
 
 Machine Learning
 ********************

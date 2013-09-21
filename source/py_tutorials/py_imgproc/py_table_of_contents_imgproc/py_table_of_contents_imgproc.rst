@@ -1,4 +1,4 @@
-.. _Table-Of-Content-ImgProc:
+.. _PY_Table-Of-Content-ImgProc:
 
 Image Processing in OpenCV
 -----------------------------------------------------------
