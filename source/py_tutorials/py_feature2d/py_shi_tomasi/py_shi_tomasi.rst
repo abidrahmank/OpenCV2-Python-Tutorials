@@ -14,7 +14,7 @@ In this chapter,
 Theory
 =========
 
-In last chapter, we saw Harris Corner Detector. Later in 1994, J. Shi and C. Tomasi made a small modification to it in their paper "Good Features to Track" which shows betr results compared to Harris Corner Detector. The scoring function in Harris Corner Detector was given by:
+In last chapter, we saw Harris Corner Detector. Later in 1994, J. Shi and C. Tomasi made a small modification to it in their paper **Good Features to Track** which shows better results compared to Harris Corner Detector. The scoring function in Harris Corner Detector was given by:
 
 .. math:: 
 
