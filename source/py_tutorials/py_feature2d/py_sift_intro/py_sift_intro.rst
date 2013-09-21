@@ -17,11 +17,11 @@ Theory
 
 In last couple of chapters, we saw some corner detectors like Harris etc. They are rotation-invariant, which means, even if the image is rotated, we can find the same corners. It is obvious because corners remain corners in rotated image also. But what about scaling? A corner may not be a corner if the image is scaled. For example, check a simple image below. A corner in a small image within a small window is flat when it is zoomed in the same window. So Harris corner is not scale invariant.
 
-    .. image:: images/sift_scale_invariant.png
+    .. image:: images/sift_scale_invariant.jpg
         :alt: Scale-Invariance
         :align: center
         
-So, in 2004, D.Lowe, University of British Columbia, came up with a new algorithm, Scale Invariant Feature Transform (SIFT) in his paper, "Distinctive Image Features from Scale-Invariant Keypoints", which extract keypoints and compute its descriptors. ( This paper is easy to understand and considered to be best material available on SIFT. So this explanation is just a short summary of this paper).
+So, in 2004, **D.Lowe**, University of British Columbia, came up with a new algorithm, Scale Invariant Feature Transform (SIFT) in his paper, **Distinctive Image Features from Scale-Invariant Keypoints**, which extract keypoints and compute its descriptors. *(This paper is easy to understand and considered to be best material available on SIFT. So this explanation is just a short summary of this paper)*.
 
 There are mainly four steps involved in SIFT algorithm. We will see them one-by-one.
 
@@ -33,13 +33,13 @@ From the image above, it is obvious that we can't use the same window to detect 
 But this LoG is a little costly, so SIFT algorithm uses Difference of Gaussians which is an approximation of LoG. Difference of Gaussian is obtained as the difference of Gaussian blurring of an image with two different :math:`\sigma`, let it be :math:`\sigma` and :math:`k\sigma`. This process is done for different octaves of the image in Gaussian Pyramid. It is represented in below image:
 
 
-    .. image:: images/sift_dog.png
+    .. image:: images/sift_dog.jpg
         :alt: Difference of Gaussian
         :align: center
 
 Once this DoG are found, images are searched for local extrema over scale and space. For eg, one pixel in an image is compared with its 8 neighbours as well as 9 pixels in next scale and 9 pixels in previous scales. If it is a local extrema, it is a potential keypoint. It basically means that keypoint is best represented in that scale. It is shown in below image:
 
-    .. image:: images/sift_local_extrema.png
+    .. image:: images/sift_local_extrema.jpg
         :alt: Difference of Gaussian
         :align: center 
 
