@@ -121,7 +121,7 @@ Or
 
     >>> b = img[:,:,0]
     
-Suppose, you want to make all the red pixels to zero, you need not split like this and put it equal to zero. You can simply use Numpy indexing, and that is more faster.
+Suppose you want to turn all the red pixels to zero, you need not split the image into its channels, assign zero to the red channel and merge the channels back again into a color image. You can simply use Numpy indexing, which is faster.
 ::
 
     >>> img[:,:,2] = 0
@@ -130,7 +130,7 @@ Suppose, you want to make all the red pixels to zero, you need not split like th
 
 Making Borders for Images (Padding)
 ====================================
-If you want to create a border around the image, something like a photo frame, you can use **cv2.copyMakeBorder()** function. But it has more applications for convolution operation, zero padding etc. This function takes following arguments:
+If you want to create a border around the image, e.g. a photo frame, you can use **cv2.copyMakeBorder()** function. But it has more applications for convolution operation, zero padding etc. This function takes following arguments:
 
     * **src** - input image
     * **top**, **bottom**, **left**, **right** - border width in number of pixels in corresponding directions
