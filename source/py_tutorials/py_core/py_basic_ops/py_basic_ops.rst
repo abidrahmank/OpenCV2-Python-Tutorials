@@ -94,7 +94,7 @@ Image datatype is obtained by ``img.dtype``:
 Image ROI
 ===========
 
-Sometimes, you will have to play with certain region of images. For eye detection in images, first face detection is done all over the image and when face is obtained, we select the face region alone and search for eyes inside it instead of searching whole image. It improves accuracy (because eyes are always on faces :D ) and performance (because we search for a small area)
+Sometimes, you will have to play with certain region of images. For eye detection in images, first perform face detection over the image until the face is found, then search within the face region for eyes. This approach improves accuracy (because eyes are always on faces :D ) and performance (because we search for a small area).
 
 ROI is again obtained using Numpy indexing. Here I am selecting the ball and copying it to another region in the image:
 ::
@@ -111,7 +111,7 @@ Check the results below:
 Splitting and Merging Image Channels
 ======================================
 
-Sometimes you will need to work separately on B,G,R channels of image. Then you need to split the BGR images to single planes. Or another time, you may need to join these individual channels to BGR image. You can do it simply by:
+The B,G,R channels of an image can be split into their individual planes when needed. Then, the individual channels can be merged back together to form a BGR image again. This can be performed by:
 ::
 
     >>> b,g,r = cv2.split(img)
@@ -121,15 +121,16 @@ Or
 
     >>> b = img[:,:,0]
     
-Suppose, you want to make all the red pixels to zero, you need not split like this and put it equal to zero. You can simply use Numpy indexing, and that is more faster.
+Suppose, you want to make all the red pixels to zero, you need not split like this and put it equal to zero. You can simply use Numpy indexing which is faster.
 ::
 
     >>> img[:,:,2] = 0
     
-.. warning:: ``cv2.split()`` is a costly operation (in terms of time). So do it only if you need it. Otherwise go for Numpy indexing.
+.. warning:: ``cv2.split()`` is a costly operation (in terms of time), so only use it if necessary. Numpy indexing is much more efficient and should be used if possible.
 
 Making Borders for Images (Padding)
 ====================================
+
 If you want to create a border around the image, something like a photo frame, you can use **cv2.copyMakeBorder()** function. But it has more applications for convolution operation, zero padding etc. This function takes following arguments:
 
     * **src** - input image
