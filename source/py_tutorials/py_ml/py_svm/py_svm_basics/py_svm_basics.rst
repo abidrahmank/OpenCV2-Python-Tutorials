@@ -96,7 +96,7 @@ How should the parameter C be chosen? It is obvious that the answer to this ques
 Additional Resources
 ======================
 
-#. `NPTEL notes on Statistical Pattern Recognition, Chapters 25-29 <http://www.nptel.iitm.ac.in/courses/106108057/26>`_.
+#. `NPTEL notes on Statistical Pattern Recognition, Chapters 25-29 <http://nptel.ac.in/courses/index.php?subjectId=106108057&lectureId=26>`_.
 
 
 Exercises
