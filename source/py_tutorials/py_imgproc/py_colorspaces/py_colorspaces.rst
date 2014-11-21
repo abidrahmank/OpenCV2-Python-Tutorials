@@ -30,7 +30,7 @@ For BGR :math:`\rightarrow` Gray conversion we use the flags ``cv2.COLOR_BGR2GRA
 Object Tracking
 ==================
 
-Now we know how to convert BGR image to HSV, we can use this to extract a colored object. In HSV, it is more easier to represent a color than RGB color-space. In our application, we will try to extract a blue colored object. So here is the method:
+Now we know how to convert BGR image to HSV, we can use this to extract a colored object. In HSV, it is easier to represent a color than RGB color-space. In our application, we will try to extract a blue colored object. So here is the method:
 
     * Take each frame of the video
     * Convert from BGR to HSV color-space
