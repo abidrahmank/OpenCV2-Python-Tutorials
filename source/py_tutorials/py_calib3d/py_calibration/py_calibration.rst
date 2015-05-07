@@ -114,7 +114,7 @@ Once we find the corners, we can increase their accuracy using **cv2.cornerSubPi
             imgpoints.append(corners2)
             
             # Draw and display the corners
-            img = cv2.drawChessboardCorners(img, (7,6), corners2,ret)
+            cv2.drawChessboardCorners(img, (7,6), corners2,ret)
             cv2.imshow('img',img)
             cv2.waitKey(500)
 
