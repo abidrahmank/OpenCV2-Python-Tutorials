@@ -66,6 +66,9 @@ It is same as capturing from Camera, just change camera index with video file na
     while(cap.isOpened()):
         ret, frame = cap.read()
         
+        if ret == False:  # check end of the video by checking this return value.
+            break
+        
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
         
         cv2.imshow('frame',gray)
@@ -102,7 +105,7 @@ Below code capture from a Camera, flip every frame in vertical direction and sav
     cap = cv2.VideoCapture(0)
 
     # Define the codec and create VideoWriter object
-    fourcc = cv2.VideoWriter_fourcc(*'XVID')
+    fourcc = cv2.VideoWriter_fourcc(*'MJPG')   # *'XVID' not work for my windows7
     out = cv2.VideoWriter('output.avi',fourcc, 20.0, (640,480))
 
     while(cap.isOpened()):
