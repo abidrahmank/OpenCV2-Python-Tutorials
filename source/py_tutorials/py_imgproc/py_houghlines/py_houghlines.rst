@@ -70,12 +70,16 @@ Everything explained above is encapsulated in the OpenCV function, **cv2.HoughLi
 
     cv2.imwrite('houghlines3.jpg',img)
     
-Check the results below:
-
     .. image:: images/houghlines3.jpg
         :alt: Hough Transform Line Detection
         :align: center
         
+Having lines[0] it only adds the first line. In case you want to add all the hough lines you have to add:
+    for x in range(0, len(lines)):
+       for rho,theta in lines[x]:
+         ...
+         
+
 Probabilistic Hough Transform
 ==============================
 
