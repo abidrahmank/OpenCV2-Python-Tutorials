@@ -33,21 +33,21 @@ OpenCV introduces a new set of tutorials which will guide you through various fu
 
 A prior knowledge on Python and Numpy is required before starting because they won't be covered in this guide. **Especially, a good knowledge on Numpy is must to write optimized codes in OpenCV-Python.**
 
-This tutorial has been started by *Abid Rahman K.* as part of Google Summer of Code 2013 program, under the guidance of *Alexander Mordvintsev*.
+This tutorial was started by *Abid Rahman K.* as part of Google Summer of Code 2013 program, under the guidance of *Alexander Mordvintsev*.
 
 
-OpenCV Needs You !!!
+OpenCV Needs You!
 ==========================
 
-Since OpenCV is an open source initiative, all are welcome to make contributions to this library. And it is same for this tutorial also.
+Since OpenCV is an open source initiative, all are welcome to make contributions to the library, as well as this tutorial.
 
-So, if you find any mistake in this tutorial (whether it be a small spelling mistake or a big error in code or concepts, whatever), feel free to correct it. 
+So, if you find any mistakes in this tutorial (whether it be a small spelling mistake or a big error in code or concepts, whatever), feel free to correct it. 
 
 And that will be a good task for freshers who begin to contribute to open source projects. Just fork the OpenCV in github, make necessary corrections and send a pull request to OpenCV. OpenCV developers will check your pull request, give you important feedback and once it passes the approval of the reviewer, it will be merged to OpenCV. Then you become a open source contributor. Similar is the case with other tutorials, documentation etc.
 
-As new modules are added to OpenCV-Python, this tutorial will have to be expanded. So those who knows about particular algorithm can write up a tutorial which includes a basic theory of the algorithm and a code showing basic usage of the algorithm and submit it to OpenCV.
+As new modules are added to OpenCV-Python, this tutorial will have to be expanded. So those who knows about particular algorithms can write up a tutorial which includes the basic theory of the algorithm and code showing basic usage of the algorithm and submit it to OpenCV.
 
-Remember, we **together** can make this project a great success !!!
+Remember, we **together** can make this project a great success!
 
 
 Contributors
