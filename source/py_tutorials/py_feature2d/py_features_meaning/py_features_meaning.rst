@@ -6,7 +6,7 @@ Understanding Features
 Goal
 =====
 
-In this chapter, we will just try to understand what are features, why are they important, why corners are important etc.
+In this chapter, we will just try to understand what features are, why they are important, why corners are important, etc.
 
 Explanation
 ==============
