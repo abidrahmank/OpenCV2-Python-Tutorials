@@ -66,14 +66,19 @@ It is same as capturing from Camera, just change camera index with video file na
     while(cap.isOpened()):
         ret, frame = cap.read()
         
-        gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+        if ret == True:
+            gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
         
-        cv2.imshow('frame',gray)
-        if cv2.waitKey(1) & 0xFF == ord('q'):
+            cv2.imshow('frame',gray)
+            
+            if cv2.waitKey(1) & 0xFF == ord('q'):
+               cap.release()
+               cv2.destroyAllWindows()
+               break
+         else:
+            cap.release()
+            cv2.destroyAllWindows()
             break
-
-    cap.release()
-    cv2.destroyAllWindows()
     
 .. Note:: Make sure proper versions of ffmpeg or gstreamer is installed. Sometimes, it is a headache to work with Video Capture mostly due to wrong installation of ffmpeg/gstreamer.
 
