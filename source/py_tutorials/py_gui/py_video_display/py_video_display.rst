@@ -89,7 +89,7 @@ This time we create a **VideoWriter** object. We should specify the output file 
 
 * In Fedora: DIVX, XVID, MJPG, X264, WMV1, WMV2. (XVID is more preferable. MJPG results in high size video. X264 gives very small size video)
 * In Windows: DIVX (More to be tested and added)
-* In OSX : *(I don't have access to OSX. Can some one fill this?)*
+* In OSX: MP4V (Tested on OpenCV 3.1.0 and OSX 10.10.5)
 
 FourCC code is passed as ``cv2.VideoWriter_fourcc('M','J','P','G')`` or ``cv2.VideoWriter_fourcc(*'MJPG)`` for MJPG.
 
