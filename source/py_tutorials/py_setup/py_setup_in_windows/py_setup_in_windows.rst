@@ -39,6 +39,9 @@ Installing OpenCV from prebuilt binaries
     
 If the results are printed out without any errors, congratulations !!! You have installed OpenCV-Python successfully.
 
+To add support for video processing, FFMPEG needs to be added to your PATH. 
+
+10. Copy **opencv/build/bin/opencv_ffmpeg.dll** to your working folder for each project or a folder on your PATH.
 
 Building OpenCV from source 
 ===============================
