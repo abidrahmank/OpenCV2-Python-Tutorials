@@ -75,7 +75,7 @@ It is same as capturing from Camera, just change camera index with video file na
     cap.release()
     cv2.destroyAllWindows()
     
-.. Note:: Make sure proper versions of ffmpeg or gstreamer is installed. Sometimes, it is a headache to work with Video Capture mostly due to wrong installation of ffmpeg/gstreamer.
+.. Note:: Make sure proper versions of ffmpeg or gstreamer is installed. Sometimes, it is a headache to work with Video Capture mostly due to wrong installation of ffmpeg/gstreamer. A proper installation of ffmpeg is where the opencv_ffmpeg DLL/lib is available in the path to the python script.
 
 
 Saving a Video
