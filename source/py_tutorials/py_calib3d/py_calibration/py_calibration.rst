@@ -110,11 +110,11 @@ Once we find the corners, we can increase their accuracy using **cv2.cornerSubPi
         if ret == True:
             objpoints.append(objp)
 
-            corners2 = cv2.cornerSubPix(gray,corners,(11,11),(-1,-1),criteria)
-            imgpoints.append(corners2)
+            cv2.cornerSubPix(gray,corners,(11,11),(-1,-1),criteria)
+            imgpoints.append(corners)
             
             # Draw and display the corners
-            img = cv2.drawChessboardCorners(img, (7,6), corners2,ret)
+            cv2.drawChessboardCorners(img, (7,6), corners,ret)
             cv2.imshow('img',img)
             cv2.waitKey(500)
 
@@ -197,7 +197,7 @@ Re-projection error gives a good estimation of just how exact is the found param
     for i in xrange(len(objpoints)):
         imgpoints2, _ = cv2.projectPoints(objpoints[i], rvecs[i], tvecs[i], mtx, dist)
         error = cv2.norm(imgpoints[i],imgpoints2, cv2.NORM_L2)/len(imgpoints2)
-        tot_error += error
+        mean_error += error
 
     print "total error: ", mean_error/len(objpoints)
 
