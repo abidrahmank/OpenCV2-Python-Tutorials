@@ -10,12 +10,12 @@ Goal
 In this chapter,
     * We will understand the concepts of optical flow and its estimation using Lucas-Kanade method.
     * We will use functions like **cv2.calcOpticalFlowPyrLK()** to track feature points in a video.
-    
+
 
 Optical Flow
 ================
 
-Optical flow is the pattern of apparent motion of image objects between two consecutive frames caused by the movemement of object or camera. It is 2D vector field where each vector is a displacement vector showing the movement of points from first frame to second. Consider the image below (Image Courtesy: `Wikipedia article on Optical Flow <http://en.wikipedia.org/wiki/Optical_flow>`_). 
+Optical flow is the pattern of apparent motion of image objects between two consecutive frames caused by the movemement of object or camera. It is 2D vector field where each vector is a displacement vector showing the movement of points from first frame to second. Consider the image below (Image Courtesy: `Wikipedia article on Optical Flow <http://en.wikipedia.org/wiki/Optical_flow>`_).
 
 
     .. image:: images/optical_flow_basic1.jpg
@@ -27,7 +27,7 @@ It shows a ball moving in 5 consecutive frames. The arrow shows its displacement
     * Structure from Motion
     * Video Compression
     * Video Stabilization ...
-    
+
 Optical flow works on several assumptions:
 
 1. The pixel intensities of an object do not change between consecutive frames.
@@ -38,19 +38,19 @@ Consider a pixel :math:`I(x,y,t)` in first frame (Check a new dimension, time, i
 .. math::
 
     I(x,y,t) = I(x+dx, y+dy, t+dt)
-    
+
 Then take taylor series approximation of right-hand side, remove common terms and divide by :math:`dt` to get the following equation:
 
 .. math::
 
-    f_x u + f_y v + f_t = 0 \; 
-    
+    f_x u + f_y v + f_t = 0 \;
+
 where:
 
-.. math:: 
-        
+.. math::
+
     f_x = \frac{\partial f}{\partial x} \; ; \; f_y = \frac{\partial f}{\partial x}
-    
+
     u = \frac{dx}{dt} \; ; \; v = \frac{dy}{dt}
 
 
@@ -63,20 +63,20 @@ We have seen an assumption before, that all the neighbouring pixels will have si
 
 .. math::
 
-    \begin{bmatrix} u \\ v \end{bmatrix} = 
-    \begin{bmatrix} 
+    \begin{bmatrix} u \\ v \end{bmatrix} =
+    \begin{bmatrix}
         \sum_{i}{f_{x_i}}^2  &  \sum_{i}{f_{x_i} f_{y_i} } \\
-        \sum_{i}{f_{x_i} f_{y_i}} & \sum_{i}{f_{y_i}}^2 
+        \sum_{i}{f_{x_i} f_{y_i}} & \sum_{i}{f_{y_i}}^2
     \end{bmatrix}^{-1}
-    \begin{bmatrix} 
+    \begin{bmatrix}
         - \sum_{i}{f_{x_i} f_{t_i}} \\
-        - \sum_{i}{f_{y_i} f_{t_i}} 
+        - \sum_{i}{f_{y_i} f_{t_i}}
     \end{bmatrix}
-    
-    
+
+
 ( Check similarity of inverse matrix with Harris corner detector. It denotes that corners are better points to be tracked.)
 
-So from user point of view, idea is simple, we give some points to track, we receive the optical flow vectors of those points. But again there are some problems. Until now, we were dealing with small motions. So it fails when there is large motion. So again we go for pyramids. When we go up in the pyramid, small motions are removed and large motions becomes small motions. So applying Lucas-Kanade there, we get optical flow along with the scale. 
+So from user point of view, idea is simple, we give some points to track, we receive the optical flow vectors of those points. But again there are some problems. Until now, we were dealing with small motions. So it fails when there is large motion. So again we go for pyramids. When we go up in the pyramid, small motions are removed and large motions becomes small motions. So applying Lucas-Kanade there, we get optical flow along with the scale.
 
 
 Lucas-Kanade Optical Flow in OpenCV
@@ -127,8 +127,8 @@ OpenCV provides all these in a single function, **cv2.calcOpticalFlowPyrLK()**. 
         for i,(new,old) in enumerate(zip(good_new,good_old)):
             a,b = new.ravel()
             c,d = old.ravel()
-            mask = cv2.line(mask, (a,b),(c,d), color[i].tolist(), 2)
-            frame = cv2.circle(frame,(a,b),5,color[i].tolist(),-1)
+            cv2.line(mask, (a,b),(c,d), color[i].tolist(), 2)
+            cv2.circle(frame,(a,b),5,color[i].tolist(),-1)
         img = cv2.add(frame,mask)
 
         cv2.imshow('frame',img)
@@ -139,10 +139,10 @@ OpenCV provides all these in a single function, **cv2.calcOpticalFlowPyrLK()**. 
         # Now update the previous frame and previous points
         old_gray = frame_gray.copy()
         p0 = good_new.reshape(-1,1,2)
-            
+
     cv2.destroyAllWindows()
     cap.release()
-    
+
 
 (This code doesn't check how correct are the next keypoints. So even if any feature point disappears in image, there is a chance that optical flow finds the next point which may look close to it. So actually for a robust tracking, corner points should be detected in particular intervals. OpenCV samples comes up with such a sample which finds the feature points at every 5 frames. It also run a backward-check of the optical flow points got to select only good ones. Check ``samples/python2/lk_track.py``).
 
@@ -151,12 +151,12 @@ See the results we got:
     .. image:: images/opticalflow_lk.jpg
         :alt: Lucas-Kanade method for optical flow
         :align: center
-        
+
 
 Dense Optical Flow in OpenCV
 ==============================
 
-Lucas-Kanade method computes optical flow for a sparse feature set (in our example, corners detected using Shi-Tomasi algorithm). OpenCV provides another algorithm to find the dense optical flow. It computes the optical flow for all the points in the frame. It is based on Gunner Farneback's algorithm which is explained in "Two-Frame Motion Estimation Based on Polynomial Expansion" by Gunner Farneback in 2003. 
+Lucas-Kanade method computes optical flow for a sparse feature set (in our example, corners detected using Shi-Tomasi algorithm). OpenCV provides another algorithm to find the dense optical flow. It computes the optical flow for all the points in the frame. It is based on Gunner Farneback's algorithm which is explained in "Two-Frame Motion Estimation Based on Polynomial Expansion" by Gunner Farneback in 2003.
 
 Below sample shows how to find the dense optical flow using above algorithm. We get a 2-channel array with optical flow vectors, :math:`(u,v)`. We find their magnitude and direction. We color code the result for better visualization. Direction corresponds to Hue value of the image. Magnitude corresponds to Value plane. See the code below:
 ::
@@ -175,7 +175,7 @@ Below sample shows how to find the dense optical flow using above algorithm. We 
         next = cv2.cvtColor(frame2,cv2.COLOR_BGR2GRAY)
 
         flow = cv2.calcOpticalFlowFarneback(prvs,next, None, 0.5, 3, 15, 3, 5, 1.2, 0)
-        
+
         mag, ang = cv2.cartToPolar(flow[...,0], flow[...,1])
         hsv[...,0] = ang*180/np.pi/2
         hsv[...,2] = cv2.normalize(mag,None,0,255,cv2.NORM_MINMAX)
@@ -189,18 +189,18 @@ Below sample shows how to find the dense optical flow using above algorithm. We 
             cv2.imwrite('opticalfb.png',frame2)
             cv2.imwrite('opticalhsv.png',rgb)
         prvs = next
-        
+
     cap.release()
     cv2.destroyAllWindows()
- 
+
 See the result below:
 
     .. image:: images/opticalfb.jpg
         :alt: Dense Optical Flow
         :align: center
-        
-OpenCV comes with a more advanced sample on dense optical flow, please see ``samples/python2/opt_flow.py``. 
-        
+
+OpenCV comes with a more advanced sample on dense optical flow, please see ``samples/python2/opt_flow.py``.
+
 Additional Resources
 ========================
 
