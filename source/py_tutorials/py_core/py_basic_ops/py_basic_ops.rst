@@ -150,7 +150,7 @@ Below is a sample code demonstrating all these border types for better understan
     import numpy as np
     from matplotlib import pyplot as plt
 
-    BLUE = [255,0,0]
+    BLUE = [0,0,255]
 
     img1 = cv2.imread('opencv_logo.png')
 
