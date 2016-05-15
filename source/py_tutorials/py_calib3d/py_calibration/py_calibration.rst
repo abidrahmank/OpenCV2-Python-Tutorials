@@ -193,13 +193,13 @@ Re-projection Error
 Re-projection error gives a good estimation of just how exact is the found parameters. This should be as close to zero as possible. Given the intrinsic, distortion, rotation and translation matrices, we first transform the object point to image point using **cv2.projectPoints()**. Then we calculate the absolute norm between what we got with our transformation and the corner finding algorithm. To find the average error we calculate the arithmetical mean of the errors calculate for all the calibration images.
 ::
 
-    mean_error = 0
+    tot_error = 0
     for i in xrange(len(objpoints)):
         imgpoints2, _ = cv2.projectPoints(objpoints[i], rvecs[i], tvecs[i], mtx, dist)
         error = cv2.norm(imgpoints[i],imgpoints2, cv2.NORM_L2)/len(imgpoints2)
         tot_error += error
 
-    print "total error: ", mean_error/len(objpoints)
+    print "Mean error: ", tot_error/len(objpoints)
 
 
 Additional Resources
