@@ -26,7 +26,7 @@ Let's load a color image first:
     >>> import cv2
     >>> import numpy as np
     
-    >>> img = cv2.imread('messi5.jpg')
+    >>> img = cv2.imread('messi5.jpg', cv2.CV_LOAD_IMAGE_COLOR)
     
 You can access a pixel value by its row and column coordinates. For BGR image, it returns an array of Blue, Green, Red values. For grayscale image, just corresponding intensity is returned.
 ::
