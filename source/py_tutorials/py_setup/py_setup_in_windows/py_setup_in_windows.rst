@@ -18,7 +18,7 @@ Installing OpenCV from prebuilt binaries
 
     1.1. `Python-2.7.x <http://python.org/ftp/python/2.7.5/python-2.7.5.msi>`_.
 
-    1.2. `Numpy <http://sourceforge.net/projects/numpy/files/NumPy/1.7.1/numpy-1.7.1-win32-superpack-python2.7.exe/download>`_.
+    1.2. `Numpy <http://superb-sea2.dl.sourceforge.net/project/numpy/NumPy/1.10.1/numpy-1.10.1-win32-superpack-python2.7.exe>`_.
 
     1.3. `Matplotlib <https://downloads.sourceforge.net/project/matplotlib/matplotlib/matplotlib-1.3.0/matplotlib-1.3.0.win32-py2.7.exe>`_ (*Matplotlib is optional, but recommended since we use it a lot in our tutorials*).
 
