@@ -156,6 +156,8 @@ Take contour-0 : It is in hierarchy-0. Next contour in same hierarchy is contour
 
 Take contour-2 : It is in hierarchy-1. No contour in same level. No previous one. Child is contour-2. Parent is contour-0. So array is [-1,-1,2,0].
 
+**NOTE:** There is a mistake in that picture. The hierarchy of contour-6 should be (5) instead of (6), since contour-6 is not a child of contour-5, but of contour-4. Though, the following array of hierarchy states is correct.
+
 And remaining, try yourself. Below is the full answer:
 ::
 
