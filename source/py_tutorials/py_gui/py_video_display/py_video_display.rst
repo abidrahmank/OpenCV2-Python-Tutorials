@@ -124,6 +124,7 @@ Below code capture from a Camera, flip every frame in vertical direction and sav
     out.release()
     cv2.destroyAllWindows()
 
+.. Note:: It may happen that the video is not saving properly and you are getting an empty file. The most likely cause for this is wrong codec in fourcc. You can pass the parameter -1 instead of fourcc to manual select the codec.
 
 Additional Resources
 ==========================
