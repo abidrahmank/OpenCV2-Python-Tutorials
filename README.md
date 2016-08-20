@@ -20,7 +20,7 @@ The input data used in these tutorials are given in **Data** folder
 Online
 ---------
 
-* **For official tutorials, please visit : http://docs.opencv.org/trunk/doc/py_tutorials/py_tutorials.html**
+* **For official tutorials, please visit : http://docs.opencv.org/3.0-beta/doc/py_tutorials/py_tutorials.html**
 * https://opencv-python-tutroals.readthedocs.org/en/latest/index.html - This is only for checking. May contain lots of errors, please stick to the official tutorials.
 
 Offline
