@@ -61,7 +61,7 @@ First we need to load the required XML classifiers. Then load our input image (o
     import numpy as np
     import cv2
 
-    face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
+    face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_alt.xml')
     eye_cascade = cv2.CascadeClassifier('haarcascade_eye.xml')
 
     img = cv2.imread('sachin.jpg')
@@ -73,7 +73,7 @@ Now we find the faces in the image. If faces are found, it returns the positions
 
     faces = face_cascade.detectMultiScale(gray, 1.3, 5)
     for (x,y,w,h) in faces:
-        img = cv2.rectangle(img,(x,y),(x+w,y+h),(255,0,0),2)
+        cv2.rectangle(img,(x,y),(x+w,y+h),(255,0,0),2)
         roi_gray = gray[y:y+h, x:x+w]
         roi_color = img[y:y+h, x:x+w]
         eyes = eye_cascade.detectMultiScale(roi_gray)
