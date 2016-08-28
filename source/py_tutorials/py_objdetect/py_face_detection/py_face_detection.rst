@@ -61,7 +61,7 @@ First we need to load the required XML classifiers. Then load our input image (o
     import numpy as np
     import cv2
 
-    face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
+    face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_alt.xml')
     eye_cascade = cv2.CascadeClassifier('haarcascade_eye.xml')
 
     img = cv2.imread('sachin.jpg')
