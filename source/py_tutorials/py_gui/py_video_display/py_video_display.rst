@@ -76,6 +76,7 @@ It is same as capturing from Camera, just change camera index with video file na
     cv2.destroyAllWindows()
     
 .. Note:: Make sure proper versions of ffmpeg or gstreamer is installed. Sometimes, it is a headache to work with Video Capture mostly due to wrong installation of ffmpeg/gstreamer.
+.. Note:: If you want to use pythons multiprocessing, make sure to create the VideoCapture object in the same process where you execute the read function - otherwise read might hang.
 
 
 Saving a Video
