@@ -58,7 +58,7 @@ Everything explained above is encapsulated in the OpenCV function, **cv2.HoughLi
     lines = cv2.HoughLines(edges,1,np.pi/180,200)
     for rho,theta in lines[0]:
         a = np.cos(theta)
-        b = np.sin(theta)
+        b = -np.sin(theta)
         x0 = a*rho
         y0 = b*rho
         x1 = int(x0 + 1000*(-b))   
