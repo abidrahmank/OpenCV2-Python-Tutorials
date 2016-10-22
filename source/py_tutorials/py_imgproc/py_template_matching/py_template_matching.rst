@@ -41,12 +41,11 @@ We will try all the comparison methods so that we can see how their results look
     w, h = template.shape[::-1]
 
     # All the 6 methods for comparison in a list
-    methods = ['cv2.TM_CCOEFF', 'cv2.TM_CCOEFF_NORMED', 'cv2.TM_CCORR', 
-                'cv2.TM_CCORR_NORMED', 'cv2.TM_SQDIFF', 'cv2.TM_SQDIFF_NORMED']
+    methods = [cv2.TM_CCOEFF, cv2.TM_CCOEFF_NORMED, cv2.TM_CCORR, 
+               cv2.TM_CCORR_NORMED, cv2.TM_SQDIFF, cv2.TM_SQDIFF_NORMED]
 
-    for meth in methods:
+    for method in methods:
         img = img2.copy()
-        method = eval(meth)
         
         # Apply template Matching
         res = cv2.matchTemplate(img,template,method)
