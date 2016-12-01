@@ -7,7 +7,7 @@ Goal
 =====
 
 In this chapter, 
-    * We will understand the concept of Hough Tranform.
+    * We will understand the concept of Hough Transform.
     * We will see how to use it detect lines in an image.
     * We will see following functions: **cv2.HoughLines()**, **cv2.HoughLinesP()**
     
