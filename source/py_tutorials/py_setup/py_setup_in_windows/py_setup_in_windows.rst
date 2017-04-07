@@ -11,6 +11,15 @@ In this tutorial
     
 *Below steps are tested in a Windows 7-64 bit machine with Visual Studio 2010 and Visual Studio 2012. The screenshots shows VS2012.*
 
+Installing OpenCV-Python with `pip`
+==========================
+In Python-3.x, you can install Opencv-Python and its dependencies with one `pip` command.
+``$ pip install opencv-python``
+Then in any Python ternimal, input
+    >>> import cv2
+    >>> print cv2.__version__
+If nothing goes wrong, congratulations!!!
+
 Installing OpenCV from prebuilt binaries
 =========================================
 
