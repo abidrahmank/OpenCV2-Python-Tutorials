@@ -154,7 +154,7 @@ For examle, I took above image, rewrite the code for cv2.RETR_TREE, reorder the 
 
 Take contour-0 : It is in hierarchy-0. Next contour in same hierarchy is contour-7. No previous contours. Child is contour-1. And no parent. So array is [7,-1,1,-1].
 
-Take contour-2 : It is in hierarchy-1. No contour in same level. No previous one. Child is contour-2. Parent is contour-0. So array is [-1,-1,2,0].
+Take contour-1 : It is in hierarchy-1. No contour in same level. No previous one. Child is contour-2. Parent is contour-0. So array is [-1,-1,2,0].
 
 And remaining, try yourself. Below is the full answer:
 ::
