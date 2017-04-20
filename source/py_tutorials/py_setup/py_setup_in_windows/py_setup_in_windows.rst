@@ -28,9 +28,9 @@ Installing OpenCV from prebuilt binaries
 
 4. Download latest OpenCV release from `sourceforge site <http://sourceforge.net/projects/opencvlibrary/files/opencv-win/2.4.6/OpenCV-2.4.6.0.exe/download>`_ and double-click to extract it.
 
-7. Goto **opencv/build/python/2.7** folder.
+7. Goto **opencv/build/python/2.7/x86** folder.
 
-8. Copy **cv2.pyd** to **C:/Python27/lib/site-packeges**.
+8. Copy **cv2.pyd** to **C:/Python27/Lib/site-packages**.
 
 9. Open Python IDLE and type following codes in Python terminal.
 
