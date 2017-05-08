@@ -52,7 +52,7 @@ Gui Features in OpenCV
   .. cssclass:: toctableopencv
 
   =========== ======================================================
-  |gui_3|     Draw stuffs with your mouse
+  |gui_3|     Draw stuff with your mouse
 
   =========== ======================================================
 
