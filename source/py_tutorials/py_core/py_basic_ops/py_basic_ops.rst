@@ -140,7 +140,7 @@ If you want to create a border around the image, something like a photo frame, y
         * **cv2.BORDER_REFLECT** - Border will be mirror reflection of the border elements, like this : *fedcba|abcdefgh|hgfedcb*
         * **cv2.BORDER_REFLECT_101** or **cv2.BORDER_DEFAULT** - Same as above, but with a slight change, like this : *gfedcb|abcdefgh|gfedcba*
         * **cv2.BORDER_REPLICATE** - Last element is replicated throughout, like this: *aaaaaa|abcdefgh|hhhhhhh*
-        * **cv2.BORDER_WRAP** - Can't explain, it will look like this : *cdefgh|abcdefgh|abcdefg*
+        * **cv2.BORDER_WRAP** - The border will be circular wrapping around the image, like this : *cdefgh|abcdefgh|abcdefg*
     * **value** - Color of border if border type is ``cv2.BORDER_CONSTANT``
 
 Below is a sample code demonstrating all these border types for better understanding:
