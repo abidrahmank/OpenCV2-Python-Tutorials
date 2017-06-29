@@ -38,7 +38,7 @@ First, as usual, let's find SIFT features in images and apply the ratio test to 
     img2 = cv2.imread('box_in_scene.png',0) # trainImage
 
     # Initiate SIFT detector
-    sift = cv2.SIFT()
+    sift = cv2.xfeatures2d.SIFT_create()
 
     # find the keypoints and descriptors with SIFT
     kp1, des1 = sift.detectAndCompute(img1,None)
