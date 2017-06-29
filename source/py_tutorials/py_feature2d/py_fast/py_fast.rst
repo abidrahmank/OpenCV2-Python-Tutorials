@@ -93,7 +93,7 @@ For the neighborhood, three flags are defined, ``cv2.FAST_FEATURE_DETECTOR_TYPE_
     img = cv2.imread('simple.jpg',0)
 
     # Initiate FAST object with default values
-    fast = cv2.FastFeatureDetector()
+    fast = cv2.FastFeatureDetector_create()
 
     # find and draw the keypoints
     kp = fast.detect(img,None)
