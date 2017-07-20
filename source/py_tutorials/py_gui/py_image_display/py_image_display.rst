@@ -115,7 +115,7 @@ Matplotlib is a plotting library for Python which gives you wide variety of plot
     
     img = cv2.imread('messi5.jpg',0)
     plt.imshow(img, cmap = 'gray', interpolation = 'bicubic')
-    plt.xticks([]), plt.yticks([])  # to hide tick values on X and Y axis
+    plt.axis('off')  # to hide tick values on X and Y axis
     plt.show()
     
 A screen-shot of the window will look like this :
