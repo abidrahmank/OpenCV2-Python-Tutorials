@@ -14,7 +14,7 @@ In this chapter, we will learn about
 Theory
 =========
 
-Canny Edge Detection is a popular edge detection algorithm. It was developed by John F. Canny in 1986. It is a multi-stage algorithm and we will go through each stages.
+Canny Edge Detection is a popular edge detection algorithm. It was developed by John F. Canny in 1986. It is a multi-stage algorithm and we will go through each stage.
 
 1. **Noise Reduction**
 
@@ -34,34 +34,34 @@ Gradient direction is always perpendicular to edges. It is rounded to one of fou
 
 3. **Non-maximum Suppression**
 
-After getting gradient magnitude and direction, a full scan of image is done to remove any unwanted pixels which may not constitute the edge. For this, at every pixel, pixel is checked if it is a local maximum in its neighborhood in the direction of gradient. Check the image below:
+After getting gradient magnitude and direction, a full scan of the image is done to remove any unwanted pixel which may not constitute the edge. For this, at every pixel, one checks if it is a local maximum in its neighborhood in the direction of the gradient. Check the image below:
 
     .. image:: images/nms.jpg
         :alt: Non-Maximum Suppression
         :align: center
         
-Point A is on the edge ( in vertical direction). Gradient direction is normal to the edge. Point B and C are in gradient directions. So point A is checked with point B and C to see if it forms a local maximum. If so, it is considered for next stage, otherwise, it is suppressed ( put to zero).
+Point A is on the edge (in vertical direction). Gradient direction is normal to the edge. Point B and C are in gradient direction. So point A is checked with point B and C to see if it forms a local maximum. If so, it is considered for next stage, otherwise, it is suppressed (put to zero).
 
-In short, the result you get is a binary image with "thin edges".
+In short, the result you get is an image with "thin edges".
 
 4. **Hysteresis Thresholding**
 
-This stage decides which are all edges are really edges and which are not. For this, we need two threshold values, `minVal` and `maxVal`. Any edges with intensity gradient more than `maxVal` are sure to be edges and those below `minVal` are sure to be non-edges, so discarded. Those who lie between these two thresholds are classified edges or non-edges based on their connectivity. If they are connected to "sure-edge" pixels, they are considered to be part of edges. Otherwise, they are also discarded. See the image below:
+This stage decides which of all edges are really edges and which are not. For this, we need two threshold values, `minVal` and `maxVal`. Any edge with intensity gradient greater than `maxVal` is sure to be an edge ("sure-edge") and any edge below `minVal` is sure to be an non-edge, hence discarded. Those which lie between these two thresholds are classified edges or non-edges based on their connectivity. If they are connected to "sure-edge" pixels, they are considered to be part of edges. Otherwise, they are also discarded. See the image below:
 
     .. image:: images/hysteresis.jpg
         :alt: Hysteresis Thresholding
         :align: center
 
-The edge A is above the `maxVal`, so considered as "sure-edge". Although edge C is below `maxVal`, it is connected to edge A, so that also considered as valid edge and we get that full curve. But edge B, although it is above `minVal` and is in same region as that of edge C, it is not connected to any "sure-edge", so that is discarded. So it is very important that we have to select `minVal` and `maxVal` accordingly to get the correct result.
+The edge A is above `maxVal`, hence considered as "sure-edge". Although edge C is below `maxVal`, it is connected to edge A, so that it is also considered as a valid edge and we get that full curve. But when it comes to edge B, although it is above `minVal` and in same region as edge C, it is not connected to any "sure-edge", so that it is discarded. So it is very important that we select `minVal` and `maxVal` accordingly, to get the correct result.
 
-This stage also removes small pixels noises on the assumption that edges are long lines. 
+This stage also removes small pixel noise on the assumption that edges are long lines. 
 
 So what we finally get is strong edges in the image.
 
 Canny Edge Detection in OpenCV
 ===============================
 
-OpenCV puts all the above in single function, **cv2.Canny()**. We will see how to use it. First argument is our input image. Second and third arguments are our `minVal` and `maxVal` respectively. Third argument is `aperture_size`. It is the size of Sobel kernel used for find image gradients. By default it is 3. Last argument is `L2gradient` which specifies the equation for finding gradient magnitude. If it is ``True``, it uses the equation mentioned above which is more accurate, otherwise it uses this function: :math:`Edge\_Gradient \; (G) = |G_x| + |G_y|`. By default, it is ``False``.
+OpenCV puts all the above in a single function, **cv2.Canny()**. We will see how to use it. First argument is our input image. Second and third arguments are our `minVal` and `maxVal` respectively. Third argument is `aperture_size`. It is the size of Sobel kernel used for find image gradients. By default it is 3. Last argument is `L2gradient` which specifies the equation for finding gradient magnitude. If it is ``True``, it uses the equation mentioned above which is more accurate, otherwise it uses this function: :math:`Edge\_Gradient \; (G) = |G_x| + |G_y|`. By default, it is ``False``.
 ::
 
     import cv2
