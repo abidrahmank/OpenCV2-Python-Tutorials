@@ -13,7 +13,7 @@ messi5.jpg
 left.jpg
 right.jpg
 
-Feature Matching	-	https://github.com/Itseez/opencv/blob/master/samples/c/box.png
-			-	https://github.com/Itseez/opencv/blob/master/samples/c/box_in_scene.png
+Feature Matching	-	https://github.com/opencv/opencv/blob/master/samples/data/box.png
+			-	https://github.com/opencv/opencv/blob/master/samples/data/box_in_scene.png
 
-Background subtraction	-	https://github.com/Itseez/opencv/blob/master/samples/gpu/768x576.avi
+Background subtraction	-	https://github.com/npinto/opencv/blob/master/samples/gpu/768x576.avi
