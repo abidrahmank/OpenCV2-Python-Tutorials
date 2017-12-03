@@ -119,7 +119,7 @@ Or you can download latest source from OpenCV's github repo. (If you want to con
     .. code-block:: bash
     
         yum install git
-        git clone https://github.com/Itseez/opencv.git
+        git clone https://github.com/opencv/opencv.git
         
 It will create a folder ``OpenCV`` in home directory (or the directory you specify). The cloning may take some time depending upon your internet connection. 
 
