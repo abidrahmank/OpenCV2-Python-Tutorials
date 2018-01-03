@@ -13,7 +13,7 @@ Introduction
 
 In the first article, we calculated and plotted one-dimensional histogram. It is called one-dimensional because we are taking only one feature into our consideration, ie grayscale intensity value of the pixel. But in two-dimensional histograms, you consider two features. Normally it is used for finding color histograms where two features are Hue & Saturation values of every pixel.
 
-There is a `python sample in the official samples <https://github.com/Itseez/opencv/blob/master/samples/python2/color_histogram.py>`_ already for finding color histograms. We will try to understand how to create such a color histogram, and it will be useful in understanding further topics like Histogram Back-Projection.
+There is a `python sample in the official samples <https://github.com/Itseez/opencv/blob/master/samples/python/color_histogram.py>`_ already for finding color histograms. We will try to understand how to create such a color histogram, and it will be useful in understanding further topics like Histogram Back-Projection.
 
 2D Histogram in OpenCV
 =======================
@@ -93,7 +93,7 @@ In histogram, you can see some high values near H = 100 and S = 200. It correspo
 Method 3 : OpenCV sample style !!
 ------------------------------------
 
-There is a `sample code for color-histogram in OpenCV-Python2 samples <https://github.com/Itseez/opencv/blob/master/samples/python2/color_histogram.py>`_. If you run the code, you can see the histogram shows the corresponding color also. Or simply it outputs a color coded histogram. Its result is very good (although you need to add extra bunch of lines).
+There is a `sample code for color-histogram in OpenCV-Python2 samples <https://github.com/Itseez/opencv/blob/master/samples/python/color_histogram.py>`_. If you run the code, you can see the histogram shows the corresponding color also. Or simply it outputs a color coded histogram. Its result is very good (although you need to add extra bunch of lines).
 
 In that code, the author created a color map in HSV. Then converted it into BGR. The resulting histogram image is multiplied with this color map. He also uses some preprocessing steps to remove small isolated pixels, resulting in a good histogram.
 

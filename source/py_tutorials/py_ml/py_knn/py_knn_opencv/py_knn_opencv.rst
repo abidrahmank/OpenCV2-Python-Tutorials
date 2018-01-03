@@ -14,7 +14,7 @@ In this chapter
 OCR of Hand-written Digits
 ============================
 
-Our goal is to build an application which can read the handwritten digits. For this we need some train_data and test_data. OpenCV comes with an image `digits.png` (in the folder ``opencv/samples/python2/data/``) which has 5000 handwritten digits (500 for each digit). Each digit is a 20x20 image. So our first step is to split this image into 5000 different digits. For each digit, we flatten it into a single row with 400 pixels. That is our feature set, ie intensity values of all pixels. It is the simplest feature set we can create. We use first 250 samples of each digit as train_data, and next 250 samples as test_data. So let's prepare them first.
+Our goal is to build an application which can read the handwritten digits. For this we need some train_data and test_data. OpenCV comes with an image `digits.png` (in the folder ``opencv/samples/python/data/``) which has 5000 handwritten digits (500 for each digit). Each digit is a 20x20 image. So our first step is to split this image into 5000 different digits. For each digit, we flatten it into a single row with 400 pixels. That is our feature set, ie intensity values of all pixels. It is the simplest feature set we can create. We use first 250 samples of each digit as train_data, and next 250 samples as test_data. So let's prepare them first.
 ::
 
     import numpy as np

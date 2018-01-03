@@ -127,7 +127,7 @@ You can deduct from the above graph that, blue has some high value areas in the 
 2. Using OpenCV
 --------------------------
 
-Well, here you adjust the values of histograms along with its bin values to look like x,y coordinates so that you can draw it using cv2.line() or cv2.polyline() function to generate same image as above. This is already available with OpenCV-Python2 official samples. `Check the Code <https://github.com/Itseez/opencv/raw/master/samples/python2/hist.py>`_
+Well, here you adjust the values of histograms along with its bin values to look like x,y coordinates so that you can draw it using cv2.line() or cv2.polyline() function to generate same image as above. This is already available with OpenCV-Python2 official samples. `Check the Code <https://github.com/Itseez/opencv/raw/master/samples/python/hist.py>`_
 
 Application of Mask
 =====================

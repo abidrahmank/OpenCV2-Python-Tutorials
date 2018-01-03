@@ -144,7 +144,7 @@ OpenCV provides all these in a single function, **cv2.calcOpticalFlowPyrLK()**. 
     cap.release()
     
 
-(This code doesn't check how correct are the next keypoints. So even if any feature point disappears in image, there is a chance that optical flow finds the next point which may look close to it. So actually for a robust tracking, corner points should be detected in particular intervals. OpenCV samples comes up with such a sample which finds the feature points at every 5 frames. It also run a backward-check of the optical flow points got to select only good ones. Check ``samples/python2/lk_track.py``).
+(This code doesn't check how correct are the next keypoints. So even if any feature point disappears in image, there is a chance that optical flow finds the next point which may look close to it. So actually for a robust tracking, corner points should be detected in particular intervals. OpenCV samples comes up with such a sample which finds the feature points at every 5 frames. It also run a backward-check of the optical flow points got to select only good ones. Check ``samples/python/lk_track.py``).
 
 See the results we got:
 
@@ -199,7 +199,7 @@ See the result below:
         :alt: Dense Optical Flow
         :align: center
         
-OpenCV comes with a more advanced sample on dense optical flow, please see ``samples/python2/opt_flow.py``. 
+OpenCV comes with a more advanced sample on dense optical flow, please see ``samples/python/opt_flow.py``. 
         
 Additional Resources
 ========================
@@ -208,5 +208,5 @@ Additional Resources
 Exercises
 ===========
 
-#. Check the code in ``samples/python2/lk_track.py``. Try to understand the code.
-#. Check the code in ``samples/python2/opt_flow.py``. Try to understand the code.
+#. Check the code in ``samples/python/lk_track.py``. Try to understand the code.
+#. Check the code in ``samples/python/opt_flow.py``. Try to understand the code.
