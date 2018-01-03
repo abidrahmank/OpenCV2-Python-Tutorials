@@ -65,6 +65,6 @@ Additional Resources
 Exercises
 ================
 
-#. OpenCV comes with an interactive sample on inpainting, ``samples/python2/inpaint.py``, try it.
+#. OpenCV comes with an interactive sample on inpainting, ``samples/python/inpaint.py``, try it.
 
 #. A few months ago, I watched a video on `Content-Aware Fill <http://www.youtube.com/watch?v=ZtoUiplKa2A>`_, an advanced inpainting technique used in Adobe Photoshop. On further search, I was able to find that same technique is already there in GIMP with different name, "Resynthesizer" (You need to install separate plugin). I am sure you will enjoy the technique.
