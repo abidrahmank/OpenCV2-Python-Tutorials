@@ -89,7 +89,7 @@ This time we create a **VideoWriter** object. We should specify the output file 
 
 * In Fedora: DIVX, XVID, MJPG, X264, WMV1, WMV2. (XVID is more preferable. MJPG results in high size video. X264 gives very small size video)
 * In Windows: DIVX (More to be tested and added)
-* In OSX : *(I don't have access to OSX. Can some one fill this?)*
+* In OSX : mp4v (note the lowercase)
 
 FourCC code is passed as ``cv2.VideoWriter_fourcc('M','J','P','G')`` or ``cv2.VideoWriter_fourcc(*'MJPG)`` for MJPG.
 
@@ -100,10 +100,13 @@ Below code capture from a Camera, flip every frame in vertical direction and sav
     import cv2
 
     cap = cv2.VideoCapture(0)
+    
+    width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH) + 0.5)
+    height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT) + 0.5)
 
     # Define the codec and create VideoWriter object
     fourcc = cv2.VideoWriter_fourcc(*'XVID')
-    out = cv2.VideoWriter('output.avi',fourcc, 20.0, (640,480))
+    out = cv2.VideoWriter('output.avi',fourcc, 20.0, (width,height)) # please use ".mp4" for Mac
 
     while(cap.isOpened()):
         ret, frame = cap.read()
