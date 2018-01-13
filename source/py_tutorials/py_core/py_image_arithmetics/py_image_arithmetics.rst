@@ -16,7 +16,7 @@ You can add two images by OpenCV function, ``cv2.add()`` or simply by numpy oper
 
 .. note:: There is a difference between OpenCV addition and Numpy addition. OpenCV addition is a saturated operation while Numpy addition is a modulo operation.
 
-For example, consider below sample:
+For example, consider the below sample:
 ::
     
     >>> x = np.uint8([250])
@@ -28,7 +28,7 @@ For example, consider below sample:
     >>> print x+y          # 250+10 = 260 % 256 = 4
     [4]
     
-It will be more visible when you add two images. OpenCV function will provide a better result. So always better stick to OpenCV functions.
+It will be more visible when you add two images. The OpenCV function will provide a better result, so it's always better stick to OpenCV functions.
 
 Image Blending
 =================
@@ -41,7 +41,7 @@ This is also image addition, but different weights are given to images so that i
     
 By varying :math:`\alpha` from :math:`0 \rightarrow 1`, you can perform a cool transition between one image to another.
 
-Here I took two images to blend them together. First image is given a weight of 0.7 and second image is given 0.3. ``cv2.addWeighted()`` applies following equation on the image.
+Here I took two images to blend them together. First image is given a weight of 0.7 and second image is given 0.3. ``cv2.addWeighted()`` applies the following equation on the image.
 
 .. math::
     
@@ -70,7 +70,7 @@ Bitwise Operations
 
 This includes bitwise AND, OR, NOT and XOR operations. They will be highly useful while extracting any part of the image (as we will see in coming chapters), defining and working with non-rectangular ROI etc. Below we will see an example on how to change a particular region of an image.
 
-I want to put OpenCV logo above an image. If I add two images, it will change color. If I blend it, I get an transparent effect. But I want it to be opaque. If it was a rectangular region, I could use ROI as we did in last chapter. But OpenCV logo is a not a rectangular shape. So you can do it with bitwise operations as below:
+I want to put the OpenCV logo above an image. If I add two images, it will change color. If I blend it, I get an transparent effect. But I want it to be opaque. If it was a rectangular region, I could use ROI as we did in last chapter. But OpenCV logo is a not a rectangular shape. So you can do it with bitwise operations as below:
 ::
 
     # Load two images
