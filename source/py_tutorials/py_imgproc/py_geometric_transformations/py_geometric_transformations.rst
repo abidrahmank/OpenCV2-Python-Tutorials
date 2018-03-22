@@ -48,7 +48,7 @@ You can take make it into a Numpy array of type ``np.float32`` and pass it into 
     import numpy as np
 
     img = cv2.imread('messi5.jpg',0)
-    rows,cols = img.shape
+    rows,cols = img.shape[:2]
 
     M = np.float32([[1,0,100],[0,1,50]])
     dst = cv2.warpAffine(img,M,(cols,rows))
