@@ -26,7 +26,7 @@ Installing OpenCV from prebuilt binaries
 
 3. After installation, open Python IDLE. Enter ``import numpy`` and make sure Numpy is working fine.
 
-4. Download latest OpenCV release from `sourceforge site <http://sourceforge.net/projects/opencvlibrary/files/opencv-win/2.4.6/OpenCV-2.4.6.0.exe/download>`_ and double-click to extract it.
+4. Download latest OpenCV release from `sourceforge site <https://sourceforge.net/projects/opencvlibrary/files/>`_ and double-click to extract it.
 
 7. Goto **opencv/build/python/2.7** folder.
 
