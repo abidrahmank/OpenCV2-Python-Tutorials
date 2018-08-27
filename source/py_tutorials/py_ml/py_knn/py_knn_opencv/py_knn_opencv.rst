@@ -39,10 +39,16 @@ Our goal is to build an application which can read the handwritten digits. For t
     train_labels = np.repeat(k,250)[:,np.newaxis]
     test_labels = train_labels.copy()
 
-    # Initiate kNN, train the data, then test it with test data for k=1
+    # Initiate kNN, train the data, then test it with test data for k=1 for opencv.3x use below code
     knn = cv2.KNearest()
     knn.train(train,train_labels)
     ret,result,neighbours,dist = knn.find_nearest(test,k=5)
+    
+    #for OpenCv2.3x The above code will be needed to change
+    knn = cv2.ml.KNearest_create()
+    knn.train(train,cv2.ml.ROW_SAMPLE,train_labels)
+    ret,result,neighbours,dist = knn.findNearest(test,k=5)
+
 
     # Now we check the accuracy of classification
     # For that, compare the result with test_labels and check which are wrong
@@ -93,6 +99,11 @@ There are 20000 samples available, so we take first 10000 data as training sampl
     knn = cv2.KNearest()
     knn.train(trainData, responses)
     ret, result, neighbours, dist = knn.find_nearest(testData, k=5)
+    
+    #for OpenCv2.3x The above code will be needed to change
+    knn = cv2.ml.KNearest_create()
+    knn.train(trainData, cv2.ml.ROW_SAMPLE, responses)
+    ret, result, neighbours, dist = knn.findNearest(testData, k=5)
 
     correct = np.count_nonzero(result == labels)
     accuracy = correct*100.0/10000
