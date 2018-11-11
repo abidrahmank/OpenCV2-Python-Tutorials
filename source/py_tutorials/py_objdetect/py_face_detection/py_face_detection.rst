@@ -97,7 +97,7 @@ Additional Resources
 
 #. Video Lecture on `Face Detection and Tracking <http://www.youtube.com/watch?v=WfdYYNamHZ8>`_
 
-#. An interesting interview regarding Face Detection by `Adam Harvey <http://www.makematics.com/research/viola-jones/>`_
+#. An interesting interview regarding Face Detection by `Adam Harvey <https://vimeo.com/39561082>`_
 
 
 Exercises
