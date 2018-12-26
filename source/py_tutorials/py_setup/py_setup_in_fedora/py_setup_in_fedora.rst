@@ -24,7 +24,7 @@ Install all packages with following command in terminal as root.
 
     .. code-block:: bash
     
-        $ yum install numpy opencv*
+        $ yum install numpy opencv* python2-opencv
     
 Open Python IDLE (or IPython) and type following codes in Python terminal.
 
