@@ -86,7 +86,7 @@ This will save the image in PNG format in the working directory.
 Sum it up
 ---------------
 
-Below program loads an image in grayscale, displays it, save the image if you press 's' and exit, or simply exit without saving if you press `ESC` key.
+The program below loads an image in grayscale, displays it, saves the image if you press 's' and exit, or simply exit without saving if you press `ESC` key.
 ::
     
     import numpy as np
