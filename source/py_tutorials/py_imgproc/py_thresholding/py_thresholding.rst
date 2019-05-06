@@ -43,8 +43,9 @@ Code :
     titles = ['Original Image','BINARY','BINARY_INV','TRUNC','TOZERO','TOZERO_INV']
     images = [img, thresh1, thresh2, thresh3, thresh4, thresh5]
      
-    for i in xrange(6):
-        plt.subplot(2,3,i+1),plt.imshow(images[i],'gray')
+    for i in range(6):
+        plt.subplot(2,3,i+1)
+        plt.imshow(images[i],'gray', vmin=0, vmax=255)
         plt.title(titles[i])
         plt.xticks([]),plt.yticks([])
      
@@ -57,6 +58,72 @@ Result is given below :
          .. image:: images/threshold.jpg
               :alt: Simple Thresholding
               :align: center 
+              
+cv::ThresholdTypes
+===================
+
+<tt>threshold(src, thresh, maxval, <span style="background-color: #ffff55"><font color="no">type</font></span>[, dst]) -> retval, dst</tt>
+
+The <tt><span style="background-color: #ffff55">type</span></tt> param can be one of the following:
+
+`THRESH_BINARY = 0`<br>
+$\textsf{dst} (x,y) =
+\begin{cases}
+    \textsf{maxval} & \text{if}\quad \textsf{src}(x,y) > \textsf{thresh} \\
+    0 & \text{otherwise} \\
+\end{cases}$
+
+---
+
+`THRESH_BINARY_INV = 1`<br>
+$\textsf{dst} (x,y) =
+\begin{cases}
+    0 & \text{if}\ \textsf{src}(x,y) > \textsf{thresh} \\
+    \textsf{maxval} & \text{otherwise} \\
+\end{cases}$
+
+---
+
+`THRESH_TRUNC = 2`<br>
+$\textsf{dst} (x,y) =
+\begin{cases}
+    \textsf{thresh} & \text{if}\ \textsf{src}(x,y) > \textsf{thresh} \\
+    \textsf{src}(x,y) & \text{otherwise} \\
+\end{cases}$
+
+---
+
+`THRESH_TOZERO = 3`<br>
+$\textsf{dst} (x,y) =
+\begin{cases}
+    \textsf{src}(x,y) & \text{if}\ \textsf{src}(x,y) > \textsf{thresh} \\
+    0 & \text{otherwise} \\
+\end{cases}$
+
+---
+
+`THRESH_TOZERO_INV = 4`<br>
+$\textsf{dst} (x,y) =
+\begin{cases}
+    0 & \text{if}\ \textsf{src}(x,y) > \textsf{thresh} \\
+    \textsf{src}(x,y) & \text{otherwise} \\
+\end{cases}$
+
+---
+
+`THRESH_MASK = 7`<br>
+Không có nói
+
+---
+
+`THRESH_OTSU = 8`<br>
+use Otsu algorithm to choose the optimal threshold value
+
+---
+
+`THRESH_TRIANGLE = 16`<br>
+use Triangle algorithm to choose the optimal threshold value
+
 
 Adaptive Thresholding
 ========================
@@ -66,8 +133,8 @@ In the previous section, we used a global value as threshold value. But it may n
 It has three ‘special’ input params and only one output argument.
 
 **Adaptive Method** - It decides how thresholding value is calculated.
-     * cv2.ADAPTIVE_THRESH_MEAN_C : threshold value is the mean of neighbourhood area.
-     * cv2.ADAPTIVE_THRESH_GAUSSIAN_C : threshold value is the weighted sum of neighbourhood values where weights are a gaussian window.
+     * cv2.ADAPTIVE_THRESH_MEAN_C : threshold value is the mean of neighbourhood area minus the constant C.
+     * cv2.ADAPTIVE_THRESH_GAUSSIAN_C : threshold value is the weighted sum of neighbourhood values minus the constant C where weights are a gaussian window.
      
 **Block Size** - It decides the size of neighbourhood area.
 
