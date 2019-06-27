@@ -47,7 +47,7 @@ Use the function **cv2.imshow()** to display an image in a window. The window au
 First argument is a window name which is a string. second argument is our image. You can create as many windows as you wish, but with different window names.
 ::
     
-    cv2.imshow('image',img)
+    cv2.imshow('messi5.jpg',img)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
 
@@ -66,8 +66,8 @@ A screenshot of the window will look like this (in Fedora-Gnome machine):
 See the code below:
 ::
     
-    cv2.namedWindow('image', cv2.WINDOW_NORMAL)
-    cv2.imshow('image',img)
+    cv2.namedWindow('messi5.jpg', cv2.WINDOW_NORMAL)
+    cv2.imshow('messi5.jpg',img)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
     
@@ -93,7 +93,7 @@ Below program loads an image in grayscale, displays it, save the image if you pr
     import cv2
     
     img = cv2.imread('messi5.jpg',0)
-    cv2.imshow('image',img)
+    cv2.imshow('messi5.jpg',img)
     k = cv2.waitKey(0)
     if k == 27:         # wait for ESC key to exit
         cv2.destroyAllWindows()
