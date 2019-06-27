@@ -34,7 +34,7 @@ See the code below:
     import numpy as np
     import cv2
     
-    # Load an color image in grayscale
+    # Load a color image in grayscale
     img = cv2.imread('messi5.jpg',0)
     
 .. warning:: Even if the image path is wrong, it won't throw any error, but ``print img`` will give you ``None``
