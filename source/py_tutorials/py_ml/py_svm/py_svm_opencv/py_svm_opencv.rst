@@ -64,10 +64,6 @@ Finally, as in the previous case, we start by splitting our big dataset into ind
     SZ=20
     bin_n = 16 # Number of bins
 
-    svm_params = dict( kernel_type = cv2.SVM_LINEAR,
-                        svm_type = cv2.SVM_C_SVC,
-                        C=2.67, gamma=5.383 )
-
     affine_flags = cv2.WARP_INVERSE_MAP|cv2.INTER_LINEAR
 
     def deskew(img):
@@ -93,33 +89,37 @@ Finally, as in the previous case, we start by splitting our big dataset into ind
     img = cv2.imread('digits.png',0)
 
     cells = [np.hsplit(row,100) for row in np.vsplit(img,50)]
-    
+
     # First half is trainData, remaining is testData
     train_cells = [ i[:50] for i in cells ]
     test_cells = [ i[50:] for i in cells]
 
     ######     Now training      ########################
 
-    deskewed = [map(deskew,row) for row in train_cells]
-    hogdata = [map(hog,row) for row in deskewed]
+    deskewed = [tuple(map(deskew,row)) for row in train_cells]
+    hogdata = [tuple(map(hog,row)) for row in deskewed]
     trainData = np.float32(hogdata).reshape(-1,64)
-    responses = np.float32(np.repeat(np.arange(10),250)[:,np.newaxis])
+    responses = np.repeat(np.arange(10),250)[:,np.newaxis]
 
-    svm = cv2.SVM()
-    svm.train(trainData,responses, params=svm_params)
+    svm = cv2.ml.SVM_create()
+    svm.setKernel(cv2.ml.SVM_LINEAR)
+    svm.setType(cv2.ml.SVM_C_SVC)
+    svm.setC(2.67)
+    svm.setGamma(5.383)
+    svm.train(trainData, cv2.ml.ROW_SAMPLE, responses)
     svm.save('svm_data.dat')
 
     ######     Now testing      ########################
 
-    deskewed = [map(deskew,row) for row in test_cells]
-    hogdata = [map(hog,row) for row in deskewed]
+    deskewed = [tuple(map(deskew,row)) for row in test_cells]
+    hogdata = [tuple(map(hog,row)) for row in deskewed]
     testData = np.float32(hogdata).reshape(-1,bin_n*4)
-    result = svm.predict_all(testData)
+    flt, result = svm.predict(testData)
 
     #######   Check Accuracy   ########################
     mask = result==responses
     correct = np.count_nonzero(mask)
-    print correct*100.0/result.size
+    print(correct*100.0/result.size)
 
 This particular technique gave me nearly 94% accuracy. You can try different values for various parameters of SVM to check if higher accuracy is possible. Or you can read technical papers on this area and try to implement them.
 
