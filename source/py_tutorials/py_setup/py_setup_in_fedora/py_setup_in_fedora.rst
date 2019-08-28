@@ -56,7 +56,7 @@ We need **CMake** to configure the installation, **GCC** for compilation, **Pyth
 
     .. code-block:: bash
     
-        yum install cmake
+        yum install cmake make
         yum install python-devel numpy
         yum install gcc gcc-c++
 
