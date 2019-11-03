@@ -7,7 +7,7 @@ Goals
 =======
 
 Learn to:
-    * Blur  imagess with various low pass filters
+    * Blur  images with various low pass filters
     * Apply custom-made filters to images (2D convolution)
     
 2D Convolution ( Image Filtering )
