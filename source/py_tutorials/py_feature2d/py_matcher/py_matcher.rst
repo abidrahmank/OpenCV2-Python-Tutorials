@@ -44,7 +44,7 @@ We are using SIFT descriptors to match features. So let's start with loading ima
     img2 = cv2.imread('box_in_scene.png',0) # trainImage
 
     # Initiate SIFT detector
-    orb = cv2.ORB()
+    orb = cv2.ORB_create()
 
     # find the keypoints and descriptors with SIFT
     kp1, des1 = orb.detectAndCompute(img1,None)
