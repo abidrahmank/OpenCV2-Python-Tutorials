@@ -14,7 +14,7 @@ Goal
 Simple Thresholding
 =====================
 
-Here, the matter is straight forward. If pixel value is greater than a threshold value, it is assigned one value (may be white), else it is assigned another value (may be black). The function used is **cv2.threshold**. First argument is the source image, which **should be a grayscale image**. Second argument is the threshold value which is used to classify the pixel values. Third argument is the maxVal which represents the value to be given if pixel value is more than (sometimes less than) the threshold value. OpenCV provides different styles of thresholding and it is decided by the fourth parameter of the function. Different types are:
+Here, the matter is straight forward: if pixel value is greater than a threshold value, it is assigned one value (for example, white), else it is assigned another value (e.g. black). The function used is **cv2.threshold**. The first argument is the source image, which **should be a grayscale image**. The second argument is the threshold value which is used to classify the pixel values. Third argument is the maxVal which represents the value to be given if pixel value is more than (sometimes less than) the threshold value. OpenCV provides different styles of thresholding and it is decided by the fourth parameter of the function. Different types are:
 
    * cv2.THRESH_BINARY
    * cv2.THRESH_BINARY_INV
@@ -22,11 +22,11 @@ Here, the matter is straight forward. If pixel value is greater than a threshold
    * cv2.THRESH_TOZERO
    * cv2.THRESH_TOZERO_INV
 
-Documentation clearly explain what each type is meant for. Please check out the documentation.
+.. Note:: Please read documentation for clear explanation of each type.
 
-Two outputs are obtained. First one is a **retval** which will be explained later. Second output is our **thresholded image**.
+Two outputs are obtained. The first is a **retval** which will be explained later. The second is our **thresholded image**.
 
-Code :
+Code:
 ::
     
     import cv2
@@ -52,7 +52,7 @@ Code :
 
 .. note:: To plot multiple images, we have used `plt.subplot()` function. Please checkout Matplotlib docs for more details.
 
-Result is given below :
+Result:
 
          .. image:: images/threshold.jpg
               :alt: Simple Thresholding
@@ -61,19 +61,19 @@ Result is given below :
 Adaptive Thresholding
 ========================
 
-In the previous section, we used a global value as threshold value. But it may not be good in all the conditions where image has different lighting conditions in different areas. In that case, we go for adaptive thresholding. In this, the algorithm calculate the threshold for a small regions of the image. So we get different thresholds for different regions of the same image and it gives us better results for images with varying illumination.
+In the previous section, we used a global value as threshold value. But it may not be good in some conditions where an image has different lighting conditions in different areas. In that case, we may use adaptive thresholding. This algorithm calculates the threshold for small subregions (neighborhoods) of the image. We get different thresholds for different regions of the same image which gives better results for images with varying illumination.
 
-It has three ‘special’ input params and only one output argument.
+Adaptive thresholding has three ‘special’ input params and only one output argument.
 
-**Adaptive Method** - It decides how thresholding value is calculated.
-     * cv2.ADAPTIVE_THRESH_MEAN_C : threshold value is the mean of neighbourhood area.
-     * cv2.ADAPTIVE_THRESH_GAUSSIAN_C : threshold value is the weighted sum of neighbourhood values where weights are a gaussian window.
+**Adaptive Method** - decides how thresholding value is calculated.
+     * ``cv2.ADAPTIVE_THRESH_MEAN_C`` : threshold value is the mean of neighbourhood area.
+     * ``cv2.ADAPTIVE_THRESH_GAUSSIAN_C`` : threshold value is the weighted sum of neighbourhood values where weights are a gaussian window.
      
-**Block Size** - It decides the size of neighbourhood area.
+**Block Size** - decides the size of neighbourhood area.
 
-**C** - It is just a constant which is subtracted from the mean or weighted mean calculated.
+**C** - a constant which is subtracted from the mean or weighted mean calculated.
 
-Below piece of code compares global thresholding and adaptive thresholding for an image with varying illumination:
+The code below compares global thresholding and adaptive thresholding for an image with varying illumination:
 ::
 
     import cv2
@@ -108,13 +108,15 @@ Result :
 Otsu’s Binarization
 =====================
 
-In the first section, I told you there is a second parameter **retVal**. Its use comes when we go for Otsu’s Binarization. So what is it?
+In the first section, I told you there is a second parameter **retVal**. This is useful for Otsu’s Binarization.
 
-In global thresholding, we used an arbitrary value for threshold value, right? So, how can we know a value we selected is good or not? Answer is, trial and error method. But consider a **bimodal image** (*In simple words, bimodal image is an image whose histogram has two peaks*). For that image, we can approximately take a value in the middle of those peaks as threshold value, right ? That is what Otsu binarization does. So in simple words, it automatically calculates a threshold value from image histogram for a bimodal image. (For images which are not bimodal, binarization won’t be accurate.)
+In global thresholding, we used an arbitrary value for our threshold value. But how can we know if a value we selected is good or not? The answer is *trial and error method*. Consider a **bimodal image** (*In simple words, a bimodal image is an image whose histogram has two peaks*). For that image, we can approximately take a value in the middle of those peaks as a threshold value, right? That is what Otsu binarization does. Put simply, Otsu binarization automatically calculates a threshold value from an image histogram of a bimodal image.
+
+.. note:: For images which are not bimodal, binarization won’t be accurate.
 
 For this, our cv2.threshold() function is used, but pass an extra flag, `cv2.THRESH_OTSU`. **For threshold value, simply pass zero**. Then the algorithm finds the optimal threshold value and returns you as the second output, ``retVal``. If Otsu thresholding is not used, retVal is same as the threshold value you used.
 
-Check out below example. Input image is a noisy image. In first case, I applied global thresholding for a value of 127. In second case, I applied Otsu’s thresholding directly. In third case, I filtered image with a 5x5 gaussian kernel to remove the noise, then applied Otsu thresholding. See how noise filtering improves the result.
+Check out below example. The input image is a noisy image. In the first case, I applied global thresholding for a value of 127. In the second case, I applied Otsu’s thresholding directly. In the third case, I filtered the image with a 5x5 gaussian kernel to remove the noise, then applied Otsu thresholding. See how noise filtering improves the result.
 ::
     
     import cv2
@@ -138,8 +140,8 @@ Check out below example. Input image is a noisy image. In first case, I applied 
               img, 0, th2,
               blur, 0, th3]
     titles = ['Original Noisy Image','Histogram','Global Thresholding (v=127)',
-              'Original Noisy Image','Histogram',"Otsu's Thresholding",
-              'Gaussian filtered Image','Histogram',"Otsu's Thresholding"]
+              'Original Noisy Image','Histogram','Otsu's Thresholding',
+              'Gaussian filtered Image','Histogram','Otsu's Thresholding']
 
     for i in xrange(3):
         plt.subplot(3,3,i*3+1),plt.imshow(images[i*3],'gray')
@@ -156,7 +158,7 @@ Result :
               :alt: Otsu's Thresholding
               :align: center 
               
-How Otsu's Binarization Works?
+How Otsu's Binarization Works
 ----------------------------------
 
 This section demonstrates a Python implementation of Otsu's binarization to show how it works actually. If you are not interested, you can skip this.
@@ -206,7 +208,7 @@ It actually finds a value of t which lies in between two peaks such that varianc
             fn_min = fn
             thresh = i
      
-    # find otsu's threshold value with OpenCV function
+    # find Otsu's threshold value with OpenCV function
     ret, otsu = cv2.threshold(blur,0,255,cv2.THRESH_BINARY+cv2.THRESH_OTSU)
     print thresh,ret
     
