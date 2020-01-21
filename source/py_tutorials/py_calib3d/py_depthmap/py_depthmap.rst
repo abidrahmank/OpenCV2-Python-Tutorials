@@ -34,7 +34,8 @@ Code
 ========
 
 Below code snippet shows a simple procedure to create disparity map.
-::
+
+.. code-block:: python
 
     import numpy as np
     import cv2
@@ -43,11 +44,11 @@ Below code snippet shows a simple procedure to create disparity map.
     imgL = cv2.imread('tsukuba_l.png',0)
     imgR = cv2.imread('tsukuba_r.png',0)
 
-    stereo = cv2.createStereoBM(numDisparities=16, blockSize=15)
+    stereo = cv2.StereoBM_create(numDisparities=16, blockSize=15)
     disparity = stereo.compute(imgL,imgR)
     plt.imshow(disparity,'gray')
     plt.show()
-    
+
 Below image contains the original image (left) and its disparity map (right). As you can see, result is contaminated with high degree of noise. By adjusting the values of numDisparities and blockSize, you can get better results.
 
     .. image:: images/disparity_map.jpg
