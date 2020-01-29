@@ -247,6 +247,7 @@ Additional Resources
 =====================
 
 1. `An Intuitive Explanation of Fourier Theory <http://cns-alumni.bu.edu/~slehar/fourier/fourier.html>`_ by Steven Lehar
+1a. `An Intuitive Explanation of Fourier Theory (WayBackMachine) <https://web.archive.org/web/20190703052510/http://cns-alumni.bu.edu/~slehar/fourier/fourier.html>`_ by Steven Lehar
 2. `Fourier Transform <http://homepages.inf.ed.ac.uk/rbf/HIPR2/fourier.htm>`_ at HIPR
 3. `What does frequency domain denote in case of images? <http://dsp.stackexchange.com/q/1637/818>`_
 
