@@ -34,6 +34,10 @@ To draw a line, you need to pass starting and ending coordinates of line. We wil
     
     # Draw a diagonal blue line with thickness of 5 px
     img = cv2.line(img,(0,0),(511,511),(255,0,0),5)
+    
+    # Display the image and wait for Esc Key to close
+    cv2.imshow('Drawing Functions',img)
+    cv2.waitKey(0)
 
 Drawing Rectangle
 -------------------
