@@ -43,18 +43,18 @@ Then take taylor series approximation of right-hand side, remove common terms an
 
 .. math::
 
-    f_x u + f_y v + f_t = 0 \; 
+    I_x u + I_y v + I_t = 0 \; 
     
 where:
 
 .. math:: 
         
-    f_x = \frac{\partial f}{\partial x} \; ; \; f_y = \frac{\partial f}{\partial x}
+    I_x = \frac{\partial I}{\partial x} \; ; \; I_y = \frac{\partial I}{\partial x}
     
     u = \frac{dx}{dt} \; ; \; v = \frac{dy}{dt}
 
 
-Above equation is called Optical Flow equation. In it, we can find :math:`f_x` and :math:`f_y`, they are image gradients. Similarly :math:`f_t` is the gradient along time. But :math:`(u,v)` is unknown. We cannot solve this one equation with two unknown variables. So several methods are provided to solve this problem and one of them is Lucas-Kanade.
+Above equation is called Optical Flow equation. In it, we can find :math:`I_x` and :math:`I_y`, they are image gradients. Similarly :math:`I_t` is the gradient along time. But :math:`(u,v)` is unknown. We cannot solve this one equation with two unknown variables. So several methods are provided to solve this problem and one of them is Lucas-Kanade.
 
 Lucas-Kanade method
 -------------------------
