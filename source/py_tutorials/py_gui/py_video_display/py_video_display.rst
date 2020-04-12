@@ -91,7 +91,7 @@ This time we create a **VideoWriter** object. We should specify the output file 
 * In Windows: DIVX (More to be tested and added)
 * In OSX : *(I don't have access to OSX. Can some one fill this?)*
 
-FourCC code is passed as ``cv2.VideoWriter_fourcc('M','J','P','G')`` or ``cv2.VideoWriter_fourcc(*'MJPG)`` for MJPG.
+FourCC code is passed as ``cv2.VideoWriter_fourcc('M','J','P','G')`` or ``cv2.VideoWriter_fourcc(*'MJPG')`` for MJPG.
 
 Below code capture from a Camera, flip every frame in vertical direction and saves it.
 ::
