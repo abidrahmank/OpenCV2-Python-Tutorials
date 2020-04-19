@@ -32,7 +32,7 @@ If it is a greater than a threshold value, it is considered as a corner. If we p
         :alt: Shi-Tomasi Corner Space
         :align: center
         
-From the figure, you can see that only when :math:`\lambda_1` and :math:`\lambda_2` are above a minimum value, :math:`\lambda_{min}`, it is conidered as a corner(green region).
+From the figure, you can see that only when :math:`\lambda_1` and :math:`\lambda_2` are above a minimum value, :math:`\lambda_{min}`, it is considered as a corner(green region).
 
 Code
 =======
