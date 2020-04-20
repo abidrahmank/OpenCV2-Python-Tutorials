@@ -127,7 +127,7 @@ Below code capture from a Camera, flip every frame in vertical direction and sav
 
 Creating a Video
 ================
-Creating a video from numeric arrays. We create a black (0) background & white (255) rectangle of random size as foreground. So it's a grayscale video. Here is the code below.
+Creating a video from numeric arrays. We create a black (0) background & white (255) rectangle of random size as foreground. So it's a grayscale video. The object (rectangle) will be moving towards left. Here is the code below.
 ::
 
    import numpy as np
