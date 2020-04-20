@@ -149,7 +149,7 @@ Creating a video from numeric arrays. We create a black (0) background & white (
       vid[i, y:y+h, x:x+w] = 255 # set rectangle as foreground
       x = x-1
       cv2.imshow('frame',vid[i])
-      cv2.waitKey(0)
+      cv2.waitKey(1000)
       out.write(vid[i])
       i = i+1
 
