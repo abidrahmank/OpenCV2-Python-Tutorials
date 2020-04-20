@@ -125,6 +125,38 @@ Below code capture from a Camera, flip every frame in vertical direction and sav
     cv2.destroyAllWindows()
 
 
+Creating a Video
+================
+Creating a video from numeric arrays. We create a black (0) background & white (255) rectangle of random size as foreground. So it's a grayscale video. The object (rectangle) will be moving towards left. Here is the code below.
+::
+
+   import numpy as np
+   import cv2
+
+   num_imgs = 50
+   img_size = 50
+   min_object_size = 5
+   max_object_size = 10
+
+   fourcc = cv2.VideoWriter_fourcc(*'MJPG')
+   out = cv2.VideoWriter('output.avi',fourcc, 3, (img_size,img_size), 0)
+   vid = np.zeros((num_imgs, img_size, img_size)) # set background to 0
+   w, h = np.random.randint(min_object_size, max_object_size, size=2)
+   x = np.random.randint(0, img_size-w)
+   y = np.random.randint(0, img_size-h)
+   i = 0
+   while x>0:
+      vid[i, y:y+h, x:x+w] = 255 # set rectangle as foreground
+      x = x-1
+      cv2.imshow('frame',vid[i])
+      cv2.waitKey(1000)
+      out.write(vid[i])
+      i = i+1
+
+   out.release()
+   cv2.destroyAllWindows()
+
+
 Additional Resources
 ==========================
 
