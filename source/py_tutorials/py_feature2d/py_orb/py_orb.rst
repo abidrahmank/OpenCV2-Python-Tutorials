@@ -44,13 +44,10 @@ Below is a simple code which shows the use of ORB.
     img = cv2.imread('simple.jpg',0)
 
     # Initiate STAR detector
-    orb = cv2.ORB()
+    orb = cv2.ORB_create()
 
-    # find the keypoints with ORB
-    kp = orb.detect(img,None)
-
-    # compute the descriptors with ORB
-    kp, des = orb.compute(img, kp)
+    # find the keypoints and compute the descriptors with ORB
+    kp, des = orb.detectAndCompute(img,None)
 
     # draw only keypoints location,not size and orientation
     img2 = cv2.drawKeypoints(img,kp,color=(0,255,0), flags=0)
