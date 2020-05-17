@@ -9,7 +9,7 @@ Goals
 In this tutorial
     * We will learn to setup OpenCV-Python in your Windows system.
     
-*Below steps are tested in a Windows 7-64 bit machine with Visual Studio 2010 and Visual Studio 2012. The screenshots shows VS2012.*
+*Below steps are tested in a Windows 7-64 bit machine with Visual Studio 2010 and Visual Studio 2012. The screenshots show VS2012.*
 
 Installing OpenCV from prebuilt binaries
 =========================================
@@ -26,13 +26,13 @@ Installing OpenCV from prebuilt binaries
 
 3. After installation, open Python IDLE. Enter ``import numpy`` and make sure Numpy is working fine.
 
-4. Download latest OpenCV release from `sourceforge site <http://sourceforge.net/projects/opencvlibrary/files/opencv-win/2.4.6/OpenCV-2.4.6.0.exe/download>`_ and double-click to extract it.
+4. Download the latest OpenCV release from `SourceForge site <http://sourceforge.net/projects/opencvlibrary/files/opencv-win/2.4.6/OpenCV-2.4.6.0.exe/download>`_ and double-click to extract it.
 
 7. Goto **opencv/build/python/2.7** folder.
 
-8. Copy **cv2.pyd** to **C:/Python27/lib/site-packeges**.
+8. Copy **cv2.pyd** to **C:/Python27/lib/site-packages**.
 
-9. Open Python IDLE and type following codes in Python terminal.
+9. Open Python IDLE and type the following codes in Python terminal.
 
     >>> import cv2
     >>> print cv2.__version__
@@ -56,13 +56,13 @@ Building OpenCV from source
 
     2.3. `Matplotlib <https://downloads.sourceforge.net/project/matplotlib/matplotlib/matplotlib-1.3.0/matplotlib-1.3.0.win32-py2.7.exe>`_ (*Matplotlib is optional, but recommended since we use it a lot in our tutorials.*)
 
-.. note:: In this case, we are using 32-bit binaries of Python packages. But if you want to use OpenCV for x64, 64-bit binaries of Python packages are to be installed. Problem is that, there is no official 64-bit binaries of Numpy. You have to build it on your own. For that, you have to use the same compiler used to build Python. When you start Python IDLE, it shows the compiler details. You can get more `information here <http://stackoverflow.com/q/2676763/1134940>`_. So your system must have the same Visual Studio version and build Numpy from source.
+.. note:: In this case, we are using 32-bit binaries of Python packages. But if you want to use OpenCV for x64, 64-bit binaries of Python packages are to be installed. The problem is that there are no official 64-bit binaries of Numpy. You have to build them on your own. For that, you have to use the same compiler used to build Python. When you start Python IDLE, it shows the compiler details. You can get more `information here <http://stackoverflow.com/q/2676763/1134940>`_. So your system must have the same Visual Studio version and build Numpy from the source.
 
-.. note:: Another method to have 64-bit Python packages is to use ready-made Python distributions from third-parties like `Anaconda <http://www.continuum.io/downloads>`_, `Enthought <https://www.enthought.com/downloads/>`_ etc. It will be bigger in size, but will have everything you need. Everything in a single shell. You can also download 32-bit versions also.
+.. note:: Another method to have 64-bit Python packages is to use ready-made Python distributions from third-parties like `Anaconda <http://www.continuum.io/downloads>`_, `Enthought <https://www.enthought.com/downloads/>`_, etc. It will be bigger in size but will have everything you need, in a single shell. You can also download 32-bit versions.
 
 3. Make sure Python and Numpy are working fine.
 
-4. Download OpenCV source. It can be from `Sourceforge <http://sourceforge.net/projects/opencvlibrary/>`_ (for official release version) or from `Github <https://github.com/Itseez/opencv>`_ (for latest source).
+4. Download the OpenCV source. It can be from `Sourceforge <http://sourceforge.net/projects/opencvlibrary/>`_ (for the official release version) or from `Github <https://github.com/Itseez/opencv>`_ (for latest source).
 
 5. Extract it to a folder, ``opencv`` and create a new folder ``build`` in it.
 
@@ -81,14 +81,14 @@ Building OpenCV from source
             :align: center
 
     
-    7.4. It will open a new window to select the compiler. Choose appropriate compiler (here, Visual Studio 11) and click **Finish**.
+    7.4. It will open a new window to select the compiler. Choose the appropriate compiler (here, Visual Studio 11) and click **Finish**.
     
         .. image:: images/Capture2.png
             :alt: capture2
             :align: center        
 
     
-    7.5. Wait until analysis is finished.
+    7.5. Wait until the analysis is finished.
     
 8. You will see all the fields are marked in red. Click on the **WITH** field to expand it. It decides what extra features you need. So mark appropriate fields. See the below image:
 
@@ -104,7 +104,7 @@ Building OpenCV from source
         :align: center
 
         
-10. Remaining fields specify what modules are to be built. Since GPU modules are not yet supported by OpenCV-Python, you can completely avoid it to save time (But if you work with them, keep it there). See the image below:
+10. The remaining fields specify what modules are to be built. Since GPU modules are not yet supported by OpenCV-Python, you can completely avoid it to save time (But if you work with them, keep it there). See the image below:
 
     .. image:: images/Capture6.png
         :alt: capture6
@@ -125,7 +125,7 @@ Building OpenCV from source
         :align: center  
 
         
-13. Finally click the **Generate** button.
+13. Finally, click the **Generate** button.
 
 14. Now go to our **opencv/build** folder. There you will find **OpenCV.sln** file. Open it with Visual Studio.
 
@@ -142,7 +142,7 @@ Building OpenCV from source
         
 18. Open Python IDLE and enter ``import cv2``. If no error, it is installed correctly.
 
-.. note:: We have installed with no other support like TBB, Eigen, Qt, Documentation etc. It would be difficult to explain it here. A more detailed video will be added soon or you can just hack around.
+.. note:: We have installed with no other support like TBB, Eigen, Qt, Documentation, etc. It would be difficult to explain it here. A more detailed video will be added soon or you can just hack around.
 
 
 Additional Resources
@@ -152,4 +152,4 @@ Additional Resources
 Exercises
 ============
 
-1. If you have a windows machine, compile the OpenCV from source. Do all kinds of hacks. If you meet any problem, visit OpenCV forum and explain your problem.
+1. If you have a windows machine, compile the OpenCV from the source. Do all kinds of hacks. If you meet any problem, visit the OpenCV forum and explain your problem.
