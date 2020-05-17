@@ -18,11 +18,11 @@ Using OpenCV
 Read an image
 --------------
 
-Use the function **cv2.imread()** to read an image. The image should be in the working directory or a full path of image should be given.
+Use the function **cv2.imread()** to read an image. The image should be in the working directory or a full path of the image should be given.
 
-Second argument is a flag which specifies the way image should be read.
+The second argument is a flag that specifies the way the image should be read.
 
-* cv2.IMREAD_COLOR : Loads a color image. Any transparency of image will be neglected. It is the default flag.
+* cv2.IMREAD_COLOR : Loads a color image. Any transparency of the image will be neglected. It is the default flag.
 * cv2.IMREAD_GRAYSCALE : Loads image in grayscale mode
 * cv2.IMREAD_UNCHANGED : Loads image as such including alpha channel
 
@@ -42,9 +42,9 @@ See the code below:
 Display an image
 -----------------
 
-Use the function **cv2.imshow()** to display an image in a window. The window automatically fits to the image size.
+Use the function **cv2.imshow()** to display an image in a window. The window automatically fits into the image size.
 
-First argument is a window name which is a string. second argument is our image. You can create as many windows as you wish, but with different window names.
+The first argument is a window name which is a string. second argument is our image. You can create as many windows as you wish, but with different window names.
 ::
     
     cv2.imshow('image',img)
@@ -57,11 +57,11 @@ A screenshot of the window will look like this (in Fedora-Gnome machine):
               :alt: Screenshot of Image Window in OpenCV
               :align: center 
    
-**cv2.waitKey()** is a keyboard binding function. Its argument is the time in milliseconds. The function waits for specified milliseconds for any keyboard event. If you press any key in that time, the program continues. If **0** is passed, it waits indefinitely for a key stroke. It can also be set to detect specific key strokes like, if key `a` is pressed etc which we will discuss below.
+**cv2.waitKey()** is a keyboard binding function. Its argument is the time in milliseconds. The function waits for specified milliseconds for any keyboard event. If you press any key in that time, the program continues. If **0** is passed, it waits indefinitely for a keystroke. It can also be set to detect specific keystrokes like if key `a` is pressed etc which we will discuss below.
 
 **cv2.destroyAllWindows()** simply destroys all the windows we created. If you want to destroy any specific window, use the function **cv2.destroyWindow()** where you pass the exact window name as the argument.
 
-.. note:: There is a special case where you can already create a window and load image to it later. In that case, you can specify whether window is resizable or not. It is done with the function **cv2.namedWindow()**. By default, the flag is ``cv2.WINDOW_AUTOSIZE``. But if you specify flag to be ``cv2.WINDOW_NORMAL``, you can resize window. It will be helpful when image is too large in dimension and adding track bar to windows.
+.. note:: There is a special case where you can already create a window and load image to it later. In that case, you can specify whether a window is resizable or not. It is done with the function **cv2.namedWindow()**. By default, the flag is ``cv2.WINDOW_AUTOSIZE``. But if you specify a flag to be ``cv2.WINDOW_NORMAL``, you can resize the window. It will be helpful when an image is too large in dimension and adding track bar to windows.
 
 See the code below:
 ::
@@ -76,7 +76,7 @@ Write an image
 
 Use the function **cv2.imwrite()** to save an image.
 
-First argument is the file name, second argument is the image you want to save.
+The first argument is the file name, second argument is the image you want to save.
 ::
     
     cv2.imwrite('messigray.png',img)
@@ -86,7 +86,7 @@ This will save the image in PNG format in the working directory.
 Sum it up
 ---------------
 
-Below program loads an image in grayscale, displays it, save the image if you press 's' and exit, or simply exit without saving if you press `ESC` key.
+The following program loads an image in grayscale, displays it, save the image if you press 's' and exit, or simply exit without saving if you press `ESC` key.
 ::
     
     import numpy as np
@@ -106,7 +106,7 @@ Below program loads an image in grayscale, displays it, save the image if you pr
 Using Matplotlib
 =================
 
-Matplotlib is a plotting library for Python which gives you wide variety of plotting methods. You will see them in coming articles. Here, you will learn how to display image with Matplotlib. You can zoom images, save it etc using Matplotlib.
+Matplotlib is a plotting library for Python which gives you a wide variety of plotting methods. You will see them in upcoming articles. Here, you will learn how to display the image with Matplotlib. You can zoom images, save it, etc. using Matplotlib.
 ::
     
     import numpy as np
@@ -118,7 +118,7 @@ Matplotlib is a plotting library for Python which gives you wide variety of plot
     plt.xticks([]), plt.yticks([])  # to hide tick values on X and Y axis
     plt.show()
     
-A screen-shot of the window will look like this :
+A screenshot of the window will look like this :
 
      .. image:: images/matplotlib_screenshot.jpg
               :alt: Screenshot of Image Window in Matplotlib
@@ -126,14 +126,14 @@ A screen-shot of the window will look like this :
     
 .. seealso:: Plenty of plotting options are available in Matplotlib. Please refer to Matplotlib docs for more details. Some, we will see on the way.
 
-.. warning:: Color image loaded by OpenCV is in BGR mode. But Matplotlib displays in RGB mode. So color images will not be displayed correctly in Matplotlib if image is read with OpenCV. Please see the exercises for more details.
+.. warning:: Color image loaded by OpenCV is in BGR mode. But Matplotlib displays in RGB mode. So color images will not be displayed correctly in Matplotlib if the image is read with OpenCV. Please see the exercises for more details.
 
-Additional Resources
+Additional Resource
 ======================
 
-#. `Matplotlib Plotting Styles and Features <http://matplotlib.org/api/pyplot_api.html>`_
+`Matplotlib Plotting Styles and Features <http://matplotlib.org/api/pyplot_api.html>`_
 
-Exercises
+Exercise
 ==========
 
-#. There is some problem when you try to load color image in OpenCV and display it in Matplotlib. Read `this discussion <http://stackoverflow.com/a/15074748/1134940>`_ and understand it.
+There is some problem when you try to load a color image in OpenCV and display it in Matplotlib. Read `this discussion <http://stackoverflow.com/a/15074748/1134940>`_ and understand it.
