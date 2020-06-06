@@ -33,7 +33,7 @@ Brute-Force Matching with ORB Descriptors
 
 Here, we will see a simple example on how to match features between two images. In this case, I have a queryImage and a trainImage. We will try to find the queryImage in trainImage using feature matching. ( The images are ``/samples/c/box.png`` and ``/samples/c/box_in_scene.png``)
 
-We are using SIFT descriptors to match features. So let's start with loading images, finding descriptors etc.
+We are using ORB descriptors to match features. So let's start with loading images, finding descriptors etc.
 ::
 
     import numpy as np
