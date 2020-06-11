@@ -40,9 +40,9 @@ Our goal is to build an application which can read the handwritten digits. For t
     test_labels = train_labels.copy()
 
     # Initiate kNN, train the data, then test it with test data for k=1
-    knn = cv2.KNearest()
-    knn.train(train,train_labels)
-    ret,result,neighbours,dist = knn.find_nearest(test,k=5)
+    knn = cv2.ml.KNearest_create() # cv2.KNearest() was an old module
+    knn.train(train,cv2.ml.ROW_SAMPLE,train_labels)
+    ret,result,neighbours,dist = knn.findNearest(test,k=5) # find_nearest is now 'findNearest'
 
     # Now we check the accuracy of classification
     # For that, compare the result with test_labels and check which are wrong
