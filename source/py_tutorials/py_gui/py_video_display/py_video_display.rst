@@ -55,7 +55,7 @@ For example, I can check the frame width and height by ``cap.get(3)`` and ``cap.
 Playing Video from file
 ========================
 
-It is same as capturing from Camera, just change camera index with video file name. Also while displaying the frame, use appropriate time for ``cv2.waitKey()``. If it is too less, video will be very fast and if it is too high, video will be slow (Well, that is how you can display videos in slow motion). 25 milliseconds will be OK in normal cases.
+It is same as capturing from Camera, just change camera index with video file name. Also while displaying the frame, use appropriate time for ``cv2.waitKey()``. If it is too low, video will be very fast and if it is too high, video will be slow (Well, that is how you can display videos in slow motion). 25 milliseconds will be OK in normal cases.
 ::
 
     import numpy as np
