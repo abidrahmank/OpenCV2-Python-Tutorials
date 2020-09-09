@@ -34,7 +34,7 @@ Now you can go down the image pyramid with **cv2.pyrUp()** function.
            
     higher_reso2 = cv2.pyrUp(lower_reso)
     
-Remember, `higher_reso2` is not equal to `higher_reso`, because once you decrease the resolution, you loose the information. Below image is 3 level down the pyramid created from smallest image in previous case. Compare it with original image:
+Remember, `higher_reso2` is not equal to `higher_reso`, because once you decrease the resolution, you lose the information. Below image is 3 level down the pyramid created from smallest image in previous case. Compare it with original image:
 
     .. image:: images/messiup.jpg
         :alt: Gaussian Pyramid
