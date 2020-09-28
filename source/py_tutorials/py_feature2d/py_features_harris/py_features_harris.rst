@@ -20,7 +20,7 @@ In last chapter, we saw that corners are regions in the image with large variati
 
     E(u,v) = \sum_{x,y} \underbrace{w(x,y)}_\text{window function} \, [\underbrace{I(x+u,y+v)}_\text{shifted intensity}-\underbrace{I(x,y)}_\text{intensity}]^2
 
-Window function is either a rectangular window or gaussian window which gives weights to pixels underneath.
+The window function is either a rectangular window or gaussian window which gives weights to pixels underneath.
 
 We have to maximize this function :math:`E(u,v)` for corner detection. That means, we have to maximize the second term. Applying Taylor Expansion to above equation and using some mathematical steps (please refer any standard text books you like for full derivation), we get the final equation as:
 
@@ -35,7 +35,7 @@ where
     M = \sum_{x,y} w(x,y) \begin{bmatrix}I_x I_x & I_x I_y \\
                                          I_x I_y & I_y I_y \end{bmatrix}
                                          
-Here, :math:`I_x` and :math:`I_y` are image derivatives in x and y directions respectively. (Can be easily found out using **cv2.Sobel()**).
+Here, :math:`I_x` and :math:`I_y` are image derivatives in x and y directions respectively. (Can be easily found out using `cv2.Sobel() <https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_gradients/py_gradients.html>`_.)
 
 Then comes the main part. After this, they created a score, basically an equation, which will determine if a window can contain a corner or not.
 
