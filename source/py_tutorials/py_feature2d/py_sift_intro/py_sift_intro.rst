@@ -57,7 +57,7 @@ DoG has higher response for edges, so edges also need to be removed. For this, a
 
     \frac{Tr(H)^2}{Det(H)} < \frac{(r+1)^2}{r} \; \text{where} \; r = \frac{\lambda_1}{\lambda_2}; \; \lambda_1 > \lambda_2
 
-If this ratio is greater than a threshold, called **edgeThreshold** in OpenCV, that keypoint is discarded. It is given as 10 in paper.
+If this ratio is greater than a threshold, called **edgeThreshold** in OpenCV, that keypoint is discarded. It is given as 10 in the paper.
 
 So it eliminates any low-contrast keypoints and edge keypoints and what remains is strong interest points.
 
