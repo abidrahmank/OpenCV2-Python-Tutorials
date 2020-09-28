@@ -85,19 +85,19 @@ SIFT in OpenCV
 
 So now let's see SIFT functionalities available in OpenCV. Let's start with keypoint detection and draw them. First we have to construct a SIFT object. We can pass different parameters to it which are optional and they are well explained in docs.
 ::
+    """SIFT Feature Detection"""
 
     import cv2
-    import numpy as np
 
     img = cv2.imread('home.jpg')
-    gray= cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
+    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
-    sift = cv2.SIFT()
-    kp = sift.detect(gray,None)
+    sift = cv2.SIFT_create()
+    kp = sift.detect(gray, None)
 
-    img=cv2.drawKeypoints(gray,kp)
-
-    cv2.imwrite('sift_keypoints.jpg',img)
+    img = cv2.drawKeypoints(gray, kp, img)
+    cv2.imshow("sift_keypoints", img)
+    cv2.waitKey()
 
 **sift.detect()** function finds the keypoint in the images. You can pass a mask if you want to search only a part of image. Each keypoint is a special structure which has many attributes like its (x,y) coordinates, size of the meaningful neighbourhood, angle which specifies its orientation, response that specifies strength of keypoints etc.
 
