@@ -49,7 +49,7 @@ where:
 
 .. math:: 
         
-    f_x = \frac{\partial f}{\partial x} \; ; \; f_y = \frac{\partial f}{\partial x}
+    f_x = \frac{\partial f}{\partial x} \; ; \; f_y = \frac{\partial f}{\partial y}
     
     u = \frac{dx}{dt} \; ; \; v = \frac{dy}{dt}
 
