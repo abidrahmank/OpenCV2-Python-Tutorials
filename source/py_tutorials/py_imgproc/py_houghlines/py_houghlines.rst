@@ -42,7 +42,7 @@ This is how hough transform for lines works. It is simple, and may be you can im
         :alt: Hough Transform accumulator
         :align: center
         
-Hough Tranform in OpenCV
+Hough Transform in OpenCV
 =========================
 
 Everything explained above is encapsulated in the OpenCV function, **cv2.HoughLines()**. It simply returns an array of :math:`(\rho, \theta)` values. :math:`\rho` is measured in pixels and :math:`\theta` is measured in radians. First parameter, Input image should be a binary image, so apply threshold or use canny edge detection before finding applying hough transform. Second and third parameters are :math:`\rho` and :math:`\theta` accuracies respectively. Fourth argument is the `threshold`, which means minimum vote it should get for it to be considered as a line. Remember, number of votes depend upon number of points on the line. So it represents the minimum length of line that should be detected.
