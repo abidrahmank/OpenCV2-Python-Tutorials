@@ -140,7 +140,7 @@ For FLANN based matcher, we need to pass two dictionaries which specifies the al
     
 While using ORB, you can pass the following. The commented values are recommended as per the docs, but it didn't provide required results in some cases. Other values worked fine.:
 ::
-
+    FLANN_INDEX_LSH = 6
     index_params= dict(algorithm = FLANN_INDEX_LSH,
                        table_number = 6, # 12
                        key_size = 12,     # 20
