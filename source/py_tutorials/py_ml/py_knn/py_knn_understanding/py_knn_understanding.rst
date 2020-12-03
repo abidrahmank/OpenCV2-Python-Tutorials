@@ -115,7 +115,6 @@ If you have large number of data, you can just pass it as array. Corresponding r
 Additional Resources
 ======================
 
-#. `NPTEL notes on Pattern Recognition, Chapter 11 <http://www.nptel.iitm.ac.in/courses/106108057/12>`_
 
 Exercises
 ===========
