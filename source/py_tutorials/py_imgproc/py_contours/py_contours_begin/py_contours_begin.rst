@@ -33,7 +33,7 @@ Let's see how to find contours of a binary image:
 See, there are three arguments in **cv2.findContours()** function, first one is source image, second is contour retrieval mode, third is contour approximation method. And it outputs the image, contours and hierarchy. ``contours`` is a Python list of all the contours in the image. Each individual contour is a Numpy array of (x,y) coordinates of boundary points of the object.
 
 .. note:: We will discuss second and third arguments and about hierarchy in details later. Until then, the values given to them in code sample will work fine for all images. 
-
+If you are using OpenCV version >=3.2, **cv2.findContours()** function returns only two arguments - ``contours`` and ``hierarchy``, it no longer makes any changes on the source image. So changing the code to use ``contours, hierarchy = cv2.findContours(thresh,cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)`` should work.
 
 How to draw the contours?
 ===========================
