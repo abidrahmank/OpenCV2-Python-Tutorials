@@ -100,7 +100,7 @@ This time, we will use ``BFMatcher.knnMatch()`` to get k best matches. In this e
     img2 = cv2.imread('box_in_scene.png',0) # trainImage
 
     # Initiate SIFT detector
-    sift = cv2.SIFT()
+    sift = cv2.SIFT_create()
 
     # find the keypoints and descriptors with SIFT
     kp1, des1 = sift.detectAndCompute(img1,None)
@@ -159,7 +159,7 @@ With these informations, we are good to go.
     img2 = cv2.imread('box_in_scene.png',0) # trainImage
 
     # Initiate SIFT detector
-    sift = cv2.SIFT()
+    sift = cv2.SIFT_create()
 
     # find the keypoints and descriptors with SIFT
     kp1, des1 = sift.detectAndCompute(img1,None)
