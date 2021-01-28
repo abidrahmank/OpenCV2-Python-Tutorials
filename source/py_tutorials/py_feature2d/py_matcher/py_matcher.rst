@@ -117,7 +117,7 @@ This time, we will use ``BFMatcher.knnMatch()`` to get k best matches. In this e
             good.append([m])
 
     # cv2.drawMatchesKnn expects list of lists as matches.
-    img3 = cv2.drawMatchesKnn(img1,kp1,img2,kp2,good,flags=2)
+    img3 = cv2.drawMatchesKnn(img1,kp1,img2,kp2,good,None,flags=2)
 
     plt.imshow(img3),plt.show()
 
