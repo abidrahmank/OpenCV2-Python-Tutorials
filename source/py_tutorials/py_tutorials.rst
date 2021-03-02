@@ -149,7 +149,7 @@ OpenCV-Python Tutorials
    .. cssclass:: toctableopencv
 
    =========== =======================================================
-   |Objde|     In this section you will object detection techniques like face detection etc.
+   |Objde|     In this section you will learn about object detection techniques like face detection etc.
 
    =========== =======================================================
 
