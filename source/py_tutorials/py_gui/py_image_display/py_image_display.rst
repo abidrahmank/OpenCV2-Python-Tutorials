@@ -26,8 +26,6 @@ Second argument is a flag which specifies the way image should be read.
 * cv2.IMREAD_GRAYSCALE : Loads image in grayscale mode
 * cv2.IMREAD_UNCHANGED : Loads image as such including alpha channel
 
-.. note:: Instead of these three flags, you can simply pass integers 1, 0 or -1 respectively.
-
 See the code below:
 ::
     
@@ -35,7 +33,7 @@ See the code below:
     import cv2
     
     # Load an color image in grayscale
-    img = cv2.imread('messi5.jpg',0)
+    img = cv2.imread('messi5.jpg', cv2.IMREAD_GRAYSCALE)
     
 .. warning:: Even if the image path is wrong, it won't throw any error, but ``print img`` will give you ``None``
 
@@ -92,7 +90,7 @@ Below program loads an image in grayscale, displays it, save the image if you pr
     import numpy as np
     import cv2
     
-    img = cv2.imread('messi5.jpg',0)
+    img = cv2.imread('messi5.jpg', cv2.IMREAD_GRAYSCALE)
     cv2.imshow('image',img)
     k = cv2.waitKey(0)
     if k == 27:         # wait for ESC key to exit
@@ -113,7 +111,7 @@ Matplotlib is a plotting library for Python which gives you wide variety of plot
     import cv2
     from matplotlib import pyplot as plt
     
-    img = cv2.imread('messi5.jpg',0)
+    img = cv2.imread('messi5.jpg', cv2.IMREAD_GRAYSCALE)
     plt.imshow(img, cmap = 'gray', interpolation = 'bicubic')
     plt.xticks([]), plt.yticks([])  # to hide tick values on X and Y axis
     plt.show()
